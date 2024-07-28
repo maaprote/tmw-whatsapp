@@ -14,6 +14,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 use TM\Master_Whats_Chat\Functions;
+use TM\Master_Whats_Chat\Translator;
 
 class Button extends WPBakeryShortCode {
     
@@ -33,6 +34,11 @@ class Button extends WPBakeryShortCode {
         $this->settings = Functions::get_settings();
     }
 
+    /**
+     * Create shortcode.
+     * 
+     * @return void
+     */
     public function create_shortcode() {            
         vc_map( array(
             'name'          => esc_html__( 'TM Whatsapp Button', 'tmw-whatsapp'),
@@ -290,7 +296,7 @@ class Button extends WPBakeryShortCode {
         $attributes[] = 'class="'. esc_attr( implode( ' ', $classes ) ) .'"';
 
         // Output
-        $output .= '<'. $html_tag .' '. Functions::filter_output( implode( ' ', $attributes ) ) .'>';
+        $output .= '<'. $html_tag .' '. implode( ' ', $attributes ) .'>';
             $output .= esc_html( $status_text );
         $output .= '</'. $html_tag .'>';
 
@@ -375,7 +381,7 @@ class Button extends WPBakeryShortCode {
 
         $output .= '<div class="tmw-whatsapp-wpbakery-widget">';
             $output .= '<a href="#" class="tmw-whatsapp-button tmw-fadeIn tmw-d-block" data-phone-number="'. esc_attr( Translator::translate_string( $attendants[ $attendant_id ]['phone'], 'atendant_'. [ $attendant_id ] .'_phone' ) ) .'" data-availability="'. esc_attr( $attendantAvailability ) .'" data-default-timezone="'. esc_attr( $attendants[ $attendant_id ]['default_timezone'] ) .'"'. ( empty($attendants[ $attendant_id ]['phone'] ) ? ' disabled' : '' ) .'>';
-                $output .= '<div '. Functions::filter_output( implode( ' ', $wrapper_atts ) ) .'>';
+                $output .= '<div '. implode( ' ', $wrapper_atts ) .'>';
                     $output .= '<div class="tmw-whatsapp-elementor-body">';
                         $output .= '<div class="tmw-whatsapp-elementor-icon">';
                         if( $settings['photo_or_icon'] === 'icon' ) {
@@ -395,7 +401,7 @@ class Button extends WPBakeryShortCode {
                             $output .= '<span class="tmw-whatsapp-elementor-info-offline-message is-interval">'. esc_html( Translator::translate_string( $attendants[ $attendant_id ]['interval_message'], 'atendant_'. [ $attendant_id ] .'_interval_message' ) ) .'</span>';
                             $output .= '<div class="tmw-whatsapp-elementor-title">';
                                 $output .= '<h5>'. esc_html( $title ) .'</h5>';
-                                $output .= Functions::filter_output( $this->get_attendant_status_html( $settings, $attendants ) );
+                                $output .= $this->get_attendant_status_html( $settings, $attendants );
                             $output .= '</div>';
                             if( !empty($description) ) {
                                 $output .= '<div class="tmw-whatsapp-elementor-description">';
@@ -410,20 +416,20 @@ class Button extends WPBakeryShortCode {
         
         // Skin
         $output .= '<style>';
-            $output .= '#'. Functions::filter_output( $uniqid ) .'.tmw-whatsapp-elementor-wrapper.tmw-whatsapp-elementor-wrapper-style-1 .tmw-whatsapp-elementor-body { background: '. Functions::filter_output( $atts['background_color'] ) .'; }';
-            $output .= '#'. Functions::filter_output( $uniqid ) .'.tmw-whatsapp-elementor-wrapper:hover .tmw-whatsapp-elementor-body { background: '. Functions::filter_output( $atts['background_hover_color'] ) .'; }';
-            $output .= '#'. Functions::filter_output( $uniqid ) .'.tmw-whatsapp-elementor-wrapper .tmw-whatsapp-elementor-body .tmw-whatsapp-elementor-icon { color: '. Functions::filter_output( $atts['icon_color'] ) .'; }';
-            $output .= '#'. Functions::filter_output( $uniqid ) .'.tmw-whatsapp-elementor-wrapper:hover .tmw-whatsapp-elementor-body .tmw-whatsapp-elementor-icon { color: '. Functions::filter_output( $atts['icon_hover_color'] ) .'; }';
-            $output .= '#'. Functions::filter_output( $uniqid ) .'.tmw-whatsapp-elementor-wrapper .tmw-whatsapp-elementor-body .tmw-whatsapp-elementor-info .tmw-whatsapp-elementor-title h5 { color: '. Functions::filter_output( $atts['attendant_name_color'] ) .'; }';
-            $output .= '#'. Functions::filter_output( $uniqid ) .'.tmw-whatsapp-elementor-wrapper:hover .tmw-whatsapp-elementor-body .tmw-whatsapp-elementor-info .tmw-whatsapp-elementor-title h5 { color: '. Functions::filter_output( $atts['attendant_name_hover_color'] ) .'; }';
-            $output .= '#'. Functions::filter_output( $uniqid ) .'.tmw-whatsapp-elementor-wrapper .tmw-whatsapp-elementor-body .tmw-whatsapp-elementor-info .tmw-whatsapp-elementor-description p { color: '. Functions::filter_output( $atts['attendant_description_color'] ) .'; }';
-            $output .= '#'. Functions::filter_output( $uniqid ) .'.tmw-whatsapp-elementor-wrapper:hover .tmw-whatsapp-elementor-body .tmw-whatsapp-elementor-info .tmw-whatsapp-elementor-description p { color: '. Functions::filter_output( $atts['attendant_description_hover_color'] ) .'; }';
-            $output .= '#'. Functions::filter_output( $uniqid ) .'.tmw-whatsapp-elementor-wrapper .tmw-whatsapp-elementor-body .tmw-whatsapp-elementor-info .tmw-whatsapp-elementor-title .tmw-whatsapp-elementor-title-status { background-color: '. Functions::filter_output( $atts['status_background_color'] ) .'; }';
-            $output .= '#'. Functions::filter_output( $uniqid ) .'.tmw-whatsapp-elementor-wrapper .tmw-whatsapp-elementor-body .tmw-whatsapp-elementor-info .tmw-whatsapp-elementor-title .tmw-whatsapp-elementor-title-status { color: '. Functions::filter_output( $atts['status_text_color'] ) .'; }';
-            $output .= '#'. Functions::filter_output( $uniqid ) .'.tmw-whatsapp-elementor-wrapper.tmw-whatsapp-elementor-wrapper-style-1 .tmw-whatsapp-elementor-body .tmw-whatsapp-elementor-info .tmw-whatsapp-elementor-info-offline-message { background-color: '. Functions::filter_output( $atts['badge_offline_message_background'] ) .'; }';
-            $output .= '#'. Functions::filter_output( $uniqid ) .'.tmw-whatsapp-elementor-wrapper.tmw-whatsapp-elementor-wrapper-style-1 .tmw-whatsapp-elementor-body .tmw-whatsapp-elementor-info .tmw-whatsapp-elementor-info-offline-message { color: '. Functions::filter_output( $atts['badge_offline_message_text'] ) .'; }';
-            $output .= '#'. Functions::filter_output( $uniqid ) .'.tmw-whatsapp-elementor-wrapper.tmw-whatsapp-elementor-wrapper-style-1 .tmw-whatsapp-elementor-body .tmw-whatsapp-elementor-info .tmw-whatsapp-elementor-info-offline-message.is-interval { color: '. Functions::filter_output( $atts['badge_interval_background'] ) .'; }';
-            $output .= '#'. Functions::filter_output( $uniqid ) .'.tmw-whatsapp-elementor-wrapper.tmw-whatsapp-elementor-wrapper-style-1 .tmw-whatsapp-elementor-body .tmw-whatsapp-elementor-info .tmw-whatsapp-elementor-info-offline-message.is-interval { color: '. Functions::filter_output( $atts['badge_interval_text'] ) .'; }';
+            $output .= '#' . $uniqid . '.tmw-whatsapp-elementor-wrapper.tmw-whatsapp-elementor-wrapper-style-1 .tmw-whatsapp-elementor-body { background: '. esc_attr( $atts['background_color'] ) .'; }';
+            $output .= '#' . $uniqid . '.tmw-whatsapp-elementor-wrapper:hover .tmw-whatsapp-elementor-body { background: '. esc_attr( $atts['background_hover_color'] ) .'; }';
+            $output .= '#' . $uniqid . '.tmw-whatsapp-elementor-wrapper .tmw-whatsapp-elementor-body .tmw-whatsapp-elementor-icon { color: '. esc_attr( $atts['icon_color'] ) .'; }';
+            $output .= '#' . $uniqid . '.tmw-whatsapp-elementor-wrapper:hover .tmw-whatsapp-elementor-body .tmw-whatsapp-elementor-icon { color: '. esc_attr( $atts['icon_hover_color'] ) .'; }';
+            $output .= '#' . $uniqid . '.tmw-whatsapp-elementor-wrapper .tmw-whatsapp-elementor-body .tmw-whatsapp-elementor-info .tmw-whatsapp-elementor-title h5 { color: '. esc_attr( $atts['attendant_name_color'] ) .'; }';
+            $output .= '#' . $uniqid . '.tmw-whatsapp-elementor-wrapper:hover .tmw-whatsapp-elementor-body .tmw-whatsapp-elementor-info .tmw-whatsapp-elementor-title h5 { color: '. esc_attr( $atts['attendant_name_hover_color'] ) .'; }';
+            $output .= '#' . $uniqid . '.tmw-whatsapp-elementor-wrapper .tmw-whatsapp-elementor-body .tmw-whatsapp-elementor-info .tmw-whatsapp-elementor-description p { color: '. esc_attr( $atts['attendant_description_color'] ) .'; }';
+            $output .= '#' . $uniqid . '.tmw-whatsapp-elementor-wrapper:hover .tmw-whatsapp-elementor-body .tmw-whatsapp-elementor-info .tmw-whatsapp-elementor-description p { color: '. esc_attr( $atts['attendant_description_hover_color'] ) .'; }';
+            $output .= '#' . $uniqid . '.tmw-whatsapp-elementor-wrapper .tmw-whatsapp-elementor-body .tmw-whatsapp-elementor-info .tmw-whatsapp-elementor-title .tmw-whatsapp-elementor-title-status { background-color: '. esc_attr( $atts['status_background_color'] ) .'; }';
+            $output .= '#' . $uniqid . '.tmw-whatsapp-elementor-wrapper .tmw-whatsapp-elementor-body .tmw-whatsapp-elementor-info .tmw-whatsapp-elementor-title .tmw-whatsapp-elementor-title-status { color: '. esc_attr( $atts['status_text_color'] ) .'; }';
+            $output .= '#' . $uniqid . '.tmw-whatsapp-elementor-wrapper.tmw-whatsapp-elementor-wrapper-style-1 .tmw-whatsapp-elementor-body .tmw-whatsapp-elementor-info .tmw-whatsapp-elementor-info-offline-message { background-color: '. esc_attr( $atts['badge_offline_message_background'] ) .'; }';
+            $output .= '#' . $uniqid . '.tmw-whatsapp-elementor-wrapper.tmw-whatsapp-elementor-wrapper-style-1 .tmw-whatsapp-elementor-body .tmw-whatsapp-elementor-info .tmw-whatsapp-elementor-info-offline-message { color: '. esc_attr( $atts['badge_offline_message_text'] ) .'; }';
+            $output .= '#' . $uniqid . '.tmw-whatsapp-elementor-wrapper.tmw-whatsapp-elementor-wrapper-style-1 .tmw-whatsapp-elementor-body .tmw-whatsapp-elementor-info .tmw-whatsapp-elementor-info-offline-message.is-interval { color: '. esc_attr( $atts['badge_interval_background'] ) .'; }';
+            $output .= '#' . $uniqid . '.tmw-whatsapp-elementor-wrapper.tmw-whatsapp-elementor-wrapper-style-1 .tmw-whatsapp-elementor-body .tmw-whatsapp-elementor-info .tmw-whatsapp-elementor-info-offline-message.is-interval { color: '. esc_attr( $atts['badge_interval_text'] ) .'; }';
         $output .= '</style>';
 
         return $output;                  

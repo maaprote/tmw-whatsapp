@@ -32,6 +32,30 @@ class Button extends \WP_Widget {
 		parent::__construct( 'tmw-whatsapp-wp-widget-button', esc_html__( 'TM Whatsapp: Button', 'tmw-whatsapp' ), $options );
     }
 
+	/**
+	 * Attendant Status Output
+	 *
+	 */
+	public function get_attendant_status_html( $settings ) {
+		$output = '';
+
+		$html_tag = 'span';
+		$classes = array('tmw-whatsapp-title-status');
+		$attributes = array();
+
+		$status_text = esc_html__( 'Online', 'tmw-whatsapp' );
+
+		// Mount Class
+		$attributes[] = 'class="'. esc_attr( implode( ' ', $classes ) ) .'"';
+
+		// Output
+		$output .= '<'. $html_tag .' '. implode( ' ', $attributes ) .'>';
+			$output .= esc_html( $status_text );
+		$output .= '</'. $html_tag .'>';
+
+		return $output;
+	}
+
     /**
 	 * Outputs the content of the widget
 	 *
@@ -138,7 +162,7 @@ class Button extends \WP_Widget {
 		}
 
 		$output .= '<a href="#" class="tmw-whatsapp-button tmw-whatsapp-button-widget tmw-fadeIn" data-phone-number="'. esc_attr( Translator::translate_string( $attendant['phone'], 'attendant_'. $attendant_id .'_phone' ) ) .'"'. ( empty($attendant['phone']) ? ' disabled' : '' ) .' data-start-message="'. esc_attr( Translator::translate_string( $attendant['start_message'], 'attendant_'. $attendant_id .'_start_message' ) ) .'" data-availability="'. esc_attr( $attendantAvailability ) .'" data-default-timezone="'. esc_attr( $attendant['default_timezone'] ) .'">';
-			$output .= '<div '. Functions::filter_output( implode( ' ', $wrapper_atts ) ) .'>';
+			$output .= '<div '. implode( ' ', $wrapper_atts ) .'>';
 				$output .= '<div class="tmw-whatsapp-elementor-body">';
 					$output .= '<div class="tmw-whatsapp-elementor-icon">';
 						if( $photo_or_icon == 'icon' ) {
@@ -158,7 +182,7 @@ class Button extends \WP_Widget {
 						$output .= '<span class="tmw-whatsapp-elementor-info-offline-message is-interval">'. esc_html( Translator::translate_string( $attendant['interval_message'], 'attendant_'. $attendant_id .'_interval_message' ) ) .'</span>';
 						$output .= '<div class="tmw-whatsapp-elementor-title">';
 							$output .= '<h5>'. esc_html( $att_title ) .'</h5>';
-							$output .= Functions::filter_output( $TMW_Whatsapp->get_attendant_status_html( $settings ) );
+							$output .= $this->get_attendant_status_html( $settings );
 						$output .= '</div>';
 						if( !empty($description) ) {
 							$output .= '<div class="tmw-whatsapp-elementor-description">';
@@ -170,7 +194,7 @@ class Button extends \WP_Widget {
 			$output .= '</div>';
 		$output .= '</a>';
 
-		echo Functions::filter_output( $output );
+		echo $output; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- previously escaped.
 	}
 
 }

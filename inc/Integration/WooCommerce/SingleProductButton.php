@@ -13,6 +13,9 @@ if ( ! defined( 'ABSPATH' ) ) {
     die( '-1' );
 }
 
+use TM\Master_Whats_Chat\Functions;
+use TM\Master_Whats_Chat\Translator;
+
 class SingleProductButton {
 
     /**
@@ -67,11 +70,11 @@ class SingleProductButton {
 		$attributes[] = 'class="'. esc_attr( implode( ' ', $classes ) ) .'"';
 
 		// Output
-		$output .= '<span '. Functions::filter_output( implode( ' ', $attributes ) ) .'>';
+		$output .= '<span '. implode( ' ', $attributes ) .'>';
 			$output .= esc_html( $status_text );
 		$output .= '</span>';
 
-		return Functions::filter_output( $output );
+		return $output;
 	}
     
     /**
@@ -218,7 +221,7 @@ class SingleProductButton {
 		$output = '';
 
 		$output .= '<a href="#" class="tmw-whatsapp-button" data-phone-number="'. esc_attr( Translator::translate_string( $attendant['phone'], 'attendant_'. $attendant_id .'_phone' ) ) .'"'. ( empty($attendant['phone']) ? ' disabled' : '' ) .' data-start-message="'. sprintf( esc_attr__( Translator::translate_string( __( 'Hello! I have some questions about the product: %s (%s)', 'tmw-whatsapp' ), 'woo_button_product_start_message' ) ), $post->post_title, get_the_permalink( $post->ID ) ) .'" data-availability="'. esc_attr( $attendantAvailability ) .'" data-default-timezone="'. esc_attr( $attendant['default_timezone'] ) .'">';
-			$output .= '<div '. Functions::filter_output( implode( ' ', $wrapper_atts ) ) .'>';
+			$output .= '<div '. implode( ' ', $wrapper_atts ) .'>';
 				$output .= '<div class="tmw-whatsapp-elementor-body">';
 					$output .= '<div class="tmw-whatsapp-elementor-icon">';
 						if( $settings['photo-or-icon'] == 'icon' ) {
@@ -234,8 +237,8 @@ class SingleProductButton {
 						}
 					$output .= '</div>';
 					$output .= '<div class="tmw-whatsapp-elementor-info">';
-						$output .= '<span class="tmw-whatsapp-elementor-info-offline-message">'. esc_html( TMW_Whatsapp::tmw_get_string( $attendant['offline_message'], 'atendant_'. $attendant_id .'_offline_message' ) ) .'</span>';
-						$output .= '<span class="tmw-whatsapp-elementor-info-offline-message is-interval">'. esc_html( TMW_Whatsapp::tmw_get_string( $attendant['interval_message'], 'atendant_'. $attendant_id .'_interval_message' ) ) .'</span>';
+						$output .= '<span class="tmw-whatsapp-elementor-info-offline-message">'. esc_html( Translator::translate_string( $attendant['offline_message'], 'atendant_'. $attendant_id .'_offline_message' ) ) .'</span>';
+						$output .= '<span class="tmw-whatsapp-elementor-info-offline-message is-interval">'. esc_html( Translator::translate_string( $attendant['interval_message'], 'atendant_'. $attendant_id .'_interval_message' ) ) .'</span>';
 						$output .= '<div class="tmw-whatsapp-elementor-title">';
 							$output .= '<h5>'. esc_html( Translator::translate_string( $attendant_title, 'attendant_'. $attendant_id .'_name' ) ) .'</h5>';
 							$output .= $this->get_attendant_status_html( $settings );
@@ -251,7 +254,7 @@ class SingleProductButton {
 		$output .= '</a>';
 
 		echo '<div class="tmw-whatsapp-elementor-widget'. esc_attr( $display_class ) .'">';
-			echo Functions::filter_output( $output );
+			echo $output; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- previously escaped.
 		echo '</div>';
 	}    
 }

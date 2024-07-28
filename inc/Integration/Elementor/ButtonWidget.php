@@ -24,7 +24,7 @@ class Button extends \Elementor\Widget_Base {
     public function __construct($data = [], $args = null) {
 		parent::__construct($data, $args);
 
-	    wp_register_script( 'tmw-whatsapp-widgets-js', TMW_WHATSAPP_URL . '/js/tmw-whatsapp-widgets.js', [ 'elementor-frontend', 'elementor-backend', 'elementor-editor' ], '1.0.0', true );
+	    wp_register_script( 'tmw-whatsapp-widgets-js', TM_MASTER_WHATS_CHAT_URL . '/js/tmw-whatsapp-widgets.js', [ 'elementor-frontend', 'elementor-backend', 'elementor-editor' ], '1.0.0', true );
 	}
 
     public function get_script_depends() {
@@ -411,7 +411,7 @@ class Button extends \Elementor\Widget_Base {
 		$attributes[] = 'class="'. esc_attr( implode( ' ', $classes ) ) .'"';
 
 		// Output
-		$output .= '<'. $html_tag .' '. Functions::filter_output( implode( ' ', $attributes ) ) .'>';
+		$output .= '<'. $html_tag .' '. implode( ' ', $attributes ) .'>';
 			$output .= esc_html( $status_text );
 		$output .= '</'. $html_tag .'>';
 
@@ -479,14 +479,14 @@ class Button extends \Elementor\Widget_Base {
 		$output = '';
 
 		$output .= '<a href="#" class="tmw-whatsapp-button tmw-fadeIn tmw-d-block" data-phone-number="'. esc_attr( Translator::translate_string( $attendants[ $attendant_id ]['phone'], 'atendant_'. [ $attendant_id ] .'_phone' ) ) .'" data-availability="'. esc_attr( $attendantAvailability ) .'" data-default-timezone="'. esc_attr( $attendants[ $attendant_id ]['default_timezone'] ) .'"'. ( empty($attendants[ $attendant_id ]['phone'] ) ? ' disabled' : '' ) .'>';
-			$output .= '<div '. Functions::filter_output( implode( ' ', $wrapper_atts ) ) .'>';
+			$output .= '<div '. implode( ' ', $wrapper_atts ) .'>';
 				$output .= '<div class="tmw-whatsapp-elementor-body">';
 					$output .= '<div class="tmw-whatsapp-elementor-icon">';
 					if( $settings['photo_or_icon'] == 'icon' ) {
 						$output .= '<i class="tmw-fab tmw-fa-whatsapp"></i>';
 					} else {
 						$image = array(
-							'image' => $attendants[ $attendant_id ]['image']['attendant-image'] ? wp_get_attachment_url( $attendants[ $attendant_id ]['image']['attendant-image'] ) : TMW_WHATSAPP_URL . '/img/user-placeholder.png',
+							'image' => $attendants[ $attendant_id ]['image']['attendant-image'] ? wp_get_attachment_url( $attendants[ $attendant_id ]['image']['attendant-image'] ) : TM_MASTER_WHATS_CHAT_URL . '/img/user-placeholder.png',
 							'width' => 150,
 							'height' => 150
 						);
@@ -499,7 +499,7 @@ class Button extends \Elementor\Widget_Base {
 						$output .= '<span class="tmw-whatsapp-elementor-info-offline-message is-interval">'. esc_html( Translator::translate_string( $attendants[ $attendant_id ]['interval_message'], 'atendant_'. [ $attendant_id ] .'_interval_message' ) ) .'</span>';
 						$output .= '<div class="tmw-whatsapp-elementor-title">';
 							$output .= '<h5>'. esc_html( $title ) .'</h5>';
-							$output .= Functions::filter_output( $this->get_attendant_status_html( $settings, $attendants ) );
+							$output .= $this->get_attendant_status_html( $settings, $attendants );
 						$output .= '</div>';
 						if( !empty($description) ) {
 							$output .= '<div class="tmw-whatsapp-elementor-description">';
@@ -512,7 +512,7 @@ class Button extends \Elementor\Widget_Base {
 		$output .= '</a>';
 
 		echo '<div class="tmw-whatsapp-elementor-widget">';
-			echo Functions::filter_output( $output );
+			echo $output; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- previously escaped.
 		echo '</div>';
 	}
 }

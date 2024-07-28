@@ -76,6 +76,6 @@ class OpenChatButton {
 			$output .= '</a>';
 		$output .= '</div>';
 
-		echo Functions::filter_output( $output );
+		echo $output; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- previously escaped.
 	}
 }

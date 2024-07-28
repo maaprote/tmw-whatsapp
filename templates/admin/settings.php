@@ -85,7 +85,7 @@ use TM\Master_Whats_Chat\Views\ChatWidget;
 									<strong><?php echo esc_html__( 'Timezone:', 'tmw-whasapp' ); ?></strong>
 								</label>
 								<p class="tmw-text-color-grey mt-0 mb-2"><?php echo esc_html__( 'This option will overwrite the default timezone of the attendant in this specific day', 'tmw-whatsapp' ); ?></p>
-								<?php echo Functions::filter_output( SettingsFields::timezone_html_select( 'timezone', '' ) ); ?>
+								<?php echo SettingsFields::timezone_html_select( 'timezone', '' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- previously escaped. ?>
 							</div>
 						</div>
 
@@ -183,14 +183,14 @@ use TM\Master_Whats_Chat\Views\ChatWidget;
 																		<strong><?php echo esc_html__( 'Attendant Timezone', 'tmw-whasapp' ); ?>:</strong>
 																		<p class="tmw-form-control-description"><?php echo esc_html__( 'The attendant timezone', 'tmw-whasapp' ); ?></p>
 																	</label>
-																	<?php echo Functions::filter_output( SettingsFields::timezone_html_select( $field_name, $multi_field_val['default_timezone'], ' attendant-default-timezone' ) ); ?>
+																	<?php echo SettingsFields::timezone_html_select( $field_name, $multi_field_val['default_timezone'], ' attendant-default-timezone' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- previously escaped. ?>
 																</div>
 																<div class="tmw-form-group tmw-form-group-mobile-md col-12 d-flex mt-3">
 																	<label class="tmw-form-control-label">
 																		<strong><?php echo esc_html__( 'Attendant Image:', 'tmw-whasapp' ); ?></strong>
 																		<p class="tmw-form-control-description"><?php echo esc_html__( 'The attendant image. Default size: 50x50', 'tmw-whasapp' ); ?></p>
 																	</label>
-																	<?php echo Functions::filter_output( SettingsFields::media_upload( $multi_field_val, 'attendant-image' ) ); ?>
+																	<?php echo SettingsFields::media_upload( $multi_field_val, 'attendant-image' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- previously escaped. ?>
 																</div>
 															</div>
 														</div>
@@ -235,7 +235,7 @@ use TM\Master_Whats_Chat\Views\ChatWidget;
 
 										<?php if( isset($field_val['prepend_html']) && !empty($field_val['prepend_html']) ) : ?>
 
-											<?php echo Functions::filter_output( $field_val['prepend_html'] ); ?>
+											<?php echo wp_kses_post( $field_val['prepend_html'] ); ?>
 
 										<?php endif; ?>
 
@@ -261,7 +261,7 @@ use TM\Master_Whats_Chat\Views\ChatWidget;
 										$form_group_class = 'tmw-form-group' . ' ' . esc_attr( $field_val['form_group_class'], 'tmw-whatsapp' );
 									} ?>
 
-									<div class="<?php echo esc_attr( $form_group_class ); ?> col-md-12 align-items-center mt-3<?php echo esc_attr( SettingsFields::conditional_class( $field_val ) ); ?>"<?php echo Functions::filter_output( SettingsFields::conditional_atts( $field_val ) ); ?>>
+									<div class="<?php echo esc_attr( $form_group_class ); ?> col-md-12 align-items-center mt-3<?php echo esc_attr( SettingsFields::conditional_class( $field_val ) ); ?>"<?php echo SettingsFields::conditional_atts( $field_val ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- previously escaped. ?>>
 									
 										<label class="tmw-form-control-label">
 											<strong><?php echo esc_html($field_val['label']); ?></strong>
@@ -273,7 +273,7 @@ use TM\Master_Whats_Chat\Views\ChatWidget;
 														<?php foreach( $field_val['tooltip_content'] as $markup => $label ) : ?>
 
 															<?php if( $markup == 'explain' ) : ?>
-																<p><?php echo Functions::filter_output( $label ); ?></p>
+																<p><?php echo esc_html( $label ); ?></p>
 															<?php else : ?>
 																<div class="tmw-d-flex justify-content-between">
 																	<span><strong><?php echo esc_html( $label ); ?></strong></span>
@@ -322,11 +322,11 @@ use TM\Master_Whats_Chat\Views\ChatWidget;
 
 										<?php elseif( isset($field_val['type']) && $field_val['type'] == 'image_upload' ) : ?>
 
-											<?php echo Functions::filter_output( SettingsFields::media_upload( $field_val['value'], $field_name ) ); ?>
+											<?php echo SettingsFields::media_upload( $field_val['value'], $field_name ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- previously escaped. ?>
 
 										<?php elseif( isset($field_val['type']) && $field_val['type'] == 'padding_margin' ) : ?>
 
-											<?php echo Functions::filter_output( SettingsFields::padding_margin( $field_val['value'], $field_name ) ); ?>
+											<?php echo SettingsFields::padding_margin( $field_val['value'], $field_name ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- previously escaped. ?>
 
 										<?php elseif( isset($field_val['type']) && $field_val['type'] == 'number' ) : ?>
 
