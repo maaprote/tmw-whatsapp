@@ -8,7 +8,7 @@
  */
 
 // General options.
-const projectURL      = 'http://localhost/botiga';
+const projectURL      = 'http://localhost/tmw-whatsapp';
 const productURL      = './';
 const browserAutoOpen = false;
 const injectChanges   = true;

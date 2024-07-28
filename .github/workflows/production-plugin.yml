@@ -56,9 +56,9 @@ jobs:
           [ -d node_modules ] && rm -r node_modules
 
       - name: Create directory for artifacts
-        run: mkdir merchant-pro
+        run: mkdir tmw-whatsapp
 
-      - name: Move files to merchant directory
+      - name: Move files to twm-whatsapp directory
         run: rsync -av --progress --exclude=tmw-whatsapp . tmw-whatsapp/
 
       - name: Create Artifact

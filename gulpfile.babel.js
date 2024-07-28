@@ -19,7 +19,6 @@ const sass         = require('gulp-sass')(nodesass);
 const minifycss    = require('gulp-uglifycss');
 const autoprefixer = require('gulp-autoprefixer');
 const mmq          = require('gulp-merge-media-queries');
-const rtlcss       = require('gulp-rtlcss');
 
 // JS related plugins.
 const concat = require('gulp-concat');
