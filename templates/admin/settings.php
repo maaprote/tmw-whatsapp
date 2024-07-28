@@ -364,7 +364,7 @@ use TM\Master_Whats_Chat\Views\ChatWidget;
 					<?php 
 					// Render the floating whast app chat in the settings page
 					// The purpose is live preview
-					new ChatWidget(); ?>
+					ChatWidget::instance(); ?>
 
 				</div>
 			</div>

@@ -56,7 +56,7 @@ class AjaxHandlers {
         }
 
         ob_start();
-        new ChatWidget();
+        ChatWidget::instance();
         $app_html = ob_get_clean();
 
         $send_json = array(

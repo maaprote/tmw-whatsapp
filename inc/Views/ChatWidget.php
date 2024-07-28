@@ -27,6 +27,20 @@ class ChatWidget {
         $this->render_widget();
     }
 
+	/**
+	 * Singleton
+	 * 
+	 */
+	public static function instance() {
+		static $instance = null;
+
+		if( $instance === null ) {
+			$instance = new self();
+		}
+		
+		return $instance;
+	}
+
     public function hide_from_pages() {
         if( is_admin() ) {
 			return false;
@@ -394,6 +408,6 @@ class ChatWidget {
         <?php 
         
         // Render the button to open the chat.
-        new OpenChatButton();
+        OpenChatButton::instance();
 	}
 }

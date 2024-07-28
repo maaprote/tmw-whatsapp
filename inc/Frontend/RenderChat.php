@@ -31,6 +31,6 @@ class RenderChat {
      * @return void 
      */
     public function render() {
-        new ChatWidget();
+        ChatWidget::instance();
     }
 }
