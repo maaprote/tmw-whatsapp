@@ -1,0 +1,15 @@
+node_modules
+/vendor/
+**.code-workspace
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
+**.vscode
+.DS_Store
+.idea
+assets/css
+assets/js/**/*
+!assets/js/src
+!assets/js/src/**
+*.code-workspace
