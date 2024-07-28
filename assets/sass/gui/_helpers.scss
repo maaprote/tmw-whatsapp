@@ -1,0 +1,82 @@
+/* Helpers */
+
+// Text Color Grey
+.tmw-text-color-grey {
+    color: #9c9c9c;
+}
+
+// RTL Class
+.tmw-direction-rtl {
+    direction: rtl;
+}
+
+// Width
+.w-100 {
+    width: 100% !important;
+}
+
+// Display
+.tmw-d-none {
+    display: none;
+}
+
+.tmw-d-flex {
+    display: flex;
+}
+
+.tmw-d-inline-flex {
+    display: inline-flex;
+}
+
+.tmw-d-block {
+    display: block;
+}
+
+// Margins
+.tmw-mb-0px {
+    margin-bottom: 0px;
+}
+
+.tmw-mb-5px {
+    margin-bottom: 5px;
+}
+
+.tmw-mt-20px {
+    margin-top: 20px;
+}
+
+.tmw-mb-20px {
+    margin-bottom: 20px;
+}
+
+.tmw-my-7px {
+    margin-top: 7px;
+    margin-bottom: 7px;
+}
+
+.tmw-my-20px {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.tmw-mx-5px {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.tmw-ml-5px {
+    margin-left: 5px;
+}
+
+.tmw-mr-5px {
+    margin-right: 5px;
+}
+
+// Floats
+.tmw-float-left {
+    float: left;
+}
+
+.tmw-float-right {
+    float: right;
+}

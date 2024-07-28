@@ -1,0 +1,63 @@
+/* RTL - App */
+.tmw-whatsapp-trigger-button.tmw-direction-rtl {
+	&.tmw-whatsapp-chat-opened {
+		.tmw-whatsapp-trigger-button-icon {
+	    	transform: translate3d(100%, 0, 0);
+	    }
+    }
+}
+.tmw-whatsapp-wrapper.tmw-direction-rtl {
+	.tmw-whatsapp-card {
+		.tmw-whatsapp-card-header {
+            .tmw-whatsapp-presentation-info {
+                text-align: right;
+            }
+			.tmw-whatsapp-active-attendant-info {
+				.tmw-whatsapp-active-attendant-info-back {
+                    transform: rotate(180deg);
+                }
+				.tmw-whatsapp-attendant-info-image {
+                    margin: 0 5px 0 15px;
+				}
+			}
+		}
+		.tmw-whatsapp-card-body {
+			.tmw-whatsapp-attendant {
+                .tmw-whatsapp-attendant-info {
+                    text-align: right;
+                    .tmw-whatsapp-attedant-info-title {
+                        text-align: right;;
+                    }
+                }
+				.tmw-whatsapp-attendant-status {
+					text-align: left;
+				}
+			}
+
+			.tmw-whatsapp-attendant-chat-window {
+                text-align: right;
+			    .tmw-whatsapp-attendant-chat-message {
+				    padding: 10px 10px 10px 40px;
+				    &:before {
+					    right: -7px;
+					    border-left: 11px solid #FFF;
+                        border-right: 0;
+				    }
+				    .tmw-whatsapp-attendant-chat-message-time {
+					    left: 6px;
+                        right: auto;
+				    }
+			    }
+			    .tmw-whatsapp-attendant-chat-window-footer {
+				    .tmw-whatsapp-attendant-chat-send-button {
+					    margin-right: 5px;
+                        transform: rotateY(180deg);
+				    }
+			    }
+			}
+		}
+        .tmw-whatsapp-card-footer {
+            text-align: right;
+        }
+	}
+}

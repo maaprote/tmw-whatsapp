@@ -1,0 +1,31 @@
+{
+	"folders": [
+		{
+			"name": "WordPress Core",
+			"path": "../../athemes/dev/"
+		},
+		{
+			"name": "TM Whatsapp",
+			"path": "."
+		}
+	],
+	"settings": {
+		"phpcs.executablePath": "vendor\\bin\\phpcs",
+		"files.exclude": {
+			"**/.git": true,
+			"**/.svn": true,
+			"**/.hg": true,
+			"**/CVS": true,
+			"**/.DS_Store": true,
+			"**/Thumbs.db": true,
+		},
+		"search.exclude": {
+			"**/node_modules": true,
+			"**/bower_components": true,
+			"**/*.code-search": true,
+			"**/wp-content": true,
+			"**/wp-admin": true,
+			"**/wp-includes": true,
+		}
+	}
+}

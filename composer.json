@@ -1,0 +1,35 @@
+{
+    "name": "rodrigoteixeira/tm-whatsapp",
+    "description": "Whatsapp chat for WordPress.",
+    "license": "GPL-3.0-or-later",
+    "homepage": "https://github.com/maaprote/",
+    "authors": [
+        {
+            "name": "Rodrigo Teixeira",
+            "role": "Developer"
+        }
+    ],
+    "scripts": {
+        "phpcs": "@php ./vendor/bin/phpcs",
+        "phpcs:fix": "@php ./vendor/bin/phpcbf",
+        "run-tests": [
+            "@phpcs:fix",
+            "@phpcs"
+        ]
+    },
+    "require-dev": {
+        "dealerdirect/phpcodesniffer-composer-installer": "^1.0.0",
+        "wp-coding-standards/wpcs": "^3.0.0",
+        "phpcompatibility/phpcompatibility-wp": "*"
+    },
+    "config": {
+        "allow-plugins": {
+            "dealerdirect/phpcodesniffer-composer-installer": true
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "TM\\Master_Whats_Chat\\": "inc/"
+        }
+    }
+}

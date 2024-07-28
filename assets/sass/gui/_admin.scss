@@ -1,0 +1,427 @@
+/* TM Whatsapp Admin Settings */
+.tmw-whatsapp-admin-settings {
+	opacity: 0;
+	visibility: hidden;
+	transition: ease opacity 300ms;
+	&.tmw-whatsapp-admin-settings-show {
+		opacity: 1;
+		visibility: visible;
+	}
+
+	* {
+		box-sizing: border-box;
+	}
+
+	/* Helpers */
+	.tmw-bg-light {
+		background-color: #FFF;
+	}
+
+	/* Tabs */
+	.tmw-tab-wrapper {
+		.tmw-tab-navigation {
+			display: flex;
+			flex-wrap: wrap;
+			margin-bottom: 0;
+			> li {
+				display: inline-flex;
+				margin-bottom: 0;
+				& + li {
+					margin-left: 3px;
+				}
+				> a {
+					background: #f9f9f9;
+					padding: 20px 40px;
+					text-align: center;
+					color: #212121;
+					font-weight: 500;
+					text-decoration: none;
+				}
+
+				&.ui-tabs-active {
+					> a {
+						background: #FFF;
+					}
+				}
+			}
+		}
+		.tmw-tab-content {
+			position: relative;
+		}
+	}
+
+	/* Form Control */
+	.tmw-form-group {
+		display: flex;
+		align-items: flex-start;
+	}
+	.tmw-form-control-label {
+	    display: inline-block;
+	    margin-top: 1px;
+	    width: 50%;
+		.tmw-form-control-description {
+			margin-top: 0;
+			margin-bottom: 0;
+			color: #9c9c9c;
+		}
+	}
+	.tmw-form-control {
+		width: 50%;
+	    max-width: none;
+	    border-color: #e2e2e2;
+	    border-radius: 0;
+	    padding: 7px 16px;
+		max-height: 44px;
+	    &.tmw-form-control-100 {
+	    	width: 100%;
+	    }
+	}
+
+	/* Form Control Tooltip */
+	.tmw-form-control-tooltip {
+		position: relative;
+		color: #08c;
+		.tmw-form-control-tooltip-popup {
+			opacity: 0;
+			visibility: hidden;
+			position: absolute;
+			left: 0;
+			bottom: 100%;
+			background: #ececec;
+			color: #8c8c8c;
+			padding: 20px;
+			width: 100vw;
+			max-width: 380px;
+			box-shadow: 0px 0px 60px -25px rgba(0, 0, 0, 0.3);
+			transition: ease opacity 300ms;
+			p {
+				margin-top: 10px;
+				color: #8c8c8c;
+				margin-bottom: 0;
+				font-size: 12px;
+				img {
+					display: block;
+					margin-top: 7px;
+				}
+			}
+			strong {
+				color: #212121;
+			}
+		}
+		&:hover {
+			.tmw-form-control-tooltip-popup {
+				opacity: 1;
+				visibility: visible;
+				transition: ease opacity 300ms;
+			}
+		}
+	}
+
+	/* Media Uploader */
+	.tmw-media-uploader {
+		position: relative;
+		display: inline-flex;
+	    border: 1px solid #ddd;
+	    min-width: 100px;
+	    min-height: 100px;
+	    cursor: pointer;
+		.tmw-metabox-image-field-preview {
+			object-fit: cover;
+		}
+		.tmw-media-uploader-remove-btn {
+			display: none;
+			opacity: 0;
+		    position: absolute;
+		    top: 50%;
+		    left: 50%;
+		    font-size: 40px;
+		    width: 40px;
+		    height: 40px;
+		    color: #fd1919;
+		    cursor: pointer;
+		    transform: translate3d(-50%, -30%, 0);
+		    transition: ease transform 300ms, ease opacity 300ms;
+		}
+
+		&:hover {
+			.tmw-media-uploader-remove-btn {
+				transform: translate3d(-50%, -50%, 0);
+			}
+		}
+
+		&.remove-state {
+			.tmw-media-uploader-remove-btn {
+				display: block;
+			}
+			&:hover {
+				.tmw-media-uploader-remove-btn {
+					opacity: 1;
+				}
+			}
+		}
+	}
+
+	/* Buttons */
+	.tmw-button-primary {
+	    background: #0073aa;
+	    padding: 20px 40px;
+	    color: #FFF;
+	    text-decoration: none;
+	    font-weight: bold;
+	    text-transform: uppercase;
+	}
+
+	/* Attendants */
+	.attendant {
+		position: relative;
+		margin-bottom: 20px;
+		padding: 30px;
+	    background: #fdfdfd;
+
+	    &:nth-child(2n+3) {
+	    	background: #f9f9f9;
+	    }
+
+		.attendant-id {
+			position: absolute;
+			top: 0px;
+			left: 0px;
+			color: #9c9c9c;
+			font-weight: 500;
+			letter-spacing: -0.5px;
+			background: #f7f7f7;
+			padding: 5px 13px;
+		}
+
+	    .attendant-remove {
+		    color: #da0000;
+		    transition: ease color 300ms;
+		    &:hover {
+		    	color: red;
+		    }
+	    }
+	}
+
+	.attendant-add-new {
+		display: inline-flex;
+	}
+
+	/* Switch */
+	.custom-checkbox-switch {
+		position: relative;
+		-webkit-appearance: none;
+		-moz-appearance: none;
+		appearance: none;
+		outline: none;
+		width: 50px;
+		height: 26px;
+		background-color: #CCC;
+		border: 1px solid #D9DADC;
+		border-radius: 50px;
+		cursor: pointer;
+		transition: ease all 300ms;
+		&:before {
+			content: none !important;
+		}
+		&:after {
+			content: '';
+			position: absolute;
+			top: 50%;
+			left: 6px;
+			width: 15px;
+			height: 15px;
+			background-color: #FFF;
+			border-radius: 50%;
+			transform: translate3d(0, -50%, 0);
+			transition: ease left 300ms;
+		}
+		&:checked {
+			background-color: #08c;
+		    border-color: #08c;
+			&:after {
+				left: 27px;
+			}
+		}
+	}
+
+	/* Radio Switch */
+	.custom-radio-switch {
+		display: flex;
+		input {
+			position: absolute !important;
+			clip: rect(0, 0, 0, 0);
+			height: 1px;
+			width: 1px;
+			border: 0;
+			overflow: hidden;
+			&:checked + label {
+				background-color: #08c;
+				box-shadow: none;
+				color: #FFF;
+			}
+		}
+		label {
+			background-color: #FFF;
+			color: rgba(0, 0, 0, 0.6);
+			font-size: 14px;
+			line-height: 1;
+			text-align: center;
+			padding: 13px 20px;
+			margin-right: -1px;
+			border: 1px solid rgba(0, 0, 0, 0.2);
+			border-radius: 0;
+			box-shadow: none;
+			transition: all 0.1s ease-in-out;
+			&:hover {
+				cursor: pointer;
+			}
+		}
+	}
+
+	/* Conditional Field */
+	.tmw-conditional-field {
+		&.tmw-conditional-field-hide {
+			display: none;
+			opacity: 0;
+			visibility: hidden;
+		}
+	}
+}
+
+/* TM Whatsapp Admin Wrapper */
+.tmw-whatsapp-admin-wrapper {
+	position: fixed;
+	top: 80px;
+    z-index: 9999;
+}
+
+/* TM Settings Changed Warning */
+.tmw-settings-changed-warning {
+	background: #ffec63;
+    padding: 15px 25px;
+    font-weight: 600;
+    transition: ease opacity 300ms;
+    &.tmw-hide {
+    	opacity: 0;
+    	visibility: hidden;
+    	display: none;
+    }
+    p {
+    	margin: 0;
+    }
+}
+
+/* Clear All Fields Button */
+.tmw-skin-clear-all-fields {
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    color: #da0000;
+    transition: ease color 300ms;
+    &:hover {
+    	color: red;
+    }
+}
+
+/* Padding Margin Control */
+.tmw-control-padding-margin {
+	display: flex;
+	.tmw-control-padding-margin-input-wrapper {
+		display: flex;
+		.icon {
+		    display: flex;
+		    align-items: center;
+		    justify-content: center;
+			font-size: 24px;
+		    padding: 0 5px;
+		}
+	}
+}
+
+/* Timepicker Control */
+.tmw-timepicker {
+	background: #FFF !important;
+}
+.flatpickr-calendar {
+	max-width: 160px !important;
+	z-index: 999999 !important;
+}
+.flatpickr-time input:hover, 
+.flatpickr-time .flatpickr-am-pm:hover, 
+.flatpickr-time input:focus, 
+.flatpickr-time .flatpickr-am-pm:focus {
+	background: #FFF !important;
+}
+
+/* Setup Availabitlity */
+.tmw-setup-availability-days-wrapper {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	.tmw-setup-availability-day {
+		font-size: 10px;
+		font-weight: bold;
+		color: #FFF;
+		text-transform: uppercase;
+		padding: 6px 12px;
+		background: #ccc;
+		border-radius: 4px;
+		margin-top: 5px;
+		text-decoration: none;
+		& + .tmw-setup-availability-day {
+			margin-left: 4px;
+		}
+		&.active {
+			background-color: green;
+		}
+	}
+}
+
+.tmw-setup-availability-trigger-all-days {
+	text-decoration: none;
+	margin-top: 5px;
+	display: inline-block;
+	border-radius: 4px;
+}
+
+/* Responsive */
+@media(max-width: 991px) {
+	.tmw-form-group {
+		&.tmw-form-group-mobile-md {
+			flex-direction: column;
+			align-items: flex-start !important;
+			.tmw-form-control-label,
+			.tmw-form-control {
+				width: 100%;
+			}
+			.tmw-form-control,
+			.custom-radio-switch,
+			.tmw-control-padding-margin,
+			.tmw-form-control-checkbox,
+			.tmw-media-uploader,
+			.wp-picker-container {
+				margin-top: 10px;
+			}
+		}
+	}
+
+	.row {
+		.tmw-form-group.tmw-form-group-mobile-md {
+			& + .tmw-form-group {
+				margin-top: 10px;
+			}
+		}
+	}
+}
+
+/* WooCommerec Metabox */
+.tmw-label {
+	display: block;
+	margin-bottom: 5px;
+	font-weight: bold;
+}
+
+.tmw-input {
+	width: 100%;
+	padding: 5px 7px;
+}

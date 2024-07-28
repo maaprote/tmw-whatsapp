@@ -1,0 +1,17 @@
+/* Widget Button */
+.tmw-whatsapp-button {
+	position: relative;
+	line-height: 1;
+	text-decoration: none !important;
+	background: transparent !important;
+	&[disabled] {
+		pointer-events: none;
+		> div {
+			opacity: 0.5;
+		}
+	}
+	&.tmw-whatsapp-button-widget {
+		display: block;
+		margin-bottom: 25px;
+	}
+}

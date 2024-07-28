@@ -1,0 +1,44 @@
+/* RTL - TM Whatsapp Admin Settings */
+.tmw-whatsapp-admin-settings.tmw-direction-rtl {
+	/* Tabs */
+	.tmw-tab-wrapper {
+		.tmw-tab-navigation {
+			> li {
+				& + li {
+					margin-right: 3px;
+                    margin-left: 0;
+				}
+			}
+		}
+	}
+
+	.tmw-form-control {
+        &.tmw-form-control-select {
+            background: #fff url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20width%3D%2220%22%20height%3D%2220%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M5%206l5%205%205-5%202%201-7%207-7-7%202-1z%22%20fill%3D%22%23555%22%2F%3E%3C%2Fsvg%3E') no-repeat left 5px top 55%;
+        }
+	}
+
+	/* Attendants */
+	.attendant {
+		.attendant-id {
+			right: 0px;
+            left: auto;
+		}
+	}
+
+	/* Clear All Fields Button */
+	.tmw-skin-clear-all-fields {
+		left: 25px;
+		right: auto;
+	}
+
+	.tmw-setup-availability-days-wrapper {
+		.tmw-setup-availability-day {
+			& + .tmw-setup-availability-day {
+				margin-right: 4px;
+				margin-left: 0;
+			}
+		}
+	}
+}
+
