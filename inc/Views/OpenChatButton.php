@@ -26,6 +26,20 @@ class OpenChatButton {
         $this->render();
     }
 
+	/**
+	 * Singleton
+	 * 
+	 */
+	public static function instance() {
+		static $instance = null;
+
+		if( null === $instance ) {
+			$instance = new self();
+		}
+
+		return $instance;
+	}
+
     /**
 	 * Whatsapp Trigger/Open Chat Button Output
 	 *
