@@ -3,7 +3,7 @@
  * Plugin Name: Master Whats Chat
  * Plugin URI:  https://github.com/maaprote/
  * Description: Chat plugin for whatsapp.
- * Version:     1.0.0
+ * Version:     1.1.0
  * Author:      Rodrigo Teixeira
  * Author URI:  https://github.com/maaprote/
  * License:     GPLv3 or later License
