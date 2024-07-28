@@ -33,8 +33,8 @@ class Functions {
      */
     public static function get_i18n_data() {
         return array(
-            'attendant_online_text' => esc_html__( Translator::translate_string( 'online', 'status_online_lowercase' ) ),
-            'attendant_offline_text' => esc_html__( Translator::translate_string( 'offline', 'status_offline_lowercase' ) ),
+            'attendant_online_text' => esc_html( Translator::translate_string( 'online', 'status_online_lowercase' ) ),
+            'attendant_offline_text' => esc_html( Translator::translate_string( 'offline', 'status_offline_lowercase' ) ),
             'admin' => array(
                 'add_new_attendant' => array(
                     'attendant_id_label' => esc_html__( 'ATTENDANT ID:', 'tmw-whatsapp' ),

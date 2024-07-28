@@ -185,10 +185,8 @@ class Metabox {
             return $post_id;
         }
  
-        $nonce = $_POST['tmw_custom_security_nonce'];
- 
         // Verify that the nonce is valid.
-        if ( ! wp_verify_nonce( $nonce, 'tmw_whatsapp_side_metabox' ) ) {
+        if ( ! wp_verify_nonce( sanitize_text_field( $_POST['tmw_custom_security_nonce'] ), 'tmw_whatsapp_side_metabox' ) ) {
             return $post_id;
         }
  
@@ -196,23 +194,19 @@ class Metabox {
             return $post_id;
         }
  
-        if ( 'page' == $_POST['post_type'] ) {
-            if ( ! current_user_can( 'edit_page', $post_id ) ) {
-                return $post_id;
-            }
-        } elseif ( ! current_user_can( 'edit_post', $post_id ) ) {
-                return $post_id;
-        }
- 
+		if ( ! current_user_can( 'edit_page', $post_id ) ) {
+			return $post_id;
+		}
+
         // Sanitize the user input.
-        $attendant_id                 = sanitize_text_field( $_POST['tmw_whatsapp_woocommerce_button_attendant_id'] );
-		$button_layout                = sanitize_text_field( $_POST['tmw_whatsapp_woocommerce_button_layout'] );
-		$attendant_photo_or_icon      = sanitize_text_field( $_POST['tmw_whatsapp_woocommerce_button_attendant_photo_or_icon'] );
-		$attendant_title              = sanitize_text_field( $_POST['tmw_whatsapp_woocommerce_button_attendant_title'] );
-		$attendant_description        = sanitize_text_field( $_POST['tmw_whatsapp_woocommerce_button_attendant_description'] );
-		$button_position              = sanitize_text_field( $_POST['tmw_whatsapp_woocommerce_button_position'] );
-		$button_position_shop_archive = sanitize_text_field( $_POST['tmw_whatsapp_woocommerce_button_position_shop_archive'] );
-		$show_woo_button              = sanitize_text_field( $_POST['tmw_show_woocommerce_button'] );
+        $attendant_id                 = isset( $_POST['tmw_whatsapp_woocommerce_button_attendant_id'] ) ? sanitize_text_field( $_POST['tmw_whatsapp_woocommerce_button_attendant_id'] ) : '';
+		$button_layout                = isset( $_POST['tmw_whatsapp_woocommerce_button_layout'] ) ? sanitize_text_field( $_POST['tmw_whatsapp_woocommerce_button_layout'] ) : '';
+		$attendant_photo_or_icon      = isset( $_POST['tmw_whatsapp_woocommerce_button_attendant_photo_or_icon'] ) ? sanitize_text_field( $_POST['tmw_whatsapp_woocommerce_button_attendant_photo_or_icon'] ) : '';;
+		$attendant_title              = isset( $_POST['tmw_whatsapp_woocommerce_button_attendant_title'] ) ? sanitize_text_field( $_POST['tmw_whatsapp_woocommerce_button_attendant_title'] ) : '';;
+		$attendant_description        = isset( $_POST['tmw_whatsapp_woocommerce_button_attendant_description'] ) ? sanitize_text_field( $_POST['tmw_whatsapp_woocommerce_button_attendant_description'] ) : '';;
+		$button_position              = isset( $_POST['tmw_whatsapp_woocommerce_button_position'] ) ? sanitize_text_field( $_POST['tmw_whatsapp_woocommerce_button_position'] ) : '';;
+		$button_position_shop_archive = isset( $_POST['tmw_whatsapp_woocommerce_button_position_shop_archive'] ) ? sanitize_text_field( $_POST['tmw_whatsapp_woocommerce_button_position_shop_archive'] ) : '';;
+		$show_woo_button              = isset( $_POST['tmw_show_woocommerce_button'] ) ? sanitize_text_field( $_POST['tmw_show_woocommerce_button'] ) : '';
  
         // Update the meta field.
         update_post_meta( $post_id, 'tmw_whatsapp_woocommerce_button_attendant_id', $attendant_id );

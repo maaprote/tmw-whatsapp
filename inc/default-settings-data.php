@@ -15,7 +15,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 $defaults = array(
 	'fields' => array(
 		'tab-start-general' => array(
-			'label' => esc_html__( 'General', 'tmw-whasapp' ),
+			'label' => esc_html__( 'General', 'tmw-whatsapp' ),
 			'type' => 'tab_start',
 			'tab_id' => 'tabGeneral',
 		),
@@ -29,7 +29,7 @@ $defaults = array(
 		),
 		'position' => array(
 			'form_group_class' => 'tmw-form-group-mobile-md',
-			'label' => esc_html__( 'Position', 'tmw-whasapp' ),
+			'label' => esc_html__( 'Position', 'tmw-whatsapp' ),
 			'desc' => esc_html__( 'Controls the position of whatsapp chat on screen', 'tmw-whatsapp' ),
 			'type' => 'select',
 			'value' => 'bottom-right',
@@ -241,25 +241,25 @@ $defaults = array(
 		),
 
 		'tab-close-general' => array(
-			'label' => esc_html__( 'General', 'tmw-whasapp' ),
+			'label' => esc_html__( 'General', 'tmw-whatsapp' ),
 			'type' => 'tab_close',
 			'value' => '',
 		),
 
 		'tab-start-attendants' => array(
-			'label' => esc_html__( 'Attendants', 'tmw-whasapp' ),
+			'label' => esc_html__( 'Attendants', 'tmw-whatsapp' ),
 			'type' => 'tab_start',
 			'tab_id' => 'tabAttendants',
 		),
 
 		'attendants' => array(
-			'label' => esc_html__( 'Attendants', 'tmw-whasapp' ),
+			'label' => esc_html__( 'Attendants', 'tmw-whatsapp' ),
 			'type'  => 'multi',
 			'value' => array(),
 		),
 
 		'tab-close-attendants' => array(
-			'label' => esc_html__( 'General', 'tmw-whasapp' ),
+			'label' => esc_html__( 'General', 'tmw-whatsapp' ),
 			'type' => 'tab_close',
 			'value' => '',
 		),
@@ -268,7 +268,7 @@ $defaults = array(
 			'label' => esc_html__( 'Skin', 'tmw-whatsapp' ),
 			'type' => 'tab_start',
 			'tab_id' => 'tabSkin',
-			'prepend_html' => '<a href="#" class="tmw-skin-clear-all-fields">'. esc_html__( 'Clear All Fields', 'tmw-whasapp' ) .'</a>',
+			'prepend_html' => '<a href="#" class="tmw-skin-clear-all-fields">'. esc_html__( 'Clear All Fields', 'tmw-whatsapp' ) .'</a>',
 		),
 
 		'heading-typography' => array(
@@ -288,7 +288,11 @@ $defaults = array(
 			'tooltip' => true,
             'tooltip_title' => esc_html__( 'How to change', 'tmw-whatsapp' ),
             'tooltip_content' => array(
-				'explain' => sprintf( __( 'Go to <a href="%1$s" target="_blank">%2$s</a> and select your desired font. Once you have selected, a right sidebar will open and you should get the code from there. See the image example: <img src="%3$s" class="tmw-img-fluid" alt="Font family code" />', 'tmw-whatsapp' ), esc_url( 'https://fonts.google.com' ), esc_url( 'https://fonts.google.com' ), esc_url( TM_MASTER_WHATS_CHAT_URL . '/img/font-family-1.jpg' ) ),
+				'explain' => sprintf( 
+					/* Translators: 1. Image URL */
+					__( 'Go to <a href="https://fonts.google.com" target="_blank">https://fonts.google.com</a> and select your desired font. Once you have selected, a right sidebar will open and you should get the code from there. See the image example: <img src="%1$s" class="tmw-img-fluid" alt="Font family code" />', 'tmw-whatsapp' ),
+					TM_MASTER_WHATS_CHAT_URL . '/img/font-family-1.jpg' 
+				),
             ),
 		),
 		'skin_font_family_name' => array(
@@ -302,7 +306,11 @@ $defaults = array(
 			'tooltip' => true,
             'tooltip_title' => esc_html__( 'How to change', 'tmw-whatsapp' ),
             'tooltip_content' => array(
-				'explain' => sprintf( __( 'Go to <a href="%1$s" target="_blank">%2$s</a> and select your desired font. Once you have selected, a right sidebar will open and you should get the font family name from there. See the image example: <img src="%3$s" class="tmw-img-fluid" alt="Font family name" />', 'tmw-whatsapp' ), esc_url( 'https://fonts.google.com' ), esc_url( 'https://fonts.google.com' ), esc_url( TM_MASTER_WHATS_CHAT_URL . '/img/font-family-2.jpg' ) ),
+				'explain' => sprintf( 
+					/* Translators: 1. Image URL */
+					__( 'Go to <a href="https://fonts.google.com" target="_blank">https://fonts.google.com</a> and select your desired font. Once you have selected, a right sidebar will open and you should get the font family name from there. See the image example: <img src="%1$s" class="tmw-img-fluid" alt="Font family name" />', 'tmw-whatsapp' ),
+					TM_MASTER_WHATS_CHAT_URL . '/img/font-family-2.jpg', 
+				),
             ),
 		),
 

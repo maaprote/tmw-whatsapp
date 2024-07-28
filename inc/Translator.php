@@ -23,22 +23,23 @@ class Translator {
 	public static function translate_string( $original_value = '', $name = '', $default_value = false, $placeholder = '' ){
 		
 		if( empty($original_value) ) {
-			$original_value = esc_html__( wp_unslash( $placeholder ) );
+			$original_value = $placeholder;
 		}
 
 		// WPML
 		if( class_exists( 'SitePress' ) ) {
 			$domain = 'TM Whatsapp';
-			return apply_filters('wpml_translate_single_string', esc_html( wp_unslash( $original_value ) ), $domain, $name );
+			
+			return apply_filters('wpml_translate_single_string', esc_html( $original_value ), $domain, $name );
 		}
 
 		// Polylang
 		if( class_exists( 'Polylang' ) ) {
 			if( function_exists( 'pll__' ) ) {
-				return pll__( wp_unslash( $original_value ) );
+				return pll__( $original_value );
 			}
 		}
 
-		return esc_html__( wp_unslash( $original_value ), 'tmw-whatsapp' );
+		return esc_html( $original_value );
 	}
 }

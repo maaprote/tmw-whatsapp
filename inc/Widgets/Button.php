@@ -92,7 +92,7 @@ class Button extends \WP_Widget {
         }
 
 		// Register widgets script
-		wp_register_script( 'tmw-whatsapp-widgets', TM_MASTER_WHATS_CHAT_URL . '/js/tmw-whatsapp-widgets.js', array( 'jquery' ), false, true );
+		wp_register_script( 'tmw-whatsapp-widgets', TM_MASTER_WHATS_CHAT_URL . '/js/tmw-whatsapp-widgets.js', array( 'jquery' ), TM_MASTER_WHATS_CHAT_VERSION, true );
 		wp_enqueue_script( 'tmw-whatsapp-widgets' );
 
 		// Attendant Title

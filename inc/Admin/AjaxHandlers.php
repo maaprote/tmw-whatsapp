@@ -13,6 +13,7 @@ if ( ! defined( 'ABSPATH' ) ) {
     die( '-1' );
 }
 
+use TM\Master_Whats_Chat\Admin\SettingsFields;
 use TM\Master_Whats_Chat\Views\ChatWidget;
 
 class AjaxHandlers {
@@ -31,22 +32,21 @@ class AjaxHandlers {
      * @return void
      */
     function save_settings() {
-        $data = $_POST['data'];
+        if ( ! isset( $_POST['data'] ) ) {
+            wp_send_json_error( array( 'message' => 'No data received' ) );
+        }
 
-        if ( ! isset( $data['tmw-nonce'] ) 
-            || ! wp_verify_nonce( $data['tmw-nonce'], 'tmw-save-plugin-settings-nonce' ) 
-        ) {
-        print esc_html__( 'Sorry, your nonce did not verify.', 'tmw-whatsapp' );
-        exit;
-        } else {
-        // process form data
+        $data = SettingsFields::sanitize_data($_POST['data']); // phpcs:ignore WordPress.Security.NonceVerification, WordPress.Security.ValidatedSanitizedInput.InputNotSanitized -- Data is sanitized in the function and nonce is verified below
+
+        if ( ! isset( $data['tmw-nonce'] ) || ! wp_verify_nonce( $data['tmw-nonce'], 'tmw-save-plugin-settings-nonce' ) ) {
+            wp_send_json_error( array( 'message' => 'Invalid nonce' ) );
         }
 
         unset($data['tmw-nonce']);
         unset($data['_wp_http_referer']);
 
         $reset_settings = false;
-        if( $data['reset_settings'] == 'on' ) {
+        if( $data['reset_settings'] === 'on' ) {
             delete_option( 'tmw_whatsapp_settings_data' );
             delete_option( 'tmw_whatsapp_settings_data_skin_css' );
             $reset_settings = true;
@@ -64,7 +64,7 @@ class AjaxHandlers {
             'app_html' => $app_html,
         );
 
-        if( isset($data['debug']) && $data['debug'] == 'on' ) {
+        if( isset($data['debug']) && $data['debug'] === 'on' ) {
             $send_json['debug'] = $data;
         }
 

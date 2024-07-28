@@ -220,7 +220,10 @@ class SingleProductButton {
 
 		$output = '';
 
-		$output .= '<a href="#" class="tmw-whatsapp-button" data-phone-number="'. esc_attr( Translator::translate_string( $attendant['phone'], 'attendant_'. $attendant_id .'_phone' ) ) .'"'. ( empty($attendant['phone']) ? ' disabled' : '' ) .' data-start-message="'. sprintf( esc_attr__( Translator::translate_string( __( 'Hello! I have some questions about the product: %1$s (%2$s)', 'tmw-whatsapp' ), 'woo_button_product_start_message' ) ), $post->post_title, get_the_permalink( $post->ID ) ) .'" data-availability="'. esc_attr( $attendantAvailability ) .'" data-default-timezone="'. esc_attr( $attendant['default_timezone'] ) .'">';
+		/* Translators: %1$s - Product Title, %2$s - Product URL */
+		$start_message = sprintf( Translator::translate_string( __( 'Hello! I have some questions about the product: %1$s (%2$s)', 'tmw-whatsapp' ), 'woo_button_product_start_message' ), $post->post_title, get_the_permalink( $post->ID ) );
+
+		$output .= '<a href="#" class="tmw-whatsapp-button" data-phone-number="'. esc_attr( Translator::translate_string( $attendant['phone'], 'attendant_'. $attendant_id .'_phone' ) ) .'"'. ( empty($attendant['phone']) ? ' disabled' : '' ) .' data-start-message="'. esc_attr( $start_message ) .'" data-availability="'. esc_attr( $attendantAvailability ) .'" data-default-timezone="'. esc_attr( $attendant['default_timezone'] ) .'">';
 			$output .= '<div '. implode( ' ', $wrapper_atts ) .'>';
 				$output .= '<div class="tmw-whatsapp-elementor-body">';
 					$output .= '<div class="tmw-whatsapp-elementor-icon">';

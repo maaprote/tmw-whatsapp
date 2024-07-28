@@ -240,7 +240,7 @@ class ChatWidget {
 		$wrapper_atts[] = 'data-tmw-whatsapp-web-start-message="'. esc_attr( Translator::translate_string( $this->replace_special_variables( Functions::get_setting('whatsapp_initial_message') ), 'whatsapp_initial_message' ) ) .'"';
 
 		// No Footer
-		if( !isset( $settings['footer_show'] ) && Functions::get_setting('footer_show') != 'on' ) {
+		if( !isset( $settings['footer_show'] ) && Functions::get_setting('footer_show') !== 'on' ) {
 			$wrapper_classes[] = 'tmw-whatsapp-no-footer';
 		}
 
@@ -275,7 +275,7 @@ class ChatWidget {
 
 		?>
 
-		<div <?php echo ( implode( ' ', $wrapper_atts ) ) ?>>
+		<div <?php echo ( implode( ' ', $wrapper_atts ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- previously escaped. ?>>
 			<div class="tmw-whatsapp-card">
 				<div class="tmw-whatsapp-card-header">
 

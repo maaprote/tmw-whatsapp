@@ -21,7 +21,8 @@ class Assets {
             return;
         }
 
-        if ( isset( $_GET['page'] ) && ! in_array( $_GET['page'], array( 'tmw-whatsapp-settings', 'mlang_strings' ) ) ) {
+        // phpcs:ignore WordPress.Security.NonceVerification
+        if ( isset( $_GET['page'] ) && ! in_array( $_GET['page'], array( 'tmw-whatsapp-settings', 'mlang_strings' ), true ) ) {
             return;
         }
 
@@ -46,12 +47,12 @@ class Assets {
 		// Plugin settings data.
 		$settings = get_option( 'tmw_whatsapp_settings_data' );
 
-        wp_enqueue_style( 'tmw-whatsapp-font', Functions::get_google_fonts_family( $settings ), false );
+        wp_enqueue_style( 'tmw-whatsapp-font', Functions::get_google_fonts_family( $settings ), false, TM_MASTER_WHATS_CHAT_VERSION );
 
-        wp_register_style( 'tmw-whatsapp-admin', TM_MASTER_WHATS_CHAT_URL . 'assets/css/tmw-whatsapp-admin.css' );
+        wp_register_style( 'tmw-whatsapp-admin', TM_MASTER_WHATS_CHAT_URL . 'assets/css/tmw-whatsapp-admin.css', false, TM_MASTER_WHATS_CHAT_VERSION );
         wp_enqueue_style( 'tmw-whatsapp-admin' );
 
-        wp_register_style( 'tmw-whatsapp-app', TM_MASTER_WHATS_CHAT_URL . 'assets/css/tmw-whatsapp-app.css' );
+        wp_register_style( 'tmw-whatsapp-app', TM_MASTER_WHATS_CHAT_URL . 'assets/css/tmw-whatsapp-app.css', false, TM_MASTER_WHATS_CHAT_VERSION );
         wp_enqueue_style( 'tmw-whatsapp-app' );
 
         $skinCSS = get_option( 'tmw_whatsapp_settings_data_skin_css' );
@@ -76,44 +77,45 @@ class Assets {
             wp_add_inline_style( 'tmw-whatsapp-app', $skinCSS );
         }
 
-        wp_register_style( 'bootstrap-grid', TM_MASTER_WHATS_CHAT_URL . '/assets/vendor/bootstrap-grid/bootstrap-grid.min.css' );
+        wp_register_style( 'bootstrap-grid', TM_MASTER_WHATS_CHAT_URL . '/assets/vendor/bootstrap-grid/bootstrap-grid.min.css', false, TM_MASTER_WHATS_CHAT_VERSION );
         wp_enqueue_style( 'bootstrap-grid' );
 
-        wp_register_style( 'tmw-whatsapp-fontawesome-custom', TM_MASTER_WHATS_CHAT_URL . '/assets/vendor/tmw-fontawesome-custom/css/all.css' );
+        wp_register_style( 'tmw-whatsapp-fontawesome-custom', TM_MASTER_WHATS_CHAT_URL . '/assets/vendor/tmw-fontawesome-custom/css/all.css', false, TM_MASTER_WHATS_CHAT_VERSION );
         wp_enqueue_style( 'tmw-whatsapp-fontawesome-custom' );
 
-        wp_register_style( 'flatpickr', TM_MASTER_WHATS_CHAT_URL . '/assets/vendor/flatpickr/flatpickr.min.css' );
+        wp_register_style( 'flatpickr', TM_MASTER_WHATS_CHAT_URL . '/assets/vendor/flatpickr/flatpickr.min.css', false, TM_MASTER_WHATS_CHAT_VERSION );
         wp_enqueue_style( 'flatpickr' );
 
-        wp_register_script( 'flatpickr', TM_MASTER_WHATS_CHAT_URL . 'assets/vendor/flatpickr/flatpickr.min.js', false, false, true );
+        wp_register_script( 'flatpickr', TM_MASTER_WHATS_CHAT_URL . 'assets/vendor/flatpickr/flatpickr.min.js', false, TM_MASTER_WHATS_CHAT_VERSION, true );
         wp_enqueue_script( 'flatpickr' );
 
-        wp_register_script( 'moment', TM_MASTER_WHATS_CHAT_URL . 'assets/vendor/moment/moment.min.js', false, false, true );
+        wp_register_script( 'moment', TM_MASTER_WHATS_CHAT_URL . 'assets/vendor/moment/moment.min.js', false, TM_MASTER_WHATS_CHAT_VERSION, true );
         wp_enqueue_script( 'moment' );
 
-        wp_register_script( 'moment-timezone-with-data', TM_MASTER_WHATS_CHAT_URL . 'assets/vendor/moment/moment-timezone-with-data.min.js', false, false, true );
+        wp_register_script( 'moment-timezone-with-data', TM_MASTER_WHATS_CHAT_URL . 'assets/vendor/moment/moment-timezone-with-data.min.js', false, TM_MASTER_WHATS_CHAT_VERSION, true );
         wp_enqueue_script( 'moment-timezone-with-data' );
 
-        wp_register_script( 'tmw-whatsapp-admin', TM_MASTER_WHATS_CHAT_URL . 'assets/js/tmw-whatsapp-admin.js', array( 'jquery', 'jquery-ui-tabs', 'wp-color-picker' ), false, true );
+        wp_register_script( 'tmw-whatsapp-admin', TM_MASTER_WHATS_CHAT_URL . 'assets/js/tmw-whatsapp-admin.js', array( 'jquery', 'jquery-ui-tabs', 'wp-color-picker' ), TM_MASTER_WHATS_CHAT_VERSION, true );
         wp_localize_script( 'tmw-whatsapp-admin', 'tmw_data', $data_to_localize );
         wp_enqueue_script( 'tmw-whatsapp-admin' );
 
-        wp_register_script( 'tmw-whatsapp-app', TM_MASTER_WHATS_CHAT_URL . 'assets/js/tmw-whatsapp-app.js', array( 'jquery' ), false, true );
+        wp_register_script( 'tmw-whatsapp-app', TM_MASTER_WHATS_CHAT_URL . 'assets/js/tmw-whatsapp-app.js', array( 'jquery' ), TM_MASTER_WHATS_CHAT_VERSION, true );
         wp_enqueue_script( 'tmw-whatsapp-app' );
 
         wp_enqueue_media();
 
-		if( class_exists( 'WooCommerce' ) && 'product' === get_post_type( $_GET['post'] ) ) {
-			wp_register_style( 'tmw-whatsapp-admin', TM_MASTER_WHATS_CHAT_URL . 'assets/css/tmw-whatsapp-admin.css' );
+        // phpcs:ignore WordPress.Security.NonceVerification
+		if( class_exists( 'WooCommerce' ) && ( isset( $_GET['post'] ) && 'product' === get_post_type( sanitize_text_field( $_GET['post'] ) ) ) ) {
+			wp_register_style( 'tmw-whatsapp-admin', TM_MASTER_WHATS_CHAT_URL . 'assets/css/tmw-whatsapp-admin.css', array(), TM_MASTER_WHATS_CHAT_VERSION );
 			wp_enqueue_style( 'tmw-whatsapp-admin' );
 		}
 
-		wp_register_script( 'tmw-whatsapp-widgets', TM_MASTER_WHATS_CHAT_URL . 'assets/js/tmw-whatsapp-widgets.js', array( 'jquery' ), false, true );
+		wp_register_script( 'tmw-whatsapp-widgets', TM_MASTER_WHATS_CHAT_URL . 'assets/js/tmw-whatsapp-widgets.js', array( 'jquery' ), TM_MASTER_WHATS_CHAT_VERSION, true );
 		wp_localize_script( 'tmw-whatsapp-widgets', 'tmw_data', $data_to_localize );
 		wp_enqueue_script( 'tmw-whatsapp-widgets' );
 
 		// Dequeue script from Polyland breaking the WPBakery Fron End Editor.
-		if( isset($_GET['vc_action']) && $_GET['vc_action'] == 'vc_inline' ) {
+		if( isset($_GET['vc_action']) && ( isset( $_GET['vc_action'] ) && sanitize_text_field( $_GET['vc_action'] ) === 'vc_inline' ) ) { // phpcs:ignore WordPress.Security.NonceVerification
 			wp_dequeue_script( 'pll_block-editor' );
 		}
 	}

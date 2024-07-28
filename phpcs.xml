@@ -12,6 +12,8 @@
     <!-- Exclude paths -->
 	<exclude-pattern>*/node_modules/*</exclude-pattern>
     <exclude-pattern>*/vendor/*</exclude-pattern>
+    <exclude-pattern>*/Documentation/*</exclude-pattern>
+    <exclude-pattern>*/Design/*</exclude-pattern>
 
     <!-- Scan args -->
     <arg value="sp"/><!-- Show sniff and progress -->
@@ -56,7 +58,7 @@
     <rule ref="WordPress.WP.I18n">
         <properties>
             <property name="text_domain" type="array">
-                <element value="tm-whatsapp"/>
+                <element value="tmw-whatsapp"/>
                 <element value="library-textdomain"/>
             </property>
         </properties>
@@ -65,7 +67,7 @@
 	<rule ref="WordPress.NamingConventions.PrefixAllGlobals">
 		<properties>
 			<property name="prefixes" type="array">
-				<element value="tm-whatsapp"/>
+				<element value="tmw-whatsapp"/>
 			</property>
 		</properties>
 	</rule>
