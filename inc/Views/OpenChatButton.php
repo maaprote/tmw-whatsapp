@@ -63,7 +63,7 @@ class OpenChatButton {
 		$atts[] = 'style="'. implode( ' ;', $styles ) .'"';
 
 		$output .= '<div '. implode( ' ', $atts ) .'>';
-			if( $settings['call_to_action_show'] === 'on' && ! empty( $settings['call_to_action_text'] ) ) {
+			if( Functions::get_setting('call_to_action_show') === 'on' && ! empty( $settings['call_to_action_text'] ) ) {
 				$output .= '<div class="tmw-whatsapp-call-to-action">';
 					$output .= '<a href="#" class="tmw-whatsapp-call-to-action-button" rel="nofollow">';
 						$output .= esc_html( Translator::translate_string( $settings['call_to_action_text'], 'call_to_action_text' ) );

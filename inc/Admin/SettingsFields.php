@@ -55,8 +55,8 @@ class SettingsFields {
             $field_val['image'] = array(
                 $inputName => $image_id,
                 $inputName . '_type' => 'image',
-                $inputName . '_width' => $image_metadata['width'],
-                $inputName . '_height' => $image_metadata['height'],
+                $inputName . '_width' => isset( $image_metadata['width'] ) ? $image_metadata['width'] : 0,
+                $inputName . '_height' => isset( $image_metadata['height'] ) ? $image_metadata['height'] : 0,
                 $inputName . '_title' => '',
                 $inputName . '_icon' => ''
             );

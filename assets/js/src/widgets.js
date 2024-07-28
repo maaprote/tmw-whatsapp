@@ -2,7 +2,9 @@
 
 	'use strict';
 
-	var TMW_Whatsapp_App_Widgets = {
+	var MasterWhatsChatWidgets = window || {};
+
+	MasterWhatsChatWidgets = {
 		$tmw_whatsapp_widget_button: $('.tmw-whatsapp-button'),
 
 		initialize: function( $elementorElement ) {
@@ -128,7 +130,7 @@
 						vc.events.on('shortcodes:tmw_whatsapp_button:add shortcodes:tmw_whatsapp_button:clone', function(e){
 							alert(1);
 							setTimeout(function(){
-								TMW_Whatsapp_App_Widgets.initialize( vc.$frame[0].contentWindow.jQuery('.vc_element[data-model-id="'+ e.id +'"]').find(('.tmw-whatsapp-wpbakery-widget')) );
+								MasterWhatsChatWidgets.initialize( vc.$frame[0].contentWindow.jQuery('.vc_element[data-model-id="'+ e.id +'"]').find(('.tmw-whatsapp-wpbakery-widget')) );
 							}, 1000);
 						});
 					});
@@ -158,7 +160,7 @@
 
 	$( window ).on( 'elementor/frontend/init', () => {
 		const addHandler = ( $element ) => {
-			TMW_Whatsapp_App_Widgets.initialize( $element );
+			MasterWhatsChatWidgets.initialize( $element );
 		};
 	 
 		elementorFrontend.hooks.addAction( 'frontend/element_ready/tmwhatsappwidget.default', addHandler );
@@ -169,7 +171,7 @@
 			setTimeout(function(){
 				if( vc.$frame[0].contentWindow.jQuery('.tmw-whatsapp-wpbakery-widget') ) {
 					vc.$frame[0].contentWindow.jQuery('.tmw-whatsapp-wpbakery-widget').each(function(){
-						TMW_Whatsapp_App_Widgets.initialize( vc.$frame[0].contentWindow.jQuery('.tmw-whatsapp-wpbakery-widget') );
+						MasterWhatsChatWidgets.initialize( vc.$frame[0].contentWindow.jQuery('.tmw-whatsapp-wpbakery-widget') );
 
 						jQuery(this).find('p').each(function(){
 							if( jQuery(this).text() == '' ) {
@@ -181,7 +183,7 @@
 					vc.events.on('shortcodes:tmw_whatsapp_button:add shortcodeView:updated shortcodes:tmw_whatsapp_button:clone', function(e){
 						setTimeout(function(){
 							if( e.attributes.shortcode == 'tmw_whatsapp_button' ) {
-								TMW_Whatsapp_App_Widgets.initialize( vc.$frame[0].contentWindow.jQuery('.vc_element[data-model-id="'+ e.id +'"]').find('.tmw-whatsapp-wpbakery-widget') );
+								MasterWhatsChatWidgets.initialize( vc.$frame[0].contentWindow.jQuery('.vc_element[data-model-id="'+ e.id +'"]').find('.tmw-whatsapp-wpbakery-widget') );
 							}
 						}, 3000);
 					});
@@ -189,7 +191,7 @@
 					vc.events.on('shortcodes:add shortcodeView:updated shortcodes:clone', function(e){
 						setTimeout(function(){
 							if( e.attributes.params.content.indexOf('tmw_whatsapp_button_wp') > 0 ) {
-								TMW_Whatsapp_App_Widgets.initialize( vc.$frame[0].contentWindow.jQuery('.vc_element[data-model-id="'+ e.id +'"]').find('.tmw-whatsapp-wpbakery-widget') );
+								MasterWhatsChatWidgets.initialize( vc.$frame[0].contentWindow.jQuery('.vc_element[data-model-id="'+ e.id +'"]').find('.tmw-whatsapp-wpbakery-widget') );
 							}
 						}, 3000);
 					});
@@ -198,6 +200,6 @@
 		});
 	}
 
-	TMW_Whatsapp_App_Widgets.initialize( false );
+	MasterWhatsChatWidgets.initialize( false );
 
 })(jQuery);

@@ -112,6 +112,6 @@ class SettingsPage {
             $rtl_direction_class = ' tmw-direction-rtl';
         }
 
-        include TM_MASTER_WHATS_CHAT_PATH . 'inc/templates/admin/settings.php';
+        include TM_MASTER_WHATS_CHAT_PATH . 'templates/admin/settings.php';
     }
 }

@@ -35,8 +35,8 @@ class ChatWidget {
 		global $post;
 
 		$hide_from_pages = false;
-		if( ! empty( $settings['whatsapp_hide_from_pages'] ) ) {
-			$hide_from_pages = explode( ',', $settings['whatsapp_hide_from_pages'] );
+		if( ! empty( Functions::get_setting('whatsapp_hide_from_pages') ) ) {
+			$hide_from_pages = explode( ',', Functions::get_setting('whatsapp_hide_from_pages') );
 		}
 
 		if( $hide_from_pages && in_array( $post->ID, $hide_from_pages, true ) ) {
@@ -61,15 +61,15 @@ class ChatWidget {
 		$settings = Functions::get_settings();
 		
 		$show_on_pages = false;
-		if( !empty($settings['whatsapp_show_on_pages']) ) {
-			$show_on_pages = explode( ',', $settings['whatsapp_show_on_pages'] );
+		if( !empty(Functions::get_setting('whatsapp_show_on_pages')) ) {
+			$show_on_pages = explode( ',', Functions::get_setting('whatsapp_show_on_pages') );
 		}
 
 		if( $show_on_pages && in_array( $post->ID, $show_on_pages, true ) ) {
 			return true;
 		}
 
-		if( empty( $settings['whatsapp_show_on_pages'] ) ) {
+		if( empty( Functions::get_setting('whatsapp_show_on_pages') ) ) {
 			return true;
 		}
 
@@ -206,15 +206,16 @@ class ChatWidget {
 		$wrapper_styles  = array();
 
 		// RTL
-		if( isset( $settings['rtl_layout'] ) && $settings['rtl_layout'] ) {
+		$rtl_layout = Functions::get_setting('rtl_layout');
+		if( isset( $rtl_layout ) && $rtl_layout ) {
 			$wrapper_classes[] = 'tmw-direction-rtl';
 		}
 
 		// Position
-		$wrapper_classes[] = 'tmw-whats-app-wrapper-' . $settings['position'];
+		$wrapper_classes[] = 'tmw-whats-app-wrapper-' . Functions::get_setting('position');
 
 		// Open WhatsApp Chat Type
-		switch ( $settings['open_whatsapp_type']  ) {
+		switch ( Functions::get_setting('open_whatsapp_type') ) {
 			case 'click-icon':
 				$wrapper_atts[] = 'data-tmw-open-whatsapp-chat-type="click-icon"';
 				break;
@@ -231,37 +232,37 @@ class ChatWidget {
 		}
 
 		// If none attendant is registered, show a message for it
-		if( !isset($settings['attendants']) && !$settings['attendants'] || !is_array( $settings['attendants'] ) ) {
+		if( !isset($settings['attendants']) && !Functions::get_setting('attendants') || !is_array( Functions::get_setting('attendants') ) ) {
 			$wrapper_classes[] = 'tmw-whatsapp-none-attendants';
 		}
 
 		// Whatsapp Web Start Message
-		$wrapper_atts[] = 'data-tmw-whatsapp-web-start-message="'. esc_attr( Translator::translate_string( $this->replace_special_variables( $settings['whatsapp_initial_message'] ), 'whatsapp_initial_message' ) ) .'"';
+		$wrapper_atts[] = 'data-tmw-whatsapp-web-start-message="'. esc_attr( Translator::translate_string( $this->replace_special_variables( Functions::get_setting('whatsapp_initial_message') ), 'whatsapp_initial_message' ) ) .'"';
 
 		// No Footer
-		if( !isset( $settings['footer_show'] ) && $settings['footer_show'] != 'on' ) {
+		if( !isset( $settings['footer_show'] ) && Functions::get_setting('footer_show') != 'on' ) {
 			$wrapper_classes[] = 'tmw-whatsapp-no-footer';
 		}
 
 		// Move Button
 		$x = $y = 0;
 		if( isset($settings['whatsapp_move_button-left-right']) ) {
-			$x = $settings['whatsapp_move_button-left-right'];
+			$x = Functions::get_setting('whatsapp_move_button-left-right');
 		}
 
 		if( isset($settings['whatsapp_move_button-top-bottom']) ) {
-			$y = $settings['whatsapp_move_button-top-bottom'];
+			$y = Functions::get_setting('whatsapp_move_button-top-bottom');
 		}
 
 		// Open conversation chat for specific attendant after X seconds
-		if( isset($settings['whatsapp_open_chat_with_attendant']) && $settings['whatsapp_open_chat_with_attendant'] ) {
-			$wrapper_atts[] = 'data-open-chat-with="'. esc_attr( $settings['whatsapp_open_chat_with_attendant_id'] ) .'" data-open-chat-with-delay="'. esc_attr( $settings['whatsapp_open_chat_with_attendant_delay'] ) .'"';
+		if( isset($settings['whatsapp_open_chat_with_attendant']) && Functions::get_setting('whatsapp_open_chat_with_attendant') ) {
+			$wrapper_atts[] = 'data-open-chat-with="'. esc_attr( Functions::get_setting('whatsapp_open_chat_with_attendant_id') ) .'" data-open-chat-with-delay="'. esc_attr( Functions::get_setting('whatsapp_open_chat_with_attendant_delay') ) .'"';
 		}
 
 		// How the plugin should be iniitilized
-		$wrapper_atts[] = 'data-init-method="'. esc_attr( $settings['performance_how_plugin_init'] ) .'"';
-		if( isset($settings['performance_after_few_seconds_delay']) && !empty($settings['performance_after_few_seconds_delay']) ) {
-			$wrapper_atts[] = 'data-init-method-delay="'. esc_attr( $settings['performance_after_few_seconds_delay'] ) .'"';
+		$wrapper_atts[] = 'data-init-method="'. esc_attr( Functions::get_setting('performance_how_plugin_init') ) .'"';
+		if( isset($settings['performance_after_few_seconds_delay']) && !empty(Functions::get_setting('performance_after_few_seconds_delay')) ) {
+			$wrapper_atts[] = 'data-init-method-delay="'. esc_attr( Functions::get_setting('performance_after_few_seconds_delay') ) .'"';
 		}
 		
 		$wrapper_styles[] = 'transform: translate3d('. esc_attr( $x ) .'px, '. esc_attr( $y ) .'px, 0)';
@@ -280,15 +281,15 @@ class ChatWidget {
 
 					<?php 
 					// If has attendants show the normal header
-					if( isset($settings['attendants']) && $settings['attendants'] && is_array( $settings['attendants'] ) ) : ?>
+					if( isset($settings['attendants']) && Functions::get_setting('attendants') && is_array( Functions::get_setting('attendants') ) ) : ?>
 						<div class="tmw-whatsapp-presentation-info">
-							<h2><?php echo $settings['header_title'] ? esc_html( Translator::translate_string( $settings['header_title'], 'header_title' ) ) : esc_html( Translator::translate_string( __( 'Hello!', 'tmw-whatsapp' ), 'header_title', true ) ); ?></h2>
-							<p><?php echo $settings['header_description'] ? esc_html( Translator::translate_string( $settings['header_description'], 'header_description' ) ) : esc_html( Translator::translate_string( __( 'Any questions? Feel free to chat with our attendants.', 'tmw-whatsapp' ), 'header_description', true ) ); ?></p>
-							<?php if( $settings['header_phone'] ) : ?>
-								<a href="tel:<?php echo esc_attr( $this->format_phone_number( Translator::translate_string( $settings['header_phone'], 'header_phone' ) ) ); ?>"><strong><?php echo esc_html( Translator::translate_string( $settings['header_phone'], 'header_phone' ) ); ?></strong></a>
+							<h2><?php echo Functions::get_setting('header_title') ? esc_html( Translator::translate_string( Functions::get_setting('header_title'), 'header_title' ) ) : esc_html( Translator::translate_string( __( 'Hello!', 'tmw-whatsapp' ), 'header_title', true ) ); ?></h2>
+							<p><?php echo Functions::get_setting('header_description') ? esc_html( Translator::translate_string( Functions::get_setting('header_description'), 'header_description' ) ) : esc_html( Translator::translate_string( __( 'Any questions? Feel free to chat with our attendants.', 'tmw-whatsapp' ), 'header_description', true ) ); ?></p>
+							<?php if( Functions::get_setting('header_phone') ) : ?>
+								<a href="tel:<?php echo esc_attr( $this->format_phone_number( Translator::translate_string( Functions::get_setting('header_phone'), 'header_phone' ) ) ); ?>"><strong><?php echo esc_html( Translator::translate_string( Functions::get_setting('header_phone'), 'header_phone' ) ); ?></strong></a>
 							<?php endif; ?>
-							<?php if( $settings['header_email'] ) : ?>
-								<a href="mailto:<?php echo esc_attr( Translator::translate_string( $settings['header_email'], 'header_email' ) ); ?>"><?php echo esc_html( Translator::translate_string( $settings['header_email'], 'header_email' ) ); ?></a>
+							<?php if( Functions::get_setting('header_email') ) : ?>
+								<a href="mailto:<?php echo esc_attr( Translator::translate_string( Functions::get_setting('header_email'), 'header_email' ) ); ?>"><?php echo esc_html( Translator::translate_string( Functions::get_setting('header_email'), 'header_email' ) ); ?></a>
 							<?php endif; ?>
 						</div>
 						<div class="tmw-whatsapp-active-attendant-info tmw-hide">
@@ -306,22 +307,22 @@ class ChatWidget {
 					else : ?>
 						<div class="tmw-whatsapp-presentation-info">
 						
-							<p><?php echo esc_html( Translator::translate_string( $settings['header_no_attendants_registered'], 'header_no_attendants_registered', false, __( 'Sorry! But we have no attendants at this moment! In this mean time, you can contact us trough the phone or email below:', 'tmw-whatsapp' ) ) ); ?></p>
-							<?php if( $settings['header_phone'] ) : ?>
-								<a href="tel:<?php echo esc_attr( $this->format_phone_number( Translator::translate_string( $settings['header_phone'], 'header_phone' ) ) ) ?>"><strong><?php echo esc_html( Translator::translate_string( $settings['header_phone'], 'header_phone' ) ); ?></strong></a>
+							<p><?php echo esc_html( Translator::translate_string( Functions::get_setting('header_no_attendants_registered'), 'header_no_attendants_registered', false, __( 'Sorry! But we have no attendants at this moment! In this mean time, you can contact us trough the phone or email below:', 'tmw-whatsapp' ) ) ); ?></p>
+							<?php if( Functions::get_setting('header_phone') ) : ?>
+								<a href="tel:<?php echo esc_attr( $this->format_phone_number( Translator::translate_string( Functions::get_setting('header_phone'), 'header_phone' ) ) ) ?>"><strong><?php echo esc_html( Translator::translate_string( Functions::get_setting('header_phone'), 'header_phone' ) ); ?></strong></a>
 							<?php endif; ?>
-							<?php if( $settings['header_email'] ) : ?>
-								<a href="mailto:<?php echo esc_attr( Translator::translate_string( $settings['header_email'], 'header_email' ) ); ?>"><?php echo esc_html( Translator::translate_string( $settings['header_email'], 'header_email' ) ); ?></a>
+							<?php if( Functions::get_setting('header_email') ) : ?>
+								<a href="mailto:<?php echo esc_attr( Translator::translate_string( Functions::get_setting('header_email'), 'header_email' ) ); ?>"><?php echo esc_html( Translator::translate_string( Functions::get_setting('header_email'), 'header_email' ) ); ?></a>
 							<?php endif; ?>
 						</div>
 					<?php endif; ?>
 					
 				</div>
 
-				<div class="tmw-whatsapp-card-body"<?php echo ( $settings['chat_image_background'] ? 'style="background-image: url('. esc_url( wp_get_attachment_url( $settings['chat_image_background'] ) ) .')"' : '' ); ?>>
+				<div class="tmw-whatsapp-card-body"<?php echo ( Functions::get_setting('chat_image_background') ? 'style="background-image: url('. esc_url( wp_get_attachment_url( Functions::get_setting('chat_image_background') ) ) .')"' : '' ); ?>>
 
-					<?php if( isset($settings['attendants']) && $settings['attendants'] && is_array($settings['attendants']) ) : ?>
-						<?php foreach( $settings['attendants'] as $attendantObj ) : 
+					<?php if( isset($settings['attendants']) && Functions::get_setting('attendants') && is_array(Functions::get_setting('attendants')) ) : ?>
+						<?php foreach( Functions::get_setting('attendants') as $attendantObj ) : 
 
 							// Attendant Availability Days and Hours
 							$attendantAvailability = base64_encode( wp_json_encode( $attendantObj['availability'] ) ); ?>
@@ -369,19 +370,19 @@ class ChatWidget {
 						</div>
 					</div>
 				</div>
-				<?php if( isset($settings['footer_show']) && $settings['footer_show'] == 'on' ) : ?>
+				<?php if( isset($settings['footer_show']) && Functions::get_setting('footer_show') == 'on' ) : ?>
 					<div class="tmw-whatsapp-card-footer">
-						<?php if( $settings['footer_message'] ) : ?>
-							<p><?php echo esc_html( Translator::translate_string( $settings['footer_message'], 'footer_message' ) ); ?></p>
+						<?php if( Functions::get_setting('footer_message') ) : ?>
+							<p><?php echo esc_html( Translator::translate_string( Functions::get_setting('footer_message'), 'footer_message' ) ); ?></p>
 						<?php endif; ?>
-						<?php if( $settings['footer_phone'] || $settings['footer_email'] ) : ?>
+						<?php if( Functions::get_setting('footer_phone') || Functions::get_setting('footer_email') ) : ?>
 						<p>
-							<?php if( $settings['footer_phone'] ) : ?>
-							<a href="tel:<?php echo esc_attr( $this->format_phone_number( Translator::translate_string( $settings['footer_phone'], 'footer_phone' ) ) ) ?>"><?php echo esc_html( Translator::translate_string( $settings['footer_phone'], 'footer_phone' ) ); ?></a>
+							<?php if( Functions::get_setting('footer_phone') ) : ?>
+							<a href="tel:<?php echo esc_attr( $this->format_phone_number( Translator::translate_string( Functions::get_setting('footer_phone'), 'footer_phone' ) ) ) ?>"><?php echo esc_html( Translator::translate_string( Functions::get_setting('footer_phone'), 'footer_phone' ) ); ?></a>
 							<?php endif; ?>
-							<?php if( $settings['footer_email'] ) : ?>
+							<?php if( Functions::get_setting('footer_email') ) : ?>
 							 / 
-							<a href="mailto:<?php echo esc_attr( Translator::translate_string( $settings['footer_email'], 'footer_email' ) ); ?>"><?php echo esc_html( Translator::translate_string( $settings['footer_email'], 'footer_email' ) ); ?></a>
+							<a href="mailto:<?php echo esc_attr( Translator::translate_string( Functions::get_setting('footer_email'), 'footer_email' ) ); ?>"><?php echo esc_html( Translator::translate_string( Functions::get_setting('footer_email'), 'footer_email' ) ); ?></a>
 							<?php endif; ?>
 						</p>
 						<?php endif; ?>

@@ -91,6 +91,20 @@ class Functions {
     }
 
     /**
+     * Get setting by id.
+     * 
+     */
+    public static function get_setting( $setting_id ) {
+        $settings = self::get_settings();
+
+        if( ! isset($settings[ $setting_id ]) ) {
+            return '';
+        }
+
+        return $settings[ $setting_id ];
+    }
+    
+    /**
 	 * Get Google Fonts Family 
 	 *
      * @param array $settings

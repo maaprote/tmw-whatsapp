@@ -2,11 +2,9 @@
 
 	'use strict';
 
-	/*
-	 * App Whatsapp Floating Chat Class
-	 *
-	 */
-	var TMW_Whatsapp_App = {
+	var MasterWhatsChatApp = window || {};
+
+	MasterWhatsChatApp = {
 		initialize: function() {
 			
 			this.$wrapper = $('.tmw-whatsapp-wrapper');
@@ -362,13 +360,13 @@
 
 	switch ( init_method ) {
 		case 'on-first-load':
-			TMW_Whatsapp_App.initialize();
+			MasterWhatsChatApp.initialize();
 			break;
 
 		case 'on-first-scroll':
 			var plugin_intialized = false;
 			$(window).on('scroll', function(){
-				TMW_Whatsapp_App.initialize();
+				MasterWhatsChatApp.initialize();
 				plugin_intialized = true;
 			});
 			break;
@@ -376,19 +374,19 @@
 		case 'on-first-mouseover':
 			var plugin_intialized = false;
 			$(document).on('mouseover', function(){
-				TMW_Whatsapp_App.initialize();
+				MasterWhatsChatApp.initialize();
 				plugin_intialized = true;
 			});
 			break;
 
 		case 'after-few-seconds':
 			setTimeout(function(){
-				TMW_Whatsapp_App.initialize();
+				MasterWhatsChatApp.initialize();
 			}, init_delay * 1000);
 			break;
 	
 		default:
-			TMW_Whatsapp_App.initialize();
+			MasterWhatsChatApp.initialize();
 			break;
 	}
 
