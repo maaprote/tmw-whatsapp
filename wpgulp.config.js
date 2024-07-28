@@ -68,7 +68,7 @@ const watchPhp     = './**/*.php';
 // Zip options.
 const zipName = 'tmw-whatsapp.zip';
 const zipDestination = './../'; // Default: Parent folder.
-const zipIncludeGlob = ['../@(tm-whatsapp)/**/*'];
+const zipIncludeGlob = ['../@(tmw-whatsapp)/**/*'];
 const zipIgnoreGlob = [
 	'!**/*{node_modules,node_modules/**/*}',
 	'!**/*.git',
@@ -104,6 +104,8 @@ const zipIgnoreGlob = [
 	'!**/*test-results/**/*',
 	'!**/*test-results',
 	'!**/*playwright.config.js',
+	'!{Design,Design/**/*}',
+	'!{Documentation,Documentation/**/*}',
 ];
 
 // Translation options.
