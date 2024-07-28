@@ -68,7 +68,7 @@ if (array_key_exists('provider', $_GET)) {
 } elseif (array_key_exists('provider', $_SESSION)) {
     $providerName = $_SESSION['provider'];
 }
-if (!in_array($providerName, ['Google', 'Microsoft', 'Yahoo'])) {
+if (!in_array($providerName, array( 'Google', 'Microsoft', 'Yahoo' ))) {
     exit('Only Google, Microsoft and Yahoo OAuth2 providers are currently supported in this script.');
 }
 
@@ -81,36 +81,36 @@ $clientSecret = 'RANDOMCHARS-----lGyjPcRtvP';
 $redirectUri = (isset($_SERVER['HTTPS']) ? 'https://' : 'http://') . $_SERVER['HTTP_HOST'] . $_SERVER['PHP_SELF'];
 //$redirectUri = 'http://localhost/PHPMailer/redirect';
 
-$params = [
+$params = array(
     'clientId' => $clientId,
     'clientSecret' => $clientSecret,
     'redirectUri' => $redirectUri,
-    'accessType' => 'offline'
-];
+    'accessType' => 'offline',
+);
 
-$options = [];
+$options = array();
 $provider = null;
 
 switch ($providerName) {
     case 'Google':
         $provider = new Google($params);
-        $options = [
-            'scope' => [
-                'https://mail.google.com/'
-            ]
-        ];
+        $options = array(
+            'scope' => array(
+                'https://mail.google.com/',
+            ),
+        );
         break;
     case 'Yahoo':
         $provider = new Yahoo($params);
         break;
     case 'Microsoft':
         $provider = new Microsoft($params);
-        $options = [
-            'scope' => [
+        $options = array(
+            'scope' => array(
                 'wl.imap',
-                'wl.offline_access'
-            ]
-        ];
+                'wl.offline_access',
+            ),
+        );
         break;
 }
 
@@ -134,9 +134,9 @@ if (!isset($_GET['code'])) {
     // Try to get an access token (using the authorization code grant)
     $token = $provider->getAccessToken(
         'authorization_code',
-        [
-            'code' => $_GET['code']
-        ]
+        array(
+            'code' => $_GET['code'],
+        )
     );
     // Use this to interact with an API on the users behalf
     // Use this to get a new access token if the old one expires

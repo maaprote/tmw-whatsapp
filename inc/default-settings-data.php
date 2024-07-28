@@ -25,7 +25,7 @@ $defaults = array(
 			'label' => esc_html__( 'RTL Layout', 'tmw-whatsapp' ),
 			'desc' => esc_html__( 'Right To Left layout. This is good for languages like arabic, hebrew, etc...', 'tmw-whatsapp' ),
 			'type' => 'switch_onoff',
-			'value' => ''
+			'value' => '',
 		),
 		'position' => array(
 			'form_group_class' => 'tmw-form-group-mobile-md',
@@ -37,8 +37,8 @@ $defaults = array(
 				'top-right' => esc_html__( 'Top Right', 'tmw-whatsapp' ),
 				'top-left' => esc_html__( 'Top Left', 'tmw-whatsapp' ),
 				'bottom-right' => esc_html__( 'Bottom Right', 'tmw-whatsapp' ),
-				'bottom-left' => esc_html__( 'Bottom Left', 'tmw-whatsapp' )
-			)
+				'bottom-left' => esc_html__( 'Bottom Left', 'tmw-whatsapp' ),
+			),
 		),
 
 		'header_title' => array(
@@ -46,14 +46,14 @@ $defaults = array(
 			'label' => esc_html__( 'Header Title', 'tmw-whatsapp' ),
 			'desc' => esc_html__( 'Controls the text for chat window header title', 'tmw-whatsapp' ),
 			'type' => 'text',
-			'value' => ''
+			'value' => '',
 		),
 		'header_description' => array(
 			'form_group_class' => 'tmw-form-group-mobile-md',
 			'label' => esc_html__( 'Header Description', 'tmw-whatsapp' ),
 			'desc' => esc_html__( 'Controls the text for chat window header description', 'tmw-whatsapp' ),
 			'type' => 'text',
-			'value' => ''
+			'value' => '',
 		),
 		'header_phone' => array(
 			'form_group_class' => 'tmw-form-group-mobile-md',
@@ -61,7 +61,7 @@ $defaults = array(
 			'desc' => esc_html__( 'Controls the phone number on header', 'tmw-whatsapp' ),
 			'type' => 'text',
 			'placeholder' => esc_html__( '(800) 123-4567', 'tmw-whatsapp' ),
-			'value' => esc_html__( '(800) 123-4567', 'tmw-whatsapp' )
+			'value' => esc_html__( '(800) 123-4567', 'tmw-whatsapp' ),
 		),
 		'header_email' => array(
 			'form_group_class' => 'tmw-form-group-mobile-md',
@@ -69,14 +69,14 @@ $defaults = array(
 			'desc' => esc_html__( 'Controls the email on header', 'tmw-whatsapp' ),
 			'type' => 'text',
 			'placeholder' => esc_html__( 'mail@domain.com', 'tmw-whatsapp' ),
-			'value' => esc_html__( 'mail@domain.com', 'tmw-whatsapp' )
+			'value' => esc_html__( 'mail@domain.com', 'tmw-whatsapp' ),
 		),
 		'header_no_attendants_registered' => array(
 			'form_group_class' => 'tmw-form-group-mobile-md',
 			'label' => esc_html__( 'No Attendants Registered Message', 'tmw-whatsapp' ),
 			'desc' => esc_html__( 'The message when has none attendat registered', 'tmw-whatsapp' ),
 			'type' => 'text',
-			'value' => ''
+			'value' => '',
 		),
 
 		'chat_image_background' => array(
@@ -84,7 +84,7 @@ $defaults = array(
 			'label' => esc_html__( 'Chat Image Background', 'tmw-whatsapp' ),
 			'desc' => esc_html__( 'Controls the chat image background', 'tmw-whatsapp' ),
 			'type' => 'image_upload',
-			'value' => ''
+			'value' => '',
 		),
 
 		'footer_show' => array(
@@ -92,14 +92,14 @@ $defaults = array(
 			'label' => esc_html__( 'Show Footer', 'tmw-whatsapp' ),
 			'desc' => esc_html__( 'Check to show the chat footer', 'tmw-whatsapp' ),
 			'type' => 'switch_onoff',
-			'value' => ''
+			'value' => '',
 		),
 		'footer_message' => array(
 			'form_group_class' => 'tmw-form-group-mobile-md',
 			'label' => esc_html__( 'Footer Message', 'tmw-whatsapp' ),
 			'desc' => esc_html__( 'Controls the text for chat window footer message', 'tmw-whatsapp' ),
 			'type' => 'text',
-			'value' => ''
+			'value' => '',
 		),
 		'footer_phone' => array(
 			'form_group_class' => 'tmw-form-group-mobile-md',
@@ -107,7 +107,7 @@ $defaults = array(
 			'desc' => esc_html__( 'Controls the phone in the chat window footer', 'tmw-whatsapp' ),
 			'type' => 'text',
 			'placeholder' => esc_html__( '(800) 123-4567', 'tmw-whatsapp' ),
-			'value' => ''
+			'value' => '',
 		),
 		'footer_email' => array(
 			'form_group_class' => 'tmw-form-group-mobile-md',
@@ -115,7 +115,7 @@ $defaults = array(
 			'desc' => esc_html__( 'Controls the email in the chat window footer', 'tmw-whatsapp' ),
 			'type' => 'text',
 			'placeholder' => esc_html__( 'mail@domain.com', 'tmw-whatsapp' ),
-			'value' => ''
+			'value' => '',
 		),
 
 		'call_to_action_show' => array(
@@ -123,7 +123,7 @@ $defaults = array(
 			'label' => esc_html__( 'Show Call To Action', 'tmw-whatsapp' ),
 			'desc' => esc_html__( 'Show text next to floating button', 'tmw-whatsapp' ),
 			'type' => 'switch_onoff',
-			'value' => 'on'
+			'value' => 'on',
 		),
 		'call_to_action_text' => array(
 			'form_group_class' => 'tmw-form-group-mobile-md',
@@ -131,7 +131,7 @@ $defaults = array(
 			'desc' => esc_html__( 'Controls the text of call to action', 'tmw-whatsapp' ),
 			'type' => 'text',
 			'placeholder' => esc_html__( 'Need Help?', 'tmw-whatsapp' ),
-			'value' => ''
+			'value' => '',
 		),
 
 		'open_whatsapp_type' => array(
@@ -144,7 +144,7 @@ $defaults = array(
 				'select-attendant' => esc_html__( 'Select Attendant', 'tmw-whatsapp' ),
 				'click-chat-send' => esc_html__( 'Click Chat Send', 'tmw-whatsapp' ),
 			),
-			'value' => 'click-chat-send'
+			'value' => 'click-chat-send',
 		),
 		'whatsapp_initial_message' => array(
 			'form_group_class' => 'tmw-form-group-mobile-md',
@@ -155,7 +155,7 @@ $defaults = array(
 			'condition' => array(
 				'target' => 'open_whatsapp_type',
 				'cond'   => 'include',
-				'value' => array( 'click-icon', 'select-attendant' )
+				'value' => array( 'click-icon', 'select-attendant' ),
             ),
             'tooltip' => true,
             'tooltip_title' => esc_html__( 'See all markups', 'tmw-whatsapp' ),
@@ -166,8 +166,8 @@ $defaults = array(
                 '{{post_link:__ID__}}' => esc_html__( 'Post link:', 'tmw-whatsapp' ),
                 '{{page_title:__ID__}}' => esc_html__( 'Page title:', 'tmw-whatsapp' ),
                 '{{page_link:__ID__}}' => esc_html__( 'Page link:', 'tmw-whatsapp' ),
-                'explain' => esc_html__( 'OBS: Replace "__ID__" with the product/post/page ID', 'tmw-whatsapp' )
-            )
+                'explain' => esc_html__( 'OBS: Replace "__ID__" with the product/post/page ID', 'tmw-whatsapp' ),
+            ),
 		),
 		'whatsapp_move_button' => array(
 			'form_group_class' => 'tmw-form-group-mobile-md',
@@ -176,15 +176,15 @@ $defaults = array(
 			'type' => 'padding_margin',
 			'value' => array(
 				'top-bottom' => 0,
-				'left-right' => 0
-			)
+				'left-right' => 0,
+			),
 		),
 		'whatsapp_open_chat_with_attendant' => array(
 			'form_group_class' => 'tmw-form-group-mobile-md',
 			'label' => esc_html__( 'Open chat with attendant on page first load', 'tmw-whatsapp' ),
 			'desc' => esc_html__( 'On the first load of page, the attendant chat window will automatically open', 'tmw-whatsapp' ),
 			'type' => 'switch_onoff',
-			'value' => ''
+			'value' => '',
 		),
 		'whatsapp_open_chat_with_attendant_id' => array(
 			'form_group_class' => 'tmw-form-group-mobile-md',
@@ -195,8 +195,8 @@ $defaults = array(
 			'condition' => array(
 				'target' => 'whatsapp_open_chat_with_attendant',
 				'cond' => 'equal',
-				'value' => true
-			)
+				'value' => true,
+			),
 		),
 		'whatsapp_open_chat_with_attendant_delay' => array(
 			'form_group_class' => 'tmw-form-group-mobile-md',
@@ -207,8 +207,8 @@ $defaults = array(
 			'condition' => array(
 				'target' => 'whatsapp_open_chat_with_attendant',
 				'cond' => 'equal',
-				'value' => true
-			)
+				'value' => true,
+			),
 		),
 		'whatsapp_hide_from_pages' => array(
 			'form_group_class' => 'tmw-form-group-mobile-md',
@@ -218,8 +218,8 @@ $defaults = array(
 			'value' => '',
 			'condition' => array(
 				'target' => 'whatsapp_show_on_pages',
-				'cond'   => 'empty'
-			)
+				'cond'   => 'empty',
+			),
 		),
 		'whatsapp_show_on_pages' => array(
 			'form_group_class' => 'tmw-form-group-mobile-md',
@@ -229,15 +229,15 @@ $defaults = array(
 			'value' => '',
 			'condition' => array(
 				'target' => 'whatsapp_hide_from_pages',
-				'cond'   => 'empty'
-			)
+				'cond'   => 'empty',
+			),
 		),
 		'debug' => array(
 			'form_group_class' => 'tmw-form-group-mobile-md',
 			'label' => esc_html__( 'Enable Debug', 'tmw-whatsapp' ),
 			'desc' => esc_html__( 'The purpose of this options is support help if you need. Keep it disabled. Enable only if someone of our support team ask to enable.', 'tmw-whatsapp' ),
 			'type' => 'switch_onoff',
-			'value' => ''
+			'value' => '',
 		),
 
 		'tab-close-general' => array(
@@ -255,7 +255,7 @@ $defaults = array(
 		'attendants' => array(
 			'label' => esc_html__( 'Attendants', 'tmw-whasapp' ),
 			'type'  => 'multi',
-			'value' => array()
+			'value' => array(),
 		),
 
 		'tab-close-attendants' => array(
@@ -268,7 +268,7 @@ $defaults = array(
 			'label' => esc_html__( 'Skin', 'tmw-whatsapp' ),
 			'type' => 'tab_start',
 			'tab_id' => 'tabSkin',
-			'prepend_html' => '<a href="#" class="tmw-skin-clear-all-fields">'. esc_html__( 'Clear All Fields', 'tmw-whasapp' ) .'</a>'
+			'prepend_html' => '<a href="#" class="tmw-skin-clear-all-fields">'. esc_html__( 'Clear All Fields', 'tmw-whasapp' ) .'</a>',
 		),
 
 		'heading-typography' => array(
@@ -288,8 +288,8 @@ $defaults = array(
 			'tooltip' => true,
             'tooltip_title' => esc_html__( 'How to change', 'tmw-whatsapp' ),
             'tooltip_content' => array(
-				'explain' => sprintf( __( 'Go to <a href="%s" target="_blank">%s</a> and select your desired font. Once you have selected, a right sidebar will open and you should get the code from there. See the image example: <img src="%s" class="tmw-img-fluid" alt="Font family code" />', 'tmw-whatsapp' ), esc_url( 'https://fonts.google.com' ), esc_url( 'https://fonts.google.com' ), esc_url( TM_MASTER_WHATS_CHAT_URL . '/img/font-family-1.jpg' ) )
-            )
+				'explain' => sprintf( __( 'Go to <a href="%1$s" target="_blank">%2$s</a> and select your desired font. Once you have selected, a right sidebar will open and you should get the code from there. See the image example: <img src="%3$s" class="tmw-img-fluid" alt="Font family code" />', 'tmw-whatsapp' ), esc_url( 'https://fonts.google.com' ), esc_url( 'https://fonts.google.com' ), esc_url( TM_MASTER_WHATS_CHAT_URL . '/img/font-family-1.jpg' ) ),
+            ),
 		),
 		'skin_font_family_name' => array(
 			'filter_output' => true,
@@ -302,8 +302,8 @@ $defaults = array(
 			'tooltip' => true,
             'tooltip_title' => esc_html__( 'How to change', 'tmw-whatsapp' ),
             'tooltip_content' => array(
-				'explain' => sprintf( __( 'Go to <a href="%s" target="_blank">%s</a> and select your desired font. Once you have selected, a right sidebar will open and you should get the font family name from there. See the image example: <img src="%s" class="tmw-img-fluid" alt="Font family name" />', 'tmw-whatsapp' ), esc_url( 'https://fonts.google.com' ), esc_url( 'https://fonts.google.com' ), esc_url( TM_MASTER_WHATS_CHAT_URL . '/img/font-family-2.jpg' ) )
-            )
+				'explain' => sprintf( __( 'Go to <a href="%1$s" target="_blank">%2$s</a> and select your desired font. Once you have selected, a right sidebar will open and you should get the font family name from there. See the image example: <img src="%3$s" class="tmw-img-fluid" alt="Font family name" />', 'tmw-whatsapp' ), esc_url( 'https://fonts.google.com' ), esc_url( 'https://fonts.google.com' ), esc_url( TM_MASTER_WHATS_CHAT_URL . '/img/font-family-2.jpg' ) ),
+            ),
 		),
 
 		'heading-skin-button' => array(
@@ -320,7 +320,7 @@ $defaults = array(
 			'type' => 'colorpicker',
 			'value' => '#20ab54',
 			'target' => '.tmw-whatsapp-trigger-button > a',
-			'cssProp' => 'backgroundColor' 		
+			'cssProp' => 'backgroundColor',      
 		),
 		'skin_open_chat_button_icon_color' => array(
 			'form_group_class' => 'tmw-form-group-mobile-md',
@@ -329,7 +329,7 @@ $defaults = array(
 			'type' => 'colorpicker',
 			'value' => '#FFF',
 			'target' => '.tmw-whatsapp-trigger-button > a',
-			'cssProp' => 'color' 		
+			'cssProp' => 'color',        
 		),
 		'skin_call_to_action_background_color' => array(
 			'form_group_class' => 'tmw-form-group-mobile-md',
@@ -338,7 +338,7 @@ $defaults = array(
 			'type' => 'colorpicker',
 			'value' => '#e4e4e4',
 			'target' => '.tmw-whatsapp-trigger-button .tmw-whatsapp-call-to-action > a',
-			'cssProp' => 'backgroundColor' 		
+			'cssProp' => 'backgroundColor',      
 		),
 		'skin_call_to_action_text_color' => array(
 			'form_group_class' => 'tmw-form-group-mobile-md',
@@ -347,12 +347,12 @@ $defaults = array(
 			'type' => 'colorpicker',
 			'value' => '#616161',
 			'target' => '.tmw-whatsapp-trigger-button .tmw-whatsapp-call-to-action > a',
-			'cssProp' => 'color' 		
+			'cssProp' => 'color',        
 		),
 
 		'space-after-skin-button' => array(
 			'type' => 'space',
-			'value' => '30px'
+			'value' => '30px',
 		),
 
 		'heading-skin-chat-list-view' => array(
@@ -369,7 +369,7 @@ $defaults = array(
 			'type' => 'colorpicker',
 			'value' => '#20ab54',
 			'target' => '.tmw-whatsapp-card-header',
-			'cssProp' => 'backgroundColor' 		
+			'cssProp' => 'backgroundColor',      
 		),
 		'skin_header_title' => array(
 			'form_group_class' => 'tmw-form-group-mobile-md',
@@ -378,7 +378,7 @@ $defaults = array(
 			'type' => 'colorpicker',
 			'value' => '#FFF',
 			'target' => '.tmw-whatsapp-wrapper .tmw-whatsapp-card .tmw-whatsapp-card-header .tmw-whatsapp-presentation-info > h2',
-			'cssProp' => 'color' 		
+			'cssProp' => 'color',        
 		),
 		'skin_header_description' => array(
 			'form_group_class' => 'tmw-form-group-mobile-md',
@@ -387,7 +387,7 @@ $defaults = array(
 			'type' => 'colorpicker',
 			'value' => '#FFF',
 			'target' => '.tmw-whatsapp-wrapper .tmw-whatsapp-card .tmw-whatsapp-card-header .tmw-whatsapp-presentation-info > p',
-			'cssProp' => 'color' 		
+			'cssProp' => 'color',        
 		),
 		'skin_header_phone' => array(
 			'form_group_class' => 'tmw-form-group-mobile-md',
@@ -396,7 +396,7 @@ $defaults = array(
 			'type' => 'colorpicker',
 			'value' => '#FFF',
 			'target' => '.tmw-whatsapp-wrapper .tmw-whatsapp-card .tmw-whatsapp-card-header .tmw-whatsapp-presentation-info > a > strong',
-			'cssProp' => 'color' 		
+			'cssProp' => 'color',        
 		),
 		'skin_header_email' => array(
 			'form_group_class' => 'tmw-form-group-mobile-md',
@@ -405,7 +405,7 @@ $defaults = array(
 			'type' => 'colorpicker',
 			'value' => '#FFF',
 			'target' => '.tmw-whatsapp-wrapper .tmw-whatsapp-card .tmw-whatsapp-card-header .tmw-whatsapp-presentation-info > a',
-			'cssProp' => 'color' 		
+			'cssProp' => 'color',        
 		),
 		'skin_attendants_list' => array(
 			'form_group_class' => 'tmw-form-group-mobile-md',
@@ -414,7 +414,7 @@ $defaults = array(
 			'type' => 'colorpicker',
 			'value' => '#f7f7f7',
 			'target' => '.tmw-whatsapp-wrapper .tmw-whatsapp-card .tmw-whatsapp-card-body .tmw-whatsapp-attendant',
-			'cssProp' => 'backgroundColor' 		
+			'cssProp' => 'backgroundColor',      
 		),
 		'skin_attendants_list_hover' => array(
 			'form_group_class' => 'tmw-form-group-mobile-md',
@@ -425,7 +425,7 @@ $defaults = array(
 			'target' => '',
 			'cssProp' => 'color',
 			'pseudo' => '.tmw-whatsapp-wrapper .tmw-whatsapp-card .tmw-whatsapp-card-body .tmw-whatsapp-attendant:hover',
-			'pseudo_prop' => 'background-color'	
+			'pseudo_prop' => 'background-color', 
 		),
 		'skin_attendants_list_title' => array(
 			'form_group_class' => 'tmw-form-group-mobile-md',
@@ -434,7 +434,7 @@ $defaults = array(
 			'type' => 'colorpicker',
 			'value' => '#212121',
 			'target' => '.tmw-whatsapp-wrapper .tmw-whatsapp-card .tmw-whatsapp-card-body .tmw-whatsapp-attendant .tmw-whatsapp-attendant-info h3',
-			'cssProp' => 'color' 		
+			'cssProp' => 'color',        
 		),
 		'skin_attendants_list_description' => array(
 			'form_group_class' => 'tmw-form-group-mobile-md',
@@ -443,7 +443,7 @@ $defaults = array(
 			'type' => 'colorpicker',
 			'value' => '#777',
 			'target' => '.tmw-whatsapp-wrapper .tmw-whatsapp-card .tmw-whatsapp-card-body .tmw-whatsapp-attendant .tmw-whatsapp-attendant-info p',
-			'cssProp' => 'color' 		
+			'cssProp' => 'color',        
 		),
 		'skin_attendants_list_status_badge' => array(
 			'form_group_class' => 'tmw-form-group-mobile-md',
@@ -452,7 +452,7 @@ $defaults = array(
 			'type' => 'colorpicker',
 			'value' => '#20ab54',
 			'target' => '.tmw-whatsapp-wrapper .tmw-whatsapp-card .tmw-whatsapp-card-body .tmw-whatsapp-attendant .tmw-whatsapp-attendant-status p',
-			'cssProp' => 'backgroundColor' 		
+			'cssProp' => 'backgroundColor',      
 		),
 		'skin_attendants_list_status_text' => array(
 			'form_group_class' => 'tmw-form-group-mobile-md',
@@ -461,7 +461,7 @@ $defaults = array(
 			'type' => 'colorpicker',
 			'value' => '#FFF',
 			'target' => '.tmw-whatsapp-wrapper .tmw-whatsapp-card .tmw-whatsapp-card-body .tmw-whatsapp-attendant .tmw-whatsapp-attendant-status p',
-			'cssProp' => 'color' 		
+			'cssProp' => 'color',        
 		),
 		'skin_attendants_list_offline_status_badge' => array(
 			'form_group_class' => 'tmw-form-group-mobile-md',
@@ -470,7 +470,7 @@ $defaults = array(
 			'type' => 'colorpicker',
 			'value' => '#dedede',
 			'target' => '.tmw-whatsapp-wrapper .tmw-whatsapp-card .tmw-whatsapp-card-body .tmw-whatsapp-attendant .tmw-whatsapp-attendant-info .tmw-whastapp-attendant-info-offline-message, .tmw-whatsapp-wrapper .tmw-whatsapp-card .tmw-whatsapp-card-body .tmw-whatsapp-attendant.tmw-attendant-is-offline .tmw-whatsapp-attendant-status p.tmw-whatsapp-attendant-status-offline',
-			'cssProp' => 'backgroundColor' 		
+			'cssProp' => 'backgroundColor',      
 		),
 		'skin_attendants_list_offline_status_badge_text' => array(
 			'form_group_class' => 'tmw-form-group-mobile-md',
@@ -479,7 +479,7 @@ $defaults = array(
 			'type' => 'colorpicker',
 			'value' => '#000',
 			'target' => '.tmw-whatsapp-wrapper .tmw-whatsapp-card .tmw-whatsapp-card-body .tmw-whatsapp-attendant .tmw-whatsapp-attendant-info .tmw-whastapp-attendant-info-offline-message, .tmw-whatsapp-wrapper .tmw-whatsapp-card .tmw-whatsapp-card-body .tmw-whatsapp-attendant.tmw-attendant-is-offline .tmw-whatsapp-attendant-status p.tmw-whatsapp-attendant-status-offline',
-			'cssProp' => 'color' 		
+			'cssProp' => 'color',        
 		),
 		'skin_attendants_list_interval_status_badge' => array(
 			'form_group_class' => 'tmw-form-group-mobile-md',
@@ -488,7 +488,7 @@ $defaults = array(
 			'type' => 'colorpicker',
 			'value' => '#e2c80c',
 			'target' => '.tmw-whatsapp-wrapper .tmw-whatsapp-card .tmw-whatsapp-card-body .tmw-whatsapp-attendant .tmw-whatsapp-attendant-info .tmw-whastapp-attendant-info-offline-message.is-interval, .tmw-whatsapp-wrapper .tmw-whatsapp-card .tmw-whatsapp-card-body .tmw-whatsapp-attendant.tmw-attendant-is-offline .tmw-whatsapp-attendant-status p.tmw-whatsapp-attendant-status-interval',
-			'cssProp' => 'backgroundColor' 		
+			'cssProp' => 'backgroundColor',      
 		),
 		'skin_attendants_list_interval_status_badge_text' => array(
 			'form_group_class' => 'tmw-form-group-mobile-md',
@@ -497,7 +497,7 @@ $defaults = array(
 			'type' => 'colorpicker',
 			'value' => '#000',
 			'target' => '.tmw-whatsapp-wrapper .tmw-whatsapp-card .tmw-whatsapp-card-body .tmw-whatsapp-attendant .tmw-whatsapp-attendant-info .tmw-whastapp-attendant-info-offline-message.is-interval, .tmw-whatsapp-wrapper .tmw-whatsapp-card .tmw-whatsapp-card-body .tmw-whatsapp-attendant.tmw-attendant-is-offline .tmw-whatsapp-attendant-status p.tmw-whatsapp-attendant-status-interval',
-			'cssProp' => 'color' 		
+			'cssProp' => 'color',        
 		),
 		'skin_footer_bg' => array(
 			'form_group_class' => 'tmw-form-group-mobile-md',
@@ -506,7 +506,7 @@ $defaults = array(
 			'type' => 'colorpicker',
 			'value' => '#20ab54',
 			'target' => '.tmw-whatsapp-wrapper .tmw-whatsapp-card .tmw-whatsapp-card-footer',
-			'cssProp' => 'backgroundColor' 		
+			'cssProp' => 'backgroundColor',      
 		),
 		'skin_footer_message' => array(
 			'form_group_class' => 'tmw-form-group-mobile-md',
@@ -515,7 +515,7 @@ $defaults = array(
 			'type' => 'colorpicker',
 			'value' => '#FFF',
 			'target' => '.tmw-whatsapp-wrapper .tmw-whatsapp-card .tmw-whatsapp-card-footer p:nth-child(1)',
-			'cssProp' => 'color' 		
+			'cssProp' => 'color',        
 		),
 		'skin_footer_phone_email' => array(
 			'form_group_class' => 'tmw-form-group-mobile-md',
@@ -524,12 +524,12 @@ $defaults = array(
 			'type' => 'colorpicker',
 			'value' => '#FFF',
 			'target' => '.tmw-whatsapp-wrapper .tmw-whatsapp-card .tmw-whatsapp-card-footer p:nth-child(2), .tmw-whatsapp-wrapper .tmw-whatsapp-card .tmw-whatsapp-card-footer a',
-			'cssProp' => 'color' 		
+			'cssProp' => 'color',        
 		),
 
 		'space-after-skin-chat-list-view' => array(
 			'type' => 'space',
-			'value' => '30px'
+			'value' => '30px',
 		),
 
 		'heading-skin-chat-attendant-view' => array(
@@ -546,7 +546,7 @@ $defaults = array(
 			'type' => 'colorpicker',
 			'value' => '#FFF',
 			'target' => '.tmw-whatsapp-wrapper .tmw-whatsapp-card .tmw-whatsapp-card-header .tmw-whatsapp-attedant-info-title h2',
-			'cssProp' => 'color' 		
+			'cssProp' => 'color',        
 		),
 		'skin_attendant_status' => array(
 			'form_group_class' => 'tmw-form-group-mobile-md',
@@ -555,7 +555,7 @@ $defaults = array(
 			'type' => 'colorpicker',
 			'value' => '#FFF',
 			'target' => '.tmw-whatsapp-wrapper .tmw-whatsapp-card .tmw-whatsapp-card-header .tmw-whatsapp-attedant-info-title p',
-			'cssProp' => 'color' 		
+			'cssProp' => 'color',        
 		),
 		'skin_attendant_back_icon' => array(
 			'form_group_class' => 'tmw-form-group-mobile-md',
@@ -564,7 +564,7 @@ $defaults = array(
 			'type' => 'colorpicker',
 			'value' => '#FFF',
 			'target' => '.tmw-whatsapp-wrapper .tmw-whatsapp-card .tmw-whatsapp-card-header .tmw-whatsapp-active-attendant-info .tmw-whatsapp-active-attendant-info-back',
-			'cssProp' => 'color' 		
+			'cssProp' => 'color',        
 		),
 		'skin_attendant_chat_message' => array(
 			'form_group_class' => 'tmw-form-group-mobile-md',
@@ -575,7 +575,7 @@ $defaults = array(
 			'target' => '.tmw-whatsapp-wrapper .tmw-whatsapp-card .tmw-whatsapp-card-body .tmw-whatsapp-attendant-chat-window .tmw-whatsapp-attendant-chat-message',
 			'cssProp' => 'backgroundColor',
 			'pseudo' => '.tmw-whatsapp-wrapper .tmw-whatsapp-card .tmw-whatsapp-card-body .tmw-whatsapp-attendant-chat-window .tmw-whatsapp-attendant-chat-message:before',
-			'pseudo_prop' => 'border-right-color'	
+			'pseudo_prop' => 'border-right-color',   
 		),
 		'skin_attendant_chat_message_hour' => array(
 			'form_group_class' => 'tmw-form-group-mobile-md',
@@ -584,7 +584,7 @@ $defaults = array(
 			'type' => 'colorpicker',
 			'value' => '#9a9a9a',
 			'target' => '.tmw-whatsapp-wrapper .tmw-whatsapp-card .tmw-whatsapp-card-body .tmw-whatsapp-attendant-chat-window .tmw-whatsapp-attendant-chat-message .tmw-whatsapp-attendant-chat-message-time',
-			'cssProp' => 'color'
+			'cssProp' => 'color',
 		),
 		'skin_attendant_chat_message_text' => array(
 			'form_group_class' => 'tmw-form-group-mobile-md',
@@ -593,7 +593,7 @@ $defaults = array(
 			'type' => 'colorpicker',
 			'value' => '#777',
 			'target' => '.tmw-whatsapp-wrapper .tmw-whatsapp-card .tmw-whatsapp-card-body .tmw-whatsapp-attendant-chat-window .tmw-whatsapp-attendant-chat-message',
-			'cssProp' => 'color' 		
+			'cssProp' => 'color',        
 		),
 		'skin_attendant_chat_message_input_wrapper' => array(
 			'form_group_class' => 'tmw-form-group-mobile-md',
@@ -602,7 +602,7 @@ $defaults = array(
 			'type' => 'colorpicker',
 			'value' => '#f0f0f0',
 			'target' => '.tmw-whatsapp-wrapper .tmw-whatsapp-card .tmw-whatsapp-card-body .tmw-whatsapp-attendant-chat-window .tmw-whatsapp-attendant-chat-window-footer',
-			'cssProp' => 'backgroundColor' 		
+			'cssProp' => 'backgroundColor',      
 		),
 		'skin_attendant_chat_message_input' => array(
 			'form_group_class' => 'tmw-form-group-mobile-md',
@@ -611,7 +611,7 @@ $defaults = array(
 			'type' => 'colorpicker',
 			'value' => '#FFF',
 			'target' => '.tmw-whatsapp-wrapper .tmw-whatsapp-card .tmw-whatsapp-card-body .tmw-whatsapp-attendant-chat-window .tmw-whatsapp-attendant-chat-window-footer > input',
-			'cssProp' => 'backgroundColor' 		
+			'cssProp' => 'backgroundColor',      
 		),
 		'skin_attendant_chat_message_input_placeholder' => array(
 			'form_group_class' => 'tmw-form-group-mobile-md',
@@ -623,7 +623,7 @@ $defaults = array(
 			'cssProp' => 'color',
 			'pseudo' => '.tmw-whatsapp-wrapper .tmw-whatsapp-card .tmw-whatsapp-card-body .tmw-whatsapp-attendant-chat-window .tmw-whatsapp-attendant-chat-window-footer > input::-webkit-input-placeholder,
 .tmw-whatsapp-wrapper .tmw-whatsapp-card .tmw-whatsapp-card-body .tmw-whatsapp-attendant-chat-window .tmw-whatsapp-attendant-chat-window-footer > input::placeholder',
-			'pseudo_prop' => 'color'	
+			'pseudo_prop' => 'color',    
 		),
 		'skin_attendant_chat_message_input_text' => array(
 			'form_group_class' => 'tmw-form-group-mobile-md',
@@ -632,7 +632,7 @@ $defaults = array(
 			'type' => 'colorpicker',
 			'value' => '#777',
 			'target' => '.tmw-whatsapp-wrapper .tmw-whatsapp-card .tmw-whatsapp-card-body .tmw-whatsapp-attendant-chat-window .tmw-whatsapp-attendant-chat-window-footer > input',
-			'cssProp' => 'color' 		
+			'cssProp' => 'color',        
 		),
 		'skin_attendant_chat_send_button_background' => array(
 			'form_group_class' => 'tmw-form-group-mobile-md',
@@ -641,7 +641,7 @@ $defaults = array(
 			'type' => 'colorpicker',
 			'value' => '#f0f0f0',
 			'target' => '.tmw-whatsapp-wrapper .tmw-whatsapp-card .tmw-whatsapp-card-body .tmw-whatsapp-attendant-chat-window .tmw-whatsapp-attendant-chat-window-footer .tmw-whatsapp-attendant-chat-send-button',
-			'cssProp' => 'backgroundColor' 		
+			'cssProp' => 'backgroundColor',      
 		),
 		'skin_attendant_chat_send_button_icon' => array(
 			'form_group_class' => 'tmw-form-group-mobile-md',
@@ -650,7 +650,7 @@ $defaults = array(
 			'type' => 'colorpicker',
 			'value' => '#9a9a9a',
 			'target' => '.tmw-whatsapp-wrapper .tmw-whatsapp-card .tmw-whatsapp-card-body .tmw-whatsapp-attendant-chat-window .tmw-whatsapp-attendant-chat-window-footer .tmw-whatsapp-attendant-chat-send-button',
-			'cssProp' => 'color' 		
+			'cssProp' => 'color',        
 		),
 
 		'tab-close-skin' => array(
@@ -662,7 +662,7 @@ $defaults = array(
 		'tab-start-performance' => array(
 			'label' => esc_html__( 'Performance', 'tmw-whatsapp' ),
 			'type' => 'tab_start',
-			'tab_id' => 'tabPerformance'
+			'tab_id' => 'tabPerformance',
 		),
 
 		'heading-performance-tab' => array(
@@ -682,8 +682,8 @@ $defaults = array(
 				'on-first-load' => esc_html__( 'On Load of the Page', 'tmw-whatsapp' ),
 				'on-first-scroll' => esc_html__( 'On First Scroll of the Page', 'tmw-whatsapp' ),
 				'on-first-mouseover' => esc_html__( 'On First movement of Mouse on the Page', 'tmw-whatsapp' ),
-				'after-few-seconds' => esc_html__( 'After few seconds (not recommeded for some page performance tools)', 'tmw-whatsapp' )
-			)
+				'after-few-seconds' => esc_html__( 'After few seconds (not recommeded for some page performance tools)', 'tmw-whatsapp' ),
+			),
 		),
 		'performance_after_few_seconds_delay' => array(
 			'form_group_class' => 'tmw-form-group-mobile-md',
@@ -694,8 +694,8 @@ $defaults = array(
 			'condition' => array(
 				'target' => 'performance_how_plugin_init',
 				'cond' => 'equal',
-				'value' => 'after-few-seconds'
-			)
+				'value' => 'after-few-seconds',
+			),
 		),
 
 		'heading-performance-tab-information' => array(
@@ -714,7 +714,7 @@ $defaults = array(
 		'tab-start-reset-settings' => array(
 			'label' => esc_html__( 'Reset', 'tmw-whatsapp' ),
 			'type' => 'tab_start',
-			'tab_id' => 'tabReset'
+			'tab_id' => 'tabReset',
 		),
 
 		'reset_settings' => array(
@@ -722,7 +722,7 @@ $defaults = array(
 			'label' => esc_html__( 'Reset Settings To Default', 'tmw-whatsapp' ),
 			'desc' => esc_html__( 'Warning: This will reset all plugin settings to it´s default', 'tmw-whatsapp' ),
 			'type' => 'switch_onoff',
-			'value' => ''
+			'value' => '',
 		),
 
 		'tab-close-reset-settings' => array(
@@ -730,5 +730,5 @@ $defaults = array(
 			'type' => 'tab_close',
 			'value' => '',
 		),
-	)
+	),
 );

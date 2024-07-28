@@ -43,7 +43,7 @@ class Button extends WPBakeryShortCode {
         vc_map( array(
             'name'          => esc_html__( 'TM Whatsapp Button', 'tmw-whatsapp'),
             'base'          => 'tmw_whatsapp_button',
-            'description'  	=> esc_html__( 'Add whatsapp button', 'tmw-whatsapp' ),
+            'description'   => esc_html__( 'Add whatsapp button', 'tmw-whatsapp' ),
             'icon' => 'tmw-wpbakery-element-icon dashicons dashicons-whatsapp',
             'category'      => esc_html__( 'TM Whatsapp', 'tmw-whatsapp'),
             'admin_enqueue_css' => TM_MASTER_WHATS_CHAT_URL . '/css/tmw-whatsapp-wpbakery.css',
@@ -59,7 +59,7 @@ class Button extends WPBakeryShortCode {
                     'heading' => esc_html__( 'Select Attendant', 'tmw-whatsapp' ),
                     'param_name' => 'attendant',
                     'value' => Functions::get_attendants_list(),
-                    'std' => 0
+                    'std' => 0,
                 ),
 
                 array(
@@ -70,8 +70,8 @@ class Button extends WPBakeryShortCode {
                     'param_name' => 'layout-style',
                     'value' => array(
                         esc_html__( 'Style 1', 'tmw-whatsapp' ) => 'tmw-whatsapp-elementor-wrapper-style-1',
-                        esc_html__( 'Style 2', 'tmw-whatsapp' ) => 'tmw-whatsapp-elementor-wrapper-style-1 tmw-whatsapp-elementor-wrapper-style-1-rounded'
-                    )
+                        esc_html__( 'Style 2', 'tmw-whatsapp' ) => 'tmw-whatsapp-elementor-wrapper-style-1 tmw-whatsapp-elementor-wrapper-style-1-rounded',
+                    ),
                 ),
 
                 array(
@@ -80,7 +80,7 @@ class Button extends WPBakeryShortCode {
                     'edit_field_class' => 'vc_col-sm-6',
                     'heading' => esc_html__( 'TItle', 'tmw-whatsapp' ),
                     'param_name' => 'title',
-                    'value' => ''
+                    'value' => '',
                 ),
 
                 array(
@@ -89,7 +89,7 @@ class Button extends WPBakeryShortCode {
                     'edit_field_class' => 'vc_col-sm-6',
                     'heading' => esc_html__( 'Description', 'tmw-whatsapp' ),
                     'param_name' => 'description',
-                    'value' => ''
+                    'value' => '',
                 ),
 
                 array(
@@ -100,9 +100,9 @@ class Button extends WPBakeryShortCode {
                     'param_name' => 'photo_or_icon',
                     'value' => array(
                         esc_html__( 'Whatsapp Icon', 'tmw-whatsapp' ) => 'icon',
-                        esc_html__( 'Attendant Image', 'tmw-whatsapp' ) => 'image' 
+                        esc_html__( 'Attendant Image', 'tmw-whatsapp' ) => 'image', 
                     ),
-                    'std' => 'icon'
+                    'std' => 'icon',
                 ),
 
                 array(
@@ -115,9 +115,9 @@ class Button extends WPBakeryShortCode {
                         esc_html__( 'Full Width', 'tmw-whatsapp' ) => 'full-width',
                         esc_html__( 'Center', 'tmw-whatsapp' ) => 'center',
                         esc_html__( 'Left', 'tmw-whatsapp' ) => 'left',
-                        esc_html__( 'Right', 'tmw-whatsapp' ) => 'right'
+                        esc_html__( 'Right', 'tmw-whatsapp' ) => 'right',
                     ),
-                    'std' => 'left'
+                    'std' => 'left',
                 ),
 
                 // Skin
@@ -129,7 +129,7 @@ class Button extends WPBakeryShortCode {
                     'heading' => esc_html__( 'Background Color', 'tmw-whatsapp' ),
                     'param_name' => 'background_color',
                     'value' => '#20ab54',
-                    'group' => esc_html__( 'Skin', 'tmw-whatsapp' )
+                    'group' => esc_html__( 'Skin', 'tmw-whatsapp' ),
                 ),
 
                 array(
@@ -140,7 +140,7 @@ class Button extends WPBakeryShortCode {
                     'heading' => esc_html__( 'Background Hover Color', 'tmw-whatsapp' ),
                     'param_name' => 'background_hover_color',
                     'value' => '#38bd6a',
-                    'group' => esc_html__( 'Skin', 'tmw-whatsapp' )
+                    'group' => esc_html__( 'Skin', 'tmw-whatsapp' ),
                 ),
 
                 array(
@@ -151,7 +151,7 @@ class Button extends WPBakeryShortCode {
                     'heading' => esc_html__( 'Icon Color', 'tmw-whatsapp' ),
                     'param_name' => 'icon_color',
                     'value' => '#FFF',
-                    'group' => esc_html__( 'Skin', 'tmw-whatsapp' )
+                    'group' => esc_html__( 'Skin', 'tmw-whatsapp' ),
                 ),
 
                 array(
@@ -162,7 +162,7 @@ class Button extends WPBakeryShortCode {
                     'heading' => esc_html__( 'Icon Hover Color', 'tmw-whatsapp' ),
                     'param_name' => 'icon_hover_color',
                     'value' => '#FFF',
-                    'group' => esc_html__( 'Skin', 'tmw-whatsapp' )
+                    'group' => esc_html__( 'Skin', 'tmw-whatsapp' ),
                 ),
 
                 array(
@@ -173,7 +173,7 @@ class Button extends WPBakeryShortCode {
                     'heading' => esc_html__( 'Attendant Name Color', 'tmw-whatsapp' ),
                     'param_name' => 'attendant_name_color',
                     'value' => '#FFF',
-                    'group' => esc_html__( 'Skin', 'tmw-whatsapp' )
+                    'group' => esc_html__( 'Skin', 'tmw-whatsapp' ),
                 ),
 
                 array(
@@ -184,7 +184,7 @@ class Button extends WPBakeryShortCode {
                     'heading' => esc_html__( 'Attendant Name Hover Color', 'tmw-whatsapp' ),
                     'param_name' => 'attendant_name_hover_color',
                     'value' => '#FFF',
-                    'group' => esc_html__( 'Skin', 'tmw-whatsapp' )
+                    'group' => esc_html__( 'Skin', 'tmw-whatsapp' ),
                 ),
 
                 array(
@@ -195,7 +195,7 @@ class Button extends WPBakeryShortCode {
                     'heading' => esc_html__( 'Attendant Description Color', 'tmw-whatsapp' ),
                     'param_name' => 'attendant_description_color',
                     'value' => '#FFF',
-                    'group' => esc_html__( 'Skin', 'tmw-whatsapp' )
+                    'group' => esc_html__( 'Skin', 'tmw-whatsapp' ),
                 ),
 
                 array(
@@ -206,7 +206,7 @@ class Button extends WPBakeryShortCode {
                     'heading' => esc_html__( 'Attendant Description Hover Color', 'tmw-whatsapp' ),
                     'param_name' => 'attendant_description_hover_color',
                     'value' => '#FFF',
-                    'group' => esc_html__( 'Skin', 'tmw-whatsapp' )
+                    'group' => esc_html__( 'Skin', 'tmw-whatsapp' ),
                 ),
 
                 array(
@@ -217,7 +217,7 @@ class Button extends WPBakeryShortCode {
                     'heading' => esc_html__( 'Status Background Color', 'tmw-whatsapp' ),
                     'param_name' => 'status_background_color',
                     'value' => '#FFF',
-                    'group' => esc_html__( 'Skin', 'tmw-whatsapp' )
+                    'group' => esc_html__( 'Skin', 'tmw-whatsapp' ),
                 ),
 
                 array(
@@ -228,7 +228,7 @@ class Button extends WPBakeryShortCode {
                     'heading' => esc_html__( 'Status Text Color', 'tmw-whatsapp' ),
                     'param_name' => 'status_text_color',
                     'value' => '#212121',
-                    'group' => esc_html__( 'Skin', 'tmw-whatsapp' )
+                    'group' => esc_html__( 'Skin', 'tmw-whatsapp' ),
                 ),
 
                 array(
@@ -239,7 +239,7 @@ class Button extends WPBakeryShortCode {
                     'heading' => esc_html__( 'Offline Badge Background', 'tmw-whatsapp' ),
                     'param_name' => 'badge_offline_message_background',
                     'value' => '#ebebeb',
-                    'group' => esc_html__( 'Skin', 'tmw-whatsapp' )
+                    'group' => esc_html__( 'Skin', 'tmw-whatsapp' ),
                 ),
 
                 array(
@@ -250,7 +250,7 @@ class Button extends WPBakeryShortCode {
                     'heading' => esc_html__( 'Offline Message Badge Text', 'tmw-whatsapp' ),
                     'param_name' => 'badge_offline_message_text',
                     'value' => '#000',
-                    'group' => esc_html__( 'Skin', 'tmw-whatsapp' )
+                    'group' => esc_html__( 'Skin', 'tmw-whatsapp' ),
                 ),
 
                 array(
@@ -261,7 +261,7 @@ class Button extends WPBakeryShortCode {
                     'heading' => esc_html__( 'Interval Badge Background', 'tmw-whatsapp' ),
                     'param_name' => 'badge_interval_background',
                     'value' => '#e2c80c',
-                    'group' => esc_html__( 'Skin', 'tmw-whatsapp' )
+                    'group' => esc_html__( 'Skin', 'tmw-whatsapp' ),
                 ),
 
                 array(
@@ -272,8 +272,8 @@ class Button extends WPBakeryShortCode {
                     'heading' => esc_html__( 'Interval Badge Text', 'tmw-whatsapp' ),
                     'param_name' => 'badge_interval_text',
                     'value' => '#000',
-                    'group' => esc_html__( 'Skin', 'tmw-whatsapp' )
-                )
+                    'group' => esc_html__( 'Skin', 'tmw-whatsapp' ),
+                ),
        
             ),
         ));             
@@ -287,7 +287,7 @@ class Button extends WPBakeryShortCode {
         $output = '';
 
         $html_tag = 'span';
-        $classes = array('tmw-whatsapp-elementor-title-status');
+        $classes = array( 'tmw-whatsapp-elementor-title-status' );
         $attributes = array();
 
         $status_text = esc_html__( 'Online', 'tmw-whatsapp' );
@@ -324,7 +324,7 @@ class Button extends WPBakeryShortCode {
             'badge_offline_message_background' => '',
             'badge_offline_message_text' => '',
             'badge_interval_background' => '',
-            'badge_interval_text' => ''
+            'badge_interval_text' => '',
         ), $atts));
 
         $attendants = Functions::get_attendants();
@@ -348,7 +348,7 @@ class Button extends WPBakeryShortCode {
         // Attendant Description
         $description = !empty( $settings['description'] ) ? $settings['description'] : $attendants[ $attendant_id ]['description'];
         
-        $wrapper_classes = array('tmw-whatsapp-elementor-wrapper');
+        $wrapper_classes = array( 'tmw-whatsapp-elementor-wrapper' );
         $wrapper_atts = array(); 
 
         // Layout Style
@@ -380,7 +380,7 @@ class Button extends WPBakeryShortCode {
         $output = '';
 
         $output .= '<div class="tmw-whatsapp-wpbakery-widget">';
-            $output .= '<a href="#" class="tmw-whatsapp-button tmw-fadeIn tmw-d-block" data-phone-number="'. esc_attr( Translator::translate_string( $attendants[ $attendant_id ]['phone'], 'atendant_'. [ $attendant_id ] .'_phone' ) ) .'" data-availability="'. esc_attr( $attendantAvailability ) .'" data-default-timezone="'. esc_attr( $attendants[ $attendant_id ]['default_timezone'] ) .'"'. ( empty($attendants[ $attendant_id ]['phone'] ) ? ' disabled' : '' ) .'>';
+            $output .= '<a href="#" class="tmw-whatsapp-button tmw-fadeIn tmw-d-block" data-phone-number="'. esc_attr( Translator::translate_string( $attendants[ $attendant_id ]['phone'], 'atendant_'. array( $attendant_id ) .'_phone' ) ) .'" data-availability="'. esc_attr( $attendantAvailability ) .'" data-default-timezone="'. esc_attr( $attendants[ $attendant_id ]['default_timezone'] ) .'"'. ( empty($attendants[ $attendant_id ]['phone'] ) ? ' disabled' : '' ) .'>';
                 $output .= '<div '. implode( ' ', $wrapper_atts ) .'>';
                     $output .= '<div class="tmw-whatsapp-elementor-body">';
                         $output .= '<div class="tmw-whatsapp-elementor-icon">';
@@ -397,8 +397,8 @@ class Button extends WPBakeryShortCode {
                         }
                         $output .= '</div>';
                         $output .= '<div class="tmw-whatsapp-elementor-info">';
-                            $output .= '<span class="tmw-whatsapp-elementor-info-offline-message">'. esc_html( Translator::translate_string( $attendants[ $attendant_id ]['offline_message'], 'atendant_'. [ $attendant_id ] .'_offline_message' ) ) .'</span>';
-                            $output .= '<span class="tmw-whatsapp-elementor-info-offline-message is-interval">'. esc_html( Translator::translate_string( $attendants[ $attendant_id ]['interval_message'], 'atendant_'. [ $attendant_id ] .'_interval_message' ) ) .'</span>';
+                            $output .= '<span class="tmw-whatsapp-elementor-info-offline-message">'. esc_html( Translator::translate_string( $attendants[ $attendant_id ]['offline_message'], 'atendant_'. array( $attendant_id ) .'_offline_message' ) ) .'</span>';
+                            $output .= '<span class="tmw-whatsapp-elementor-info-offline-message is-interval">'. esc_html( Translator::translate_string( $attendants[ $attendant_id ]['interval_message'], 'atendant_'. array( $attendant_id ) .'_interval_message' ) ) .'</span>';
                             $output .= '<div class="tmw-whatsapp-elementor-title">';
                                 $output .= '<h5>'. esc_html( $title ) .'</h5>';
                                 $output .= $this->get_attendant_status_html( $settings, $attendants );

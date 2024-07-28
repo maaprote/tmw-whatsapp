@@ -8,10 +8,10 @@ $_SESSION['captcha'] = simple_php_captcha(array(
 												'max_length' => 6,
 												'min_font_size' => 22,
 												'max_font_size' => 22,
-												'angle_max' => 3
+												'angle_max' => 3,
 											));
 
 $_SESSION['captchaCode'] = $_SESSION['captcha']['code'];
 
 exit($_SESSION['captcha']['image_src']);
-?>
+

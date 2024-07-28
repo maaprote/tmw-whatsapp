@@ -89,7 +89,7 @@ class ChatWidget {
 			'post_type' => 'post',
 			'post_status' => 'publish',
 			'fields' => 'ids',
-			'posts_per_page' => -1
+			'posts_per_page' => -1,
 		) );
 		
 		foreach( $post_ids as $post_id ) {
@@ -130,7 +130,7 @@ class ChatWidget {
 				'post_type' => 'product',
 				'post_status' => 'publish',
 				'fields' => 'ids',
-				'posts_per_page' => -1
+				'posts_per_page' => -1,
 			) );
 			
 			foreach( $product_ids as $product_id ) {

@@ -177,7 +177,7 @@ class SMTP
      *
      * @var string[]
      */
-    protected $smtp_transaction_id_patterns = [
+    protected $smtp_transaction_id_patterns = array(
         'exim' => '/[\d]{3} OK id=(.*)/',
         'sendmail' => '/[\d]{3} 2.0.0 (.*) Message/',
         'postfix' => '/[\d]{3} 2.0.0 Ok: queued as (.*)/',
@@ -185,7 +185,7 @@ class SMTP
         'Amazon_SES' => '/[\d]{3} Ok (.*)/',
         'SendGrid' => '/[\d]{3} Ok: queued as (.*)/',
         'CampaignMonitor' => '/[\d]{3} 2.0.0 OK:([a-zA-Z\d]{48})/',
-    ];
+    );
 
     /**
      * The last transaction ID issued in response to a DATA command,
@@ -207,12 +207,12 @@ class SMTP
      *
      * @var array
      */
-    protected $error = [
+    protected $error = array(
         'error' => '',
         'detail' => '',
         'smtp_code' => '',
         'smtp_code_ex' => '',
-    ];
+    );
 
     /**
      * The reply the server sent to us for HELO.
@@ -262,7 +262,7 @@ class SMTP
             return;
         }
         //Avoid clash with built-in function names
-        if (is_callable($this->Debugoutput) && !in_array($this->Debugoutput, ['error_log', 'html', 'echo'])) {
+        if (is_callable($this->Debugoutput) && !in_array($this->Debugoutput, array( 'error_log', 'html', 'echo' ))) {
             call_user_func($this->Debugoutput, $str, $level);
 
             return;
@@ -309,7 +309,7 @@ class SMTP
      *
      * @return bool
      */
-    public function connect($host, $port = null, $timeout = 30, $options = [])
+    public function connect($host, $port = null, $timeout = 30, $options = array())
     {
         static $streamok;
         //This is enabled by default since 5.0.0 but some providers disable it
@@ -339,7 +339,7 @@ class SMTP
         $errstr = '';
         if ($streamok) {
             $socket_context = stream_context_create($options);
-            set_error_handler([$this, 'errorHandler']);
+            set_error_handler(array( $this, 'errorHandler' ));
             $this->smtp_conn = stream_socket_client(
                 $host . ':' . $port,
                 $errno,
@@ -355,7 +355,7 @@ class SMTP
                 'Connection: stream_socket_client not available, falling back to fsockopen',
                 self::DEBUG_CONNECTION
             );
-            set_error_handler([$this, 'errorHandler']);
+            set_error_handler(array( $this, 'errorHandler' ));
             $this->smtp_conn = fsockopen(
                 $host,
                 $port,
@@ -421,7 +421,7 @@ class SMTP
         }
 
         // Begin encrypted connection
-        set_error_handler([$this, 'errorHandler']);
+        set_error_handler(array( $this, 'errorHandler' ));
         $crypto_ok = stream_socket_enable_crypto(
             $this->smtp_conn,
             true,
@@ -482,7 +482,7 @@ class SMTP
             if (empty($authtype)) {
                 //If no auth mechanism is specified, attempt to use these, in this order
                 //Try CRAM-MD5 first as it's more secure than the others
-                foreach (['CRAM-MD5', 'LOGIN', 'PLAIN', 'XOAUTH2'] as $method) {
+                foreach (array( 'CRAM-MD5', 'LOGIN', 'PLAIN', 'XOAUTH2' ) as $method) {
                     if (in_array($method, $this->server_caps['AUTH'], true)) {
                         $authtype = $method;
                         break;
@@ -677,7 +677,7 @@ class SMTP
          */
 
         // Normalize line breaks before exploding
-        $lines = explode("\n", str_replace(["\r\n", "\r"], "\n", $msg_data));
+        $lines = explode("\n", str_replace(array( "\r\n", "\r" ), "\n", $msg_data));
 
         /* To distinguish between a complete RFC822 message and a plain message body, we check if the first field
          * of the first line (':' separated) does not contain a space then it _should_ be a header and we will
@@ -691,7 +691,7 @@ class SMTP
         }
 
         foreach ($lines as $line) {
-            $lines_out = [];
+            $lines_out = array();
             if ($in_headers && $line === '') {
                 $in_headers = false;
             }
@@ -791,7 +791,7 @@ class SMTP
      */
     protected function parseHelloFields($type)
     {
-        $this->server_caps = [];
+        $this->server_caps = array();
         $lines = explode("\n", $this->helo_rply);
 
         foreach ($lines as $n => $s) {
@@ -813,7 +813,7 @@ class SMTP
                             break;
                         case 'AUTH':
                             if (!is_array($fields)) {
-                                $fields = [];
+                                $fields = array();
                             }
                             break;
                         default:
@@ -887,12 +887,12 @@ class SMTP
             $rcpt = 'RCPT TO:<' . $address . '>';
         } else {
             $dsn = strtoupper($dsn);
-            $notify = [];
+            $notify = array();
 
             if (strpos($dsn, 'NEVER') !== false) {
                 $notify[] = 'NEVER';
             } else {
-                foreach (['SUCCESS', 'FAILURE', 'DELAY'] as $value) {
+                foreach (array( 'SUCCESS', 'FAILURE', 'DELAY' ) as $value) {
                     if (strpos($dsn, $value) !== false) {
                         $notify[] = $value;
                     }
@@ -905,7 +905,7 @@ class SMTP
         return $this->sendCommand(
             'RCPT TO',
             $rcpt,
-            [250, 251]
+            array( 250, 251 )
         );
     }
 
@@ -947,7 +947,7 @@ class SMTP
 
         $this->last_reply = $this->get_lines();
         // Fetch SMTP code and possible error code explanation
-        $matches = [];
+        $matches = array();
         if (preg_match('/^([\d]{3})[ -](?:([\d]\\.[\d]\\.[\d]{1,2}) )?/', $this->last_reply, $matches)) {
             $code = (int) $matches[1];
             $code_ex = (count($matches) > 2 ? $matches[2] : null);
@@ -1015,7 +1015,7 @@ class SMTP
      */
     public function verify($name)
     {
-        return $this->sendCommand('VRFY', "VRFY $name", [250, 251]);
+        return $this->sendCommand('VRFY', "VRFY $name", array( 250, 251 ));
     }
 
     /**
@@ -1059,12 +1059,12 @@ class SMTP
         //If SMTP transcripts are left enabled, or debug output is posted online
         //it can leak credentials, so hide credentials in all but lowest level
         if (self::DEBUG_LOWLEVEL > $this->do_debug &&
-            in_array($command, ['User & Password', 'Username', 'Password'], true)) {
+            in_array($command, array( 'User & Password', 'Username', 'Password' ), true)) {
             $this->edebug('CLIENT -> SERVER: [credentials hidden]', self::DEBUG_CLIENT);
         } else {
             $this->edebug('CLIENT -> SERVER: ' . $data, self::DEBUG_CLIENT);
         }
-        set_error_handler([$this, 'errorHandler']);
+        set_error_handler(array( $this, 'errorHandler' ));
         $result = fwrite($this->smtp_conn, $data);
         restore_error_handler();
 
@@ -1162,7 +1162,7 @@ class SMTP
         if ($this->Timelimit > 0) {
             $endtime = time() + $this->Timelimit;
         }
-        $selR = [$this->smtp_conn];
+        $selR = array( $this->smtp_conn );
         $selW = null;
         while (is_resource($this->smtp_conn) && !feof($this->smtp_conn)) {
             //Must pass vars in here as params are by reference
@@ -1236,12 +1236,12 @@ class SMTP
      */
     protected function setError($message, $detail = '', $smtp_code = '', $smtp_code_ex = '')
     {
-        $this->error = [
+        $this->error = array(
             'error' => $message,
             'detail' => $detail,
             'smtp_code' => $smtp_code,
             'smtp_code_ex' => $smtp_code_ex,
-        ];
+        );
     }
 
     /**
@@ -1344,7 +1344,7 @@ class SMTP
         } else {
             $this->last_smtp_transaction_id = false;
             foreach ($this->smtp_transaction_id_patterns as $smtp_transaction_id_pattern) {
-                $matches = [];
+                $matches = array();
                 if (preg_match($smtp_transaction_id_pattern, $reply, $matches)) {
                     $this->last_smtp_transaction_id = trim($matches[1]);
                     break;

@@ -54,7 +54,7 @@ class SingleProductButton {
 	public function get_attendant_status_html( $settings ) {
 		$output = '';
 
-		$classes = array('tmw-whatsapp-elementor-title-status');
+		$classes = array( 'tmw-whatsapp-elementor-title-status' );
 		$attributes = array();
 
 		// Check Status
@@ -88,15 +88,15 @@ class SingleProductButton {
         $settings = Functions::get_settings();
 
 		// Post Metabox Data
-		$show_button    		      = get_post_meta( $post->ID, 'tmw_show_woocommerce_button', true );
-		$attendant_id    		      = get_post_meta( $post->ID, 'tmw_whatsapp_woocommerce_button_attendant_id', true );
-		$button_layout    		      = get_post_meta( $post->ID, 'tmw_whatsapp_woocommerce_button_layout', true );
+		$show_button                  = get_post_meta( $post->ID, 'tmw_show_woocommerce_button', true );
+		$attendant_id                 = get_post_meta( $post->ID, 'tmw_whatsapp_woocommerce_button_attendant_id', true );
+		$button_layout                = get_post_meta( $post->ID, 'tmw_whatsapp_woocommerce_button_layout', true );
 		$attendant_photo_or_icon      = get_post_meta( $post->ID, 'tmw_whatsapp_woocommerce_button_attendant_photo_or_icon', true );
-		$attendant_title    		  = get_post_meta( $post->ID, 'tmw_whatsapp_woocommerce_button_attendant_title', true );
+		$attendant_title              = get_post_meta( $post->ID, 'tmw_whatsapp_woocommerce_button_attendant_title', true );
 		$attendant_description        = get_post_meta( $post->ID, 'tmw_whatsapp_woocommerce_button_attendant_description', true );
-		$button_position 			  = get_post_meta( $post->ID, 'tmw_whatsapp_woocommerce_button_position', true );
+		$button_position              = get_post_meta( $post->ID, 'tmw_whatsapp_woocommerce_button_position', true );
 		$button_position_shop_archive = get_post_meta( $post->ID, 'tmw_whatsapp_woocommerce_button_position_shop_archive', true );
-		$show_woo_button			  = get_post_meta( $post->ID, 'tmw_show_woocommerce_button', true );
+		$show_woo_button              = get_post_meta( $post->ID, 'tmw_show_woocommerce_button', true );
 		
 		if( !$show_button ) {
 			return '';
@@ -114,14 +114,14 @@ class SingleProductButton {
 		// Shop Archive
 		if( is_shop() || taxonomy_exists( 'product_cat' ) ) {
 			switch ( $button_position_shop_archive ) {
-				case 'woocommerce_before_shop_loop_item_title' :
-				case 'woocommerce_after_shop_loop_item' :
+				case 'woocommerce_before_shop_loop_item_title':
+				case 'woocommerce_after_shop_loop_item':
 					$display_class = ' tmw-mt-20px';
 					break;
-				case 'woocommerce_shop_loop_item_title' :
+				case 'woocommerce_shop_loop_item_title':
 					$display_class = ' tmw-my-7px';
 					break;
-				case 'woocommerce_after_shop_loop_item_title' :
+				case 'woocommerce_after_shop_loop_item_title':
 					$display_class = ' tmw-mb-20px';
 					break;
 			}
@@ -130,23 +130,23 @@ class SingleProductButton {
 		// Product Single
 		if( is_singular( 'product' ) ) {
 			switch ( $button_position ) {
-				case 'woocommerce_before_add_to_cart_button' :
-				case 'woocommerce_before_add_to_cart_form' :
+				case 'woocommerce_before_add_to_cart_button':
+				case 'woocommerce_before_add_to_cart_form':
 					$display_class = ' tmw-mb-20px';
 					break;
-				case 'woocommerce_after_add_to_cart_button' :
-				case 'woocommerce_after_add_to_cart_form' :
+				case 'woocommerce_after_add_to_cart_button':
+				case 'woocommerce_after_add_to_cart_form':
 					$display_class = ' tmw-mt-20px';
 					break;
-				case 'woocommerce_before_add_to_cart_quantity' :
+				case 'woocommerce_before_add_to_cart_quantity':
 					$display_class = ' tmw-float-left tmw-d-inline-flex tmw-mr-5px';
 					break;
-				case 'woocommerce_after_add_to_cart_quantity' :
+				case 'woocommerce_after_add_to_cart_quantity':
 					$display_class = ' tmw-float-left tmw-d-inline-flex tmw-mx-5px';
 					break;
-				case 'woocommerce_before_add_to_cart_form' :
+				case 'woocommerce_before_add_to_cart_form':
 					$display_class = ' tmw-mb-20px';
-					break;			
+					break;          
 			}
 		}
 		
@@ -183,10 +183,10 @@ class SingleProductButton {
 			'attendant-description-hover-color' => '#FFF',
 			'status-background-color' => '#61c386',
 			'status-background-hover-color' => '#61c386',
-			'status-text-hover-color' => '#FFF'
+			'status-text-hover-color' => '#FFF',
 		);
 
-		$wrapper_classes = array('tmw-whatsapp-elementor-wrapper');
+		$wrapper_classes = array( 'tmw-whatsapp-elementor-wrapper' );
 		$wrapper_atts = array(); 
 
 		// Layout Style
@@ -220,7 +220,7 @@ class SingleProductButton {
 
 		$output = '';
 
-		$output .= '<a href="#" class="tmw-whatsapp-button" data-phone-number="'. esc_attr( Translator::translate_string( $attendant['phone'], 'attendant_'. $attendant_id .'_phone' ) ) .'"'. ( empty($attendant['phone']) ? ' disabled' : '' ) .' data-start-message="'. sprintf( esc_attr__( Translator::translate_string( __( 'Hello! I have some questions about the product: %s (%s)', 'tmw-whatsapp' ), 'woo_button_product_start_message' ) ), $post->post_title, get_the_permalink( $post->ID ) ) .'" data-availability="'. esc_attr( $attendantAvailability ) .'" data-default-timezone="'. esc_attr( $attendant['default_timezone'] ) .'">';
+		$output .= '<a href="#" class="tmw-whatsapp-button" data-phone-number="'. esc_attr( Translator::translate_string( $attendant['phone'], 'attendant_'. $attendant_id .'_phone' ) ) .'"'. ( empty($attendant['phone']) ? ' disabled' : '' ) .' data-start-message="'. sprintf( esc_attr__( Translator::translate_string( __( 'Hello! I have some questions about the product: %1$s (%2$s)', 'tmw-whatsapp' ), 'woo_button_product_start_message' ) ), $post->post_title, get_the_permalink( $post->ID ) ) .'" data-availability="'. esc_attr( $attendantAvailability ) .'" data-default-timezone="'. esc_attr( $attendant['default_timezone'] ) .'">';
 			$output .= '<div '. implode( ' ', $wrapper_atts ) .'>';
 				$output .= '<div class="tmw-whatsapp-elementor-body">';
 					$output .= '<div class="tmw-whatsapp-elementor-icon">';
@@ -230,7 +230,7 @@ class SingleProductButton {
 							$image = array(
 								'image' => $attendants[ $attendant_id ]['image']['attendant-image'] ? wp_get_attachment_url( $attendants[ $attendant_id ]['image']['attendant-image'] ) : TM_MASTER_WHATS_CHAT_URL . '/img/user-placeholder.png',
 								'width' => 150,
-								'height' => 150
+								'height' => 150,
 							);
 
 							$output .= '<img src="'. esc_url( $image['image'] ) .'" width="'. esc_attr( $image['width'] ) .'" height="'. esc_attr( $image['height'] ) .'" alt="" />';

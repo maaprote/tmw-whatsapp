@@ -1,8 +1,8 @@
 <?php
 /*
-Name: 			Contact Form
-Written by: 	Okler Themes - (http://www.okler.net)
-Theme Version:	8.3.0
+Name:           Contact Form
+Written by:     Okler Themes - (http://www.okler.net)
+Theme Version:  8.3.0
 */
 
 namespace PortoContactForm;
@@ -25,7 +25,7 @@ foreach($_POST as $label => $value) {
 	// Use the commented code below to change label texts. On this example will change "Email" to "Email Address"
 
 	// if( $label == 'Email' ) {               
-	// 	$label = 'Email Address';              
+	//  $label = 'Email Address';              
 	// }
 
 	// Checkboxes
@@ -57,7 +57,7 @@ foreach($_POST as $label => $value) {
 	// Use the commented code below to change label texts. On this example will change "Email" to "Email Address"
 
 	// if( $label == 'Email' ) {               
-	// 	$label = 'Email Address';              
+	//  $label = 'Email Address';              
 	// }
 
 	// Checkboxes
@@ -78,14 +78,14 @@ try {
 	// Step 2 (Optional) - If you don't receive the email, try to configure the parameters below:
 
 	//$mail->IsSMTP();                                         // Set mailer to use SMTP
-	//$mail->Host = 'mail.yourserver.com';				       // Specify main and backup server
+	//$mail->Host = 'mail.yourserver.com';                     // Specify main and backup server
 	//$mail->SMTPAuth = true;                                  // Enable SMTP authentication
 	//$mail->Username = 'user@example.com';                    // SMTP username
 	//$mail->Password = 'secret';                              // SMTP password
 	//$mail->SMTPSecure = 'tls';                               // Enable encryption, 'ssl' also accepted
-	//$mail->Port = 587;   								       // TCP port to connect to
+	//$mail->Port = 587;                                       // TCP port to connect to
 
-	$mail->AddAddress($email);	 						       // Add another recipient
+	$mail->AddAddress($email);                                 // Add another recipient
 
 	//$mail->AddAddress('person2@domain.com', 'Person 2');     // Add a secondary recipient
 	//$mail->AddCC('person3@domain.com', 'Person 3');          // Add a "Cc" address. 
@@ -108,12 +108,12 @@ try {
 	$mail->Body    = $message;
 
 	$mail->Send();
-	$arrResult = array ('response'=>'success');
+	$arrResult = array( 'response'=>'success' );
 
 } catch (Exception $e) {
-	$arrResult = array ('response'=>'error','errorMessage'=>$e->errorMessage());
+	$arrResult = array( 'response'=>'error', 'errorMessage'=>$e->errorMessage() );
 } catch (\Exception $e) {
-	$arrResult = array ('response'=>'error','errorMessage'=>$e->getMessage());
+	$arrResult = array( 'response'=>'error', 'errorMessage'=>$e->getMessage() );
 }
 
 if ($debug == 0) {

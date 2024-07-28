@@ -61,7 +61,7 @@ class AjaxHandlers {
 
         $send_json = array(
             'success' => true,
-            'app_html' => $app_html
+            'app_html' => $app_html,
         );
 
         if( isset($data['debug']) && $data['debug'] == 'on' ) {

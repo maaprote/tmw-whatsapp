@@ -21,14 +21,14 @@ class Button extends \Elementor\Widget_Base {
      * Constructor.
      * 
      */
-    public function __construct($data = [], $args = null) {
+    public function __construct($data = array(), $args = null) {
 		parent::__construct($data, $args);
 
-	    wp_register_script( 'tmw-whatsapp-widgets-js', TM_MASTER_WHATS_CHAT_URL . '/js/tmw-whatsapp-widgets.js', [ 'elementor-frontend', 'elementor-backend', 'elementor-editor' ], '1.0.0', true );
+	    wp_register_script( 'tmw-whatsapp-widgets-js', TM_MASTER_WHATS_CHAT_URL . '/js/tmw-whatsapp-widgets.js', array( 'elementor-frontend', 'elementor-backend', 'elementor-editor' ), '1.0.0', true );
 	}
 
     public function get_script_depends() {
-	    return [ 'tmw-whatsapp-widgets-js' ];
+	    return array( 'tmw-whatsapp-widgets-js' );
 	}
 
 	/**
@@ -84,7 +84,7 @@ class Button extends \Elementor\Widget_Base {
 	 * @return array Widget categories.
 	 */
 	public function get_categories() {
-		return [ 'general' ];
+		return array( 'general' );
 	}
 
 	/**
@@ -121,277 +121,276 @@ class Button extends \Elementor\Widget_Base {
 
 		$this->start_controls_section(
 			'general_section',
-			[
+			array(
 				'label' => esc_html__( 'General', 'tmw-whatsapp' ),
 				'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
-			]
+			)
 		);
 
 		$this->add_control(
 			'attendant',
-			[
+			array(
 				'label' => esc_html__( 'Select Attendant', 'tmw-whatsapp' ),
 				'type' => \Elementor\Controls_Manager::SELECT,
 				'default' => 0,
 				'options' => $this->get_attendants_list(),
-			]
+			)
 		);
 
 		$this->add_control(
 			'layout-style',
-			[
+			array(
 				'label' => esc_html__( 'Layout Style', 'tmw-whatsapp' ),
 				'type' => \Elementor\Controls_Manager::SELECT,
 				'default' => 'tmw-whatsapp-elementor-wrapper-style-1',
-				'options' => [
+				'options' => array(
 					'tmw-whatsapp-elementor-wrapper-style-1'  => esc_html__( 'Style 1', 'tmw-whatsapp' ),
 					'tmw-whatsapp-elementor-wrapper-style-1 tmw-whatsapp-elementor-wrapper-style-1-rounded' => esc_html__( 'Style 2', 'tmw-whatsapp' ),
-				],
-			]
+				),
+			)
 		);
 
 		$this->add_control(
 			'title',
-			[
+			array(
 				'label' => esc_html__( 'Title', 'tmw-whatsapp' ),
 				'type' => \Elementor\Controls_Manager::TEXT,
 				'input_type' => 'text',
 				'placeholder' => esc_html__( 'Type title here...', 'tmw-whatsapp' ),
-			]
+			)
 		);
 
 		$this->add_control(
 			'description',
-			[
+			array(
 				'label' => esc_html__( 'Description', 'tmw-whatsapp' ),
 				'type' => \Elementor\Controls_Manager::TEXT,
 				'input_type' => 'text',
 				'placeholder' => esc_html__( 'Description here...', 'tmw-whatsapp' ),
-			]
+			)
 		);
 
 		$this->add_control(
 			'photo_or_icon',
-			[
+			array(
 				'label' => esc_html__( 'Attendant Image', 'tmw-whatsapp' ),
 				'type' => \Elementor\Controls_Manager::SELECT,
 				'description' => esc_html__( 'Default size for "Attendant Image" is 50x50', 'tmw-whatsapp' ),
 				'default' => 'icon',
-				'options' => [
+				'options' => array(
 					'icon'  => esc_html__( 'Whatsapp Icon', 'tmw-whatsapp' ),
-					'image' => esc_html__( 'Attendant Image', 'tmw-whatsapp' )
-				],
-			]
+					'image' => esc_html__( 'Attendant Image', 'tmw-whatsapp' ),
+				),
+			)
 		);
 
 		$this->add_control(
 			'alignment',
-			[
+			array(
 				'label' => esc_html__( 'Alignment', 'tmw-whatsapp' ),
 				'type' => \Elementor\Controls_Manager::CHOOSE,
-				'options' => [
-					'full-width' => [
+				'options' => array(
+					'full-width' => array(
 						'title' => esc_html__( 'Full Width', 'tmw-whatsapp' ),
 						'icon' => 'fa fa-align-justify',
-					],
-					'center' => [
+					),
+					'center' => array(
 						'title' => esc_html__( 'Center', 'tmw-whatsapp' ),
 						'icon' => 'fa fa-align-center',
-					],
-					'left' => [
+					),
+					'left' => array(
 						'title' => esc_html__( 'Left', 'tmw-whatsapp' ),
 						'icon' => 'fa fa-align-left',
-					],
-					'right' => [
+					),
+					'right' => array(
 						'title' => esc_html__( 'Right', 'tmw-whatsapp' ),
 						'icon' => 'fa fa-align-right',
-					],
-				],
+					),
+				),
 				'default' => 'left',
-				'toggle' => true
-			]
+				'toggle' => true,
+			)
 		);
 
 		$this->end_controls_section();
 
 		$this->start_controls_section(
 			'skin_section',
-			[
+			array(
 				'label' => esc_html__( 'Skin', 'tmw-whatsapp' ),
 				'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
-			]
+			)
 		);
 
 		$this->add_control(
 			'background-color',
-			[
+			array(
 				'label' => esc_html__( 'Background Color', 'tmw-whatsapp' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'default' => '#20ab54',
-				'selectors' => [
-					'{{WRAPPER}} .tmw-whatsapp-elementor-wrapper.tmw-whatsapp-elementor-wrapper-style-1 .tmw-whatsapp-elementor-body' => 'background: {{VALUE}}'
-				],
-			]
+				'selectors' => array(
+					'{{WRAPPER}} .tmw-whatsapp-elementor-wrapper.tmw-whatsapp-elementor-wrapper-style-1 .tmw-whatsapp-elementor-body' => 'background: {{VALUE}}',
+				),
+			)
 		);
 
 		$this->add_control(
 			'background-hover-color',
-			[
+			array(
 				'label' => esc_html__( 'Background Hover Color', 'tmw-whatsapp' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'default' => '#38bd6a',
-				'selectors' => [
+				'selectors' => array(
 					'{{WRAPPER}} .tmw-whatsapp-elementor-wrapper:hover .tmw-whatsapp-elementor-body' => 'background: {{VALUE}}',
-				],
-			]
+				),
+			)
 		);
 
 		$this->add_control(
 			'icon-color',
-			[
+			array(
 				'label' => esc_html__( 'Icon Color', 'tmw-whatsapp' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'default' => '#FFF',
-				'selectors' => [
+				'selectors' => array(
 					'{{WRAPPER}} .tmw-whatsapp-elementor-wrapper .tmw-whatsapp-elementor-body .tmw-whatsapp-elementor-icon' => 'color: {{VALUE}}',
-				],
-			]
+				),
+			)
 		);
 
 		$this->add_control(
 			'icon-hover-color',
-			[
+			array(
 				'label' => esc_html__( 'Icon Hover Color', 'tmw-whatsapp' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'default' => '#FFF',
-				'selectors' => [
+				'selectors' => array(
 					'{{WRAPPER}} .tmw-whatsapp-elementor-wrapper:hover .tmw-whatsapp-elementor-body .tmw-whatsapp-elementor-icon' => 'color: {{VALUE}}',
-				],
-			]
+				),
+			)
 		);
 
 		$this->add_control(
 			'title-color',
-			[
+			array(
 				'label' => esc_html__( 'Attendant Name Color', 'tmw-whatsapp' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'default' => '#FFF',
-				'selectors' => [
+				'selectors' => array(
 					'{{WRAPPER}} .tmw-whatsapp-elementor-wrapper .tmw-whatsapp-elementor-body .tmw-whatsapp-elementor-info .tmw-whatsapp-elementor-title h5' => 'color: {{VALUE}}',
-				],
-			]
+				),
+			)
 		);
 
 		$this->add_control(
 			'title-hover-color',
-			[
+			array(
 				'label' => esc_html__( 'Attendant Name Hover Color', 'tmw-whatsapp' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'default' => '#FFF',
-				'selectors' => [
+				'selectors' => array(
 					'{{WRAPPER}} .tmw-whatsapp-elementor-wrapper:hover .tmw-whatsapp-elementor-body .tmw-whatsapp-elementor-info .tmw-whatsapp-elementor-title h5' => 'color: {{VALUE}}',
-				],
-			]
+				),
+			)
 		);
 
 		$this->add_control(
 			'description-color',
-			[
+			array(
 				'label' => esc_html__( 'Description Color', 'tmw-whatsapp' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'default' => '#FFF',
-				'selectors' => [
+				'selectors' => array(
 					'{{WRAPPER}} .tmw-whatsapp-elementor-wrapper .tmw-whatsapp-elementor-body .tmw-whatsapp-elementor-info .tmw-whatsapp-elementor-description p' => 'color: {{VALUE}}',
-				],
-			]
+				),
+			)
 		);
 
 		$this->add_control(
 			'description-hover-color',
-			[
+			array(
 				'label' => esc_html__( 'Description Hover Color', 'tmw-whatsapp' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'default' => '#FFF',
-				'selectors' => [
+				'selectors' => array(
 					'{{WRAPPER}} .tmw-whatsapp-elementor-wrapper:hover .tmw-whatsapp-elementor-body .tmw-whatsapp-elementor-info .tmw-whatsapp-elementor-description p' => 'color: {{VALUE}}',
-				],
-			]
+				),
+			)
 		);
 
 		$this->add_control(
 			'status-background-color',
-			[
+			array(
 				'label' => esc_html__( 'Status Background Color', 'tmw-whatsapp' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'default' => '#61c386',
-				'selectors' => [
+				'selectors' => array(
 					'{{WRAPPER}} .tmw-whatsapp-elementor-wrapper .tmw-whatsapp-elementor-body .tmw-whatsapp-elementor-info .tmw-whatsapp-elementor-title .tmw-whatsapp-elementor-title-status' => 'background-color: {{VALUE}}',
-				],
-			]
+				),
+			)
 		);
 
 		$this->add_control(
 			'status-text-color',
-			[
+			array(
 				'label' => esc_html__( 'Status Text Color', 'tmw-whatsapp' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'default' => '#FFF',
-				'selectors' => [
+				'selectors' => array(
 					'{{WRAPPER}} .tmw-whatsapp-elementor-wrapper .tmw-whatsapp-elementor-body .tmw-whatsapp-elementor-info .tmw-whatsapp-elementor-title .tmw-whatsapp-elementor-title-status' => 'color: {{VALUE}}',
-				],
-			]
+				),
+			)
 		);
 
 		$this->add_control(
 			'badge-offline-message-background',
-			[
+			array(
 				'label' => esc_html__( 'Interval Badge Background', 'tmw-whatsapp' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'default' => '#ebebeb',
-				'selectors' => [
+				'selectors' => array(
 					'{{WRAPPER}} .tmw-whatsapp-elementor-wrapper.tmw-whatsapp-elementor-wrapper-style-1 .tmw-whatsapp-elementor-body .tmw-whatsapp-elementor-info .tmw-whatsapp-elementor-info-offline-message' => 'background-color: {{VALUE}}',
-				],
-			]
+				),
+			)
 		);
 
 		$this->add_control(
 			'badge-offline-message-text',
-			[
+			array(
 				'label' => esc_html__( 'Offline Message Badge Text', 'tmw-whatsapp' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'default' => '#000',
-				'selectors' => [
+				'selectors' => array(
 					'{{WRAPPER}} .tmw-whatsapp-elementor-wrapper.tmw-whatsapp-elementor-wrapper-style-1 .tmw-whatsapp-elementor-body .tmw-whatsapp-elementor-info .tmw-whatsapp-elementor-info-offline-message' => 'color: {{VALUE}}',
-				],
-			]
+				),
+			)
 		);
 
 		$this->add_control(
 			'badge-interval-background',
-			[
+			array(
 				'label' => esc_html__( 'Interval Badge Background', 'tmw-whatsapp' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'default' => '#e2c80c',
-				'selectors' => [
+				'selectors' => array(
 					'{{WRAPPER}} .tmw-whatsapp-elementor-wrapper.tmw-whatsapp-elementor-wrapper-style-1 .tmw-whatsapp-elementor-body .tmw-whatsapp-elementor-info .tmw-whatsapp-elementor-info-offline-message.is-interval' => 'background-color: {{VALUE}}',
-				],
-			]
+				),
+			)
 		);
 
 		$this->add_control(
 			'badge-interval-text',
-			[
+			array(
 				'label' => esc_html__( 'Interval Badge Text', 'tmw-whatsapp' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'default' => '#000',
-				'selectors' => [
+				'selectors' => array(
 					'{{WRAPPER}} .tmw-whatsapp-elementor-wrapper.tmw-whatsapp-elementor-wrapper-style-1 .tmw-whatsapp-elementor-body .tmw-whatsapp-elementor-info .tmw-whatsapp-elementor-info-offline-message.is-interval' => 'color: {{VALUE}}',
-				],
-			]
+				),
+			)
 		);
 
 		$this->end_controls_section();
-
 	}
 
 	/**
@@ -402,7 +401,7 @@ class Button extends \Elementor\Widget_Base {
 		$output = '';
 
 		$html_tag = 'span';
-		$classes = array('tmw-whatsapp-elementor-title-status');
+		$classes = array( 'tmw-whatsapp-elementor-title-status' );
 		$attributes = array();
 
 		$status_text = esc_html__( 'Online', 'tmw-whatsapp' );
@@ -447,7 +446,7 @@ class Button extends \Elementor\Widget_Base {
 		// Attendant Description
 		$description = !empty( $settings['description'] ) ? $settings['description'] : $attendants[ $attendant_id ]['description'];
 
-		$wrapper_classes = array('tmw-whatsapp-elementor-wrapper');
+		$wrapper_classes = array( 'tmw-whatsapp-elementor-wrapper' );
 		$wrapper_atts = array(); 
 
 		// Layout Style
@@ -478,7 +477,7 @@ class Button extends \Elementor\Widget_Base {
 
 		$output = '';
 
-		$output .= '<a href="#" class="tmw-whatsapp-button tmw-fadeIn tmw-d-block" data-phone-number="'. esc_attr( Translator::translate_string( $attendants[ $attendant_id ]['phone'], 'atendant_'. [ $attendant_id ] .'_phone' ) ) .'" data-availability="'. esc_attr( $attendantAvailability ) .'" data-default-timezone="'. esc_attr( $attendants[ $attendant_id ]['default_timezone'] ) .'"'. ( empty($attendants[ $attendant_id ]['phone'] ) ? ' disabled' : '' ) .'>';
+		$output .= '<a href="#" class="tmw-whatsapp-button tmw-fadeIn tmw-d-block" data-phone-number="'. esc_attr( Translator::translate_string( $attendants[ $attendant_id ]['phone'], 'atendant_'. array( $attendant_id ) .'_phone' ) ) .'" data-availability="'. esc_attr( $attendantAvailability ) .'" data-default-timezone="'. esc_attr( $attendants[ $attendant_id ]['default_timezone'] ) .'"'. ( empty($attendants[ $attendant_id ]['phone'] ) ? ' disabled' : '' ) .'>';
 			$output .= '<div '. implode( ' ', $wrapper_atts ) .'>';
 				$output .= '<div class="tmw-whatsapp-elementor-body">';
 					$output .= '<div class="tmw-whatsapp-elementor-icon">';
@@ -488,15 +487,15 @@ class Button extends \Elementor\Widget_Base {
 						$image = array(
 							'image' => $attendants[ $attendant_id ]['image']['attendant-image'] ? wp_get_attachment_url( $attendants[ $attendant_id ]['image']['attendant-image'] ) : TM_MASTER_WHATS_CHAT_URL . '/img/user-placeholder.png',
 							'width' => 150,
-							'height' => 150
+							'height' => 150,
 						);
 
 						$output .= '<img src="'. esc_url( $image['image'] ) .'" width="'. esc_attr( $image['width'] ) .'" height="'. esc_attr( $image['height'] ) .'" alt="" />';
 					}
 					$output .= '</div>';
 					$output .= '<div class="tmw-whatsapp-elementor-info">';
-						$output .= '<span class="tmw-whatsapp-elementor-info-offline-message">'. esc_html( Translator::translate_string( $attendants[ $attendant_id ]['offline_message'], 'atendant_'. [ $attendant_id ] .'_offline_message' ) ) .'</span>';
-						$output .= '<span class="tmw-whatsapp-elementor-info-offline-message is-interval">'. esc_html( Translator::translate_string( $attendants[ $attendant_id ]['interval_message'], 'atendant_'. [ $attendant_id ] .'_interval_message' ) ) .'</span>';
+						$output .= '<span class="tmw-whatsapp-elementor-info-offline-message">'. esc_html( Translator::translate_string( $attendants[ $attendant_id ]['offline_message'], 'atendant_'. array( $attendant_id ) .'_offline_message' ) ) .'</span>';
+						$output .= '<span class="tmw-whatsapp-elementor-info-offline-message is-interval">'. esc_html( Translator::translate_string( $attendants[ $attendant_id ]['interval_message'], 'atendant_'. array( $attendant_id ) .'_interval_message' ) ) .'</span>';
 						$output .= '<div class="tmw-whatsapp-elementor-title">';
 							$output .= '<h5>'. esc_html( $title ) .'</h5>';
 							$output .= $this->get_attendant_status_html( $settings, $attendants );

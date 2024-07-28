@@ -1,8 +1,8 @@
 <?php
 /*
-Name: 			Contact Form - Google Recaptcha v3
-Written by: 	Okler Themes - (http://www.okler.net)
-Theme Version:	8.3.0
+Name:           Contact Form - Google Recaptcha v3
+Written by:     Okler Themes - (http://www.okler.net)
+Theme Version:  8.3.0
 */
 
 namespace PortoContactForm;
@@ -35,7 +35,7 @@ if(isset($_POST['g-recaptcha-response']) && !empty($_POST['g-recaptcha-response'
 		$fields = array(
 	        'secret'    =>  $secret,
 	        'response'  =>  $_POST['g-recaptcha-response'],
-	        'remoteip'  =>  $_SERVER['REMOTE_ADDR']
+	        'remoteip'  =>  $_SERVER['REMOTE_ADDR'],
 	    );
 
 	    $verifyResponse = curl_init("https://www.google.com/recaptcha/api/siteverify");
@@ -45,7 +45,7 @@ if(isset($_POST['g-recaptcha-response']) && !empty($_POST['g-recaptcha-response'
 	    $responseData = json_decode(curl_exec($verifyResponse));
 	    curl_close($verifyResponse);
 	} else {
-		$arrResult = array ('response'=>'error','errorMessage'=>'You need CURL or file_get_contents() activated in your server. Please contact your host to activate.');
+		$arrResult = array( 'response'=>'error', 'errorMessage'=>'You need CURL or file_get_contents() activated in your server. Please contact your host to activate.' );
 		echo json_encode($arrResult);
 		die();
 	}
@@ -70,7 +70,7 @@ if(isset($_POST['g-recaptcha-response']) && !empty($_POST['g-recaptcha-response'
 				// Use the commented code below to change label texts. On this example will change "Email" to "Email Address"
 
 				// if( $label == 'Email' ) {               
-				// 	$label = 'Email Address';              
+				//  $label = 'Email Address';              
 				// }
 
 				// Checkboxes
@@ -92,14 +92,14 @@ if(isset($_POST['g-recaptcha-response']) && !empty($_POST['g-recaptcha-response'
 			// Step 2 (Optional) - If you don't receive the email, try to configure the parameters below:
 
 			//$mail->IsSMTP();                                         // Set mailer to use SMTP
-			//$mail->Host = 'mail.yourserver.com';				       // Specify main and backup server
+			//$mail->Host = 'mail.yourserver.com';                     // Specify main and backup server
 			//$mail->SMTPAuth = true;                                  // Enable SMTP authentication
 			//$mail->Username = 'user@example.com';                    // SMTP username
 			//$mail->Password = 'secret';                              // SMTP password
 			//$mail->SMTPSecure = 'tls';                               // Enable encryption, 'ssl' also accepted
-			//$mail->Port = 587;   								       // TCP port to connect to
+			//$mail->Port = 587;                                       // TCP port to connect to
 
-			$mail->AddAddress($email);	 						       // Add another recipient
+			$mail->AddAddress($email);                                 // Add another recipient
 
 			//$mail->AddAddress('person2@domain.com', 'Person 2');     // Add a secondary recipient
 			//$mail->AddCC('person3@domain.com', 'Person 3');          // Add a "Cc" address. 
@@ -122,12 +122,12 @@ if(isset($_POST['g-recaptcha-response']) && !empty($_POST['g-recaptcha-response'
 			$mail->Body    = $message;
 
 			$mail->Send();
-			$arrResult = array ('response'=>'success');
+			$arrResult = array( 'response'=>'success' );
 
 		} catch (Exception $e) {
-			$arrResult = array ('response'=>'error','errorMessage'=>$e->errorMessage());
+			$arrResult = array( 'response'=>'error', 'errorMessage'=>$e->errorMessage() );
 		} catch (\Exception $e) {
-			$arrResult = array ('response'=>'error','errorMessage'=>$e->getMessage());
+			$arrResult = array( 'response'=>'error', 'errorMessage'=>$e->getMessage() );
 		}
 
 		if ($debug == 0) {
@@ -135,11 +135,11 @@ if(isset($_POST['g-recaptcha-response']) && !empty($_POST['g-recaptcha-response'
 		}
 
 	} else {
-		$arrResult = array ('response'=>'error','errorMessage'=>'reCaptcha Error: Verifcation failed (no success). Please contact the website administrator.');
+		$arrResult = array( 'response'=>'error', 'errorMessage'=>'reCaptcha Error: Verifcation failed (no success). Please contact the website administrator.' );
 		echo json_encode($arrResult);
 	}
 
 } else { 
-	$arrResult = array ('response'=>'error','errorMessage'=>'reCaptcha Error: Invalid token. Please contact the website administrator.');
+	$arrResult = array( 'response'=>'error', 'errorMessage'=>'reCaptcha Error: Invalid token. Please contact the website administrator.' );
 	echo json_encode($arrResult);
 }

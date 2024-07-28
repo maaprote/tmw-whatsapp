@@ -66,19 +66,19 @@ class Functions {
                         'sunday' => esc_html__( 'sunday', 'tmw-whatsapp' ),
                     ),
                     'attendant_remove_attendant' => esc_html__( 'Remove Attendant', 'tmw-whatsapp' ),
-                    'attendant_enable_all_days' => esc_html__( 'Enable all days', 'tmw-whatsapp' )
+                    'attendant_enable_all_days' => esc_html__( 'Enable all days', 'tmw-whatsapp' ),
                 ),
                 'weekday_popup_status' => array(
                     'online' => esc_html__( 'Online all the time in this day', 'tmw-whatsapp' ),
                     'offline' => esc_html__( 'Offline all the time in this day', 'tmw-whatsapp' ),
-                    'hours' => esc_html__( 'Online in the available hours below', 'tmw-whatsapp' )
+                    'hours' => esc_html__( 'Online in the available hours below', 'tmw-whatsapp' ),
                 ),
                 'reset_settings_alert' => esc_html__( 'Do you make sure want to reset ALL settings to default ? This way you will lost all your current defined settings.', 'tmw-whatsapp' ),
                 'media_upload' => array(
                     'title' => esc_html__( 'Select a image to upload', 'tmw-whatsapp' ),
-                    'button_text' => esc_html__( 'Use this image', 'tmw-whatsapp' )
-                )
-            )
+                    'button_text' => esc_html__( 'Use this image', 'tmw-whatsapp' ),
+                ),
+            ),
         );
     }
 

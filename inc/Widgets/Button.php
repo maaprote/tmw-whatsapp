@@ -40,7 +40,7 @@ class Button extends \WP_Widget {
 		$output = '';
 
 		$html_tag = 'span';
-		$classes = array('tmw-whatsapp-title-status');
+		$classes = array( 'tmw-whatsapp-title-status' );
 		$attributes = array();
 
 		$status_text = esc_html__( 'Online', 'tmw-whatsapp' );
@@ -92,7 +92,7 @@ class Button extends \WP_Widget {
         }
 
 		// Register widgets script
-		wp_register_script( 'tmw-whatsapp-widgets', TM_MASTER_WHATS_CHAT_URL . '/js/tmw-whatsapp-widgets.js', array('jquery'), false, true );
+		wp_register_script( 'tmw-whatsapp-widgets', TM_MASTER_WHATS_CHAT_URL . '/js/tmw-whatsapp-widgets.js', array( 'jquery' ), false, true );
 		wp_enqueue_script( 'tmw-whatsapp-widgets' );
 
 		// Attendant Title
@@ -171,7 +171,7 @@ class Button extends \WP_Widget {
 							$image = array(
 								'image' => $attendant['image']['attendant-image'] ? wp_get_attachment_url( $attendant['image']['attendant-image'] ) : TM_MASTER_WHATS_CHAT_URL . '/img/user-placeholder.png',
 								'width' => 150,
-								'height' => 150
+								'height' => 150,
 							);
 
 							$output .= '<img src="'. esc_url( $image['image'] ) .'" width="'. esc_attr( $image['width'] ) .'" height="'. esc_attr( $image['height'] ) .'" alt="" />';
@@ -196,5 +196,4 @@ class Button extends \WP_Widget {
 
 		echo $output; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- previously escaped.
 	}
-
 }

@@ -58,12 +58,10 @@ class SettingsFields {
                 $inputName . '_width' => isset( $image_metadata['width'] ) ? $image_metadata['width'] : 0,
                 $inputName . '_height' => isset( $image_metadata['height'] ) ? $image_metadata['height'] : 0,
                 $inputName . '_title' => '',
-                $inputName . '_icon' => ''
+                $inputName . '_icon' => '',
             );
-        } else {
-            if( !isset($field_val['image']) ) {
+        } elseif( !isset($field_val['image']) ) {
                 return;
-            }
         }
 
         $imageObj = $field_val['image'];

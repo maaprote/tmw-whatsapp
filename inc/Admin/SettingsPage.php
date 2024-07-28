@@ -36,7 +36,7 @@ class SettingsPage {
             'tmw-whatsapp-settings',
             array(
                 $this,
-                'render_page'
+                'render_page',
             ),
             'dashicons-whatsapp',
             3
