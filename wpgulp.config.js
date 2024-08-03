@@ -67,7 +67,7 @@ const watchPhp     = './**/*.php';
 
 // Zip options.
 const zipName = 'tmw-whatsapp.zip';
-const zipDestination = './../'; // Default: Parent folder.
+const zipDestination = './../';
 const zipIncludeGlob = ['../@(tmw-whatsapp)/**/*'];
 const zipIgnoreGlob = [
 	'!**/*{node_modules,node_modules/**/*}',
