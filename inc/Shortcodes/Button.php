@@ -37,7 +37,7 @@ class Button {
 		$classes = array( 'tmw-whatsapp-title-status' );
 		$attributes = array();
 
-		$status_text = esc_html__( 'Online', 'tmw-whatsapp' );
+		$status_text = esc_html__( 'Online', 'tmw-whatschat' );
 
 		// Mount Class
 		$attributes[] = 'class="'. esc_attr( implode( ' ', $classes ) ) .'"';
@@ -83,7 +83,7 @@ class Button {
         $attendants = Functions::get_attendants();
 
         if( $attendants === NULL ) {
-            return esc_html__( 'None attendant is registered to show in this widget. Please register at least one attendant to render the widget.', 'tmw-whatsapp' );
+            return esc_html__( 'None attendant is registered to show in this widget. Please register at least one attendant to render the widget.', 'tmw-whatschat' );
         }
 
         // Uniqueid

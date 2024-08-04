@@ -26,10 +26,10 @@ class Button extends \WP_Widget {
     public function __construct() {
 		$options = array( 
 			'classname' => 'tmw-whatsapp-wp-widget-button',
-			'description' => esc_html__( 'Show TM Whatsapp Button', 'tmw-whatsapp' ),
+			'description' => esc_html__( 'Show TM Whatsapp Button', 'tmw-whatschat' ),
 		);
 
-		parent::__construct( 'tmw-whatsapp-wp-widget-button', esc_html__( 'TM Whatsapp: Button', 'tmw-whatsapp' ), $options );
+		parent::__construct( 'tmw-whatsapp-wp-widget-button', esc_html__( 'TM Whatsapp: Button', 'tmw-whatschat' ), $options );
     }
 
 	/**
@@ -43,7 +43,7 @@ class Button extends \WP_Widget {
 		$classes = array( 'tmw-whatsapp-title-status' );
 		$attributes = array();
 
-		$status_text = esc_html__( 'Online', 'tmw-whatsapp' );
+		$status_text = esc_html__( 'Online', 'tmw-whatschat' );
 
 		// Mount Class
 		$attributes[] = 'class="'. esc_attr( implode( ' ', $classes ) ) .'"';
@@ -86,7 +86,7 @@ class Button extends \WP_Widget {
 		$attendant = $attendants_list[ $attendant_id ];
 
 		if( $attendants_list === NULL ) {
-            echo esc_html__( 'None attendant is registered to show in this widget. Please register at least one attendant to render the widget.', 'tmw-whatsapp' );
+            echo esc_html__( 'None attendant is registered to show in this widget. Please register at least one attendant to render the widget.', 'tmw-whatschat' );
 
 			return;
         }

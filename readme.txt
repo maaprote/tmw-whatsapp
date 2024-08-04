@@ -1,11 +1,11 @@
-=== Master Whats Chat - A WhatsApp Chat Helper ===
+=== Master Whats Chat - A Social Chat Helper ===
 Contributors: maaprote
 Tags: chat, whatsapp, social, woocommerce whatsapp
-Requires at least: 5.5
+Requires at least: 5.6
 Tested up to: 6.6
-Requires PHP: 7
+Requires PHP: 7.0
 Stable tag: 1.0.0
-License: GPLv3 or later License
+License: GPLv3 or later
 URI: http://www.gnu.org/licenses/gpl-3.0.html
 
 Connect your website users with your company attendants via WhatsApp in few clicks
