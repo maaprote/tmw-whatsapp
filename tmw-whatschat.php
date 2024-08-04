@@ -1,20 +1,19 @@
 <?php
 /**
  * Plugin Name: Master Whats Chat
- * Plugin URI:  https://github.com/maaprote/
- * Description: Chat plugin for whatsapp.
- * Version:     1.1.0
+ * Description: Chat plugin with a beatiful interface which allows to your website visitors to contact your team with few clicks.
+ * Version:     1.0.0
  * Author:      Rodrigo Teixeira
  * Author URI:  https://github.com/maaprote/
- * License:     GPLv3 or later License
+ * License:     GPLv3 or later
  * License URI: http://www.gnu.org/licenses/gpl-3.0.html
- * Text Domain: tmw-whatsapp
+ * Text Domain: tmw-whatschat
  * Domain Path: /languages
  *
  * WC requires at least: 6.0
  * WC tested up to: 8.8.3
  *
- * @package TMW_Whatsapp
+ * @package Master_Whats_Chat
  * @since 1.0
  */
 
@@ -102,7 +101,7 @@ class TM_Master_Whats_Chat {
      * @return void
      */
     public function load_textdomain() {
-        load_plugin_textdomain( 'tmw-whatsapp', false, dirname( plugin_basename( __FILE__ ) ) . '/languages' );
+        load_plugin_textdomain( 'tmw-whatschat', false, dirname( plugin_basename( __FILE__ ) ) . '/languages' );
     }
 }
 

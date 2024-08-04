@@ -66,9 +66,9 @@ const watchScripts = './assets/js/src/**/*.js';
 const watchPhp     = './**/*.php';
 
 // Zip options.
-const zipName = 'tmw-whatsapp.zip';
-const zipDestination = './../'; // Default: Parent folder.
-const zipIncludeGlob = ['../@(tmw-whatsapp)/**/*'];
+const zipName = 'tmw-whatschat.zip';
+const zipDestination = './../';
+const zipIncludeGlob = ['../@(tmw-whatschat)/**/*'];
 const zipIgnoreGlob = [
 	'!**/*{node_modules,node_modules/**/*}',
 	'!**/*.git',
@@ -93,7 +93,12 @@ const zipIgnoreGlob = [
 	'!**/*composer.json',
 	'!**/*composer.lock',
 	'!**/*phpcs.xml',
-	'!{vendor,vendor/**/*}',
+	'!{vendor/bin,vendor/bin/**/*}',
+	'!{vendor/dealerdirect,vendor/dealerdirect/**/*}',
+	'!{vendor/phpcompatibility,vendor/phpcompatibility/**/*}',
+	'!{vendor/phpcsstandards,vendor/phpcsstandards/**/*}',
+	'!{vendor/squizlabs,vendor/squizlabs/**/*}',
+	'!{vendor/wp-coding-standards,vendor/wp-coding-standards/**/*}',
 	'!**/*.map',
 	'!**/*tests/**/*',
 	'!**/*tests',
@@ -106,6 +111,7 @@ const zipIgnoreGlob = [
 	'!**/*playwright.config.js',
 	'!{Design,Design/**/*}',
 	'!{Documentation,Documentation/**/*}',
+	'!**/*readme.md',
 ];
 
 // Translation options.
