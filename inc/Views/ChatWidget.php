@@ -289,7 +289,7 @@ class ChatWidget {
 
 		?>
 
-		<div <?php echo ( implode( ' ', $wrapper_atts ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- previously escaped. ?>>
+		<div <?php echo wp_kses_post( ( implode( ' ', $wrapper_atts ) ) ); ?>>
 			<div class="tmw-whatsapp-card">
 				<div class="tmw-whatsapp-card-header">
 

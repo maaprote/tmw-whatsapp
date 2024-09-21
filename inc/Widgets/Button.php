@@ -194,6 +194,6 @@ class Button extends \WP_Widget {
 			$output .= '</div>';
 		$output .= '</a>';
 
-		echo $output; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- previously escaped.
+		echo wp_kses_post( $output );
 	}
 }

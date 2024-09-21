@@ -511,7 +511,7 @@ class Button extends \Elementor\Widget_Base {
 		$output .= '</a>';
 
 		echo '<div class="tmw-whatsapp-elementor-widget">';
-			echo $output; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- previously escaped.
+			echo wp_kses_post( $output );
 		echo '</div>';
 	}
 }

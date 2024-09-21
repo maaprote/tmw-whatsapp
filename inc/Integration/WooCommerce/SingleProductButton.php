@@ -257,7 +257,7 @@ class SingleProductButton {
 		$output .= '</a>';
 
 		echo '<div class="tmw-whatsapp-elementor-widget'. esc_attr( $display_class ) .'">';
-			echo $output; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- previously escaped.
+			echo wp_kses_post( $output );
 		echo '</div>';
 	}    
 }

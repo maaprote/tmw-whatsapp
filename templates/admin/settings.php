@@ -85,7 +85,7 @@ use TM\Master_Whats_Chat\Views\ChatWidget;
 									<strong><?php echo esc_html__( 'Timezone:', 'master-whats-chat' ); ?></strong>
 								</label>
 								<p class="tmw-text-color-grey mt-0 mb-2"><?php echo esc_html__( 'This option will overwrite the default timezone of the attendant in this specific day', 'master-whats-chat' ); ?></p>
-								<?php echo SettingsFields::timezone_html_select( 'timezone', '' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- previously escaped. ?>
+								<?php SettingsFields::timezone_html_select( 'timezone', '' ); ?>
 							</div>
 						</div>
 
@@ -183,14 +183,14 @@ use TM\Master_Whats_Chat\Views\ChatWidget;
 																		<strong><?php echo esc_html__( 'Attendant Timezone', 'master-whats-chat' ); ?>:</strong>
 																		<p class="tmw-form-control-description"><?php echo esc_html__( 'The attendant timezone', 'master-whats-chat' ); ?></p>
 																	</label>
-																	<?php echo SettingsFields::timezone_html_select( $field_name, $multi_field_val['default_timezone'], ' attendant-default-timezone' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- previously escaped. ?>
+																	<?php SettingsFields::timezone_html_select( $field_name, $multi_field_val['default_timezone'], ' attendant-default-timezone' ); ?>
 																</div>
 																<div class="tmw-form-group tmw-form-group-mobile-md col-12 d-flex mt-3">
 																	<label class="tmw-form-control-label">
 																		<strong><?php echo esc_html__( 'Attendant Image:', 'master-whats-chat' ); ?></strong>
 																		<p class="tmw-form-control-description"><?php echo esc_html__( 'The attendant image. Default size: 50x50', 'master-whats-chat' ); ?></p>
 																	</label>
-																	<?php echo SettingsFields::media_upload( $multi_field_val, 'attendant-image' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- previously escaped. ?>
+																	<?php SettingsFields::media_upload( $multi_field_val, 'attendant-image' ); ?>
 																</div>
 															</div>
 														</div>
@@ -322,7 +322,7 @@ use TM\Master_Whats_Chat\Views\ChatWidget;
 
 										<?php elseif( isset($field_val['type']) && $field_val['type'] == 'image_upload' ) : ?>
 
-											<?php echo SettingsFields::media_upload( $field_val['value'], $field_name ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- previously escaped. ?>
+											<?php SettingsFields::media_upload( $field_val['value'], $field_name ); ?>
 
 										<?php elseif( isset($field_val['type']) && $field_val['type'] == 'padding_margin' ) : ?>
 

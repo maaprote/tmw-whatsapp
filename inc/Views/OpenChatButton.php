@@ -90,6 +90,6 @@ class OpenChatButton {
 			$output .= '</a>';
 		$output .= '</div>';
 
-		echo $output; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- previously escaped.
+		echo wp_kses_post( $output );
 	}
 }
