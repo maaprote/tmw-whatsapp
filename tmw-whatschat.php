@@ -101,7 +101,7 @@ class TM_Master_Whats_Chat {
      * @return void
      */
     public function load_textdomain() {
-        load_plugin_textdomain( 'tmw-whatschat', false, dirname( plugin_basename( __FILE__ ) ) . '/languages' );
+        load_plugin_textdomain( 'master-whats-chat', false, dirname( plugin_basename( __FILE__ ) ) . '/languages' );
     }
 }
 

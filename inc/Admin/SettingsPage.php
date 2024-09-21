@@ -30,8 +30,8 @@ class SettingsPage {
      */
     public function add_menu_page() {
         add_menu_page(
-            esc_html__( 'TM Whatsapp', 'tmw-whatschat' ),
-            esc_html__( 'TM Whatsapp', 'tmw-whatschat' ),
+            esc_html__( 'TM Whatsapp', 'master-whats-chat' ),
+            esc_html__( 'TM Whatsapp', 'master-whats-chat' ),
             'manage_options',
             'tmw-whatsapp-settings',
             array(

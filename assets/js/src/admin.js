@@ -390,7 +390,8 @@
 		e.preventDefault();
 
 		var $this    = $(this),
-			formData = $('#rm_settings').serializeArray(),
+			$form    = $('#rm_settings'),
+			formData = $form.serializeArray(),
 			data 	 = {};
 
 		$this.text('Saving...');
@@ -473,13 +474,14 @@
 		});
 
 		data['css_skin'] = skinCSS; 
-
+console.log(data);
 		$.ajax({
 			url: '../wp-admin/admin-ajax.php',
 			type: 'post',
 			data: {
 				action: 'tmw_save_settings',
-				data: data
+				data: JSON.stringify( data ),
+				tmw_nonce: $form.data('nonce')
 			}
 		})
 		.done(function(data) {

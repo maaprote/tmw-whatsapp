@@ -49,7 +49,7 @@ class Assets {
 		$skinCSS = get_option( 'tmw_whatsapp_settings_data_skin_css' );
 		if( isset($settings['skin_font_family_name']) || isset($settings['skin_font_family_name']) && !empty($settings['skin_font_family_name']) ) {
 			if( empty($skinCSS) ) {
-				$skinCSS = '/\* TM Whatsapp Fonts \*/';
+				$skinCSS .= '/\* TM Whatsapp Fonts \*/';
 			}
 			$skinCSS .= '.tmw-whatsapp-trigger-button > a { font-family: '. wp_unslash( $settings['skin_font_family_name'] ) .' }';
 			$skinCSS .= '.tmw-whatsapp-trigger-button .tmw-whatsapp-call-to-action > a { font-family: '. wp_unslash( $settings['skin_font_family_name'] ) .' }';
@@ -67,7 +67,6 @@ class Assets {
 			wp_add_inline_style( 'tmw-whatsapp-app', $skinCSS );
 		}
 
-		wp_register_script( 'moment', TM_MASTER_WHATS_CHAT_URL . '/assets/vendor/moment/moment.min.js', false, TM_MASTER_WHATS_CHAT_VERSION, true );
 		wp_enqueue_script( 'moment' );
 
 		wp_register_script( 'moment-timezone-with-data', TM_MASTER_WHATS_CHAT_URL . '/assets/vendor/moment/moment-timezone-with-data.min.js', false, TM_MASTER_WHATS_CHAT_VERSION, true );

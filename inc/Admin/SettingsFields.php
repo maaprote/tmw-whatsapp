@@ -74,7 +74,7 @@ class SettingsFields {
         }
 
         $output .= '<div class="tmw-media-uploader'. ( isset($imageObj[ $inputName ]) && !empty($imageObj[ $inputName ]) ? ' remove-state' : '' ) .'">';
-            $output .= '<img class="tmw-metabox-image-field-preview tmw-media-uploader-upload-btn" src="'. esc_url( $image_src ) .'" alt="'. esc_attr__( 'Image Uploaded', 'tmw-whatschat' ) .'" width="100" height="" data-post-id="" />';
+            $output .= '<img class="tmw-metabox-image-field-preview tmw-media-uploader-upload-btn" src="'. esc_url( $image_src ) .'" alt="'. esc_attr__( 'Image Uploaded', 'master-whats-chat' ) .'" width="100" height="" data-post-id="" />';
             $output .= '<span class="tmw-media-uploader-remove-btn dashicons dashicons-dismiss"></span>';
             $output .= '<input class="tmw-media-uploader-media-image" type="hidden" name="'. esc_attr( $inputName ) .'" value="'. esc_attr( $imageObj[ $inputName ] ) .'">';
             $output .= '<input class="tmw-media-uploader-media-type" type="hidden" name="'. esc_attr( $inputName ) .'_type" value="'. esc_attr( $imageObj[ $inputName . '_type' ] ) .'">';
@@ -93,7 +93,7 @@ class SettingsFields {
      */
     public static function padding_margin( $field_val, $field_name ) {
         if( !$field_val ) {
-            return esc_html__( 'No values defined for this input', 'tmw-whatschat' );
+            return esc_html__( 'No values defined for this input', 'master-whats-chat' );
         }
 
         $output = '';
@@ -144,7 +144,9 @@ class SettingsFields {
         $sanitized_data = array();
 
         foreach( $data as $key => $value ) {
-            if( is_array($value) ) {
+            if ( is_array($value) ) {
+                $sanitized_data[$key] = self::sanitize_data( $value );
+            } elseif ( is_object($value) ) { 
                 $sanitized_data[$key] = self::sanitize_data( $value );
             } else {
                 $sanitized_data[$key] = sanitize_text_field( $value );

@@ -41,11 +41,11 @@ class Button extends WPBakeryShortCode {
      */
     public function create_shortcode() {            
         vc_map( array(
-            'name'          => esc_html__( 'TM Whatsapp Button', 'tmw-whatschat'),
+            'name'          => esc_html__( 'TM Whatsapp Button', 'master-whats-chat'),
             'base'          => 'tmw_whatsapp_button',
-            'description'   => esc_html__( 'Add whatsapp button', 'tmw-whatschat' ),
+            'description'   => esc_html__( 'Add whatsapp button', 'master-whats-chat' ),
             'icon' => 'tmw-wpbakery-element-icon dashicons dashicons-whatsapp',
-            'category'      => esc_html__( 'TM Whatsapp', 'tmw-whatschat'),
+            'category'      => esc_html__( 'TM Whatsapp', 'master-whats-chat'),
             'admin_enqueue_css' => TM_MASTER_WHATS_CHAT_URL . '/css/tmw-whatsapp-wpbakery.css',
             'front_enqueue_css' => TM_MASTER_WHATS_CHAT_URL . '/css/tmw-whatsapp-wpbakery.css',
             'front_enqueue_js' => TM_MASTER_WHATS_CHAT_URL . '/js/tmw-whatsapp-widgets.js',
@@ -56,7 +56,7 @@ class Button extends WPBakeryShortCode {
                     'type' => 'dropdown',
                     'admin_label' => false,
                     'edit_field_class' => 'vc_col-sm-6',
-                    'heading' => esc_html__( 'Select Attendant', 'tmw-whatschat' ),
+                    'heading' => esc_html__( 'Select Attendant', 'master-whats-chat' ),
                     'param_name' => 'attendant',
                     'value' => Functions::get_attendants_list(),
                     'std' => 0,
@@ -66,11 +66,11 @@ class Button extends WPBakeryShortCode {
                     'type' => 'dropdown',
                     'admin_label' => false,
                     'edit_field_class' => 'vc_col-sm-6',
-                    'heading' => esc_html__( 'Layout Style', 'tmw-whatschat' ),
+                    'heading' => esc_html__( 'Layout Style', 'master-whats-chat' ),
                     'param_name' => 'layout-style',
                     'value' => array(
-                        esc_html__( 'Style 1', 'tmw-whatschat' ) => 'tmw-whatsapp-elementor-wrapper-style-1',
-                        esc_html__( 'Style 2', 'tmw-whatschat' ) => 'tmw-whatsapp-elementor-wrapper-style-1 tmw-whatsapp-elementor-wrapper-style-1-rounded',
+                        esc_html__( 'Style 1', 'master-whats-chat' ) => 'tmw-whatsapp-elementor-wrapper-style-1',
+                        esc_html__( 'Style 2', 'master-whats-chat' ) => 'tmw-whatsapp-elementor-wrapper-style-1 tmw-whatsapp-elementor-wrapper-style-1-rounded',
                     ),
                 ),
 
@@ -78,7 +78,7 @@ class Button extends WPBakeryShortCode {
                     'type' => 'textfield',
                     'admin_label' => false,
                     'edit_field_class' => 'vc_col-sm-6',
-                    'heading' => esc_html__( 'TItle', 'tmw-whatschat' ),
+                    'heading' => esc_html__( 'TItle', 'master-whats-chat' ),
                     'param_name' => 'title',
                     'value' => '',
                 ),
@@ -87,7 +87,7 @@ class Button extends WPBakeryShortCode {
                     'type' => 'textfield',
                     'admin_label' => false,
                     'edit_field_class' => 'vc_col-sm-6',
-                    'heading' => esc_html__( 'Description', 'tmw-whatschat' ),
+                    'heading' => esc_html__( 'Description', 'master-whats-chat' ),
                     'param_name' => 'description',
                     'value' => '',
                 ),
@@ -96,11 +96,11 @@ class Button extends WPBakeryShortCode {
                     'type' => 'dropdown',
                     'admin_label' => false,
                     'edit_field_class' => 'vc_col-sm-6',
-                    'heading' => esc_html__( 'Attendant Image', 'tmw-whatschat' ),
+                    'heading' => esc_html__( 'Attendant Image', 'master-whats-chat' ),
                     'param_name' => 'photo_or_icon',
                     'value' => array(
-                        esc_html__( 'Whatsapp Icon', 'tmw-whatschat' ) => 'icon',
-                        esc_html__( 'Attendant Image', 'tmw-whatschat' ) => 'image', 
+                        esc_html__( 'Whatsapp Icon', 'master-whats-chat' ) => 'icon',
+                        esc_html__( 'Attendant Image', 'master-whats-chat' ) => 'image', 
                     ),
                     'std' => 'icon',
                 ),
@@ -109,170 +109,15 @@ class Button extends WPBakeryShortCode {
                     'type' => 'dropdown',
                     'admin_label' => false,
                     'edit_field_class' => 'vc_col-sm-6',
-                    'heading' => esc_html__( 'Alignment', 'tmw-whatschat' ),
+                    'heading' => esc_html__( 'Alignment', 'master-whats-chat' ),
                     'param_name' => 'alignment',
                     'value' => array(
-                        esc_html__( 'Full Width', 'tmw-whatschat' ) => 'full-width',
-                        esc_html__( 'Center', 'tmw-whatschat' ) => 'center',
-                        esc_html__( 'Left', 'tmw-whatschat' ) => 'left',
-                        esc_html__( 'Right', 'tmw-whatschat' ) => 'right',
+                        esc_html__( 'Full Width', 'master-whats-chat' ) => 'full-width',
+                        esc_html__( 'Center', 'master-whats-chat' ) => 'center',
+                        esc_html__( 'Left', 'master-whats-chat' ) => 'left',
+                        esc_html__( 'Right', 'master-whats-chat' ) => 'right',
                     ),
                     'std' => 'left',
-                ),
-
-                // Skin
-                array(
-                    'type' => 'colorpicker',
-                    'admin_label' => false,
-                    'edit_field_class' => 'vc_col-sm-6',
-                    'class' => '',
-                    'heading' => esc_html__( 'Background Color', 'tmw-whatschat' ),
-                    'param_name' => 'background_color',
-                    'value' => '#20ab54',
-                    'group' => esc_html__( 'Skin', 'tmw-whatschat' ),
-                ),
-
-                array(
-                    'type' => 'colorpicker',
-                    'admin_label' => false,
-                    'edit_field_class' => 'vc_col-sm-6',
-                    'class' => '',
-                    'heading' => esc_html__( 'Background Hover Color', 'tmw-whatschat' ),
-                    'param_name' => 'background_hover_color',
-                    'value' => '#38bd6a',
-                    'group' => esc_html__( 'Skin', 'tmw-whatschat' ),
-                ),
-
-                array(
-                    'type' => 'colorpicker',
-                    'admin_label' => false,
-                    'edit_field_class' => 'vc_col-sm-6',
-                    'class' => '',
-                    'heading' => esc_html__( 'Icon Color', 'tmw-whatschat' ),
-                    'param_name' => 'icon_color',
-                    'value' => '#FFF',
-                    'group' => esc_html__( 'Skin', 'tmw-whatschat' ),
-                ),
-
-                array(
-                    'type' => 'colorpicker',
-                    'admin_label' => false,
-                    'edit_field_class' => 'vc_col-sm-6',
-                    'class' => '',
-                    'heading' => esc_html__( 'Icon Hover Color', 'tmw-whatschat' ),
-                    'param_name' => 'icon_hover_color',
-                    'value' => '#FFF',
-                    'group' => esc_html__( 'Skin', 'tmw-whatschat' ),
-                ),
-
-                array(
-                    'type' => 'colorpicker',
-                    'admin_label' => false,
-                    'edit_field_class' => 'vc_col-sm-6',
-                    'class' => '',
-                    'heading' => esc_html__( 'Attendant Name Color', 'tmw-whatschat' ),
-                    'param_name' => 'attendant_name_color',
-                    'value' => '#FFF',
-                    'group' => esc_html__( 'Skin', 'tmw-whatschat' ),
-                ),
-
-                array(
-                    'type' => 'colorpicker',
-                    'admin_label' => false,
-                    'edit_field_class' => 'vc_col-sm-6',
-                    'class' => '',
-                    'heading' => esc_html__( 'Attendant Name Hover Color', 'tmw-whatschat' ),
-                    'param_name' => 'attendant_name_hover_color',
-                    'value' => '#FFF',
-                    'group' => esc_html__( 'Skin', 'tmw-whatschat' ),
-                ),
-
-                array(
-                    'type' => 'colorpicker',
-                    'admin_label' => false,
-                    'edit_field_class' => 'vc_col-sm-6',
-                    'class' => '',
-                    'heading' => esc_html__( 'Attendant Description Color', 'tmw-whatschat' ),
-                    'param_name' => 'attendant_description_color',
-                    'value' => '#FFF',
-                    'group' => esc_html__( 'Skin', 'tmw-whatschat' ),
-                ),
-
-                array(
-                    'type' => 'colorpicker',
-                    'admin_label' => false,
-                    'edit_field_class' => 'vc_col-sm-6',
-                    'class' => '',
-                    'heading' => esc_html__( 'Attendant Description Hover Color', 'tmw-whatschat' ),
-                    'param_name' => 'attendant_description_hover_color',
-                    'value' => '#FFF',
-                    'group' => esc_html__( 'Skin', 'tmw-whatschat' ),
-                ),
-
-                array(
-                    'type' => 'colorpicker',
-                    'admin_label' => false,
-                    'edit_field_class' => 'vc_col-sm-6',
-                    'class' => '',
-                    'heading' => esc_html__( 'Status Background Color', 'tmw-whatschat' ),
-                    'param_name' => 'status_background_color',
-                    'value' => '#FFF',
-                    'group' => esc_html__( 'Skin', 'tmw-whatschat' ),
-                ),
-
-                array(
-                    'type' => 'colorpicker',
-                    'admin_label' => false,
-                    'edit_field_class' => 'vc_col-sm-6',
-                    'class' => '',
-                    'heading' => esc_html__( 'Status Text Color', 'tmw-whatschat' ),
-                    'param_name' => 'status_text_color',
-                    'value' => '#212121',
-                    'group' => esc_html__( 'Skin', 'tmw-whatschat' ),
-                ),
-
-                array(
-                    'type' => 'colorpicker',
-                    'admin_label' => false,
-                    'edit_field_class' => 'vc_col-sm-6',
-                    'class' => '',
-                    'heading' => esc_html__( 'Offline Badge Background', 'tmw-whatschat' ),
-                    'param_name' => 'badge_offline_message_background',
-                    'value' => '#ebebeb',
-                    'group' => esc_html__( 'Skin', 'tmw-whatschat' ),
-                ),
-
-                array(
-                    'type' => 'colorpicker',
-                    'admin_label' => false,
-                    'edit_field_class' => 'vc_col-sm-6',
-                    'class' => '',
-                    'heading' => esc_html__( 'Offline Message Badge Text', 'tmw-whatschat' ),
-                    'param_name' => 'badge_offline_message_text',
-                    'value' => '#000',
-                    'group' => esc_html__( 'Skin', 'tmw-whatschat' ),
-                ),
-
-                array(
-                    'type' => 'colorpicker',
-                    'admin_label' => false,
-                    'edit_field_class' => 'vc_col-sm-6',
-                    'class' => '',
-                    'heading' => esc_html__( 'Interval Badge Background', 'tmw-whatschat' ),
-                    'param_name' => 'badge_interval_background',
-                    'value' => '#e2c80c',
-                    'group' => esc_html__( 'Skin', 'tmw-whatschat' ),
-                ),
-
-                array(
-                    'type' => 'colorpicker',
-                    'admin_label' => false,
-                    'edit_field_class' => 'vc_col-sm-6',
-                    'class' => '',
-                    'heading' => esc_html__( 'Interval Badge Text', 'tmw-whatschat' ),
-                    'param_name' => 'badge_interval_text',
-                    'value' => '#000',
-                    'group' => esc_html__( 'Skin', 'tmw-whatschat' ),
                 ),
        
             ),
@@ -290,7 +135,7 @@ class Button extends WPBakeryShortCode {
         $classes = array( 'tmw-whatsapp-elementor-title-status' );
         $attributes = array();
 
-        $status_text = esc_html__( 'Online', 'tmw-whatschat' );
+        $status_text = esc_html__( 'Online', 'master-whats-chat' );
 
         // Mount Class
         $attributes[] = 'class="'. esc_attr( implode( ' ', $classes ) ) .'"';
@@ -330,7 +175,7 @@ class Button extends WPBakeryShortCode {
         $attendants = Functions::get_attendants();
 
         if( $attendants === NULL ) {
-            return esc_html__( 'None attendant is registered to show in this widget. Please register at least one attendant to render the widget.', 'tmw-whatschat' );
+            return esc_html__( 'None attendant is registered to show in this widget. Please register at least one attendant to render the widget.', 'master-whats-chat' );
         }
 
         // Uniqueid
@@ -412,25 +257,7 @@ class Button extends WPBakeryShortCode {
                     $output .= '</div>';
                 $output .= '</div>';
             $output .= '</a>';
-        $output .= '</div>';     
-        
-        // Skin
-        $output .= '<style>';
-            $output .= '#' . $uniqid . '.tmw-whatsapp-elementor-wrapper.tmw-whatsapp-elementor-wrapper-style-1 .tmw-whatsapp-elementor-body { background: '. esc_attr( $atts['background_color'] ) .'; }';
-            $output .= '#' . $uniqid . '.tmw-whatsapp-elementor-wrapper:hover .tmw-whatsapp-elementor-body { background: '. esc_attr( $atts['background_hover_color'] ) .'; }';
-            $output .= '#' . $uniqid . '.tmw-whatsapp-elementor-wrapper .tmw-whatsapp-elementor-body .tmw-whatsapp-elementor-icon { color: '. esc_attr( $atts['icon_color'] ) .'; }';
-            $output .= '#' . $uniqid . '.tmw-whatsapp-elementor-wrapper:hover .tmw-whatsapp-elementor-body .tmw-whatsapp-elementor-icon { color: '. esc_attr( $atts['icon_hover_color'] ) .'; }';
-            $output .= '#' . $uniqid . '.tmw-whatsapp-elementor-wrapper .tmw-whatsapp-elementor-body .tmw-whatsapp-elementor-info .tmw-whatsapp-elementor-title h5 { color: '. esc_attr( $atts['attendant_name_color'] ) .'; }';
-            $output .= '#' . $uniqid . '.tmw-whatsapp-elementor-wrapper:hover .tmw-whatsapp-elementor-body .tmw-whatsapp-elementor-info .tmw-whatsapp-elementor-title h5 { color: '. esc_attr( $atts['attendant_name_hover_color'] ) .'; }';
-            $output .= '#' . $uniqid . '.tmw-whatsapp-elementor-wrapper .tmw-whatsapp-elementor-body .tmw-whatsapp-elementor-info .tmw-whatsapp-elementor-description p { color: '. esc_attr( $atts['attendant_description_color'] ) .'; }';
-            $output .= '#' . $uniqid . '.tmw-whatsapp-elementor-wrapper:hover .tmw-whatsapp-elementor-body .tmw-whatsapp-elementor-info .tmw-whatsapp-elementor-description p { color: '. esc_attr( $atts['attendant_description_hover_color'] ) .'; }';
-            $output .= '#' . $uniqid . '.tmw-whatsapp-elementor-wrapper .tmw-whatsapp-elementor-body .tmw-whatsapp-elementor-info .tmw-whatsapp-elementor-title .tmw-whatsapp-elementor-title-status { background-color: '. esc_attr( $atts['status_background_color'] ) .'; }';
-            $output .= '#' . $uniqid . '.tmw-whatsapp-elementor-wrapper .tmw-whatsapp-elementor-body .tmw-whatsapp-elementor-info .tmw-whatsapp-elementor-title .tmw-whatsapp-elementor-title-status { color: '. esc_attr( $atts['status_text_color'] ) .'; }';
-            $output .= '#' . $uniqid . '.tmw-whatsapp-elementor-wrapper.tmw-whatsapp-elementor-wrapper-style-1 .tmw-whatsapp-elementor-body .tmw-whatsapp-elementor-info .tmw-whatsapp-elementor-info-offline-message { background-color: '. esc_attr( $atts['badge_offline_message_background'] ) .'; }';
-            $output .= '#' . $uniqid . '.tmw-whatsapp-elementor-wrapper.tmw-whatsapp-elementor-wrapper-style-1 .tmw-whatsapp-elementor-body .tmw-whatsapp-elementor-info .tmw-whatsapp-elementor-info-offline-message { color: '. esc_attr( $atts['badge_offline_message_text'] ) .'; }';
-            $output .= '#' . $uniqid . '.tmw-whatsapp-elementor-wrapper.tmw-whatsapp-elementor-wrapper-style-1 .tmw-whatsapp-elementor-body .tmw-whatsapp-elementor-info .tmw-whatsapp-elementor-info-offline-message.is-interval { color: '. esc_attr( $atts['badge_interval_background'] ) .'; }';
-            $output .= '#' . $uniqid . '.tmw-whatsapp-elementor-wrapper.tmw-whatsapp-elementor-wrapper-style-1 .tmw-whatsapp-elementor-body .tmw-whatsapp-elementor-info .tmw-whatsapp-elementor-info-offline-message.is-interval { color: '. esc_attr( $atts['badge_interval_text'] ) .'; }';
-        $output .= '</style>';
+        $output .= '</div>';
 
         return $output;                  
     }

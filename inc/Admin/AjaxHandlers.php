@@ -36,13 +36,13 @@ class AjaxHandlers {
             wp_send_json_error( array( 'message' => 'No data received' ) );
         }
 
-        $data = SettingsFields::sanitize_data($_POST['data']); // phpcs:ignore WordPress.Security.NonceVerification, WordPress.Security.ValidatedSanitizedInput.InputNotSanitized -- Data is sanitized in the function and nonce is verified below
-
-        if ( ! isset( $data['tmw-nonce'] ) || ! wp_verify_nonce( $data['tmw-nonce'], 'tmw-save-plugin-settings-nonce' ) ) {
+        if ( ! isset( $_POST['tmw_nonce'] ) || ! wp_verify_nonce( sanitize_text_field( $_POST['tmw_nonce'] ), 'tmw-save-plugin-settings-nonce' ) ) {
             wp_send_json_error( array( 'message' => 'Invalid nonce' ) );
         }
+        
+        $data = json_decode( stripslashes( sanitize_text_field( $_POST['data'] ) ));
+        $data = SettingsFields::sanitize_data($data);
 
-        unset($data['tmw-nonce']);
         unset($data['_wp_http_referer']);
 
         $reset_settings = false;

@@ -90,8 +90,6 @@ const zipIgnoreGlob = [
 	'!**/*assets/js/src',
 	'!**/*assets/sass/',
 	'!**/*assets/sass/**/*',
-	'!**/*composer.json',
-	'!**/*composer.lock',
 	'!**/*phpcs.xml',
 	'!{vendor/bin,vendor/bin/**/*}',
 	'!{vendor/dealerdirect,vendor/dealerdirect/**/*}',

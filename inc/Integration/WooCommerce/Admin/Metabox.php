@@ -35,7 +35,7 @@ class Metabox {
         if ( in_array( $post_type, $post_types ) ) {
             add_meta_box(
                 'tmw_whatsapp_woocommerce_button',
-                esc_html__( 'TM WhatsApp Button', 'tmw-whatschat' ),
+                esc_html__( 'TM WhatsApp Button', 'master-whats-chat' ),
                 array( $this, 'render_woocommerce_metabox_content' ),
                 $post_type,
                 'side',
@@ -67,16 +67,16 @@ class Metabox {
         // Display the form, using the current value.
         ?>
 
-		<p><?php echo esc_html__( 'Select an attendant to show along with WooCommerce product buy button.', 'tmw-whatschat' ); ?></p>
+		<p><?php echo esc_html__( 'Select an attendant to show along with WooCommerce product buy button.', 'master-whats-chat' ); ?></p>
         <p>
 			<label>
-				<strong><?php echo esc_html__( 'Show Button?', 'tmw-whatschat' ); ?></strong>
+				<strong><?php echo esc_html__( 'Show Button?', 'master-whats-chat' ); ?></strong>
 				<input type="checkbox" name="tmw_show_woocommerce_button" <?php checked( $show_woo_button, 'on', true ); ?> /> 
 			</label>
 			
 		</p>
 		<p>
-			<label class="tmw-label"><?php echo esc_html__( 'Attendant', 'tmw-whatschat' ); ?></label>
+			<label class="tmw-label"><?php echo esc_html__( 'Attendant', 'master-whats-chat' ); ?></label>
 			<?php if( isset($this->get_field['attendants']) && $this->get_field['attendants'] ) : ?>
 				<select class="tmw-input" name="tmw_whatsapp_woocommerce_button_attendant_id">
 					<?php foreach( $this->get_field['attendants'] as $attendant ) : ?>
@@ -87,18 +87,18 @@ class Metabox {
 				</select>
 			<?php else : ?>
 
-				<?php echo esc_html__( 'None attendant registered for select here.', 'tmw-whatschat' ); ?>
+				<?php echo esc_html__( 'None attendant registered for select here.', 'master-whats-chat' ); ?>
 
 			<?php endif; ?>
 		</p>
 		<p>
-			<label class="tmw-label"><?php echo esc_html__( 'Button Layout', 'tmw-whatschat' ); ?></label>
+			<label class="tmw-label"><?php echo esc_html__( 'Button Layout', 'master-whats-chat' ); ?></label>
 			<select class="tmw-input" name="tmw_whatsapp_woocommerce_button_layout">
 				<?php 
 				// WooCommerce Hooks Positions
 				$button_layouts = array(
-					esc_html__( 'Rounded', 'tmw-whatschat' ) => 'tmw-whatsapp-elementor-wrapper-style-1',
-					esc_html__( 'Squared', 'tmw-whatschat' ) => 'tmw-whatsapp-elementor-wrapper-style-1 tmw-whatsapp-elementor-wrapper-style-1-rounded',
+					esc_html__( 'Rounded', 'master-whats-chat' ) => 'tmw-whatsapp-elementor-wrapper-style-1',
+					esc_html__( 'Squared', 'master-whats-chat' ) => 'tmw-whatsapp-elementor-wrapper-style-1 tmw-whatsapp-elementor-wrapper-style-1-rounded',
 				);
 				
 				foreach( $button_layouts as $label => $value ) : ?>
@@ -107,13 +107,13 @@ class Metabox {
 			</select>
 		</p>
 		<p>
-			<label class="tmw-label"><?php echo esc_html__( 'Attendant Image', 'tmw-whatschat' ); ?></label>
+			<label class="tmw-label"><?php echo esc_html__( 'Attendant Image', 'master-whats-chat' ); ?></label>
 			<select class="tmw-input" name="tmw_whatsapp_woocommerce_button_attendant_photo_or_icon">
 				<?php 
 				// WooCommerce Hooks Positions
 				$attendant_image_types = array(
-					esc_html__( 'Attendant Image', 'tmw-whatschat' ) => 'image',
-					esc_html__( 'Whatsapp Icon', 'tmw-whatschat' ) => 'icon',
+					esc_html__( 'Attendant Image', 'master-whats-chat' ) => 'image',
+					esc_html__( 'Whatsapp Icon', 'master-whats-chat' ) => 'icon',
 				);
 				
 				foreach( $attendant_image_types as $label => $value ) : ?>
@@ -122,28 +122,28 @@ class Metabox {
 			</select>
 		</p>
 		<p>
-			<label class="tmw-label"><?php echo esc_html__( 'Button Title', 'tmw-whatschat' ); ?></label>
+			<label class="tmw-label"><?php echo esc_html__( 'Button Title', 'master-whats-chat' ); ?></label>
 			<input type="type" class="tmw-input" name="tmw_whatsapp_woocommerce_button_attendant_title" value="<?php echo esc_attr( wp_unslash( $attendant_title ) ); ?>" /> 
-			<small><?php echo esc_html__( 'Leave this field empty if you want to show the attendant name as it is registered in the plugin options', 'tmw-whatschat' ); ?></small>
+			<small><?php echo esc_html__( 'Leave this field empty if you want to show the attendant name as it is registered in the plugin options', 'master-whats-chat' ); ?></small>
 		</p>
 		<p>
-			<label class="tmw-label"><?php echo esc_html__( 'Button Description', 'tmw-whatschat' ); ?></label>
+			<label class="tmw-label"><?php echo esc_html__( 'Button Description', 'master-whats-chat' ); ?></label>
 			<input type="type" class="tmw-input" name="tmw_whatsapp_woocommerce_button_attendant_description" value="<?php echo esc_attr( wp_unslash( $attendant_description ) ); ?>" /> 
-			<small><?php echo esc_html__( 'Leave this field empty if you want to show the attendant description as it is registered in the plugin options', 'tmw-whatschat' ); ?></small>
+			<small><?php echo esc_html__( 'Leave this field empty if you want to show the attendant description as it is registered in the plugin options', 'master-whats-chat' ); ?></small>
 		</p>
 		<p>
-			<label class="tmw-label"><?php echo esc_html__( 'Product Single Page - Button Position', 'tmw-whatschat' ); ?></label>
+			<label class="tmw-label"><?php echo esc_html__( 'Product Single Page - Button Position', 'master-whats-chat' ); ?></label>
 			<select class="tmw-input" name="tmw_whatsapp_woocommerce_button_position">
 				<?php 
 				// WooCommerce Hooks Positions
 				$positions = array(
-					esc_html__( 'None', 'tmw-whatschat' ) => 'none',
-					esc_html__( 'Before Add To Cart Button', 'tmw-whatschat' ) => 'woocommerce_before_add_to_cart_button',
-					esc_html__( 'After Add To Cart Button', 'tmw-whatschat' ) => 'woocommerce_after_add_to_cart_button',
-					esc_html__( 'Before Add To Cart Quantity', 'tmw-whatschat' ) => 'woocommerce_before_add_to_cart_quantity',
-					esc_html__( 'After Add To Cart Quantity', 'tmw-whatschat' ) => 'woocommerce_after_add_to_cart_quantity',
-					esc_html__( 'Before Add To Cart Form', 'tmw-whatschat' ) => 'woocommerce_before_add_to_cart_form',
-					esc_html__( 'After Add To Cart Form', 'tmw-whatschat' ) => 'woocommerce_after_add_to_cart_form',
+					esc_html__( 'None', 'master-whats-chat' ) => 'none',
+					esc_html__( 'Before Add To Cart Button', 'master-whats-chat' ) => 'woocommerce_before_add_to_cart_button',
+					esc_html__( 'After Add To Cart Button', 'master-whats-chat' ) => 'woocommerce_after_add_to_cart_button',
+					esc_html__( 'Before Add To Cart Quantity', 'master-whats-chat' ) => 'woocommerce_before_add_to_cart_quantity',
+					esc_html__( 'After Add To Cart Quantity', 'master-whats-chat' ) => 'woocommerce_after_add_to_cart_quantity',
+					esc_html__( 'Before Add To Cart Form', 'master-whats-chat' ) => 'woocommerce_before_add_to_cart_form',
+					esc_html__( 'After Add To Cart Form', 'master-whats-chat' ) => 'woocommerce_after_add_to_cart_form',
 				);
 				
 				foreach( $positions as $label => $value ) : ?>
@@ -152,16 +152,16 @@ class Metabox {
 			</select>
 		</p>
 		<p>
-			<label class="tmw-label"><?php echo esc_html__( 'Shop Archive Page - Button Position', 'tmw-whatschat' ); ?></label>
+			<label class="tmw-label"><?php echo esc_html__( 'Shop Archive Page - Button Position', 'master-whats-chat' ); ?></label>
 			<select class="tmw-input" name="tmw_whatsapp_woocommerce_button_position_shop_archive">
 				<?php 
 				// WooCommerce Hooks Positions
 				$positions = array(
-					esc_html__( 'None', 'tmw-whatschat' ) => 'none',
-					esc_html__( 'Before Product Title', 'tmw-whatschat' ) => 'woocommerce_before_shop_loop_item_title',
-					esc_html__( 'After Product Title', 'tmw-whatschat' ) => 'woocommerce_shop_loop_item_title',
-					esc_html__( 'After Product Price', 'tmw-whatschat' ) => 'woocommerce_after_shop_loop_item_title',
-					esc_html__( 'After Add To Cart Button', 'tmw-whatschat' ) => 'woocommerce_after_shop_loop_item',
+					esc_html__( 'None', 'master-whats-chat' ) => 'none',
+					esc_html__( 'Before Product Title', 'master-whats-chat' ) => 'woocommerce_before_shop_loop_item_title',
+					esc_html__( 'After Product Title', 'master-whats-chat' ) => 'woocommerce_shop_loop_item_title',
+					esc_html__( 'After Product Price', 'master-whats-chat' ) => 'woocommerce_after_shop_loop_item_title',
+					esc_html__( 'After Add To Cart Button', 'master-whats-chat' ) => 'woocommerce_after_shop_loop_item',
 				);
 				
 				foreach( $positions as $label => $value ) : ?>

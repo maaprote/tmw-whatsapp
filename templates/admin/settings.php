@@ -29,7 +29,7 @@ use TM\Master_Whats_Chat\Views\ChatWidget;
 
 						<div class="row align-items-center justify-content-between">
 							<div class="col-auto">
-								<p class="mt-0"><strong><?php echo esc_html__( 'Status:', 'tmw-whatschat' ); ?></strong> <span class="tmw-setup-availability-weekday-status"><?php echo esc_html__( 'Offline all the time', 'tmw-whatschat' ); ?></span></p>
+								<p class="mt-0"><strong><?php echo esc_html__( 'Status:', 'master-whats-chat' ); ?></strong> <span class="tmw-setup-availability-weekday-status"><?php echo esc_html__( 'Offline all the time', 'master-whats-chat' ); ?></span></p>
 							</div>
 							<div class="col-auto">
 								<input class="tmw-form-control-checkbox custom-checkbox-switch availability-day-switch" name="monday" value="" type="checkbox" />
@@ -39,20 +39,20 @@ use TM\Master_Whats_Chat\Views\ChatWidget;
 							<div class="col-lg-6">
 								<div class="row">
 									<div class="col-12">
-										<strong><?php echo esc_html__( 'Available Hours:', 'tmw-whatschat' ); ?></strong>
-										<p class="tmw-text-color-grey mt-0 mb-2"><?php echo esc_html__( 'When attendant is available for chat', 'tmw-whatschat' ); ?></p>
+										<strong><?php echo esc_html__( 'Available Hours:', 'master-whats-chat' ); ?></strong>
+										<p class="tmw-text-color-grey mt-0 mb-2"><?php echo esc_html__( 'When attendant is available for chat', 'master-whats-chat' ); ?></p>
 									</div>
 									<div class="col-lg-6">
 										<label class="tmw-form-control-label d-flex justify-content-between w-100 tmw-mb-5px">
-											<strong><?php echo esc_html__( 'Start:', 'tmw-whatschat' ); ?></strong>
-											<a href="#" class="tmw-timepicker-clear"><?php echo esc_html__( 'Clear', 'tmw-whatschat' ); ?></a>
+											<strong><?php echo esc_html__( 'Start:', 'master-whats-chat' ); ?></strong>
+											<a href="#" class="tmw-timepicker-clear"><?php echo esc_html__( 'Clear', 'master-whats-chat' ); ?></a>
 										</label>
 										<input type="text" class="tmw-timepicker tmw-form-control tmw-form-control-100" name="start" value="00:00" />
 									</div>
 									<div class="col-lg-6">
 										<label class="tmw-form-control-label d-flex justify-content-between w-100 tmw-mb-5px">
-											<strong><?php echo esc_html__( 'End:', 'tmw-whatschat' ); ?></strong>
-											<a href="#" class="tmw-timepicker-clear"><?php echo esc_html__( 'Clear', 'tmw-whatschat' ); ?></a>
+											<strong><?php echo esc_html__( 'End:', 'master-whats-chat' ); ?></strong>
+											<a href="#" class="tmw-timepicker-clear"><?php echo esc_html__( 'Clear', 'master-whats-chat' ); ?></a>
 										</label>
 										<input type="text" class="tmw-timepicker tmw-form-control tmw-form-control-100" name="end" value="12:00" />
 									</div>
@@ -61,20 +61,20 @@ use TM\Master_Whats_Chat\Views\ChatWidget;
 							<div class="col-lg-6 mb-3">
 								<div class="row">
 									<div class="col-12">
-										<strong><?php echo esc_html__( 'Interval:', 'tmw-whatschat' ); ?></strong>
-										<p class="tmw-text-color-grey mt-0 mb-2"><?php echo esc_html__( 'Time not available during the day. Eg: Lunch', 'tmw-whatschat' ); ?></p>
+										<strong><?php echo esc_html__( 'Interval:', 'master-whats-chat' ); ?></strong>
+										<p class="tmw-text-color-grey mt-0 mb-2"><?php echo esc_html__( 'Time not available during the day. Eg: Lunch', 'master-whats-chat' ); ?></p>
 									</div>
 									<div class="col-lg-6">
 										<label class="tmw-form-control-label d-flex justify-content-between w-100 tmw-mb-5px">
-											<strong><?php echo esc_html__( 'Start:', 'tmw-whatschat' ); ?></strong>
-											<a href="#" class="tmw-timepicker-clear"><?php echo esc_html__( 'Clear', 'tmw-whatschat' ); ?></a>
+											<strong><?php echo esc_html__( 'Start:', 'master-whats-chat' ); ?></strong>
+											<a href="#" class="tmw-timepicker-clear"><?php echo esc_html__( 'Clear', 'master-whats-chat' ); ?></a>
 										</label>
 										<input type="text" class="tmw-timepicker tmw-form-control tmw-form-control-100" name="interval-start" value="" />
 									</div>
 									<div class="col-lg-6">
 										<label class="tmw-form-control-label d-flex justify-content-between w-100 tmw-mb-5px">
-											<strong><?php echo esc_html__( 'End:', 'tmw-whatschat' ); ?></strong>
-											<a href="#" class="tmw-timepicker-clear"><?php echo esc_html__( 'Clear', 'tmw-whatschat' ); ?></a>
+											<strong><?php echo esc_html__( 'End:', 'master-whats-chat' ); ?></strong>
+											<a href="#" class="tmw-timepicker-clear"><?php echo esc_html__( 'Clear', 'master-whats-chat' ); ?></a>
 										</label>
 										<input type="text" class="tmw-timepicker tmw-form-control tmw-form-control-100" name="interval-end" value="" />
 									</div>
@@ -82,9 +82,9 @@ use TM\Master_Whats_Chat\Views\ChatWidget;
 							</div>
 							<div class="col-12">
 								<label class="tmw-form-control-label">
-									<strong><?php echo esc_html__( 'Timezone:', 'tmw-whatschat' ); ?></strong>
+									<strong><?php echo esc_html__( 'Timezone:', 'master-whats-chat' ); ?></strong>
 								</label>
-								<p class="tmw-text-color-grey mt-0 mb-2"><?php echo esc_html__( 'This option will overwrite the default timezone of the attendant in this specific day', 'tmw-whatschat' ); ?></p>
+								<p class="tmw-text-color-grey mt-0 mb-2"><?php echo esc_html__( 'This option will overwrite the default timezone of the attendant in this specific day', 'master-whats-chat' ); ?></p>
 								<?php echo SettingsFields::timezone_html_select( 'timezone', '' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- previously escaped. ?>
 							</div>
 						</div>
@@ -101,13 +101,13 @@ use TM\Master_Whats_Chat\Views\ChatWidget;
 			<div class="col-xl-9">
 				<div id="tmwWhatsappTab" class="tmw-tab-wrapper">
 					<ul class="tmw-tab-navigation">
-					    <li><a href="#tabGeneral"><?php echo esc_html__( 'General', 'tmw-whatschat' ); ?></a></li>
-					    <li><a href="#tabAttendants"><?php echo esc_html__( 'Attendants', 'tmw-whatschat' ); ?></a></li>
-					    <li><a href="#tabSkin"><?php echo esc_html__( 'Skin', 'tmw-whatschat' ); ?></a></li>
-						<li><a href="#tabPerformance"><?php echo esc_html__( 'Performance', 'tmw-whatschat' ); ?></a></li>
-						<li><a href="#tabReset"><?php echo esc_html__( 'Reset', 'tmw-whatschat' ); ?></a></li>
+					    <li><a href="#tabGeneral"><?php echo esc_html__( 'General', 'master-whats-chat' ); ?></a></li>
+					    <li><a href="#tabAttendants"><?php echo esc_html__( 'Attendants', 'master-whats-chat' ); ?></a></li>
+					    <li><a href="#tabSkin"><?php echo esc_html__( 'Skin', 'master-whats-chat' ); ?></a></li>
+						<li><a href="#tabPerformance"><?php echo esc_html__( 'Performance', 'master-whats-chat' ); ?></a></li>
+						<li><a href="#tabReset"><?php echo esc_html__( 'Reset', 'master-whats-chat' ); ?></a></li>
 					</ul>
-					<form id="rm_settings" class="tmw-bg-light p-4">
+					<form id="rm_settings" class="tmw-bg-light p-4" data-nonce="<?php echo esc_attr( wp_create_nonce( 'tmw-save-plugin-settings-nonce' ) ); ?>">
 						<div class="row">
 							<?php foreach( $defaults['fields'] as $field_name => $field_val ) : ?>
 								
@@ -118,19 +118,19 @@ use TM\Master_Whats_Chat\Views\ChatWidget;
 										<?php if( isset($field_val['value']) && !empty($field_val['value']) && is_array($field_val['value']) ) : ?>
 											<?php foreach( $field_val['value'] as $multi_field_key => $multi_field_val ) : ?>
 												<div class="attendant col-md-12">
-													<span class="attendant-id"><?php echo esc_html__( 'ATTENDANT ID:', 'tmw-whatschat' ); ?> <span class="id"><?php echo esc_html($multi_field_val['id']); ?></span></span> 
+													<span class="attendant-id"><?php echo esc_html__( 'ATTENDANT ID:', 'master-whats-chat' ); ?> <span class="id"><?php echo esc_html($multi_field_val['id']); ?></span></span> 
 													<div class="row mt-4">
 														<div class="tmw-form-group tmw-form-group-mobile-md col-lg-6">
 															<label class="tmw-form-control-label">
-																<strong><?php echo esc_html__( 'Attendant Name:', 'tmw-whatschat' ); ?></strong>
-																<p class="tmw-form-control-description"><?php echo esc_html__( 'The name of attendant', 'tmw-whatschat' ); ?></p>
+																<strong><?php echo esc_html__( 'Attendant Name:', 'master-whats-chat' ); ?></strong>
+																<p class="tmw-form-control-description"><?php echo esc_html__( 'The name of attendant', 'master-whats-chat' ); ?></p>
 															</label>
 															<input class="tmw-form-control attendant-name" name="<?php echo esc_attr( $field_name ); ?>" class="form-control" value="<?php echo esc_attr( wp_unslash($multi_field_val['name']) ); ?>" type="text" />
 														</div>
 														<div class="tmw-form-group tmw-form-group-mobile-md col-lg-6">
 															<label class="tmw-form-control-label">
-																<strong><?php echo esc_html__( 'Attendant Description:', 'tmw-whatschat' ); ?></strong>
-																<p class="tmw-form-control-description"><?php echo esc_html__( 'The description of attendant', 'tmw-whatschat' ); ?></p>
+																<strong><?php echo esc_html__( 'Attendant Description:', 'master-whats-chat' ); ?></strong>
+																<p class="tmw-form-control-description"><?php echo esc_html__( 'The description of attendant', 'master-whats-chat' ); ?></p>
 															</label>
 															<input class="tmw-form-control attendant-description" name="<?php echo esc_attr( $field_name ); ?>" class="form-control" value="<?php echo esc_attr( wp_unslash($multi_field_val['description']) ); ?>" type="text" />
 														</div>
@@ -138,19 +138,19 @@ use TM\Master_Whats_Chat\Views\ChatWidget;
 													<div class="row mt-3">
 														<div class="tmw-form-group tmw-form-group-mobile-md col-lg-6">
 															<label class="tmw-form-control-label">
-																<strong><?php echo esc_html__( 'Attendant Start Message:', 'tmw-whatschat' ); ?></strong>
-																<p class="tmw-form-control-description"><?php echo esc_html__( 'The start message of attendant', 'tmw-whatschat' ); ?></p>
+																<strong><?php echo esc_html__( 'Attendant Start Message:', 'master-whats-chat' ); ?></strong>
+																<p class="tmw-form-control-description"><?php echo esc_html__( 'The start message of attendant', 'master-whats-chat' ); ?></p>
 															</label>
 															<input class="tmw-form-control attendant-start_message" name="<?php echo esc_attr( $field_name ); ?>" class="form-control" value="<?php echo esc_attr( wp_unslash($multi_field_val['start_message']) ); ?>" type="text" />
 														</div>
 														<div class="tmw-form-group tmw-form-group-mobile-md col-lg-6">
 															<label class="tmw-form-control-label">
-																<strong><?php echo esc_html__( 'Attendant Phone:', 'tmw-whatschat' ); ?></strong>
-																<p class="tmw-form-control-description"><?php echo esc_html__( 'The attendant phone. Do not add "+" before the number', 'tmw-whatschat' ); ?></p>
+																<strong><?php echo esc_html__( 'Attendant Phone:', 'master-whats-chat' ); ?></strong>
+																<p class="tmw-form-control-description"><?php echo esc_html__( 'The attendant phone. Do not add "+" before the number', 'master-whats-chat' ); ?></p>
 																<span class="tmw-form-control-tooltip">
-																<?php echo esc_html__( 'Group Invite Links', 'tmw-whatschat' ) ?>
+																<?php echo esc_html__( 'Group Invite Links', 'master-whats-chat' ) ?>
 																	<span class="tmw-form-control-tooltip-popup">
-																		<p><?php echo esc_html__( 'This field also accept group invite links. For example: https://chat.whatsapp.com/DZb5cMkpM9P6knck5mi34W', 'tmw-whatschat' ); ?></p>
+																		<p><?php echo esc_html__( 'This field also accept group invite links. For example: https://chat.whatsapp.com/DZb5cMkpM9P6knck5mi34W', 'master-whats-chat' ); ?></p>
 																	</span>
 																</span>
 															</label>
@@ -162,15 +162,15 @@ use TM\Master_Whats_Chat\Views\ChatWidget;
 															<div class="row">
 																<div class="tmw-form-group tmw-form-group-mobile-md col-12 d-flex">
 																	<label class="tmw-form-control-label">
-																		<strong><?php echo esc_html__( 'Attendant Offline Message:', 'tmw-whatschat' ); ?></strong>
-																		<p class="tmw-form-control-description"><?php echo esc_html__( 'The message when attendat is not available for chat', 'tmw-whatschat' ); ?></p>
+																		<strong><?php echo esc_html__( 'Attendant Offline Message:', 'master-whats-chat' ); ?></strong>
+																		<p class="tmw-form-control-description"><?php echo esc_html__( 'The message when attendat is not available for chat', 'master-whats-chat' ); ?></p>
 																	</label>
 																	<input class="tmw-form-control attendant-offline_message" name="<?php echo esc_attr( $field_name ); ?>" class="form-control" value="<?php echo esc_attr( wp_unslash($multi_field_val['offline_message']) ); ?>" type="text" />
 																</div>
 																<div class="tmw-form-group tmw-form-group-mobile-md col-12 d-flex mt-3">
 																	<label class="tmw-form-control-label">
-																		<strong><?php echo esc_html__( 'Attendant Interval Message:', 'tmw-whatschat' ); ?></strong>
-																		<p class="tmw-form-control-description"><?php echo esc_html__( 'The message when attendat is not available for chat during interval', 'tmw-whatschat' ); ?></p>
+																		<strong><?php echo esc_html__( 'Attendant Interval Message:', 'master-whats-chat' ); ?></strong>
+																		<p class="tmw-form-control-description"><?php echo esc_html__( 'The message when attendat is not available for chat during interval', 'master-whats-chat' ); ?></p>
 																	</label>
 																	<input class="tmw-form-control attendant-interval_message" name="<?php echo esc_attr( $field_name ); ?>" class="form-control" value="<?php echo esc_attr( ($multi_field_val['interval_message']) ); ?>" type="text" />
 																</div>
@@ -180,15 +180,15 @@ use TM\Master_Whats_Chat\Views\ChatWidget;
 															<div class="row">
 																<div class="tmw-form-group tmw-form-group-mobile-md col-12 d-flex">
 																	<label class="tmw-form-control-label">
-																		<strong><?php echo esc_html__( 'Attendant Timezone', 'tmw-whatschat' ); ?>:</strong>
-																		<p class="tmw-form-control-description"><?php echo esc_html__( 'The attendant timezone', 'tmw-whatschat' ); ?></p>
+																		<strong><?php echo esc_html__( 'Attendant Timezone', 'master-whats-chat' ); ?>:</strong>
+																		<p class="tmw-form-control-description"><?php echo esc_html__( 'The attendant timezone', 'master-whats-chat' ); ?></p>
 																	</label>
 																	<?php echo SettingsFields::timezone_html_select( $field_name, $multi_field_val['default_timezone'], ' attendant-default-timezone' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- previously escaped. ?>
 																</div>
 																<div class="tmw-form-group tmw-form-group-mobile-md col-12 d-flex mt-3">
 																	<label class="tmw-form-control-label">
-																		<strong><?php echo esc_html__( 'Attendant Image:', 'tmw-whatschat' ); ?></strong>
-																		<p class="tmw-form-control-description"><?php echo esc_html__( 'The attendant image. Default size: 50x50', 'tmw-whatschat' ); ?></p>
+																		<strong><?php echo esc_html__( 'Attendant Image:', 'master-whats-chat' ); ?></strong>
+																		<p class="tmw-form-control-description"><?php echo esc_html__( 'The attendant image. Default size: 50x50', 'master-whats-chat' ); ?></p>
 																	</label>
 																	<?php echo SettingsFields::media_upload( $multi_field_val, 'attendant-image' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- previously escaped. ?>
 																</div>
@@ -198,7 +198,7 @@ use TM\Master_Whats_Chat\Views\ChatWidget;
 
 													<div class="row">
 														<div calss="col">
-															<p><strong><?php echo esc_html__( 'Setup Availability', 'tmw-whatschat' ); ?></strong></p>
+															<p><strong><?php echo esc_html__( 'Setup Availability', 'master-whats-chat' ); ?></strong></p>
 															<div class="tmw-setup-availability-days-wrapper">
 																
 																<?php foreach( $multi_field_val['availability'] as $dayString => $optsArray ) : ?>
@@ -212,13 +212,13 @@ use TM\Master_Whats_Chat\Views\ChatWidget;
 													</div>
 													<div class="row">
 														<div class="col">
-															<a href="#" class="tmw-setup-availability-trigger-all-days" data-toggle-text-disable="<?php echo esc_attr__( 'Disable all days', 'tmw-whatschat' ); ?>" data-toggle-text-enable="<?php echo esc_attr__( 'Enable all days', 'tmw-whatschat' ); ?>"><?php echo esc_html__( 'Enable all days', 'tmw-whatschat' ); ?></a>
+															<a href="#" class="tmw-setup-availability-trigger-all-days" data-toggle-text-disable="<?php echo esc_attr__( 'Disable all days', 'master-whats-chat' ); ?>" data-toggle-text-enable="<?php echo esc_attr__( 'Enable all days', 'master-whats-chat' ); ?>"><?php echo esc_html__( 'Enable all days', 'master-whats-chat' ); ?></a>
 														</div>
 													</div>
 													
 													<div class="row justify-content-end mt-3">
 														<div class="col-auto">
-															<a href="#" class="attendant-remove"><?php echo esc_html__( 'Remove Attendant', 'tmw-whatschat' ); ?></a>
+															<a href="#" class="attendant-remove"><?php echo esc_html__( 'Remove Attendant', 'master-whats-chat' ); ?></a>
 														</div>
 													</div>
 												</div>
@@ -227,7 +227,7 @@ use TM\Master_Whats_Chat\Views\ChatWidget;
 										<?php endif; ?>
 									</div>
 
-									<a href="#" class="attendant-add-new tmw-button-primary"><?php echo esc_html__( 'ADD NEW', 'tmw-whatschat' ); ?></a>
+									<a href="#" class="attendant-add-new tmw-button-primary"><?php echo esc_html__( 'ADD NEW', 'master-whats-chat' ); ?></a>
 
 								<?php elseif( $field_val['type'] == 'tab_start' ) : ?>
 
@@ -258,7 +258,7 @@ use TM\Master_Whats_Chat\Views\ChatWidget;
 									// Form Group Class (Responsive Purpose)
 									$form_group_class = 'tmw-form-group';
 									if( isset($field_val['form_group_class']) ) {
-										$form_group_class = 'tmw-form-group' . ' ' . esc_attr( $field_val['form_group_class'], 'tmw-whatschat' );
+										$form_group_class = 'tmw-form-group' . ' ' . esc_attr( $field_val['form_group_class'], 'master-whats-chat' );
 									} ?>
 
 									<div class="<?php echo esc_attr( $form_group_class ); ?> col-md-12 align-items-center mt-3<?php echo esc_attr( SettingsFields::conditional_class( $field_val ) ); ?>"<?php echo SettingsFields::conditional_atts( $field_val ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- previously escaped. ?>>
@@ -345,16 +345,15 @@ use TM\Master_Whats_Chat\Views\ChatWidget;
 							<?php endforeach; ?>
 						</div>
 
-						<?php wp_nonce_field( 'tmw-save-plugin-settings-nonce', 'tmw-nonce' ); ?>
 					</form>
 					<div class="tmw-settings-changed-warning tmw-hide">
-						<p><?php echo esc_html__( 'Settings Changed! Click save button to see the new changes in the preview.', 'tmw-whatschat' ); ?> </p>
+						<p><?php echo esc_html__( 'Settings Changed! Click save button to see the new changes in the preview.', 'master-whats-chat' ); ?> </p>
 					</div>
 				</div>
 				<div class="row mt-4">
 					<div class="col d-flex align-items-center">
-						<a href="#" class="tmw-button-primary tmw-settings-save"><?php echo esc_html__( 'Save Settings', 'tmw-whatschat' ); ?></a>
-						<span class="tmw-settings-save-success d-none px-4"><strong style="color: green;"><?php echo esc_html__( 'Settings Updated!', 'tmw-whatschat' ); ?></strong></span>
+						<a href="#" class="tmw-button-primary tmw-settings-save"><?php echo esc_html__( 'Save Settings', 'master-whats-chat' ); ?></a>
+						<span class="tmw-settings-save-success d-none px-4"><strong style="color: green;"><?php echo esc_html__( 'Settings Updated!', 'master-whats-chat' ); ?></strong></span>
 					</div>
 				</div>
 			</div>

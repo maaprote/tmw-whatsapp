@@ -60,10 +60,10 @@ class SingleProductButton {
 		// Check Status
 		if( $settings['status'] ) {
 			$classes[] = 'tmw-whatsapp-elementor-title-status-online';
-			$status_text = Translator::translate_string( __( 'Online!', 'tmw-whatschat' ), 'status_online' );
+			$status_text = Translator::translate_string( __( 'Online!', 'master-whats-chat' ), 'status_online' );
 		} else {
 			$classes[] = 'tmw-whatsapp-elementor-title-status-offline';
-			$status_text = Translator::translate_string( __( 'Offline!', 'tmw-whatschat' ), 'status_offline' );
+			$status_text = Translator::translate_string( __( 'Offline!', 'master-whats-chat' ), 'status_offline' );
 		}
 
 		// Mount Class
@@ -221,7 +221,7 @@ class SingleProductButton {
 		$output = '';
 
 		/* Translators: %1$s - Product Title, %2$s - Product URL */
-		$start_message = sprintf( Translator::translate_string( __( 'Hello! I have some questions about the product: %1$s (%2$s)', 'tmw-whatschat' ), 'woo_button_product_start_message' ), $post->post_title, get_the_permalink( $post->ID ) );
+		$start_message = sprintf( Translator::translate_string( __( 'Hello! I have some questions about the product: %1$s (%2$s)', 'master-whats-chat' ), 'woo_button_product_start_message' ), $post->post_title, get_the_permalink( $post->ID ) );
 
 		$output .= '<a href="#" class="tmw-whatsapp-button" data-phone-number="'. esc_attr( Translator::translate_string( $attendant['phone'], 'attendant_'. $attendant_id .'_phone' ) ) .'"'. ( empty($attendant['phone']) ? ' disabled' : '' ) .' data-start-message="'. esc_attr( $start_message ) .'" data-availability="'. esc_attr( $attendantAvailability ) .'" data-default-timezone="'. esc_attr( $attendant['default_timezone'] ) .'">';
 			$output .= '<div '. implode( ' ', $wrapper_atts ) .'>';

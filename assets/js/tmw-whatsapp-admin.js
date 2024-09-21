@@ -353,7 +353,8 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
   $(document).on('click', '.tmw-settings-save', function (e) {
     e.preventDefault();
     var $this = $(this),
-      formData = $('#rm_settings').serializeArray(),
+      $form = $('#rm_settings'),
+      formData = $form.serializeArray(),
       data = {};
     $this.text('Saving...');
     $(formData).each(function (index, obj) {
@@ -417,12 +418,14 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
       }
     });
     data['css_skin'] = skinCSS;
+    console.log(data);
     $.ajax({
       url: '../wp-admin/admin-ajax.php',
       type: 'post',
       data: {
         action: 'tmw_save_settings',
-        data: data
+        data: JSON.stringify(data),
+        tmw_nonce: $form.data('nonce')
       }
     }).done(function (data) {
       $('.tmw-settings-save-success').removeClass('d-none');

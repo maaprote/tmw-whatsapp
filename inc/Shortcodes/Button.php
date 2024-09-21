@@ -37,7 +37,7 @@ class Button {
 		$classes = array( 'tmw-whatsapp-title-status' );
 		$attributes = array();
 
-		$status_text = esc_html__( 'Online', 'tmw-whatschat' );
+		$status_text = esc_html__( 'Online', 'master-whats-chat' );
 
 		// Mount Class
 		$attributes[] = 'class="'. esc_attr( implode( ' ', $classes ) ) .'"';
@@ -83,7 +83,7 @@ class Button {
         $attendants = Functions::get_attendants();
 
         if( $attendants === NULL ) {
-            return esc_html__( 'None attendant is registered to show in this widget. Please register at least one attendant to render the widget.', 'tmw-whatschat' );
+            return esc_html__( 'None attendant is registered to show in this widget. Please register at least one attendant to render the widget.', 'master-whats-chat' );
         }
 
         // Uniqueid
@@ -166,24 +166,6 @@ class Button {
                 $output .= '</div>';
             $output .= '</a>';
         $output .= '</div>';
-        
-        // Skin
-        $output .= '<style>';
-            $output .= '#'. $uniqid .'.tmw-whatsapp-elementor-wrapper.tmw-whatsapp-elementor-wrapper-style-1 .tmw-whatsapp-elementor-body { background: '. esc_attr( $atts['background_color'] ) .'; }';
-            $output .= '#'. $uniqid .'.tmw-whatsapp-elementor-wrapper:hover .tmw-whatsapp-elementor-body { background: '. esc_attr( array( 'background_hover_color' ) ) .'; }';
-            $output .= '#'. $uniqid .'.tmw-whatsapp-elementor-wrapper .tmw-whatsapp-elementor-body .tmw-whatsapp-elementor-icon { color: '. esc_attr( array( 'icon_color' ) ) .'; }';
-            $output .= '#'. $uniqid .'.tmw-whatsapp-elementor-wrapper:hover .tmw-whatsapp-elementor-body .tmw-whatsapp-elementor-icon { color: '. esc_attr( array( 'icon_hover_color' ) ) .'; }';
-            $output .= '#'. $uniqid .'.tmw-whatsapp-elementor-wrapper .tmw-whatsapp-elementor-body .tmw-whatsapp-elementor-info .tmw-whatsapp-elementor-title h5 { color: '. esc_attr( array( 'attendant_name_color' ) ) .'; }';
-            $output .= '#'. $uniqid .'.tmw-whatsapp-elementor-wrapper:hover .tmw-whatsapp-elementor-body .tmw-whatsapp-elementor-info .tmw-whatsapp-elementor-title h5 { color: '. esc_attr( array( 'attendant_name_hover_color' ) ) .'; }';
-            $output .= '#'. $uniqid .'.tmw-whatsapp-elementor-wrapper .tmw-whatsapp-elementor-body .tmw-whatsapp-elementor-info .tmw-whatsapp-elementor-description p { color: '. esc_attr( array( 'attendant_description_color' ) ) .'; }';
-            $output .= '#'. $uniqid .'.tmw-whatsapp-elementor-wrapper:hover .tmw-whatsapp-elementor-body .tmw-whatsapp-elementor-info .tmw-whatsapp-elementor-description p { color: '. esc_attr( array( 'attendant_description_hover_color' ) ) .'; }';
-            $output .= '#'. $uniqid .'.tmw-whatsapp-elementor-wrapper .tmw-whatsapp-elementor-body .tmw-whatsapp-elementor-info .tmw-whatsapp-elementor-title .tmw-whatsapp-elementor-title-status { background-color: '. esc_attr( array( 'status_background_color' ) ) .'; }';
-            $output .= '#'. $uniqid .'.tmw-whatsapp-elementor-wrapper .tmw-whatsapp-elementor-body .tmw-whatsapp-elementor-info .tmw-whatsapp-elementor-title .tmw-whatsapp-elementor-title-status { color: '. esc_attr( array( 'status_text_color' ) ) .'; }';
-            $output .= '#'. $uniqid .'.tmw-whatsapp-elementor-wrapper.tmw-whatsapp-elementor-wrapper-style-1 .tmw-whatsapp-elementor-body .tmw-whatsapp-elementor-info .tmw-whatsapp-elementor-info-offline-message { background-color: '. esc_attr( array( 'badge_offline_message_background' ) ) .'; }';
-            $output .= '#'. $uniqid .'.tmw-whatsapp-elementor-wrapper.tmw-whatsapp-elementor-wrapper-style-1 .tmw-whatsapp-elementor-body .tmw-whatsapp-elementor-info .tmw-whatsapp-elementor-info-offline-message { color: '. esc_attr( array( 'badge_offline_message_text' ) ) .'; }';
-            $output .= '#'. $uniqid .'.tmw-whatsapp-elementor-wrapper.tmw-whatsapp-elementor-wrapper-style-1 .tmw-whatsapp-elementor-body .tmw-whatsapp-elementor-info .tmw-whatsapp-elementor-info-offline-message.is-interval { color: '. esc_attr( array( 'badge_interval_background' ) ) .'; }';
-            $output .= '#'. $uniqid .'.tmw-whatsapp-elementor-wrapper.tmw-whatsapp-elementor-wrapper-style-1 .tmw-whatsapp-elementor-body .tmw-whatsapp-elementor-info .tmw-whatsapp-elementor-info-offline-message.is-interval { color: '. esc_attr( array( 'badge_interval_text' ) ) .'; }';
-        $output .= '</style>';
 
         return $output;         
     }
