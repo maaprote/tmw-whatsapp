@@ -291,7 +291,7 @@ $defaults = array(
 				'explain' => sprintf( 
 					/* Translators: 1. Image URL */
 					__( 'Go to <a href="https://fonts.google.com" target="_blank">https://fonts.google.com</a> and select your desired font. Once you have selected, a right sidebar will open and you should get the code from there. See the image example: <img src="%1$s" class="tmw-img-fluid" alt="Font family code" />', 'master-whats-chat' ),
-					TM_MASTER_WHATS_CHAT_URL . '/img/font-family-1.jpg' 
+					TMWC_PLUGIN_URL . '/img/font-family-1.jpg' 
 				),
             ),
 		),
@@ -309,7 +309,7 @@ $defaults = array(
 				'explain' => sprintf( 
 					/* Translators: 1. Image URL */
 					__( 'Go to <a href="https://fonts.google.com" target="_blank">https://fonts.google.com</a> and select your desired font. Once you have selected, a right sidebar will open and you should get the font family name from there. See the image example: <img src="%1$s" class="tmw-img-fluid" alt="Font family name" />', 'master-whats-chat' ),
-					TM_MASTER_WHATS_CHAT_URL . '/img/font-family-2.jpg', 
+					TMWC_PLUGIN_URL . '/img/font-family-2.jpg', 
 				),
             ),
 		),

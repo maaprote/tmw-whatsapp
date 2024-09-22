@@ -6,7 +6,7 @@
  * @package Master_Whats_Chat
  */
 
-namespace TM\Master_Whats_Chat\Integration\WooCommerce\Admin;
+namespace TMWC\Master_Whats_Chat\Integration\WooCommerce\Admin;
 
 // Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -34,7 +34,7 @@ class Metabox {
  
         if ( in_array( $post_type, $post_types ) ) {
             add_meta_box(
-                'tmw_whatsapp_woocommerce_button',
+                'tmwc_woocommerce_button',
                 esc_html__( 'TM WhatsApp Button', 'master-whats-chat' ),
                 array( $this, 'render_woocommerce_metabox_content' ),
                 $post_type,
@@ -52,17 +52,17 @@ class Metabox {
      * @return void
      */
     public function render_woocommerce_metabox_content( $post ) {
-        wp_nonce_field( 'tmw_whatsapp_side_metabox', 'tmw_custom_security_nonce' );
+        wp_nonce_field( 'tmwc_side_metabox', 'tmwc_custom_security_nonce' );
  
         // Use get_post_meta to retrieve an existing value from the database.
-        $attendant_id                 = get_post_meta( $post->ID, 'tmw_whatsapp_woocommerce_button_attendant_id', true );
-		$button_layout                = get_post_meta( $post->ID, 'tmw_whatsapp_woocommerce_button_layout', true );
-		$attendant_photo_or_icon      = get_post_meta( $post->ID, 'tmw_whatsapp_woocommerce_button_attendant_photo_or_icon', true );
-		$attendant_title              = get_post_meta( $post->ID, 'tmw_whatsapp_woocommerce_button_attendant_title', true );
-		$attendant_description        = get_post_meta( $post->ID, 'tmw_whatsapp_woocommerce_button_attendant_description', true );
-		$button_position              = get_post_meta( $post->ID, 'tmw_whatsapp_woocommerce_button_position', true );
-		$button_position_shop_archive = get_post_meta( $post->ID, 'tmw_whatsapp_woocommerce_button_position_shop_archive', true );
-		$show_woo_button              = get_post_meta( $post->ID, 'tmw_show_woocommerce_button', true );
+        $attendant_id                 = get_post_meta( $post->ID, 'tmwc_woocommerce_button_attendant_id', true );
+		$button_layout                = get_post_meta( $post->ID, 'tmwc_woocommerce_button_layout', true );
+		$attendant_photo_or_icon      = get_post_meta( $post->ID, 'tmwc_woocommerce_button_attendant_photo_or_icon', true );
+		$attendant_title              = get_post_meta( $post->ID, 'tmwc_woocommerce_button_attendant_title', true );
+		$attendant_description        = get_post_meta( $post->ID, 'tmwc_woocommerce_button_attendant_description', true );
+		$button_position              = get_post_meta( $post->ID, 'tmwc_woocommerce_button_position', true );
+		$button_position_shop_archive = get_post_meta( $post->ID, 'tmwc_woocommerce_button_position_shop_archive', true );
+		$show_woo_button              = get_post_meta( $post->ID, 'tmwc_show_woocommerce_button', true );
 
         // Display the form, using the current value.
         ?>
@@ -71,14 +71,14 @@ class Metabox {
         <p>
 			<label>
 				<strong><?php echo esc_html__( 'Show Button?', 'master-whats-chat' ); ?></strong>
-				<input type="checkbox" name="tmw_show_woocommerce_button" <?php checked( $show_woo_button, 'on', true ); ?> /> 
+				<input type="checkbox" name="tmwc_show_woocommerce_button" <?php checked( $show_woo_button, 'on', true ); ?> /> 
 			</label>
 			
 		</p>
 		<p>
 			<label class="tmw-label"><?php echo esc_html__( 'Attendant', 'master-whats-chat' ); ?></label>
 			<?php if( isset($this->get_field['attendants']) && $this->get_field['attendants'] ) : ?>
-				<select class="tmw-input" name="tmw_whatsapp_woocommerce_button_attendant_id">
+				<select class="tmw-input" name="tmwc_woocommerce_button_attendant_id">
 					<?php foreach( $this->get_field['attendants'] as $attendant ) : ?>
 
 						<option value="<?php echo esc_attr( $attendant['id'] ); ?>"<?php selected( $attendant['id'], $attendant_id, true ); ?>><?php echo esc_html( $attendant['name'] ); ?></option>
@@ -93,7 +93,7 @@ class Metabox {
 		</p>
 		<p>
 			<label class="tmw-label"><?php echo esc_html__( 'Button Layout', 'master-whats-chat' ); ?></label>
-			<select class="tmw-input" name="tmw_whatsapp_woocommerce_button_layout">
+			<select class="tmw-input" name="tmwc_woocommerce_button_layout">
 				<?php 
 				// WooCommerce Hooks Positions
 				$button_layouts = array(
@@ -108,7 +108,7 @@ class Metabox {
 		</p>
 		<p>
 			<label class="tmw-label"><?php echo esc_html__( 'Attendant Image', 'master-whats-chat' ); ?></label>
-			<select class="tmw-input" name="tmw_whatsapp_woocommerce_button_attendant_photo_or_icon">
+			<select class="tmw-input" name="tmwc_woocommerce_button_attendant_photo_or_icon">
 				<?php 
 				// WooCommerce Hooks Positions
 				$attendant_image_types = array(
@@ -123,17 +123,17 @@ class Metabox {
 		</p>
 		<p>
 			<label class="tmw-label"><?php echo esc_html__( 'Button Title', 'master-whats-chat' ); ?></label>
-			<input type="type" class="tmw-input" name="tmw_whatsapp_woocommerce_button_attendant_title" value="<?php echo esc_attr( wp_unslash( $attendant_title ) ); ?>" /> 
+			<input type="type" class="tmw-input" name="tmwc_woocommerce_button_attendant_title" value="<?php echo esc_attr( wp_unslash( $attendant_title ) ); ?>" /> 
 			<small><?php echo esc_html__( 'Leave this field empty if you want to show the attendant name as it is registered in the plugin options', 'master-whats-chat' ); ?></small>
 		</p>
 		<p>
 			<label class="tmw-label"><?php echo esc_html__( 'Button Description', 'master-whats-chat' ); ?></label>
-			<input type="type" class="tmw-input" name="tmw_whatsapp_woocommerce_button_attendant_description" value="<?php echo esc_attr( wp_unslash( $attendant_description ) ); ?>" /> 
+			<input type="type" class="tmw-input" name="tmwc_woocommerce_button_attendant_description" value="<?php echo esc_attr( wp_unslash( $attendant_description ) ); ?>" /> 
 			<small><?php echo esc_html__( 'Leave this field empty if you want to show the attendant description as it is registered in the plugin options', 'master-whats-chat' ); ?></small>
 		</p>
 		<p>
 			<label class="tmw-label"><?php echo esc_html__( 'Product Single Page - Button Position', 'master-whats-chat' ); ?></label>
-			<select class="tmw-input" name="tmw_whatsapp_woocommerce_button_position">
+			<select class="tmw-input" name="tmwc_woocommerce_button_position">
 				<?php 
 				// WooCommerce Hooks Positions
 				$positions = array(
@@ -153,7 +153,7 @@ class Metabox {
 		</p>
 		<p>
 			<label class="tmw-label"><?php echo esc_html__( 'Shop Archive Page - Button Position', 'master-whats-chat' ); ?></label>
-			<select class="tmw-input" name="tmw_whatsapp_woocommerce_button_position_shop_archive">
+			<select class="tmw-input" name="tmwc_woocommerce_button_position_shop_archive">
 				<?php 
 				// WooCommerce Hooks Positions
 				$positions = array(
@@ -181,12 +181,12 @@ class Metabox {
      * @return void
      */
     public function save_metabox( $post_id ) {
-        if ( ! isset( $_POST['tmw_custom_security_nonce'] ) ) {
+        if ( ! isset( $_POST['tmwc_custom_security_nonce'] ) ) {
             return $post_id;
         }
  
         // Verify that the nonce is valid.
-        if ( ! wp_verify_nonce( sanitize_text_field( $_POST['tmw_custom_security_nonce'] ), 'tmw_whatsapp_side_metabox' ) ) {
+        if ( ! wp_verify_nonce( sanitize_text_field( wp_unslash( $_POST['tmwc_custom_security_nonce'] ) ), 'tmwc_side_metabox' ) ) {
             return $post_id;
         }
  
@@ -199,23 +199,23 @@ class Metabox {
 		}
 
         // Sanitize the user input.
-        $attendant_id                 = isset( $_POST['tmw_whatsapp_woocommerce_button_attendant_id'] ) ? sanitize_text_field( $_POST['tmw_whatsapp_woocommerce_button_attendant_id'] ) : '';
-		$button_layout                = isset( $_POST['tmw_whatsapp_woocommerce_button_layout'] ) ? sanitize_text_field( $_POST['tmw_whatsapp_woocommerce_button_layout'] ) : '';
-		$attendant_photo_or_icon      = isset( $_POST['tmw_whatsapp_woocommerce_button_attendant_photo_or_icon'] ) ? sanitize_text_field( $_POST['tmw_whatsapp_woocommerce_button_attendant_photo_or_icon'] ) : '';;
-		$attendant_title              = isset( $_POST['tmw_whatsapp_woocommerce_button_attendant_title'] ) ? sanitize_text_field( $_POST['tmw_whatsapp_woocommerce_button_attendant_title'] ) : '';;
-		$attendant_description        = isset( $_POST['tmw_whatsapp_woocommerce_button_attendant_description'] ) ? sanitize_text_field( $_POST['tmw_whatsapp_woocommerce_button_attendant_description'] ) : '';;
-		$button_position              = isset( $_POST['tmw_whatsapp_woocommerce_button_position'] ) ? sanitize_text_field( $_POST['tmw_whatsapp_woocommerce_button_position'] ) : '';;
-		$button_position_shop_archive = isset( $_POST['tmw_whatsapp_woocommerce_button_position_shop_archive'] ) ? sanitize_text_field( $_POST['tmw_whatsapp_woocommerce_button_position_shop_archive'] ) : '';;
-		$show_woo_button              = isset( $_POST['tmw_show_woocommerce_button'] ) ? sanitize_text_field( $_POST['tmw_show_woocommerce_button'] ) : '';
+        $attendant_id                 = isset( $_POST['tmwc_woocommerce_button_attendant_id'] ) ? sanitize_text_field( wp_unslash( $_POST['tmwc_woocommerce_button_attendant_id'] ) ) : '';
+		$button_layout                = isset( $_POST['tmwc_woocommerce_button_layout'] ) ? sanitize_text_field( wp_unslash( $_POST['tmwc_woocommerce_button_layout'] ) ) : '';
+		$attendant_photo_or_icon      = isset( $_POST['tmwc_woocommerce_button_attendant_photo_or_icon'] ) ? sanitize_text_field( wp_unslash( $_POST['tmwc_woocommerce_button_attendant_photo_or_icon'] ) ) : '';;
+		$attendant_title              = isset( $_POST['tmwc_woocommerce_button_attendant_title'] ) ? sanitize_text_field( wp_unslash( $_POST['tmwc_woocommerce_button_attendant_title'] ) ) : '';;
+		$attendant_description        = isset( $_POST['tmwc_woocommerce_button_attendant_description'] ) ? sanitize_text_field( wp_unslash( $_POST['tmwc_woocommerce_button_attendant_description'] ) ) : '';;
+		$button_position              = isset( $_POST['tmwc_woocommerce_button_position'] ) ? sanitize_text_field( wp_unslash( $_POST['tmwc_woocommerce_button_position'] ) ) : '';;
+		$button_position_shop_archive = isset( $_POST['tmwc_woocommerce_button_position_shop_archive'] ) ? sanitize_text_field( wp_unslash( $_POST['tmwc_woocommerce_button_position_shop_archive'] ) ) : '';;
+		$show_woo_button              = isset( $_POST['tmwc_show_woocommerce_button'] ) ? sanitize_text_field( wp_unslash( $_POST['tmwc_show_woocommerce_button'] ) ) : '';
  
         // Update the meta field.
-        update_post_meta( $post_id, 'tmw_whatsapp_woocommerce_button_attendant_id', $attendant_id );
-		update_post_meta( $post_id, 'tmw_whatsapp_woocommerce_button_layout', $button_layout );
-		update_post_meta( $post_id, 'tmw_whatsapp_woocommerce_button_attendant_photo_or_icon', $attendant_photo_or_icon );
-		update_post_meta( $post_id, 'tmw_whatsapp_woocommerce_button_attendant_title', $attendant_title );
-		update_post_meta( $post_id, 'tmw_whatsapp_woocommerce_button_attendant_description', $attendant_description );
-		update_post_meta( $post_id, 'tmw_whatsapp_woocommerce_button_position', $button_position );
-		update_post_meta( $post_id, 'tmw_whatsapp_woocommerce_button_position_shop_archive', $button_position_shop_archive );
-		update_post_meta( $post_id, 'tmw_show_woocommerce_button', $show_woo_button );
+        update_post_meta( $post_id, 'tmwc_woocommerce_button_attendant_id', $attendant_id );
+		update_post_meta( $post_id, 'tmwc_woocommerce_button_layout', $button_layout );
+		update_post_meta( $post_id, 'tmwc_woocommerce_button_attendant_photo_or_icon', $attendant_photo_or_icon );
+		update_post_meta( $post_id, 'tmwc_woocommerce_button_attendant_title', $attendant_title );
+		update_post_meta( $post_id, 'tmwc_woocommerce_button_attendant_description', $attendant_description );
+		update_post_meta( $post_id, 'tmwc_woocommerce_button_position', $button_position );
+		update_post_meta( $post_id, 'tmwc_woocommerce_button_position_shop_archive', $button_position_shop_archive );
+		update_post_meta( $post_id, 'tmwc_show_woocommerce_button', $show_woo_button );
 	}
 }

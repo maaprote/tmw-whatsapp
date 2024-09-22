@@ -6,15 +6,15 @@
  * @package Master_Whats_Chat
  */
 
-namespace TM\Master_Whats_Chat\Shortcodes;
+namespace TMWC\Master_Whats_Chat\Shortcodes;
 
 // Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) {
     exit;
 }
 
-use TM\Master_Whats_Chat\Functions;
-use TM\Master_Whats_Chat\Translator;
+use TMWC\Master_Whats_Chat\Functions;
+use TMWC\Master_Whats_Chat\Translator;
 
 class Button {
 
@@ -23,7 +23,7 @@ class Button {
      * 
      */
     public function __construct() {
-        add_shortcode( 'tmw_whatsapp_button_wp', array( $this, 'render' ), 10, 3 );
+        add_shortcode( 'tmwc_button_wp', array( $this, 'render' ), 10, 3 );
     }
 
     /**
@@ -141,7 +141,7 @@ class Button {
                             $output .= '<i class="tmw-fab tmw-fa-whatsapp"></i>';
                         } else {
                             $image = array(
-                                'image' => $attendants[ $attendant_id ]['image']['attendant-image'] ? wp_get_attachment_url( $attendants[ $attendant_id ]['image']['attendant-image'] ) : TM_MASTER_WHATS_CHAT_URL . '/img/user-placeholder.png',
+                                'image' => $attendants[ $attendant_id ]['image']['attendant-image'] ? wp_get_attachment_url( $attendants[ $attendant_id ]['image']['attendant-image'] ) : TMWC_PLUGIN_URL . '/img/user-placeholder.png',
                                 'width' => 150,
                                 'height' => 150,
                             );

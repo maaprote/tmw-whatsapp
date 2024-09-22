@@ -6,16 +6,16 @@
  * @package Master_Whats_Chat
  */
 
-namespace TM\Master_Whats_Chat\Views;
+namespace TMWC\Master_Whats_Chat\Views;
 
 // Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) {
     die( '-1' );
 }
 
-use TM\Master_Whats_Chat\Functions;
-use TM\Master_Whats_Chat\Translator;
-use TM\Master_Whats_Chat\Views\OpenChatButton;
+use TMWC\Master_Whats_Chat\Functions;
+use TMWC\Master_Whats_Chat\Translator;
+use TMWC\Master_Whats_Chat\Views\OpenChatButton;
 
 class ChatWidget {
 
@@ -310,7 +310,7 @@ class ChatWidget {
 							<a href="#" class="tmw-whatsapp-active-attendant-info-back">
 								<i class="tmw-fas tmw-fa-arrow-left"></i>
 							</a>
-							<img class="tmw-whatsapp-attendant-info-image" src="<?php echo esc_url( TM_MASTER_WHATS_CHAT_URL ); ?>/img/user-placeholder.png" width="50" height="50" alt="John Doe" />
+							<img class="tmw-whatsapp-attendant-info-image" src="<?php echo esc_url( TMWC_PLUGIN_URL ); ?>/img/user-placeholder.png" width="50" height="50" alt="John Doe" />
 							<div class="tmw-whatsapp-attedant-info-title">
 								<h2><?php echo esc_html( Translator::translate_string( 'John Doe Junior', 'default_attendant_info_title' ) ) ?></h2>
 								<p><?php echo esc_html( Translator::translate_string( 'online', 'status_online_lowercase' ) ); ?></p>
@@ -347,7 +347,7 @@ class ChatWidget {
 										<img src="<?php echo esc_url( wp_get_attachment_url( $attendantObj['image']['attendant-image'] ) ); ?>" width="<?php echo esc_attr( $attendantObj['image']['attendant-image_width'] ); ?>" height="<?php echo esc_attr( $attendantObj['image']['attendant-image_height'] ); ?>" alt="" />
 									<?php else : ?>
 
-										<img src="<?php echo esc_url( TM_MASTER_WHATS_CHAT_URL ); ?>/img/user-placeholder.png" width="150" height="151" alt="<?php echo esc_attr( $attendantObj['name'] ); ?>" />
+										<img src="<?php echo esc_url( TMWC_PLUGIN_URL ); ?>/img/user-placeholder.png" width="150" height="151" alt="<?php echo esc_attr( $attendantObj['name'] ); ?>" />
 
 									<?php endif; ?>
 								</div>

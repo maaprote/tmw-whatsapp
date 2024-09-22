@@ -6,16 +6,16 @@
  * @package Master_Whats_Chat
  */
 
-namespace TM\Master_Whats_Chat\Widgets;
+namespace TMWC\Master_Whats_Chat\Widgets;
 
 // Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) {
     die( '-1' );
 }
 
-use TM\Master_Whats_Chat\Functions;
-use TM\Master_Whats_Chat\Translator;
-use TM\Master_Whats_Chat\Views\ChatWidget;
+use TMWC\Master_Whats_Chat\Functions;
+use TMWC\Master_Whats_Chat\Translator;
+use TMWC\Master_Whats_Chat\Views\ChatWidget;
 
 class Button extends \WP_Widget {
 
@@ -92,8 +92,8 @@ class Button extends \WP_Widget {
         }
 
 		// Register widgets script
-		wp_register_script( 'tmw-whatsapp-widgets', TM_MASTER_WHATS_CHAT_URL . '/js/tmw-whatsapp-widgets.js', array( 'jquery' ), TM_MASTER_WHATS_CHAT_VERSION, true );
-		wp_enqueue_script( 'tmw-whatsapp-widgets' );
+		wp_register_script( 'tmwc-whatsapp-widgets', TMWC_PLUGIN_URL . '/js/tmw-whatsapp-widgets.js', array( 'jquery' ), TMWC_VERSION, true );
+		wp_enqueue_script( 'tmwc-whatsapp-widgets' );
 
 		// Attendant Title
 		$att_title = !empty( $instance['att_title'] ) ? $instance['att_title'] : Translator::translate_string( $attendant['name'], 'attendant_'. $attendant_id .'_name' );
@@ -169,7 +169,7 @@ class Button extends \WP_Widget {
 							$output .= '<i class="tmw-fab tmw-fa-whatsapp"></i>';
 						} else {
 							$image = array(
-								'image' => $attendant['image']['attendant-image'] ? wp_get_attachment_url( $attendant['image']['attendant-image'] ) : TM_MASTER_WHATS_CHAT_URL . '/img/user-placeholder.png',
+								'image' => $attendant['image']['attendant-image'] ? wp_get_attachment_url( $attendant['image']['attendant-image'] ) : TMWC_PLUGIN_URL . '/img/user-placeholder.png',
 								'width' => 150,
 								'height' => 150,
 							);

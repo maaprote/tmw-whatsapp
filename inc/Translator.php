@@ -6,7 +6,7 @@
  * @package Master_Whats_Chat
  */
 
-namespace TM\Master_Whats_Chat;
+namespace TMWC\Master_Whats_Chat;
 
 // Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) {

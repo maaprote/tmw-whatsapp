@@ -187,14 +187,14 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
       $('.availability-day-switch').prop('checked', true);
       setTimeout(function () {
         if ($('.tmw-timepicker[name="start"]').val() !== '' || $('.tmw-timepicker[name="end"]').val() !== '') {
-          $status.text(tmw_data.i18n.admin.weekday_popup_status.hours);
+          $status.text(tmwc_data.i18n.admin.weekday_popup_status.hours);
         } else {
-          $status.text(tmw_data.i18n.admin.weekday_popup_status.online);
+          $status.text(tmwc_data.i18n.admin.weekday_popup_status.online);
         }
       }, 500);
     } else {
       $('.availability-day-switch').prop('checked', false);
-      $status.text(tmw_data.i18n.admin.weekday_popup_status.offline);
+      $status.text(tmwc_data.i18n.admin.weekday_popup_status.offline);
     }
 
     // Start, End, Interval Start and Interval End
@@ -275,12 +275,12 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
         if ($(this).val() != '') {
           var $status = $('.tmw-setup-availability-weekday-status');
           if ($('.availability-day-switch').is(':checked')) {
-            $status.text(tmw_data.i18n.admin.weekday_popup_status.online);
+            $status.text(tmwc_data.i18n.admin.weekday_popup_status.online);
             if ($('.tmw-timepicker[name="start"]').val() != '' || $('.tmw-timepicker[name="end"]').val() != '') {
-              $status.text(tmw_data.i18n.admin.weekday_popup_status.hours);
+              $status.text(tmwc_data.i18n.admin.weekday_popup_status.hours);
             }
           } else {
-            $status.text(tmw_data.i18n.admin.weekday_popup_status.offline);
+            $status.text(tmwc_data.i18n.admin.weekday_popup_status.offline);
           }
         }
         if ($(this).attr('name') == 'start') {
@@ -321,12 +321,12 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
         // Change Status Description
         var $status = $('.tmw-setup-availability-weekday-status');
         if ($('.availability-day-switch').is(':checked')) {
-          $status.text(tmw_data.i18n.admin.weekday_popup_status.online);
+          $status.text(tmwc_data.i18n.admin.weekday_popup_status.online);
           if ($('.tmw-timepicker[name="start"]').val() != '' || $('.tmw-timepicker[name="end"]').val() != '') {
-            $status.text(tmw_data.i18n.admin.weekday_popup_status.hours);
+            $status.text(tmwc_data.i18n.admin.weekday_popup_status.hours);
           }
         } else {
-          $status.text(tmw_data.i18n.admin.weekday_popup_status.offline);
+          $status.text(tmwc_data.i18n.admin.weekday_popup_status.offline);
         }
       });
     });
@@ -338,12 +338,12 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
   $('.availability-day-switch').on('change', function () {
     var $status = $('.tmw-setup-availability-weekday-status');
     if ($(this).is(':checked')) {
-      $status.text(tmw_data.i18n.admin.weekday_popup_status.online);
+      $status.text(tmwc_data.i18n.admin.weekday_popup_status.online);
       if ($('.tmw-timepicker[name="start"]').val() != '' || $('.tmw-timepicker[name="end"]').val() != '') {
-        $status.text(tmw_data.i18n.admin.weekday_popup_status.hours);
+        $status.text(tmwc_data.i18n.admin.weekday_popup_status.hours);
       }
     } else {
-      $status.text(tmw_data.i18n.admin.weekday_popup_status.offline);
+      $status.text(tmwc_data.i18n.admin.weekday_popup_status.offline);
     }
   });
 
@@ -418,14 +418,13 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
       }
     });
     data['css_skin'] = skinCSS;
-    console.log(data);
     $.ajax({
       url: '../wp-admin/admin-ajax.php',
       type: 'post',
       data: {
-        action: 'tmw_save_settings',
+        action: 'tmwc_save_settings',
         data: JSON.stringify(data),
-        tmw_nonce: $form.data('nonce')
+        tmwc_nonce: $form.data('nonce')
       }
     }).done(function (data) {
       $('.tmw-settings-save-success').removeClass('d-none');
@@ -480,19 +479,19 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
     }
     var html = '';
     html += '<div class="attendant col-md-12">';
-    html += '<span class="attendant-id">' + tmw_data.i18n.admin.add_new_attendant.attendant_id_label + ' <span class="id">' + attendant_id + '</span></span>';
+    html += '<span class="attendant-id">' + tmwc_data.i18n.admin.add_new_attendant.attendant_id_label + ' <span class="id">' + attendant_id + '</span></span>';
     html += '<div class="row mt-4">';
     html += '<div class="tmw-form-group tmw-form-group-mobile-md col-lg-6">';
     html += '<label class="tmw-form-control-label">';
-    html += '<strong>' + tmw_data.i18n.admin.add_new_attendant.attendant_name + '</strong>';
-    html += '<p class="tmw-form-control-description">' + tmw_data.i18n.admin.add_new_attendant.attendant_name_desc + '</p>';
+    html += '<strong>' + tmwc_data.i18n.admin.add_new_attendant.attendant_name + '</strong>';
+    html += '<p class="tmw-form-control-description">' + tmwc_data.i18n.admin.add_new_attendant.attendant_name_desc + '</p>';
     html += '</label>';
     html += '<input class="tmw-form-control attendant-name" name="attendants" class="form-control" value="" type="text" />';
     html += '</div>';
     html += '<div class="tmw-form-group tmw-form-group-mobile-md col-lg-6">';
     html += '<label class="tmw-form-control-label">';
-    html += '<strong>' + tmw_data.i18n.admin.add_new_attendant.attendant_description + '</strong>';
-    html += '<p class="tmw-form-control-description">' + tmw_data.i18n.admin.add_new_attendant.attendant_description_desc + '</p>';
+    html += '<strong>' + tmwc_data.i18n.admin.add_new_attendant.attendant_description + '</strong>';
+    html += '<p class="tmw-form-control-description">' + tmwc_data.i18n.admin.add_new_attendant.attendant_description_desc + '</p>';
     html += '</label>';
     html += '<input class="tmw-form-control attendant-description" name="attendants" class="form-control" value="" type="text" />';
     html += '</div>';
@@ -500,15 +499,15 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
     html += '<div class="row mt-3">';
     html += '<div class="tmw-form-group tmw-form-group-mobile-md col-lg-6">';
     html += '<label class="tmw-form-control-label">';
-    html += '<strong>' + tmw_data.i18n.admin.add_new_attendant.attendant_start_message + '</strong>';
-    html += '<p class="tmw-form-control-description">' + tmw_data.i18n.admin.add_new_attendant.attendant_start_message_desc + '</p>';
+    html += '<strong>' + tmwc_data.i18n.admin.add_new_attendant.attendant_start_message + '</strong>';
+    html += '<p class="tmw-form-control-description">' + tmwc_data.i18n.admin.add_new_attendant.attendant_start_message_desc + '</p>';
     html += '</label>';
     html += '<input class="tmw-form-control attendant-start_message" name="attendants" class="form-control" value="" type="text" />';
     html += '</div>';
     html += '<div class="tmw-form-group tmw-form-group-mobile-md col-lg-6">';
     html += '<label class="tmw-form-control-label">';
-    html += '<strong>' + tmw_data.i18n.admin.add_new_attendant.attendant_phone + '</strong>';
-    html += '<p class="tmw-form-control-description">' + tmw_data.i18n.admin.add_new_attendant.attendant_phone_desc + '</p>';
+    html += '<strong>' + tmwc_data.i18n.admin.add_new_attendant.attendant_phone + '</strong>';
+    html += '<p class="tmw-form-control-description">' + tmwc_data.i18n.admin.add_new_attendant.attendant_phone_desc + '</p>';
     html += '</label>';
     html += '<input class="tmw-form-control attendant-phone" name="attendants" class="form-control" value="" type="text" />';
     html += '</div>';
@@ -518,15 +517,15 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
     html += '<div class="row">';
     html += '<div class="tmw-form-group tmw-form-group-mobile-md col-12 d-flex">';
     html += '<label class="tmw-form-control-label">';
-    html += '<strong>' + tmw_data.i18n.admin.add_new_attendant.attendant_offline_message + '</strong>';
-    html += '<p class="tmw-form-control-description">' + tmw_data.i18n.admin.add_new_attendant.attendant_offline_message_desc + '</p>';
+    html += '<strong>' + tmwc_data.i18n.admin.add_new_attendant.attendant_offline_message + '</strong>';
+    html += '<p class="tmw-form-control-description">' + tmwc_data.i18n.admin.add_new_attendant.attendant_offline_message_desc + '</p>';
     html += '</label>';
     html += '<input class="tmw-form-control attendant-offline_message name="attendants" class="form-control" value="" type="text" />';
     html += '</div>';
     html += '<div class="tmw-form-group tmw-form-group-mobile-md col-12 d-flex mt-3">';
     html += '<label class="tmw-form-control-label">';
-    html += '<strong>' + tmw_data.i18n.admin.add_new_attendant.attendant_interval_message + '</strong>';
-    html += '<p class="tmw-form-control-description">' + tmw_data.i18n.admin.add_new_attendant.attendant_interval_message_desc + '</p>';
+    html += '<strong>' + tmwc_data.i18n.admin.add_new_attendant.attendant_interval_message + '</strong>';
+    html += '<p class="tmw-form-control-description">' + tmwc_data.i18n.admin.add_new_attendant.attendant_interval_message_desc + '</p>';
     html += '</label>';
     html += '<input class="tmw-form-control attendant-interval_message" name="attendants" class="form-control" value="" type="text" />';
     html += '</div>';
@@ -536,8 +535,8 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
     html += '<div class="row">';
     html += '<div class="tmw-form-group tmw-form-group-mobile-md col-12 d-flex">';
     html += '<label class="tmw-form-control-label">';
-    html += '<strong>' + tmw_data.i18n.admin.add_new_attendant.attendant_timezone + '</strong>';
-    html += '<p class="tmw-form-control-description">' + tmw_data.i18n.admin.add_new_attendant.attendant_timezone_desc + '</p>';
+    html += '<strong>' + tmwc_data.i18n.admin.add_new_attendant.attendant_timezone + '</strong>';
+    html += '<p class="tmw-form-control-description">' + tmwc_data.i18n.admin.add_new_attendant.attendant_timezone_desc + '</p>';
     html += '</label>';
     html += '<select name="attendants" class="attendant-default-timezone tmw-form-control tmw-form-control-select">';
     var timezone_list = moment.tz.names(),
@@ -549,11 +548,11 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
     html += '</div>';
     html += '<div class="tmw-form-group tmw-form-group-mobile-md col-12 d-flex mt-3">';
     html += '<label class="tmw-form-control-label">';
-    html += '<strong>' + tmw_data.i18n.admin.add_new_attendant.attendant_image + '</strong>';
-    html += '<p class="tmw-form-control-description">' + tmw_data.i18n.admin.add_new_attendant.attendant_image_desc + '</p>';
+    html += '<strong>' + tmwc_data.i18n.admin.add_new_attendant.attendant_image + '</strong>';
+    html += '<p class="tmw-form-control-description">' + tmwc_data.i18n.admin.add_new_attendant.attendant_image_desc + '</p>';
     html += '</label>';
     html += '<div class="tmw-media-uploader">';
-    html += '<img class="tmw-metabox-image-field-preview tmw-media-uploader-upload-btn" src="' + tmw_data.tmw_uri + 'img/img-placeholder.png" alt="' + tmw_data.i18n.admin.add_new_attendant.attendant_image_alt + '" width="100" height="" data-post-id="">';
+    html += '<img class="tmw-metabox-image-field-preview tmw-media-uploader-upload-btn" src="' + tmwc_data.tmwc_uri + 'img/img-placeholder.png" alt="' + tmwc_data.i18n.admin.add_new_attendant.attendant_image_alt + '" width="100" height="" data-post-id="">';
     html += '<span class="tmw-media-uploader-remove-btn dashicons dashicons-dismiss"></span>';
     html += '<input class="tmw-media-uploader-media-image" type="hidden" name="attendant-image" value="">';
     html += '<input class="tmw-media-uploader-media-type" type="hidden" name="attendant-image_type" value="">';
@@ -568,9 +567,9 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
     html += '</div>';
     html += '<div class="row">';
     html += '<div calss="col">';
-    html += '<p><strong>' + tmw_data.i18n.admin.add_new_attendant.attendant_setup_availability + '</strong></p>';
+    html += '<p><strong>' + tmwc_data.i18n.admin.add_new_attendant.attendant_setup_availability + '</strong></p>';
     html += '<div class="tmw-setup-availability-days-wrapper">';
-    var daysArr = [tmw_data.i18n.admin.add_new_attendant.attendant_setup_availability_days.monday, tmw_data.i18n.admin.add_new_attendant.attendant_setup_availability_days.tuesday, tmw_data.i18n.admin.add_new_attendant.attendant_setup_availability_days.wednesday, tmw_data.i18n.admin.add_new_attendant.attendant_setup_availability_days.thursday, tmw_data.i18n.admin.add_new_attendant.attendant_setup_availability_days.friday, tmw_data.i18n.admin.add_new_attendant.attendant_setup_availability_days.saturday, tmw_data.i18n.admin.add_new_attendant.attendant_setup_availability_days.sunday];
+    var daysArr = [tmwc_data.i18n.admin.add_new_attendant.attendant_setup_availability_days.monday, tmwc_data.i18n.admin.add_new_attendant.attendant_setup_availability_days.tuesday, tmwc_data.i18n.admin.add_new_attendant.attendant_setup_availability_days.wednesday, tmwc_data.i18n.admin.add_new_attendant.attendant_setup_availability_days.thursday, tmwc_data.i18n.admin.add_new_attendant.attendant_setup_availability_days.friday, tmwc_data.i18n.admin.add_new_attendant.attendant_setup_availability_days.saturday, tmwc_data.i18n.admin.add_new_attendant.attendant_setup_availability_days.sunday];
     for (var i = 0; i < daysArr.length; i++) {
       html += '<a href="#" class="tmw-setup-availability-day tmw-setup-availability-button" data-day="' + daysArr[i] + '" data-available="no" data-start="" data-end="" data-interval-start="" data-interval-end="" data-timezone="">';
       html += daysArr[i].toUpperCase();
@@ -581,12 +580,12 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
     html += '</div>';
     html += '<div class="row">';
     html += '<div class="col">';
-    html += '<a href="#" class="tmw-setup-availability-trigger-all-days">' + tmw_data.i18n.admin.add_new_attendant.attendant_enable_all_days + '</a>';
+    html += '<a href="#" class="tmw-setup-availability-trigger-all-days">' + tmwc_data.i18n.admin.add_new_attendant.attendant_enable_all_days + '</a>';
     html += '</div>';
     html += '</div>';
     html += '<div class="row justify-content-end mt-3">';
     html += '<div class="col-auto">';
-    html += '<a href="#" class="attendant-remove">' + tmw_data.i18n.admin.add_new_attendant.attendant_remove_attendant + '</a>';
+    html += '<a href="#" class="attendant-remove">' + tmwc_data.i18n.admin.add_new_attendant.attendant_remove_attendant + '</a>';
     html += '</div>';
     html += '</div>';
     html += '</div>';
@@ -637,9 +636,9 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 
       // Create the media frame.
       file_frame = wp.media.frames.file_frame = wp.media({
-        title: tmw_data.i18n.admin.media_upload.title,
+        title: tmwc_data.i18n.admin.media_upload.title,
         button: {
-          text: tmw_data.i18n.admin.media_upload.button_text
+          text: tmwc_data.i18n.admin.media_upload.button_text
         },
         multiple: false // Set to true to allow multiple files to be selected
       });
@@ -699,7 +698,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
         image_type = $this.closest('.tmw-media-uploader').find('.tmw-media-uploader-media-type'),
         image_icon = $this.closest('.tmw-media-uploader').find('.tmw-media-uploader-media-icon');
       event.preventDefault();
-      image.attr('src', tmw_data.tmw_uri + '/img/img-placeholder.png');
+      image.attr('src', tmwc_data.tmw_uri + '/img/img-placeholder.png');
       image_field.val('');
       image_url.val('');
       image_width.val('');
@@ -767,7 +766,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
      */
     $('input[name="reset_settings"]').on('change', function () {
       if ($(this).is(':checked')) {
-        var reset = confirm(tmw_data.i18n.admin.reset_settings_alert);
+        var reset = confirm(tmwc_data.i18n.admin.reset_settings_alert);
         if (reset == false) {
           $(this).prop('checked', false);
         }

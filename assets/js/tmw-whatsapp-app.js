@@ -105,7 +105,6 @@
         setTimeout(function () {
           _self.$attendant.eq(_self.$wrapper.data('open-chat-with')).trigger('click');
           _self.$triggerButton.trigger('click');
-          alert(222);
         }, delay);
       }
       return this;
@@ -117,7 +116,7 @@
         e.preventDefault();
         var attendantImage = $(this).find('.tmw-whatsapp-attendant-image > img'),
           attendantTitle = $(this).find('.tmw-whatsapp-attendant-info > h3').text(),
-          attendantIsOnline = $(this).hasClass('tmw-attendant-is-online') ? tmw_data.i18n.attendant_online_text : tmw_data.i18n.attendant_offline_text;
+          attendantIsOnline = $(this).hasClass('tmw-attendant-is-online') ? tmwc_data.i18n.attendant_online_text : tmwc_data.i18n.attendant_offline_text;
 
         // Open Whatsapp Web Chat Window	
         if (_self.$openWhatsappChatType == 'select-attendant') {

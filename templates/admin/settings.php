@@ -15,9 +15,9 @@ if ( ! defined( 'ABSPATH' ) ) {
     exit;
 }
 
-use TM\Master_Whats_Chat\Functions;
-use TM\Master_Whats_Chat\Admin\SettingsFields;
-use TM\Master_Whats_Chat\Views\ChatWidget;
+use TMWC\Master_Whats_Chat\Functions;
+use TMWC\Master_Whats_Chat\Admin\SettingsFields;
+use TMWC\Master_Whats_Chat\Views\ChatWidget;
 
 ?>
 <div class="tmw-whatsapp-admin-settings<?php echo esc_attr( $rtl_direction_class ); ?>">
@@ -110,7 +110,10 @@ use TM\Master_Whats_Chat\Views\ChatWidget;
 					<form id="rm_settings" class="tmw-bg-light p-4" data-nonce="<?php echo esc_attr( wp_create_nonce( 'tmw-save-plugin-settings-nonce' ) ); ?>">
 						<div class="row">
 							<?php foreach( $defaults['fields'] as $field_name => $field_val ) : ?>
-								
+								<?php if ( ! isset( $field_val['type'] ) ) {
+									continue;
+								} ?>
+
 								<?php if( $field_val['type'] == 'multi' ) : ?>
 
 									<div class="attendants-wrapper">
@@ -261,7 +264,7 @@ use TM\Master_Whats_Chat\Views\ChatWidget;
 										$form_group_class = 'tmw-form-group' . ' ' . esc_attr( $field_val['form_group_class'], 'master-whats-chat' );
 									} ?>
 
-									<div class="<?php echo esc_attr( $form_group_class ); ?> col-md-12 align-items-center mt-3<?php echo esc_attr( SettingsFields::conditional_class( $field_val ) ); ?>"<?php echo SettingsFields::conditional_atts( $field_val ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- previously escaped. ?>>
+									<div class="<?php echo esc_attr( $form_group_class ); ?> col-md-12 align-items-center mt-3<?php echo esc_attr( SettingsFields::conditional_class( $field_val ) ); ?>"<?php echo wp_kses_post( SettingsFields::conditional_atts( $field_val ) ); ?>>
 									
 										<label class="tmw-form-control-label">
 											<strong><?php echo esc_html($field_val['label']); ?></strong>
@@ -326,7 +329,7 @@ use TM\Master_Whats_Chat\Views\ChatWidget;
 
 										<?php elseif( isset($field_val['type']) && $field_val['type'] == 'padding_margin' ) : ?>
 
-											<?php echo SettingsFields::padding_margin( $field_val['value'], $field_name ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- previously escaped. ?>
+											<?php SettingsFields::padding_margin( $field_val['value'], $field_name ); ?>
 
 										<?php elseif( isset($field_val['type']) && $field_val['type'] == 'number' ) : ?>
 

@@ -58,26 +58,26 @@
         }
         if (attendantIsAvailableNow) {
           $attendant.removeClass('attendant-is-offline').addClass('tmw-attendant-is-online').attr('disabled', false);
-          $attendant.find('.tmw-whatsapp-elementor-title-status').addClass('tmw-whatsapp-elementor-title-status-online').text(tmw_data.i18n.attendant_online_text);
+          $attendant.find('.tmw-whatsapp-elementor-title-status').addClass('tmw-whatsapp-elementor-title-status-online').text(tmwc_data.i18n.attendant_online_text);
           $attendant.find('.tmw-whatsapp-elementor-info-offline-message').addClass('tmw-d-none');
         } else {
           if (attendantIsAtInterval) {
             $attendant.removeClass('attendant-is-online').addClass('tmw-attendant-is-offline').attr('disabled', true);
-            $attendant.find('.tmw-whatsapp-elementor-title-status').addClass('tmw-whatsapp-elementor-title-status-offline').text(tmw_data.i18n.attendant_offline_text);
+            $attendant.find('.tmw-whatsapp-elementor-title-status').addClass('tmw-whatsapp-elementor-title-status-offline').text(tmwc_data.i18n.attendant_offline_text);
             $attendant.find('.tmw-whatsapp-elementor-info-offline-message:not(.is-interval)').addClass('tmw-d-none');
           } else {
             if (attendantAvailability[weekDayToday].available == 'no') {
               $attendant.removeClass('attendant-is-online').addClass('tmw-attendant-is-offline').attr('disabled', true);
-              $attendant.find('.tmw-whatsapp-elementor-title-status').addClass('tmw-whatsapp-elementor-title-status-offline').text(tmw_data.i18n.attendant_offline_text);
+              $attendant.find('.tmw-whatsapp-elementor-title-status').addClass('tmw-whatsapp-elementor-title-status-offline').text(tmwc_data.i18n.attendant_offline_text);
               $attendant.find('.tmw-whatsapp-elementor-info-offline-message.is-interval').addClass('tmw-d-none');
             } else {
               if (attendantIsAvailableNow) {
                 $attendant.removeClass('attendant-is-offline').addClass('tmw-attendant-is-online').attr('disabled', false);
-                $attendant.find('.tmw-whatsapp-elementor-title-status').addClass('tmw-whatsapp-elementor-title-status-online').text(tmw_data.i18n.attendant_online_text);
+                $attendant.find('.tmw-whatsapp-elementor-title-status').addClass('tmw-whatsapp-elementor-title-status-online').text(tmwc_data.i18n.attendant_online_text);
                 // $attendant.find('.tmw-whatsapp-elementor-info-offline-message').addClass('tmw-d-none');
               } else {
                 $attendant.removeClass('attendant-is-online').addClass('tmw-attendant-is-offline').attr('disabled', true);
-                $attendant.find('.tmw-whatsapp-elementor-title-status').addClass('tmw-whatsapp-elementor-title-status-offline').text(tmw_data.i18n.attendant_offline_text);
+                $attendant.find('.tmw-whatsapp-elementor-title-status').addClass('tmw-whatsapp-elementor-title-status-offline').text(tmwc_data.i18n.attendant_offline_text);
                 $attendant.find('.tmw-whatsapp-elementor-info-offline-message.is-interval').addClass('tmw-d-none');
               }
             }
@@ -110,7 +110,6 @@
         $('#vc_inline-frame').on('load', function () {
           _self.$tmw_whatsapp_widget_button.on('tmw.whatsapp.button.loaded', function () {
             vc.events.on('shortcodes:tmw_whatsapp_button:add shortcodes:tmw_whatsapp_button:clone', function (e) {
-              alert(1);
               setTimeout(function () {
                 MasterWhatsChatWidgets.initialize(vc.$frame[0].contentWindow.jQuery('.vc_element[data-model-id="' + e.id + '"]').find('.tmw-whatsapp-wpbakery-widget'));
               }, 1000);

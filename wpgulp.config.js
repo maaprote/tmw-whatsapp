@@ -66,9 +66,9 @@ const watchScripts = './assets/js/src/**/*.js';
 const watchPhp     = './**/*.php';
 
 // Zip options.
-const zipName = 'tmw-whatschat.zip';
+const zipName = 'tmwc-whatschat.zip';
 const zipDestination = './../';
-const zipIncludeGlob = ['../@(tmw-whatschat)/**/*'];
+const zipIncludeGlob = ['../@(tmwc-whatschat)/**/*'];
 const zipIgnoreGlob = [
 	'!**/*{node_modules,node_modules/**/*}',
 	'!**/*.git',

@@ -6,15 +6,15 @@
  * @package Master_Whats_Chat
  */
 
-namespace TM\Master_Whats_Chat\Integration\WooCommerce;
+namespace TMWC\Master_Whats_Chat\Integration\WooCommerce;
 
 // Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) {
     die( '-1' );
 }
 
-use TM\Master_Whats_Chat\Functions;
-use TM\Master_Whats_Chat\Translator;
+use TMWC\Master_Whats_Chat\Functions;
+use TMWC\Master_Whats_Chat\Translator;
 
 class SingleProductButton {
 
@@ -31,13 +31,13 @@ class SingleProductButton {
 			global $post;
 
 			// Shop Archive Page
-			$button_position_shop_archive = get_post_meta( $post->ID, 'tmw_whatsapp_woocommerce_button_position_shop_archive', true );
+			$button_position_shop_archive = get_post_meta( $post->ID, 'tmwc_woocommerce_button_position_shop_archive', true );
 			if( $button_position_shop_archive != '' && $button_position_shop_archive != 'none' ) {
 				add_action( $button_position_shop_archive, array( $this, 'render_chat_button' ) );
 			}
 
 			// Product Single Page
-			$button_position = get_post_meta( $post->ID, 'tmw_whatsapp_woocommerce_button_position', true );
+			$button_position = get_post_meta( $post->ID, 'tmwc_woocommerce_button_position', true );
 			if( $button_position != '' && $button_position != 'none' ) {
 				add_action( $button_position, array( $this, 'render_chat_button' ) );
 			}
@@ -88,15 +88,15 @@ class SingleProductButton {
         $settings = Functions::get_settings();
 
 		// Post Metabox Data
-		$show_button                  = get_post_meta( $post->ID, 'tmw_show_woocommerce_button', true );
-		$attendant_id                 = get_post_meta( $post->ID, 'tmw_whatsapp_woocommerce_button_attendant_id', true );
-		$button_layout                = get_post_meta( $post->ID, 'tmw_whatsapp_woocommerce_button_layout', true );
-		$attendant_photo_or_icon      = get_post_meta( $post->ID, 'tmw_whatsapp_woocommerce_button_attendant_photo_or_icon', true );
-		$attendant_title              = get_post_meta( $post->ID, 'tmw_whatsapp_woocommerce_button_attendant_title', true );
-		$attendant_description        = get_post_meta( $post->ID, 'tmw_whatsapp_woocommerce_button_attendant_description', true );
-		$button_position              = get_post_meta( $post->ID, 'tmw_whatsapp_woocommerce_button_position', true );
-		$button_position_shop_archive = get_post_meta( $post->ID, 'tmw_whatsapp_woocommerce_button_position_shop_archive', true );
-		$show_woo_button              = get_post_meta( $post->ID, 'tmw_show_woocommerce_button', true );
+		$show_button                  = get_post_meta( $post->ID, 'tmwc_show_woocommerce_button', true );
+		$attendant_id                 = get_post_meta( $post->ID, 'tmwc_woocommerce_button_attendant_id', true );
+		$button_layout                = get_post_meta( $post->ID, 'tmwc_woocommerce_button_layout', true );
+		$attendant_photo_or_icon      = get_post_meta( $post->ID, 'tmwc_woocommerce_button_attendant_photo_or_icon', true );
+		$attendant_title              = get_post_meta( $post->ID, 'tmwc_woocommerce_button_attendant_title', true );
+		$attendant_description        = get_post_meta( $post->ID, 'tmwc_woocommerce_button_attendant_description', true );
+		$button_position              = get_post_meta( $post->ID, 'tmwc_woocommerce_button_position', true );
+		$button_position_shop_archive = get_post_meta( $post->ID, 'tmwc_woocommerce_button_position_shop_archive', true );
+		$show_woo_button              = get_post_meta( $post->ID, 'tmwc_show_woocommerce_button', true );
 		
 		if( !$show_button ) {
 			return '';
@@ -231,7 +231,7 @@ class SingleProductButton {
 							$output .= '<i class="tmw-fab tmw-fa-whatsapp"></i>';
 						} else {
 							$image = array(
-								'image' => $attendants[ $attendant_id ]['image']['attendant-image'] ? wp_get_attachment_url( $attendants[ $attendant_id ]['image']['attendant-image'] ) : TM_MASTER_WHATS_CHAT_URL . '/img/user-placeholder.png',
+								'image' => $attendants[ $attendant_id ]['image']['attendant-image'] ? wp_get_attachment_url( $attendants[ $attendant_id ]['image']['attendant-image'] ) : TMWC_PLUGIN_URL . '/img/user-placeholder.png',
 								'width' => 150,
 								'height' => 150,
 							);

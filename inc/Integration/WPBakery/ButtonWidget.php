@@ -6,15 +6,15 @@
  * @package Master_Whats_Chat
  */
 
-namespace TM\Master_Whats_Chat\Integration\WPBakery;
+namespace TMWC\Master_Whats_Chat\Integration\WPBakery;
 
 // Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) {
     die( '-1' );
 }
 
-use TM\Master_Whats_Chat\Functions;
-use TM\Master_Whats_Chat\Translator;
+use TMWC\Master_Whats_Chat\Functions;
+use TMWC\Master_Whats_Chat\Translator;
 
 class Button extends WPBakeryShortCode {
     
@@ -29,7 +29,7 @@ class Button extends WPBakeryShortCode {
      */
     public function __construct() {
         add_action( 'init', array( $this, 'create_shortcode' ), 999 );            
-        add_shortcode( 'tmw_whatsapp_button', array( $this, 'render_shortcode' ), 10, 3 );
+        add_shortcode( 'tmwc_button', array( $this, 'render_shortcode' ), 10, 3 );
 
         $this->settings = Functions::get_settings();
     }
@@ -42,13 +42,13 @@ class Button extends WPBakeryShortCode {
     public function create_shortcode() {            
         vc_map( array(
             'name'          => esc_html__( 'TM Whatsapp Button', 'master-whats-chat'),
-            'base'          => 'tmw_whatsapp_button',
+            'base'          => 'tmwc_button',
             'description'   => esc_html__( 'Add whatsapp button', 'master-whats-chat' ),
             'icon' => 'tmw-wpbakery-element-icon dashicons dashicons-whatsapp',
             'category'      => esc_html__( 'TM Whatsapp', 'master-whats-chat'),
-            'admin_enqueue_css' => TM_MASTER_WHATS_CHAT_URL . '/css/tmw-whatsapp-wpbakery.css',
-            'front_enqueue_css' => TM_MASTER_WHATS_CHAT_URL . '/css/tmw-whatsapp-wpbakery.css',
-            'front_enqueue_js' => TM_MASTER_WHATS_CHAT_URL . '/js/tmw-whatsapp-widgets.js',
+            'admin_enqueue_css' => TMWC_PLUGIN_URL . '/css/tmw-whatsapp-wpbakery.css',
+            'front_enqueue_css' => TMWC_PLUGIN_URL . '/css/tmw-whatsapp-wpbakery.css',
+            'front_enqueue_js' => TMWC_PLUGIN_URL . '/js/tmw-whatsapp-widgets.js',
             'params' => array(
                 
                 // General
@@ -233,7 +233,7 @@ class Button extends WPBakeryShortCode {
                             $output .= '<i class="tmw-fab tmw-fa-whatsapp"></i>';
                         } else {
                             $image = array(
-                                'image' => $attendants[ $attendant_id ]['image']['attendant-image'] ? wp_get_attachment_url( $attendants[ $attendant_id ]['image']['attendant-image'] ) : TM_MASTER_WHATS_CHAT_URL . '/img/user-placeholder.png',
+                                'image' => $attendants[ $attendant_id ]['image']['attendant-image'] ? wp_get_attachment_url( $attendants[ $attendant_id ]['image']['attendant-image'] ) : TMWC_PLUGIN_URL . '/img/user-placeholder.png',
                                 'width' => 150,
                                 'height' => 150,
                             );

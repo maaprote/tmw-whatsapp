@@ -5,13 +5,13 @@
  * 
  */
 
-namespace TM\Master_Whats_Chat;
+namespace TMWC\Master_Whats_Chat;
 
 if ( ! defined( 'ABSPATH' ) ) {
     die( '-1' );
 }
 
-use TM\Master_Whats_Chat\Translator;
+use TMWC\Master_Whats_Chat\Translator;
 
 class Functions {
 
@@ -87,7 +87,7 @@ class Functions {
      * 
      */
     public static function get_settings() {
-        return get_option( 'tmw_whatsapp_settings_data' );
+        return get_option( 'tmwc_settings_data' );
     }
 
     /**
