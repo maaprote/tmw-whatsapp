@@ -6,15 +6,15 @@
  * @package Master_Whats_Chat
  */
 
-namespace TM\Master_Whats_Chat\Integration\WooCommerce;
+namespace TMWC\Master_Whats_Chat\Integration\WooCommerce;
 
 // Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) {
     die( '-1' );
 }
 
-use TM\Master_Whats_Chat\Functions;
-use TM\Master_Whats_Chat\Translator;
+use TMWC\Master_Whats_Chat\Functions;
+use TMWC\Master_Whats_Chat\Translator;
 
 class SingleProductButton {
 
@@ -31,13 +31,13 @@ class SingleProductButton {
 			global $post;
 
 			// Shop Archive Page
-			$button_position_shop_archive = get_post_meta( $post->ID, 'tmw_whatsapp_woocommerce_button_position_shop_archive', true );
+			$button_position_shop_archive = get_post_meta( $post->ID, 'tmwc_woocommerce_button_position_shop_archive', true );
 			if( $button_position_shop_archive != '' && $button_position_shop_archive != 'none' ) {
 				add_action( $button_position_shop_archive, array( $this, 'render_chat_button' ) );
 			}
 
 			// Product Single Page
-			$button_position = get_post_meta( $post->ID, 'tmw_whatsapp_woocommerce_button_position', true );
+			$button_position = get_post_meta( $post->ID, 'tmwc_woocommerce_button_position', true );
 			if( $button_position != '' && $button_position != 'none' ) {
 				add_action( $button_position, array( $this, 'render_chat_button' ) );
 			}
@@ -60,10 +60,10 @@ class SingleProductButton {
 		// Check Status
 		if( $settings['status'] ) {
 			$classes[] = 'tmw-whatsapp-elementor-title-status-online';
-			$status_text = Translator::translate_string( __( 'Online!', 'tmw-whatschat' ), 'status_online' );
+			$status_text = Translator::translate_string( __( 'Online!', 'master-whats-chat' ), 'status_online' );
 		} else {
 			$classes[] = 'tmw-whatsapp-elementor-title-status-offline';
-			$status_text = Translator::translate_string( __( 'Offline!', 'tmw-whatschat' ), 'status_offline' );
+			$status_text = Translator::translate_string( __( 'Offline!', 'master-whats-chat' ), 'status_offline' );
 		}
 
 		// Mount Class
@@ -88,15 +88,15 @@ class SingleProductButton {
         $settings = Functions::get_settings();
 
 		// Post Metabox Data
-		$show_button                  = get_post_meta( $post->ID, 'tmw_show_woocommerce_button', true );
-		$attendant_id                 = get_post_meta( $post->ID, 'tmw_whatsapp_woocommerce_button_attendant_id', true );
-		$button_layout                = get_post_meta( $post->ID, 'tmw_whatsapp_woocommerce_button_layout', true );
-		$attendant_photo_or_icon      = get_post_meta( $post->ID, 'tmw_whatsapp_woocommerce_button_attendant_photo_or_icon', true );
-		$attendant_title              = get_post_meta( $post->ID, 'tmw_whatsapp_woocommerce_button_attendant_title', true );
-		$attendant_description        = get_post_meta( $post->ID, 'tmw_whatsapp_woocommerce_button_attendant_description', true );
-		$button_position              = get_post_meta( $post->ID, 'tmw_whatsapp_woocommerce_button_position', true );
-		$button_position_shop_archive = get_post_meta( $post->ID, 'tmw_whatsapp_woocommerce_button_position_shop_archive', true );
-		$show_woo_button              = get_post_meta( $post->ID, 'tmw_show_woocommerce_button', true );
+		$show_button                  = get_post_meta( $post->ID, 'tmwc_show_woocommerce_button', true );
+		$attendant_id                 = get_post_meta( $post->ID, 'tmwc_woocommerce_button_attendant_id', true );
+		$button_layout                = get_post_meta( $post->ID, 'tmwc_woocommerce_button_layout', true );
+		$attendant_photo_or_icon      = get_post_meta( $post->ID, 'tmwc_woocommerce_button_attendant_photo_or_icon', true );
+		$attendant_title              = get_post_meta( $post->ID, 'tmwc_woocommerce_button_attendant_title', true );
+		$attendant_description        = get_post_meta( $post->ID, 'tmwc_woocommerce_button_attendant_description', true );
+		$button_position              = get_post_meta( $post->ID, 'tmwc_woocommerce_button_position', true );
+		$button_position_shop_archive = get_post_meta( $post->ID, 'tmwc_woocommerce_button_position_shop_archive', true );
+		$show_woo_button              = get_post_meta( $post->ID, 'tmwc_show_woocommerce_button', true );
 		
 		if( !$show_button ) {
 			return '';
@@ -221,7 +221,7 @@ class SingleProductButton {
 		$output = '';
 
 		/* Translators: %1$s - Product Title, %2$s - Product URL */
-		$start_message = sprintf( Translator::translate_string( __( 'Hello! I have some questions about the product: %1$s (%2$s)', 'tmw-whatschat' ), 'woo_button_product_start_message' ), $post->post_title, get_the_permalink( $post->ID ) );
+		$start_message = sprintf( Translator::translate_string( __( 'Hello! I have some questions about the product: %1$s (%2$s)', 'master-whats-chat' ), 'woo_button_product_start_message' ), $post->post_title, get_the_permalink( $post->ID ) );
 
 		$output .= '<a href="#" class="tmw-whatsapp-button" data-phone-number="'. esc_attr( Translator::translate_string( $attendant['phone'], 'attendant_'. $attendant_id .'_phone' ) ) .'"'. ( empty($attendant['phone']) ? ' disabled' : '' ) .' data-start-message="'. esc_attr( $start_message ) .'" data-availability="'. esc_attr( $attendantAvailability ) .'" data-default-timezone="'. esc_attr( $attendant['default_timezone'] ) .'">';
 			$output .= '<div '. implode( ' ', $wrapper_atts ) .'>';
@@ -231,7 +231,7 @@ class SingleProductButton {
 							$output .= '<i class="tmw-fab tmw-fa-whatsapp"></i>';
 						} else {
 							$image = array(
-								'image' => $attendants[ $attendant_id ]['image']['attendant-image'] ? wp_get_attachment_url( $attendants[ $attendant_id ]['image']['attendant-image'] ) : TM_MASTER_WHATS_CHAT_URL . '/img/user-placeholder.png',
+								'image' => $attendants[ $attendant_id ]['image']['attendant-image'] ? wp_get_attachment_url( $attendants[ $attendant_id ]['image']['attendant-image'] ) : TMWC_PLUGIN_URL . '/img/user-placeholder.png',
 								'width' => 150,
 								'height' => 150,
 							);
@@ -257,7 +257,7 @@ class SingleProductButton {
 		$output .= '</a>';
 
 		echo '<div class="tmw-whatsapp-elementor-widget'. esc_attr( $display_class ) .'">';
-			echo $output; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- previously escaped.
+			echo wp_kses_post( $output );
 		echo '</div>';
 	}    
 }

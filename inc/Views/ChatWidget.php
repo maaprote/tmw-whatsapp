@@ -6,16 +6,16 @@
  * @package Master_Whats_Chat
  */
 
-namespace TM\Master_Whats_Chat\Views;
+namespace TMWC\Master_Whats_Chat\Views;
 
 // Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) {
     die( '-1' );
 }
 
-use TM\Master_Whats_Chat\Functions;
-use TM\Master_Whats_Chat\Translator;
-use TM\Master_Whats_Chat\Views\OpenChatButton;
+use TMWC\Master_Whats_Chat\Functions;
+use TMWC\Master_Whats_Chat\Translator;
+use TMWC\Master_Whats_Chat\Views\OpenChatButton;
 
 class ChatWidget {
 
@@ -289,7 +289,7 @@ class ChatWidget {
 
 		?>
 
-		<div <?php echo ( implode( ' ', $wrapper_atts ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- previously escaped. ?>>
+		<div <?php echo wp_kses_post( ( implode( ' ', $wrapper_atts ) ) ); ?>>
 			<div class="tmw-whatsapp-card">
 				<div class="tmw-whatsapp-card-header">
 
@@ -297,8 +297,8 @@ class ChatWidget {
 					// If has attendants show the normal header
 					if( isset($settings['attendants']) && Functions::get_setting('attendants') && is_array( Functions::get_setting('attendants') ) ) : ?>
 						<div class="tmw-whatsapp-presentation-info">
-							<h2><?php echo Functions::get_setting('header_title') ? esc_html( Translator::translate_string( Functions::get_setting('header_title'), 'header_title' ) ) : esc_html( Translator::translate_string( __( 'Hello!', 'tmw-whatschat' ), 'header_title', true ) ); ?></h2>
-							<p><?php echo Functions::get_setting('header_description') ? esc_html( Translator::translate_string( Functions::get_setting('header_description'), 'header_description' ) ) : esc_html( Translator::translate_string( __( 'Any questions? Feel free to chat with our attendants.', 'tmw-whatschat' ), 'header_description', true ) ); ?></p>
+							<h2><?php echo Functions::get_setting('header_title') ? esc_html( Translator::translate_string( Functions::get_setting('header_title'), 'header_title' ) ) : esc_html( Translator::translate_string( __( 'Hello!', 'master-whats-chat' ), 'header_title', true ) ); ?></h2>
+							<p><?php echo Functions::get_setting('header_description') ? esc_html( Translator::translate_string( Functions::get_setting('header_description'), 'header_description' ) ) : esc_html( Translator::translate_string( __( 'Any questions? Feel free to chat with our attendants.', 'master-whats-chat' ), 'header_description', true ) ); ?></p>
 							<?php if( Functions::get_setting('header_phone') ) : ?>
 								<a href="tel:<?php echo esc_attr( $this->format_phone_number( Translator::translate_string( Functions::get_setting('header_phone'), 'header_phone' ) ) ); ?>"><strong><?php echo esc_html( Translator::translate_string( Functions::get_setting('header_phone'), 'header_phone' ) ); ?></strong></a>
 							<?php endif; ?>
@@ -310,7 +310,7 @@ class ChatWidget {
 							<a href="#" class="tmw-whatsapp-active-attendant-info-back">
 								<i class="tmw-fas tmw-fa-arrow-left"></i>
 							</a>
-							<img class="tmw-whatsapp-attendant-info-image" src="<?php echo esc_url( TM_MASTER_WHATS_CHAT_URL ); ?>/img/user-placeholder.png" width="50" height="50" alt="John Doe" />
+							<img class="tmw-whatsapp-attendant-info-image" src="<?php echo esc_url( TMWC_PLUGIN_URL ); ?>/img/user-placeholder.png" width="50" height="50" alt="John Doe" />
 							<div class="tmw-whatsapp-attedant-info-title">
 								<h2><?php echo esc_html( Translator::translate_string( 'John Doe Junior', 'default_attendant_info_title' ) ) ?></h2>
 								<p><?php echo esc_html( Translator::translate_string( 'online', 'status_online_lowercase' ) ); ?></p>
@@ -321,7 +321,7 @@ class ChatWidget {
 					else : ?>
 						<div class="tmw-whatsapp-presentation-info">
 						
-							<p><?php echo esc_html( Translator::translate_string( Functions::get_setting('header_no_attendants_registered'), 'header_no_attendants_registered', false, __( 'Sorry! But we have no attendants at this moment! In this mean time, you can contact us trough the phone or email below:', 'tmw-whatschat' ) ) ); ?></p>
+							<p><?php echo esc_html( Translator::translate_string( Functions::get_setting('header_no_attendants_registered'), 'header_no_attendants_registered', false, __( 'Sorry! But we have no attendants at this moment! In this mean time, you can contact us trough the phone or email below:', 'master-whats-chat' ) ) ); ?></p>
 							<?php if( Functions::get_setting('header_phone') ) : ?>
 								<a href="tel:<?php echo esc_attr( $this->format_phone_number( Translator::translate_string( Functions::get_setting('header_phone'), 'header_phone' ) ) ) ?>"><strong><?php echo esc_html( Translator::translate_string( Functions::get_setting('header_phone'), 'header_phone' ) ); ?></strong></a>
 							<?php endif; ?>
@@ -347,7 +347,7 @@ class ChatWidget {
 										<img src="<?php echo esc_url( wp_get_attachment_url( $attendantObj['image']['attendant-image'] ) ); ?>" width="<?php echo esc_attr( $attendantObj['image']['attendant-image_width'] ); ?>" height="<?php echo esc_attr( $attendantObj['image']['attendant-image_height'] ); ?>" alt="" />
 									<?php else : ?>
 
-										<img src="<?php echo esc_url( TM_MASTER_WHATS_CHAT_URL ); ?>/img/user-placeholder.png" width="150" height="151" alt="<?php echo esc_attr( $attendantObj['name'] ); ?>" />
+										<img src="<?php echo esc_url( TMWC_PLUGIN_URL ); ?>/img/user-placeholder.png" width="150" height="151" alt="<?php echo esc_attr( $attendantObj['name'] ); ?>" />
 
 									<?php endif; ?>
 								</div>
@@ -362,9 +362,9 @@ class ChatWidget {
 									<?php endif; ?>
 								</div>
 								<div class="tmw-whatsapp-attendant-status">
-									<p class="tmw-whatsapp-attendant-status-online tmw-d-none"><?php echo esc_html( Translator::translate_string( __( 'Online', 'tmw-whatschat' ), 'status_online' ) ); ?></p>
-									<p class="tmw-whatsapp-attendant-status-offline tmw-d-none"><?php echo esc_html( Translator::translate_string( __( 'Offline', 'tmw-whatschat' ), 'status_offline' ) ); ?></p>
-									<p class="tmw-whatsapp-attendant-status-interval tmw-d-none"><?php echo esc_html( Translator::translate_string( __( 'Interval', 'tmw-whatschat' ), 'status_interval' ) ); ?></p>
+									<p class="tmw-whatsapp-attendant-status-online tmw-d-none"><?php echo esc_html( Translator::translate_string( __( 'Online', 'master-whats-chat' ), 'status_online' ) ); ?></p>
+									<p class="tmw-whatsapp-attendant-status-offline tmw-d-none"><?php echo esc_html( Translator::translate_string( __( 'Offline', 'master-whats-chat' ), 'status_offline' ) ); ?></p>
+									<p class="tmw-whatsapp-attendant-status-interval tmw-d-none"><?php echo esc_html( Translator::translate_string( __( 'Interval', 'master-whats-chat' ), 'status_interval' ) ); ?></p>
 								</div>
 							</a>
 
@@ -374,10 +374,10 @@ class ChatWidget {
 					<!-- Attendants Chat Window -->
 					<div class="tmw-whatsapp-attendant-chat-window">
 						<p class="tmw-whatsapp-attendant-chat-message">
-							<?php echo esc_html( Translator::translate_string( __( 'Hello! How can I help you ?', 'tmw-whatschat' ), 'default_start_message' ) ); ?>
+							<?php echo esc_html( Translator::translate_string( __( 'Hello! How can I help you ?', 'master-whats-chat' ), 'default_start_message' ) ); ?>
 						</p>
 						<div class="tmw-whatsapp-attendant-chat-window-footer">
-							<input type="text" class="tmw-whatsapp-attendant-chat-input-message" value="" placeholder="<?php echo esc_attr( Translator::translate_string( __( 'Type a message...', 'tmw-whatschat' ), 'type_a_message' ) ); ?>" />
+							<input type="text" class="tmw-whatsapp-attendant-chat-input-message" value="" placeholder="<?php echo esc_attr( Translator::translate_string( __( 'Type a message...', 'master-whats-chat' ), 'type_a_message' ) ); ?>" />
 							<a href="#" class="tmw-whatsapp-attendant-chat-send-button">
 								<i class="tmw-fas tmw-fa-paper-plane"></i>
 							</a>

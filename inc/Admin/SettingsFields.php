@@ -6,7 +6,7 @@
  * @package Master_Whats_Chat
  */
 
-namespace TM\Master_Whats_Chat\Admin;
+namespace TMWC\Master_Whats_Chat\Admin;
 
 // Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -66,25 +66,31 @@ class SettingsFields {
 
         $imageObj = $field_val['image'];
 
-        $output = '';
-
-        $image_src = TM_MASTER_WHATS_CHAT_URL . '/img/img-placeholder.png';
-        if( isset($imageObj[ $inputName ]) && !empty($imageObj[ $inputName ]) ) {
-            $image_src = wp_get_attachment_image_url( $imageObj[ $inputName ], 'thumbnail', false );
+        $image_src = TMWC_PLUGIN_URL . '/img/img-placeholder.png';
+        if( isset($imageObj[$inputName]) && ! empty($imageObj[$inputName]) ) {
+            $image_src = wp_get_attachment_image_url( $imageObj[$inputName], 'thumbnail', false );
         }
 
-        $output .= '<div class="tmw-media-uploader'. ( isset($imageObj[ $inputName ]) && !empty($imageObj[ $inputName ]) ? ' remove-state' : '' ) .'">';
-            $output .= '<img class="tmw-metabox-image-field-preview tmw-media-uploader-upload-btn" src="'. esc_url( $image_src ) .'" alt="'. esc_attr__( 'Image Uploaded', 'tmw-whatschat' ) .'" width="100" height="" data-post-id="" />';
-            $output .= '<span class="tmw-media-uploader-remove-btn dashicons dashicons-dismiss"></span>';
-            $output .= '<input class="tmw-media-uploader-media-image" type="hidden" name="'. esc_attr( $inputName ) .'" value="'. esc_attr( $imageObj[ $inputName ] ) .'">';
-            $output .= '<input class="tmw-media-uploader-media-type" type="hidden" name="'. esc_attr( $inputName ) .'_type" value="'. esc_attr( $imageObj[ $inputName . '_type' ] ) .'">';
-            $output .= '<input class="tmw-media-uploader-media-width" type="hidden" name="'. esc_attr( $inputName ) .'_width" value="'. esc_attr( $imageObj[ $inputName . '_width' ] ) .'">';
-            $output .= '<input class="tmw-media-uploader-media-height" type="hidden" name="'. esc_attr( $inputName ) .'_height" value="'. esc_attr( $imageObj[ $inputName . '_height' ] ) .'">';
-            $output .= '<input class="tmw-media-uploader-media-title" type="hidden" name="'. esc_attr( $inputName ) .'_title" value="'. esc_attr( $imageObj[ $inputName . '_title' ] ) .'">';
-            $output .= '<input class="tmw-media-uploader-media-icon" type="hidden" name="'. esc_attr( $inputName ) .'_icon" value="'. esc_attr( $imageObj[ $inputName . '_icon' ] ) .'">';
-        $output .= '</div>';
+        $type = isset($imageObj[$inputName . '_type']) ? $imageObj[$inputName . '_type'] : '';
+        $width = isset($imageObj[$inputName . '_width']) ? $imageObj[$inputName . '_width'] : '';
+        $height = isset($imageObj[$inputName . '_height']) ? $imageObj[$inputName . '_height'] : '';
+        $title = isset($imageObj[$inputName . '_title']) ? $imageObj[$inputName . '_title'] : '';
+        $icon = isset($imageObj[$inputName . '_icon']) ? $imageObj[$inputName . '_icon'] : '';
 
-        return $output;
+        ?>
+
+        <div class="tmw-media-uploader<?php ( isset($imageObj[$inputName]) && !empty($imageObj[$inputName]) ? ' remove-state' : '' ); ?>">
+            <img class="tmw-metabox-image-field-preview tmw-media-uploader-upload-btn" src="<?php echo esc_url( $image_src ); ?>" alt="<?php echo esc_attr__( 'Image Uploaded', 'master-whats-chat' ); ?>" width="100" height="" data-post-id="" />
+            <span class="tmw-media-uploader-remove-btn dashicons dashicons-dismiss"></span>
+            <input class="tmw-media-uploader-media-image" type="hidden" name="<?php echo esc_attr( $inputName ); ?>" value="<?php echo esc_attr( $imageObj[$inputName] ); ?>">
+            <input class="tmw-media-uploader-media-type" type="hidden" name="<?php echo esc_attr( $inputName ); ?>_type" value="<?php echo esc_attr( $type ); ?>">
+            <input class="tmw-media-uploader-media-width" type="hidden" name="<?php echo esc_attr( $inputName ); ?>_width" value="<?php echo esc_attr( $width ); ?>">
+            <input class="tmw-media-uploader-media-height" type="hidden" name="<?php echo esc_attr( $inputName ); ?>_height" value="<?php echo esc_attr( $height ); ?>">
+            <input class="tmw-media-uploader-media-title" type="hidden" name="<?php echo esc_attr( $inputName ); ?>_title" value="<?php echo esc_attr( $title ); ?>">
+            <input class="tmw-media-uploader-media-icon" type="hidden" name="<?php echo esc_attr( $inputName ); ?>_icon" value="<?php echo esc_attr( $icon ); ?>">
+        </div>
+
+        <?php
     }
 
     /**
@@ -92,24 +98,24 @@ class SettingsFields {
      * 
      */
     public static function padding_margin( $field_val, $field_name ) {
-        if( !$field_val ) {
-            return esc_html__( 'No values defined for this input', 'tmw-whatschat' );
-        }
+        if( ! $field_val ) {
+            echo esc_html__( 'No values defined for this input', 'master-whats-chat' );
 
-        $output = '';
+            return;
+        } ?>
 
-        $output .= '<div class="tmw-control-padding-margin">';
-            $output .= '<div class="tmw-control-padding-margin-input-wrapper">';
-                $output .= '<span class="icon"><i class="tmw-fas tmw-fa-arrows-alt-v"></i></span>';
-                $output .= '<input class="tmw-padding-top tmw-form-control tmw-form-control-100" name="'. esc_attr( $field_name ) .'-top-bottom" type="number" min="-999" max="999" value="'. esc_attr( $field_val['top-bottom'] ) .'" />';
-            $output .= '</div>';
-            $output .= '<div class="tmw-control-padding-margin-input-wrapper">';
-                $output .= '<span class="icon"><i class="tmw-fas tmw-fa-arrows-alt-h"></i></span>';
-                $output .= '<input class="tmw-padding-left tmw-form-control tmw-form-control-100" type="number" name="'. esc_attr( $field_name ) .'-left-right" min="-999" max="999" value="'. esc_attr( $field_val['left-right'] ) .'" />';
-            $output .= '</div>';
-        $output .= '</div>';
+        <div class="tmw-control-padding-margin">
+            <div class="tmw-control-padding-margin-input-wrapper">
+                <span class="icon"><i class="tmw-fas tmw-fa-arrows-alt-v"></i></span>
+                <input class="tmw-padding-top tmw-form-control tmw-form-control-100" name="<?php echo esc_attr( $field_name ); ?>-top-bottom" type="number" min="-999" max="999" value="<?php echo esc_attr( $field_val['top-bottom'] ); ?>" />
+            </div>
+            <div class="tmw-control-padding-margin-input-wrapper">
+                <span class="icon"><i class="tmw-fas tmw-fa-arrows-alt-h"></i></span>
+                <input class="tmw-padding-left tmw-form-control tmw-form-control-100" type="number" name="<?php echo esc_attr( $field_name ); ?>-left-right" min="-999" max="999" value="<?php echo esc_attr( $field_val['left-right'] ); ?>" />
+            </div>
+        </div>
 
-        return $output;
+        <?php
     }
 
     /**
@@ -121,16 +127,18 @@ class SettingsFields {
      * 
      * @return string
      */
-    public static function timezone_html_select( $name, $value, $form_control_extra_class = ' tmw-form-control-100' ) {
-        $output = '';
-        $output .= '<select name="'. esc_attr( $name ) .'" class="tmw-form-control tmw-form-control-select'. esc_attr( $form_control_extra_class ) .'">';
-        $timeZoneList = \DateTimeZone::listIdentifiers(\DateTimeZone::ALL);
-        foreach( $timeZoneList as $timezone ) {
-                $output .= '<option value="'. esc_attr( $timezone ) .'"'. selected( $value, $timezone, false ) .'>'. esc_html( $timezone ) .'</option>';
-            }
-        $output .= '</select>';
+    public static function timezone_html_select( $name, $value, $form_control_extra_class = ' tmw-form-control-100' ) { ?>
+        <select name="<?php echo esc_attr( $name ); ?>" class="tmw-form-control tmw-form-control-select<?php echo esc_attr( $form_control_extra_class ); ?>">
+            <?php 
+            $timeZoneList = \DateTimeZone::listIdentifiers(\DateTimeZone::ALL);
+            foreach( $timeZoneList as $timezone ) : ?>
+                <option value="<?php echo esc_attr( $timezone ); ?>"<?php selected( $value, $timezone, true ); ?>>
+                    <?php echo esc_html( $timezone ); ?>
+                </option>';
+            <?php endforeach; ?>
+        </select>
 
-        return $output;
+        <?php
     }
 
     /**
@@ -144,7 +152,9 @@ class SettingsFields {
         $sanitized_data = array();
 
         foreach( $data as $key => $value ) {
-            if( is_array($value) ) {
+            if ( is_array($value) ) {
+                $sanitized_data[$key] = self::sanitize_data( $value );
+            } elseif ( is_object($value) ) { 
                 $sanitized_data[$key] = self::sanitize_data( $value );
             } else {
                 $sanitized_data[$key] = sanitize_text_field( $value );

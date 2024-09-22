@@ -6,15 +6,15 @@
  * @package Master_Whats_Chat
  */
 
-namespace TM\Master_Whats_Chat\Integration\Elementor;
+namespace TMWC\Master_Whats_Chat\Integration\Elementor;
 
 // Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) {
     die( '-1' );
 }
 
-use TM\Master_Whats_Chat\Functions;
-use TM\Master_Whats_Chat\Translator;
+use TMWC\Master_Whats_Chat\Functions;
+use TMWC\Master_Whats_Chat\Translator;
 
 class Button extends \Elementor\Widget_Base {
     /**
@@ -24,11 +24,11 @@ class Button extends \Elementor\Widget_Base {
     public function __construct($data = array(), $args = null) {
 		parent::__construct($data, $args);
 
-	    wp_register_script( 'tmw-whatsapp-widgets-js', TM_MASTER_WHATS_CHAT_URL . '/js/tmw-whatsapp-widgets.js', array( 'elementor-frontend', 'elementor-backend', 'elementor-editor' ), '1.0.0', true );
+	    wp_register_script( 'tmwc-whatsapp-widgets-js', TMWC_PLUGIN_URL . '/js/tmw-whatsapp-widgets.js', array( 'elementor-frontend', 'elementor-backend', 'elementor-editor' ), '1.0.0', true );
 	}
 
     public function get_script_depends() {
-	    return array( 'tmw-whatsapp-widgets-js' );
+	    return array( 'tmwc-whatsapp-widgets-js' );
 	}
 
 	/**
@@ -56,7 +56,7 @@ class Button extends \Elementor\Widget_Base {
 	 * @return string Widget title.
 	 */
 	public function get_title() {
-		return esc_html__( 'TM Whatsapp Button', 'tmw-whatschat' );
+		return esc_html__( 'TM Whatsapp Button', 'master-whats-chat' );
 	}
 
 	/**
@@ -122,7 +122,7 @@ class Button extends \Elementor\Widget_Base {
 		$this->start_controls_section(
 			'general_section',
 			array(
-				'label' => esc_html__( 'General', 'tmw-whatschat' ),
+				'label' => esc_html__( 'General', 'master-whats-chat' ),
 				'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
 			)
 		);
@@ -130,7 +130,7 @@ class Button extends \Elementor\Widget_Base {
 		$this->add_control(
 			'attendant',
 			array(
-				'label' => esc_html__( 'Select Attendant', 'tmw-whatschat' ),
+				'label' => esc_html__( 'Select Attendant', 'master-whats-chat' ),
 				'type' => \Elementor\Controls_Manager::SELECT,
 				'default' => 0,
 				'options' => $this->get_attendants_list(),
@@ -140,12 +140,12 @@ class Button extends \Elementor\Widget_Base {
 		$this->add_control(
 			'layout-style',
 			array(
-				'label' => esc_html__( 'Layout Style', 'tmw-whatschat' ),
+				'label' => esc_html__( 'Layout Style', 'master-whats-chat' ),
 				'type' => \Elementor\Controls_Manager::SELECT,
 				'default' => 'tmw-whatsapp-elementor-wrapper-style-1',
 				'options' => array(
-					'tmw-whatsapp-elementor-wrapper-style-1'  => esc_html__( 'Style 1', 'tmw-whatschat' ),
-					'tmw-whatsapp-elementor-wrapper-style-1 tmw-whatsapp-elementor-wrapper-style-1-rounded' => esc_html__( 'Style 2', 'tmw-whatschat' ),
+					'tmw-whatsapp-elementor-wrapper-style-1'  => esc_html__( 'Style 1', 'master-whats-chat' ),
+					'tmw-whatsapp-elementor-wrapper-style-1 tmw-whatsapp-elementor-wrapper-style-1-rounded' => esc_html__( 'Style 2', 'master-whats-chat' ),
 				),
 			)
 		);
@@ -153,33 +153,33 @@ class Button extends \Elementor\Widget_Base {
 		$this->add_control(
 			'title',
 			array(
-				'label' => esc_html__( 'Title', 'tmw-whatschat' ),
+				'label' => esc_html__( 'Title', 'master-whats-chat' ),
 				'type' => \Elementor\Controls_Manager::TEXT,
 				'input_type' => 'text',
-				'placeholder' => esc_html__( 'Type title here...', 'tmw-whatschat' ),
+				'placeholder' => esc_html__( 'Type title here...', 'master-whats-chat' ),
 			)
 		);
 
 		$this->add_control(
 			'description',
 			array(
-				'label' => esc_html__( 'Description', 'tmw-whatschat' ),
+				'label' => esc_html__( 'Description', 'master-whats-chat' ),
 				'type' => \Elementor\Controls_Manager::TEXT,
 				'input_type' => 'text',
-				'placeholder' => esc_html__( 'Description here...', 'tmw-whatschat' ),
+				'placeholder' => esc_html__( 'Description here...', 'master-whats-chat' ),
 			)
 		);
 
 		$this->add_control(
 			'photo_or_icon',
 			array(
-				'label' => esc_html__( 'Attendant Image', 'tmw-whatschat' ),
+				'label' => esc_html__( 'Attendant Image', 'master-whats-chat' ),
 				'type' => \Elementor\Controls_Manager::SELECT,
-				'description' => esc_html__( 'Default size for "Attendant Image" is 50x50', 'tmw-whatschat' ),
+				'description' => esc_html__( 'Default size for "Attendant Image" is 50x50', 'master-whats-chat' ),
 				'default' => 'icon',
 				'options' => array(
-					'icon'  => esc_html__( 'Whatsapp Icon', 'tmw-whatschat' ),
-					'image' => esc_html__( 'Attendant Image', 'tmw-whatschat' ),
+					'icon'  => esc_html__( 'Whatsapp Icon', 'master-whats-chat' ),
+					'image' => esc_html__( 'Attendant Image', 'master-whats-chat' ),
 				),
 			)
 		);
@@ -187,23 +187,23 @@ class Button extends \Elementor\Widget_Base {
 		$this->add_control(
 			'alignment',
 			array(
-				'label' => esc_html__( 'Alignment', 'tmw-whatschat' ),
+				'label' => esc_html__( 'Alignment', 'master-whats-chat' ),
 				'type' => \Elementor\Controls_Manager::CHOOSE,
 				'options' => array(
 					'full-width' => array(
-						'title' => esc_html__( 'Full Width', 'tmw-whatschat' ),
+						'title' => esc_html__( 'Full Width', 'master-whats-chat' ),
 						'icon' => 'fa fa-align-justify',
 					),
 					'center' => array(
-						'title' => esc_html__( 'Center', 'tmw-whatschat' ),
+						'title' => esc_html__( 'Center', 'master-whats-chat' ),
 						'icon' => 'fa fa-align-center',
 					),
 					'left' => array(
-						'title' => esc_html__( 'Left', 'tmw-whatschat' ),
+						'title' => esc_html__( 'Left', 'master-whats-chat' ),
 						'icon' => 'fa fa-align-left',
 					),
 					'right' => array(
-						'title' => esc_html__( 'Right', 'tmw-whatschat' ),
+						'title' => esc_html__( 'Right', 'master-whats-chat' ),
 						'icon' => 'fa fa-align-right',
 					),
 				),
@@ -217,7 +217,7 @@ class Button extends \Elementor\Widget_Base {
 		$this->start_controls_section(
 			'skin_section',
 			array(
-				'label' => esc_html__( 'Skin', 'tmw-whatschat' ),
+				'label' => esc_html__( 'Skin', 'master-whats-chat' ),
 				'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
 			)
 		);
@@ -225,7 +225,7 @@ class Button extends \Elementor\Widget_Base {
 		$this->add_control(
 			'background-color',
 			array(
-				'label' => esc_html__( 'Background Color', 'tmw-whatschat' ),
+				'label' => esc_html__( 'Background Color', 'master-whats-chat' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'default' => '#20ab54',
 				'selectors' => array(
@@ -237,7 +237,7 @@ class Button extends \Elementor\Widget_Base {
 		$this->add_control(
 			'background-hover-color',
 			array(
-				'label' => esc_html__( 'Background Hover Color', 'tmw-whatschat' ),
+				'label' => esc_html__( 'Background Hover Color', 'master-whats-chat' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'default' => '#38bd6a',
 				'selectors' => array(
@@ -249,7 +249,7 @@ class Button extends \Elementor\Widget_Base {
 		$this->add_control(
 			'icon-color',
 			array(
-				'label' => esc_html__( 'Icon Color', 'tmw-whatschat' ),
+				'label' => esc_html__( 'Icon Color', 'master-whats-chat' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'default' => '#FFF',
 				'selectors' => array(
@@ -261,7 +261,7 @@ class Button extends \Elementor\Widget_Base {
 		$this->add_control(
 			'icon-hover-color',
 			array(
-				'label' => esc_html__( 'Icon Hover Color', 'tmw-whatschat' ),
+				'label' => esc_html__( 'Icon Hover Color', 'master-whats-chat' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'default' => '#FFF',
 				'selectors' => array(
@@ -273,7 +273,7 @@ class Button extends \Elementor\Widget_Base {
 		$this->add_control(
 			'title-color',
 			array(
-				'label' => esc_html__( 'Attendant Name Color', 'tmw-whatschat' ),
+				'label' => esc_html__( 'Attendant Name Color', 'master-whats-chat' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'default' => '#FFF',
 				'selectors' => array(
@@ -285,7 +285,7 @@ class Button extends \Elementor\Widget_Base {
 		$this->add_control(
 			'title-hover-color',
 			array(
-				'label' => esc_html__( 'Attendant Name Hover Color', 'tmw-whatschat' ),
+				'label' => esc_html__( 'Attendant Name Hover Color', 'master-whats-chat' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'default' => '#FFF',
 				'selectors' => array(
@@ -297,7 +297,7 @@ class Button extends \Elementor\Widget_Base {
 		$this->add_control(
 			'description-color',
 			array(
-				'label' => esc_html__( 'Description Color', 'tmw-whatschat' ),
+				'label' => esc_html__( 'Description Color', 'master-whats-chat' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'default' => '#FFF',
 				'selectors' => array(
@@ -309,7 +309,7 @@ class Button extends \Elementor\Widget_Base {
 		$this->add_control(
 			'description-hover-color',
 			array(
-				'label' => esc_html__( 'Description Hover Color', 'tmw-whatschat' ),
+				'label' => esc_html__( 'Description Hover Color', 'master-whats-chat' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'default' => '#FFF',
 				'selectors' => array(
@@ -321,7 +321,7 @@ class Button extends \Elementor\Widget_Base {
 		$this->add_control(
 			'status-background-color',
 			array(
-				'label' => esc_html__( 'Status Background Color', 'tmw-whatschat' ),
+				'label' => esc_html__( 'Status Background Color', 'master-whats-chat' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'default' => '#61c386',
 				'selectors' => array(
@@ -333,7 +333,7 @@ class Button extends \Elementor\Widget_Base {
 		$this->add_control(
 			'status-text-color',
 			array(
-				'label' => esc_html__( 'Status Text Color', 'tmw-whatschat' ),
+				'label' => esc_html__( 'Status Text Color', 'master-whats-chat' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'default' => '#FFF',
 				'selectors' => array(
@@ -345,7 +345,7 @@ class Button extends \Elementor\Widget_Base {
 		$this->add_control(
 			'badge-offline-message-background',
 			array(
-				'label' => esc_html__( 'Interval Badge Background', 'tmw-whatschat' ),
+				'label' => esc_html__( 'Interval Badge Background', 'master-whats-chat' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'default' => '#ebebeb',
 				'selectors' => array(
@@ -357,7 +357,7 @@ class Button extends \Elementor\Widget_Base {
 		$this->add_control(
 			'badge-offline-message-text',
 			array(
-				'label' => esc_html__( 'Offline Message Badge Text', 'tmw-whatschat' ),
+				'label' => esc_html__( 'Offline Message Badge Text', 'master-whats-chat' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'default' => '#000',
 				'selectors' => array(
@@ -369,7 +369,7 @@ class Button extends \Elementor\Widget_Base {
 		$this->add_control(
 			'badge-interval-background',
 			array(
-				'label' => esc_html__( 'Interval Badge Background', 'tmw-whatschat' ),
+				'label' => esc_html__( 'Interval Badge Background', 'master-whats-chat' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'default' => '#e2c80c',
 				'selectors' => array(
@@ -381,7 +381,7 @@ class Button extends \Elementor\Widget_Base {
 		$this->add_control(
 			'badge-interval-text',
 			array(
-				'label' => esc_html__( 'Interval Badge Text', 'tmw-whatschat' ),
+				'label' => esc_html__( 'Interval Badge Text', 'master-whats-chat' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'default' => '#000',
 				'selectors' => array(
@@ -404,7 +404,7 @@ class Button extends \Elementor\Widget_Base {
 		$classes = array( 'tmw-whatsapp-elementor-title-status' );
 		$attributes = array();
 
-		$status_text = esc_html__( 'Online', 'tmw-whatschat' );
+		$status_text = esc_html__( 'Online', 'master-whats-chat' );
 
 		// Mount Class
 		$attributes[] = 'class="'. esc_attr( implode( ' ', $classes ) ) .'"';
@@ -429,7 +429,7 @@ class Button extends \Elementor\Widget_Base {
 		$settings = $this->get_settings_for_display();
 		$attendants = Functions::get_attendants();
 		if( $attendants === NULL ) {
-			echo esc_html__( 'None attendant is registered to show in this widget. Please register at least one attendant to render the widget.', 'tmw-whatschat' );
+			echo esc_html__( 'None attendant is registered to show in this widget. Please register at least one attendant to render the widget.', 'master-whats-chat' );
 
 			return;
 		}
@@ -485,7 +485,7 @@ class Button extends \Elementor\Widget_Base {
 						$output .= '<i class="tmw-fab tmw-fa-whatsapp"></i>';
 					} else {
 						$image = array(
-							'image' => $attendants[ $attendant_id ]['image']['attendant-image'] ? wp_get_attachment_url( $attendants[ $attendant_id ]['image']['attendant-image'] ) : TM_MASTER_WHATS_CHAT_URL . '/img/user-placeholder.png',
+							'image' => $attendants[ $attendant_id ]['image']['attendant-image'] ? wp_get_attachment_url( $attendants[ $attendant_id ]['image']['attendant-image'] ) : TMWC_PLUGIN_URL . '/img/user-placeholder.png',
 							'width' => 150,
 							'height' => 150,
 						);
@@ -511,7 +511,7 @@ class Button extends \Elementor\Widget_Base {
 		$output .= '</a>';
 
 		echo '<div class="tmw-whatsapp-elementor-widget">';
-			echo $output; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- previously escaped.
+			echo wp_kses_post( $output );
 		echo '</div>';
 	}
 }

@@ -1,10 +1,10 @@
 <?xml version="1.0"?>
 <ruleset
-        name="TM Whatsapp"
+        name="Master Whats Chat"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:noNamespaceSchemaLocation="vendor/squizlabs/php_codesniffer/phpcs.xsd">
 
-    <description>aThemes coding standards ruleset.</description>
+    <description>Coding standards ruleset.</description>
 
     <!-- Include paths -->
     <file>.</file>
@@ -58,7 +58,7 @@
     <rule ref="WordPress.WP.I18n">
         <properties>
             <property name="text_domain" type="array">
-                <element value="tmw-whatschat"/>
+                <element value="master-whats-chat"/>
                 <element value="library-textdomain"/>
             </property>
         </properties>
@@ -67,7 +67,7 @@
 	<rule ref="WordPress.NamingConventions.PrefixAllGlobals">
 		<properties>
 			<property name="prefixes" type="array">
-				<element value="tmw-whatschat"/>
+				<element value="master-whats-chat"/>
 			</property>
 		</properties>
 	</rule>

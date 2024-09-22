@@ -6,14 +6,14 @@
  * @package Master_Whats_Chat
  */
 
-namespace TM\Master_Whats_Chat\Frontend;
+namespace TMWC\Master_Whats_Chat\Frontend;
 
 // Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) {
     die( '-1' );
 }
 
-use TM\Master_Whats_Chat\Views\ChatWidget;
+use TMWC\Master_Whats_Chat\Views\ChatWidget;
 
 class RenderChat {
 

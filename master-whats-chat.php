@@ -7,7 +7,7 @@
  * Author URI:  https://github.com/maaprote/
  * License:     GPLv3 or later
  * License URI: http://www.gnu.org/licenses/gpl-3.0.html
- * Text Domain: tmw-whatschat
+ * Text Domain: master-whats-chat
  * Domain Path: /languages
  *
  * WC requires at least: 6.0
@@ -21,23 +21,23 @@ if ( ! defined( 'ABSPATH' ) ) {
     die( '-1' );
 }
 
-define( 'TM_MASTER_WHATS_CHAT_VERSION', '1.0.0' );
-define( 'TM_MASTER_WHATS_CHAT_URL', plugin_dir_url( __FILE__ ) );
-define( 'TM_MASTER_WHATS_CHAT_PATH', plugin_dir_path( __FILE__ ) );
+define( 'TMWC_VERSION', '1.0.0' );
+define( 'TMWC_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
+define( 'TMWC_PLUGIN_PATH', plugin_dir_path( __FILE__ ) );
 
-use TM\Master_Whats_Chat\Admin\AjaxHandlers as Admin_Ajax_Handlers;
-use TM\Master_Whats_Chat\Admin\Assets as Admin_Assets;
-use TM\Master_Whats_Chat\Admin\SettingsPage as Admin_Settings_Page;
-use TM\Master_Whats_Chat\Shortcodes\Button as Button_Shortcode;
-use TM\Master_Whats_Chat\Widgets\Button as Button_Widget;
-use TM\Master_Whats_Chat\Integration\Elementor\Button as Elementor_Widget_Button;
-use TM\Master_Whats_Chat\Integration\WPBakery\Button as WPBakery_Widget_Button;
-use TM\Master_Whats_Chat\Frontend\Assets as Frontend_Assets;
-use TM\Master_Whats_Chat\Frontend\RenderChat;
-use TM\Master_Whats_Chat\Integration\WooCommerce\Admin\Metabox as WooCommerce_Metabox;
-use TM\Master_Whats_Chat\Integration\WooCommerce\SingleProductButton;
+use TMWC\Master_Whats_Chat\Admin\AjaxHandlers as Admin_Ajax_Handlers;
+use TMWC\Master_Whats_Chat\Admin\Assets as Admin_Assets;
+use TMWC\Master_Whats_Chat\Admin\SettingsPage as Admin_Settings_Page;
+use TMWC\Master_Whats_Chat\Shortcodes\Button as Button_Shortcode;
+use TMWC\Master_Whats_Chat\Widgets\Button as Button_Widget;
+use TMWC\Master_Whats_Chat\Integration\Elementor\Button as Elementor_Widget_Button;
+use TMWC\Master_Whats_Chat\Integration\WPBakery\Button as WPBakery_Widget_Button;
+use TMWC\Master_Whats_Chat\Frontend\Assets as Frontend_Assets;
+use TMWC\Master_Whats_Chat\Frontend\RenderChat;
+use TMWC\Master_Whats_Chat\Integration\WooCommerce\Admin\Metabox as WooCommerce_Metabox;
+use TMWC\Master_Whats_Chat\Integration\WooCommerce\SingleProductButton;
 
-class TM_Master_Whats_Chat {
+class TMWC_Master_Whats_Chat {
 
     /**
      * Cosntructor.
@@ -74,12 +74,12 @@ class TM_Master_Whats_Chat {
 
         // WPML Strings Translation.
 		if( class_exists( 'SitePress' ) ) {
-			add_action( 'wpml_st_loaded', array( $this, 'tmw_wpml_register_strings' ) );
+			add_action( 'wpml_st_loaded', array( $this, 'tmwc_wpml_register_strings' ) );
 		}
 
 		// Polylang Strings Translation.
 		if( class_exists( 'Polylang' ) ) {
-			add_action( 'init', array( $this, 'tmw_polylang_register_strings' ) );
+			add_action( 'init', array( $this, 'tmwc_polylang_register_strings' ) );
 		}
 
         // Frontend Assets.
@@ -101,8 +101,8 @@ class TM_Master_Whats_Chat {
      * @return void
      */
     public function load_textdomain() {
-        load_plugin_textdomain( 'tmw-whatschat', false, dirname( plugin_basename( __FILE__ ) ) . '/languages' );
+        load_plugin_textdomain( 'master-whats-chat', false, dirname( plugin_basename( __FILE__ ) ) . '/languages' );
     }
 }
 
-new TM_Master_Whats_Chat();
+new TMWC_Master_Whats_Chat();

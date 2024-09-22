@@ -6,7 +6,7 @@
  * @package Master_Whats_Chat
  */
 
-namespace TM\Master_Whats_Chat\Admin;
+namespace TMWC\Master_Whats_Chat\Admin;
 
 // Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -30,10 +30,10 @@ class SettingsPage {
      */
     public function add_menu_page() {
         add_menu_page(
-            esc_html__( 'TM Whatsapp', 'tmw-whatschat' ),
-            esc_html__( 'TM Whatsapp', 'tmw-whatschat' ),
+            esc_html__( 'TM Whatsapp', 'master-whats-chat' ),
+            esc_html__( 'TM Whatsapp', 'master-whats-chat' ),
             'manage_options',
-            'tmw-whatsapp-settings',
+            'tmwc-whatsapp-settings',
             array(
                 $this,
                 'render_page',
@@ -48,9 +48,9 @@ class SettingsPage {
      * 
      */
     public function render_page() {
-        require TM_MASTER_WHATS_CHAT_PATH . 'inc/default-settings-data.php';
+        require TMWC_PLUGIN_PATH . 'inc/default-settings-data.php';
 
-        $data = get_option( 'tmw_whatsapp_settings_data' );
+        $data = get_option( 'tmwc_settings_data' );
         if( $data ) {
             foreach( $data as $key_name => $value ) {
 
@@ -112,6 +112,6 @@ class SettingsPage {
             $rtl_direction_class = ' tmw-direction-rtl';
         }
 
-        include TM_MASTER_WHATS_CHAT_PATH . 'templates/admin/settings.php';
+        include TMWC_PLUGIN_PATH . 'templates/admin/settings.php';
     }
 }

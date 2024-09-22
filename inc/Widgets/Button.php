@@ -6,16 +6,16 @@
  * @package Master_Whats_Chat
  */
 
-namespace TM\Master_Whats_Chat\Widgets;
+namespace TMWC\Master_Whats_Chat\Widgets;
 
 // Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) {
     die( '-1' );
 }
 
-use TM\Master_Whats_Chat\Functions;
-use TM\Master_Whats_Chat\Translator;
-use TM\Master_Whats_Chat\Views\ChatWidget;
+use TMWC\Master_Whats_Chat\Functions;
+use TMWC\Master_Whats_Chat\Translator;
+use TMWC\Master_Whats_Chat\Views\ChatWidget;
 
 class Button extends \WP_Widget {
 
@@ -26,10 +26,10 @@ class Button extends \WP_Widget {
     public function __construct() {
 		$options = array( 
 			'classname' => 'tmw-whatsapp-wp-widget-button',
-			'description' => esc_html__( 'Show TM Whatsapp Button', 'tmw-whatschat' ),
+			'description' => esc_html__( 'Show TM Whatsapp Button', 'master-whats-chat' ),
 		);
 
-		parent::__construct( 'tmw-whatsapp-wp-widget-button', esc_html__( 'TM Whatsapp: Button', 'tmw-whatschat' ), $options );
+		parent::__construct( 'tmw-whatsapp-wp-widget-button', esc_html__( 'TM Whatsapp: Button', 'master-whats-chat' ), $options );
     }
 
 	/**
@@ -43,7 +43,7 @@ class Button extends \WP_Widget {
 		$classes = array( 'tmw-whatsapp-title-status' );
 		$attributes = array();
 
-		$status_text = esc_html__( 'Online', 'tmw-whatschat' );
+		$status_text = esc_html__( 'Online', 'master-whats-chat' );
 
 		// Mount Class
 		$attributes[] = 'class="'. esc_attr( implode( ' ', $classes ) ) .'"';
@@ -86,14 +86,14 @@ class Button extends \WP_Widget {
 		$attendant = $attendants_list[ $attendant_id ];
 
 		if( $attendants_list === NULL ) {
-            echo esc_html__( 'None attendant is registered to show in this widget. Please register at least one attendant to render the widget.', 'tmw-whatschat' );
+            echo esc_html__( 'None attendant is registered to show in this widget. Please register at least one attendant to render the widget.', 'master-whats-chat' );
 
 			return;
         }
 
 		// Register widgets script
-		wp_register_script( 'tmw-whatsapp-widgets', TM_MASTER_WHATS_CHAT_URL . '/js/tmw-whatsapp-widgets.js', array( 'jquery' ), TM_MASTER_WHATS_CHAT_VERSION, true );
-		wp_enqueue_script( 'tmw-whatsapp-widgets' );
+		wp_register_script( 'tmwc-whatsapp-widgets', TMWC_PLUGIN_URL . '/js/tmw-whatsapp-widgets.js', array( 'jquery' ), TMWC_VERSION, true );
+		wp_enqueue_script( 'tmwc-whatsapp-widgets' );
 
 		// Attendant Title
 		$att_title = !empty( $instance['att_title'] ) ? $instance['att_title'] : Translator::translate_string( $attendant['name'], 'attendant_'. $attendant_id .'_name' );
@@ -169,7 +169,7 @@ class Button extends \WP_Widget {
 							$output .= '<i class="tmw-fab tmw-fa-whatsapp"></i>';
 						} else {
 							$image = array(
-								'image' => $attendant['image']['attendant-image'] ? wp_get_attachment_url( $attendant['image']['attendant-image'] ) : TM_MASTER_WHATS_CHAT_URL . '/img/user-placeholder.png',
+								'image' => $attendant['image']['attendant-image'] ? wp_get_attachment_url( $attendant['image']['attendant-image'] ) : TMWC_PLUGIN_URL . '/img/user-placeholder.png',
 								'width' => 150,
 								'height' => 150,
 							);
@@ -194,6 +194,6 @@ class Button extends \WP_Widget {
 			$output .= '</div>';
 		$output .= '</a>';
 
-		echo $output; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- previously escaped.
+		echo wp_kses_post( $output );
 	}
 }
