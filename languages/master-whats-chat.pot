@@ -1,0 +1,1193 @@
+# Copyright (C) 2024 master-whats-chat
+# This file is distributed under the same license as the master-whats-chat package.
+msgid ""
+msgstr ""
+"Project-Id-Version: master-whats-chat\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language-Team: Rodrigo Teixeira\n"
+"Last-Translator: Rodrigo Teixeira\n"
+"POT-Creation-Date: 2024-09-22 13:26+0000\n"
+"Report-Msgid-Bugs-To: https://github.com/maaprote/\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-KeywordsList: __;_e;_ex:1,2c;_n:1,2;_n_noop:1,2;_nx:1,2,4c;_nx_noop:1,2,3c;_x:1,2c;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: inc/default-settings-data.php:18, inc/default-settings-data.php:244, inc/default-settings-data.php:262, templates/admin/settings.php:104, inc/Integration/Elementor/ButtonWidget.php:125
+msgid "General"
+msgstr ""
+
+#: inc/default-settings-data.php:25
+msgid "RTL Layout"
+msgstr ""
+
+#: inc/default-settings-data.php:26
+msgid "Right To Left layout. This is good for languages like arabic, hebrew, etc..."
+msgstr ""
+
+#: inc/default-settings-data.php:32
+msgid "Position"
+msgstr ""
+
+#: inc/default-settings-data.php:33
+msgid "Controls the position of whatsapp chat on screen"
+msgstr ""
+
+#: inc/default-settings-data.php:37
+msgid "Top Right"
+msgstr ""
+
+#: inc/default-settings-data.php:38
+msgid "Top Left"
+msgstr ""
+
+#: inc/default-settings-data.php:39
+msgid "Bottom Right"
+msgstr ""
+
+#: inc/default-settings-data.php:40
+msgid "Bottom Left"
+msgstr ""
+
+#: inc/default-settings-data.php:46
+msgid "Header Title"
+msgstr ""
+
+#: inc/default-settings-data.php:47
+msgid "Controls the text for chat window header title"
+msgstr ""
+
+#: inc/default-settings-data.php:53
+msgid "Header Description"
+msgstr ""
+
+#: inc/default-settings-data.php:54
+msgid "Controls the text for chat window header description"
+msgstr ""
+
+#: inc/default-settings-data.php:60
+msgid "Header Phone"
+msgstr ""
+
+#: inc/default-settings-data.php:61
+msgid "Controls the phone number on header"
+msgstr ""
+
+#: inc/default-settings-data.php:63, inc/default-settings-data.php:64, inc/default-settings-data.php:109
+msgid "(800) 123-4567"
+msgstr ""
+
+#: inc/default-settings-data.php:68
+msgid "Header Email"
+msgstr ""
+
+#: inc/default-settings-data.php:69
+msgid "Controls the email on header"
+msgstr ""
+
+#: inc/default-settings-data.php:71, inc/default-settings-data.php:72, inc/default-settings-data.php:117
+msgid "mail@domain.com"
+msgstr ""
+
+#: inc/default-settings-data.php:76
+msgid "No Attendants Registered Message"
+msgstr ""
+
+#: inc/default-settings-data.php:77
+msgid "The message when has none attendat registered"
+msgstr ""
+
+#: inc/default-settings-data.php:84
+msgid "Chat Image Background"
+msgstr ""
+
+#: inc/default-settings-data.php:85
+msgid "Controls the chat image background"
+msgstr ""
+
+#: inc/default-settings-data.php:92
+msgid "Show Footer"
+msgstr ""
+
+#: inc/default-settings-data.php:93
+msgid "Check to show the chat footer"
+msgstr ""
+
+#: inc/default-settings-data.php:99, inc/default-settings-data.php:521
+msgid "Footer Message"
+msgstr ""
+
+#: inc/default-settings-data.php:100
+msgid "Controls the text for chat window footer message"
+msgstr ""
+
+#: inc/default-settings-data.php:106
+msgid "Footer Phone"
+msgstr ""
+
+#: inc/default-settings-data.php:107
+msgid "Controls the phone in the chat window footer"
+msgstr ""
+
+#: inc/default-settings-data.php:114
+msgid "Footer Email"
+msgstr ""
+
+#: inc/default-settings-data.php:115
+msgid "Controls the email in the chat window footer"
+msgstr ""
+
+#: inc/default-settings-data.php:123
+msgid "Show Call To Action"
+msgstr ""
+
+#: inc/default-settings-data.php:124
+msgid "Show text next to floating button"
+msgstr ""
+
+#: inc/default-settings-data.php:130
+msgid "Call To Action Text"
+msgstr ""
+
+#: inc/default-settings-data.php:131
+msgid "Controls the text of call to action"
+msgstr ""
+
+#: inc/default-settings-data.php:133
+msgid "Need Help?"
+msgstr ""
+
+#: inc/default-settings-data.php:139
+msgid "Open WhatsApp Web Chat When"
+msgstr ""
+
+#: inc/default-settings-data.php:140
+msgid "Control when the WhatsApp Web new window should open"
+msgstr ""
+
+#: inc/default-settings-data.php:143
+msgid "Click Icon"
+msgstr ""
+
+#: inc/default-settings-data.php:144, inc/Integration/Elementor/ButtonWidget.php:133, inc/Integration/WPBakery/ButtonWidget.php:59
+msgid "Select Attendant"
+msgstr ""
+
+#: inc/default-settings-data.php:145
+msgid "Click Chat Send"
+msgstr ""
+
+#: inc/default-settings-data.php:151
+msgid "Whatsapp Web Start Message"
+msgstr ""
+
+#: inc/default-settings-data.php:152
+msgid "The initial message to send. You can use template strings. Eg: {{woo_product_title:12}}"
+msgstr ""
+
+#: inc/default-settings-data.php:161
+msgid "See all markups"
+msgstr ""
+
+#: inc/default-settings-data.php:163
+msgid "Product title:"
+msgstr ""
+
+#: inc/default-settings-data.php:164
+msgid "Product link:"
+msgstr ""
+
+#: inc/default-settings-data.php:165
+msgid "Post title:"
+msgstr ""
+
+#: inc/default-settings-data.php:166
+msgid "Post link:"
+msgstr ""
+
+#: inc/default-settings-data.php:167
+msgid "Page title:"
+msgstr ""
+
+#: inc/default-settings-data.php:168
+msgid "Page link:"
+msgstr ""
+
+#: inc/default-settings-data.php:169
+msgid "OBS: Replace \"__ID__\" with the product/post/page ID"
+msgstr ""
+
+#: inc/default-settings-data.php:174
+msgid "Button Position Offsets"
+msgstr ""
+
+#: inc/default-settings-data.php:175
+msgid "Moves the posiion to top/bottom/left/right"
+msgstr ""
+
+#: inc/default-settings-data.php:184
+msgid "Open chat with attendant on page first load"
+msgstr ""
+
+#: inc/default-settings-data.php:185
+msgid "On the first load of page, the attendant chat window will automatically open"
+msgstr ""
+
+#: inc/default-settings-data.php:191
+msgid "Attendant ID to Open the Chat"
+msgstr ""
+
+#: inc/default-settings-data.php:192
+msgid "Get the ID in the \"Attendants\" tab of this settings page"
+msgstr ""
+
+#: inc/default-settings-data.php:203
+msgid "Delay Time to Open the Chat"
+msgstr ""
+
+#: inc/default-settings-data.php:204
+msgid "The delay time in seconds to open the chat when first load the page"
+msgstr ""
+
+#: inc/default-settings-data.php:215
+msgid "Hide From Specific Pages ID"
+msgstr ""
+
+#: inc/default-settings-data.php:216
+msgid "Do not show whatsapp button/chat in specific pages ID. Eg: 13,22,44 (comma separate)"
+msgstr ""
+
+#: inc/default-settings-data.php:226
+msgid "Show In Specific Pages ID"
+msgstr ""
+
+#: inc/default-settings-data.php:227
+msgid "Show whatsapp button/chat in specific pages ID. Eg: 13,22,44 (comma separate)"
+msgstr ""
+
+#: inc/default-settings-data.php:237
+msgid "Enable Debug"
+msgstr ""
+
+#: inc/default-settings-data.php:238
+msgid "The purpose of this options is support help if you need. Keep it disabled. Enable only if someone of our support team ask to enable."
+msgstr ""
+
+#: inc/default-settings-data.php:250, inc/default-settings-data.php:256, templates/admin/settings.php:105
+msgid "Attendants"
+msgstr ""
+
+#: inc/default-settings-data.php:268, inc/default-settings-data.php:665, templates/admin/settings.php:106, inc/Integration/Elementor/ButtonWidget.php:220
+msgid "Skin"
+msgstr ""
+
+#: inc/default-settings-data.php:271
+msgid "Clear All Fields"
+msgstr ""
+
+#: inc/default-settings-data.php:275
+msgid "Typography"
+msgstr ""
+
+#: inc/default-settings-data.php:276
+msgid "Controls the typography of the plugin"
+msgstr ""
+
+#: inc/default-settings-data.php:283
+msgid "Font Family (Google Fonts)"
+msgstr ""
+
+#: inc/default-settings-data.php:284
+msgid "Controls the font family of all texts of the plugin. The default value is: Poppins:ital,wght@0,400;0,700;1,400"
+msgstr ""
+
+#: inc/default-settings-data.php:286
+msgid "Poppins:ital,wght@0,400;0,700;1,400"
+msgstr ""
+
+#: inc/default-settings-data.php:289, inc/default-settings-data.php:307
+msgid "How to change"
+msgstr ""
+
+#. translators: 1. Image URL
+#: inc/default-settings-data.php:293
+msgid "Go to <a href=\"https://fonts.google.com\" target=\"_blank\">https://fonts.google.com</a> and select your desired font. Once you have selected, a right sidebar will open and you should get the code from there. See the image example: <img src=\"%1$s\" class=\"tmw-img-fluid\" alt=\"Font family code\" />"
+msgstr ""
+
+#: inc/default-settings-data.php:301
+msgid "Font Family Name (Google Fonts)"
+msgstr ""
+
+#: inc/default-settings-data.php:302
+msgid "Controls the font family name of all texts of the plugin. The default value is: \"Poppins\", sans-serif;"
+msgstr ""
+
+#: inc/default-settings-data.php:304
+msgid "\"Poppins\", sans-serif;"
+msgstr ""
+
+#. translators: 1. Image URL
+#: inc/default-settings-data.php:311
+msgid "Go to <a href=\"https://fonts.google.com\" target=\"_blank\">https://fonts.google.com</a> and select your desired font. Once you have selected, a right sidebar will open and you should get the font family name from there. See the image example: <img src=\"%1$s\" class=\"tmw-img-fluid\" alt=\"Font family name\" />"
+msgstr ""
+
+#: inc/default-settings-data.php:318
+msgid "Open Chat Button"
+msgstr ""
+
+#: inc/default-settings-data.php:319
+msgid "Control skin of whatsapp chat button"
+msgstr ""
+
+#: inc/default-settings-data.php:326
+msgid "Button Background"
+msgstr ""
+
+#: inc/default-settings-data.php:327
+msgid "Controls open chat button background color"
+msgstr ""
+
+#: inc/default-settings-data.php:335
+msgid "Button Icon"
+msgstr ""
+
+#: inc/default-settings-data.php:336
+msgid "Controls open chat button icon color"
+msgstr ""
+
+#: inc/default-settings-data.php:344
+msgid "Call To Action Background Color"
+msgstr ""
+
+#: inc/default-settings-data.php:345
+msgid "Controls the call to action background color"
+msgstr ""
+
+#: inc/default-settings-data.php:353
+msgid "Call To Action Text Color"
+msgstr ""
+
+#: inc/default-settings-data.php:354
+msgid "Controls the call to action text color"
+msgstr ""
+
+#: inc/default-settings-data.php:367
+msgid "Chat List View"
+msgstr ""
+
+#: inc/default-settings-data.php:368
+msgid "Control skin of whatsapp chat list view (the view with attendants list). "
+msgstr ""
+
+#: inc/default-settings-data.php:375
+msgid "Header Background"
+msgstr ""
+
+#: inc/default-settings-data.php:376
+msgid "Controls header background color"
+msgstr ""
+
+#: inc/default-settings-data.php:384
+msgid "Header Title Color"
+msgstr ""
+
+#: inc/default-settings-data.php:385
+msgid "Controls header title color"
+msgstr ""
+
+#: inc/default-settings-data.php:393
+msgid "Header Description Color"
+msgstr ""
+
+#: inc/default-settings-data.php:394
+msgid "Controls header description color"
+msgstr ""
+
+#: inc/default-settings-data.php:402
+msgid "Header Phone Color"
+msgstr ""
+
+#: inc/default-settings-data.php:403
+msgid "Controls header phone color"
+msgstr ""
+
+#: inc/default-settings-data.php:411
+msgid "Header Email Color"
+msgstr ""
+
+#: inc/default-settings-data.php:412
+msgid "Controls header email color"
+msgstr ""
+
+#: inc/default-settings-data.php:420
+msgid "Attendants List Background"
+msgstr ""
+
+#: inc/default-settings-data.php:421
+msgid "Controls attendants list background color"
+msgstr ""
+
+#: inc/default-settings-data.php:429
+msgid "Attendants List Background on Hover"
+msgstr ""
+
+#: inc/default-settings-data.php:430
+msgid "Controls attendants list background color on hover"
+msgstr ""
+
+#: inc/default-settings-data.php:440
+msgid "Attendants List Title"
+msgstr ""
+
+#: inc/default-settings-data.php:441
+msgid "Controls attendants list title color"
+msgstr ""
+
+#: inc/default-settings-data.php:449
+msgid "Attendants List Description"
+msgstr ""
+
+#: inc/default-settings-data.php:450
+msgid "Controls attendants list description color"
+msgstr ""
+
+#: inc/default-settings-data.php:458
+msgid "Attendants List Status Badge"
+msgstr ""
+
+#: inc/default-settings-data.php:459
+msgid "Controls attendants list status badge color"
+msgstr ""
+
+#: inc/default-settings-data.php:467
+msgid "Attendants List Status Text"
+msgstr ""
+
+#: inc/default-settings-data.php:468
+msgid "Controls attendants list status text color"
+msgstr ""
+
+#: inc/default-settings-data.php:476
+msgid "Attendants List Offline Badge"
+msgstr ""
+
+#: inc/default-settings-data.php:477
+msgid "Controls attendants list offline badge color"
+msgstr ""
+
+#: inc/default-settings-data.php:485
+msgid "Attendants List Offline Badge Text"
+msgstr ""
+
+#: inc/default-settings-data.php:486
+msgid "Controls attendants list offline badge text color"
+msgstr ""
+
+#: inc/default-settings-data.php:494
+msgid "Attendants List Interval Badge"
+msgstr ""
+
+#: inc/default-settings-data.php:495
+msgid "Controls attendants list interval badge color"
+msgstr ""
+
+#: inc/default-settings-data.php:503
+msgid "Attendants List Interval Badge Text"
+msgstr ""
+
+#: inc/default-settings-data.php:504
+msgid "Controls attendants list interval badge text color"
+msgstr ""
+
+#: inc/default-settings-data.php:512
+msgid "Footer Background"
+msgstr ""
+
+#: inc/default-settings-data.php:513
+msgid "Controls footer background color"
+msgstr ""
+
+#: inc/default-settings-data.php:522
+msgid "Controls footer message color"
+msgstr ""
+
+#: inc/default-settings-data.php:530
+msgid "Footer Phone & Email"
+msgstr ""
+
+#: inc/default-settings-data.php:531
+msgid "Controls footer phone and email color"
+msgstr ""
+
+#: inc/default-settings-data.php:544
+msgid "Chat Attendant View"
+msgstr ""
+
+#: inc/default-settings-data.php:545
+msgid "Control skin of whatsapp chat attendant view (the view when select attendant). "
+msgstr ""
+
+#: inc/default-settings-data.php:552
+msgid "Attendant Name"
+msgstr ""
+
+#: inc/default-settings-data.php:553
+msgid "Controls attendant name color"
+msgstr ""
+
+#: inc/default-settings-data.php:561
+msgid "Attendant Status"
+msgstr ""
+
+#: inc/default-settings-data.php:562
+msgid "Controls attendant status color"
+msgstr ""
+
+#: inc/default-settings-data.php:570
+msgid "Attendant Back Icon"
+msgstr ""
+
+#: inc/default-settings-data.php:571
+msgid "Controls attendant back icon color"
+msgstr ""
+
+#: inc/default-settings-data.php:579
+msgid "Chat Message Baloon Background"
+msgstr ""
+
+#: inc/default-settings-data.php:580
+msgid "Controls attendant chat message background color"
+msgstr ""
+
+#: inc/default-settings-data.php:590
+msgid "Chat Message Baloon Hour Color"
+msgstr ""
+
+#: inc/default-settings-data.php:591
+msgid "Controls attendant chat message hour text color"
+msgstr ""
+
+#: inc/default-settings-data.php:599
+msgid "Chat Message Baloon Text"
+msgstr ""
+
+#: inc/default-settings-data.php:600
+msgid "Controls attendant chat message text color"
+msgstr ""
+
+#: inc/default-settings-data.php:608
+msgid "Chat Message Input Wrapper"
+msgstr ""
+
+#: inc/default-settings-data.php:609
+msgid "Controls attendant chat message input wrapper background color"
+msgstr ""
+
+#: inc/default-settings-data.php:617
+msgid "Chat Message Input"
+msgstr ""
+
+#: inc/default-settings-data.php:618
+msgid "Controls attendant chat message input background color"
+msgstr ""
+
+#: inc/default-settings-data.php:626
+msgid "Chat Message Input Placeholder"
+msgstr ""
+
+#: inc/default-settings-data.php:627
+msgid "Controls attendant chat message input placeholder color"
+msgstr ""
+
+#: inc/default-settings-data.php:638
+msgid "Chat Message Input Text"
+msgstr ""
+
+#: inc/default-settings-data.php:639
+msgid "Controls attendant chat message input text color"
+msgstr ""
+
+#: inc/default-settings-data.php:647
+msgid "Chat Send Button Background"
+msgstr ""
+
+#: inc/default-settings-data.php:648
+msgid "Controls attendant chat send button background color"
+msgstr ""
+
+#: inc/default-settings-data.php:656
+msgid "Chat Send Button Icon"
+msgstr ""
+
+#: inc/default-settings-data.php:657
+msgid "Controls attendant chat send button icon color"
+msgstr ""
+
+#: inc/default-settings-data.php:671, inc/default-settings-data.php:677, inc/default-settings-data.php:717, templates/admin/settings.php:107
+msgid "Performance"
+msgstr ""
+
+#: inc/default-settings-data.php:678
+msgid "These settings controls how the TM Whatsapp should be initialized/loaded. By using one of these options, the plugin will not affect your rating in page performance tools like Google Page Speed, GTMetrix, Webpagetest, etc..."
+msgstr ""
+
+#: inc/default-settings-data.php:685
+msgid "How TM Whatsapp Plugin should be initialized?"
+msgstr ""
+
+#: inc/default-settings-data.php:686
+msgid "Controls when the JS code of the plugin will run"
+msgstr ""
+
+#: inc/default-settings-data.php:690
+msgid "On Load of the Page"
+msgstr ""
+
+#: inc/default-settings-data.php:691
+msgid "On First Scroll of the Page"
+msgstr ""
+
+#: inc/default-settings-data.php:692
+msgid "On First movement of Mouse on the Page"
+msgstr ""
+
+#: inc/default-settings-data.php:693
+msgid "After few seconds (not recommeded for some page performance tools)"
+msgstr ""
+
+#: inc/default-settings-data.php:698
+msgid "Delay Time to Run/Initialize the Plugin"
+msgstr ""
+
+#: inc/default-settings-data.php:699
+msgid "The delay time in seconds to run/initialize the plugin on first load the page"
+msgstr ""
+
+#: inc/default-settings-data.php:710
+msgid "Important"
+msgstr ""
+
+#: inc/default-settings-data.php:711
+msgid "These settings can not be preview on this page. To see this working, please open the frontend of your website."
+msgstr ""
+
+#: inc/default-settings-data.php:723, inc/default-settings-data.php:737, templates/admin/settings.php:108
+msgid "Reset"
+msgstr ""
+
+#: inc/default-settings-data.php:730
+msgid "Reset Settings To Default"
+msgstr ""
+
+#: inc/default-settings-data.php:731
+msgid "Warning: This will reset all plugin settings to it´s default"
+msgstr ""
+
+#: inc/Functions.php:40, templates/admin/settings.php:124
+msgid "ATTENDANT ID:"
+msgstr ""
+
+#: inc/Functions.php:41, templates/admin/settings.php:128
+msgid "Attendant Name:"
+msgstr ""
+
+#: inc/Functions.php:42, templates/admin/settings.php:129
+msgid "The name of attendant"
+msgstr ""
+
+#: inc/Functions.php:43, templates/admin/settings.php:135
+msgid "Attendant Description:"
+msgstr ""
+
+#: inc/Functions.php:44, templates/admin/settings.php:136
+msgid "The description of attendant"
+msgstr ""
+
+#: inc/Functions.php:45, templates/admin/settings.php:144
+msgid "Attendant Start Message:"
+msgstr ""
+
+#: inc/Functions.php:46, templates/admin/settings.php:145
+msgid "The start message of attendant"
+msgstr ""
+
+#: inc/Functions.php:47, templates/admin/settings.php:151
+msgid "Attendant Phone:"
+msgstr ""
+
+#: inc/Functions.php:48, templates/admin/settings.php:152
+msgid "The attendant phone. Do not add \"+\" before the number"
+msgstr ""
+
+#: inc/Functions.php:49, templates/admin/settings.php:168
+msgid "Attendant Offline Message:"
+msgstr ""
+
+#: inc/Functions.php:50, templates/admin/settings.php:169
+msgid "The message when attendat is not available for chat"
+msgstr ""
+
+#: inc/Functions.php:51, templates/admin/settings.php:175
+msgid "Attendant Interval Message:"
+msgstr ""
+
+#: inc/Functions.php:52, templates/admin/settings.php:176
+msgid "The message when attendat is not available for chat during interval"
+msgstr ""
+
+#: inc/Functions.php:53, templates/admin/settings.php:193
+msgid "Attendant Image:"
+msgstr ""
+
+#: inc/Functions.php:54
+msgid "The image of attendant"
+msgstr ""
+
+#: inc/Functions.php:55, inc/Admin/SettingsFields.php:83
+msgid "Image Uploaded"
+msgstr ""
+
+#: inc/Functions.php:56, templates/admin/settings.php:85
+msgid "Timezone:"
+msgstr ""
+
+#: inc/Functions.php:57
+msgid "Controls the timezone"
+msgstr ""
+
+#: inc/Functions.php:58
+msgid "Setup Availability:"
+msgstr ""
+
+#: inc/Functions.php:60
+msgid "monday"
+msgstr ""
+
+#: inc/Functions.php:61
+msgid "tuesday"
+msgstr ""
+
+#: inc/Functions.php:62
+msgid "wednesday"
+msgstr ""
+
+#: inc/Functions.php:63
+msgid "thursday"
+msgstr ""
+
+#: inc/Functions.php:64
+msgid "friday"
+msgstr ""
+
+#: inc/Functions.php:65
+msgid "saturday"
+msgstr ""
+
+#: inc/Functions.php:66
+msgid "sunday"
+msgstr ""
+
+#: inc/Functions.php:68, templates/admin/settings.php:224
+msgid "Remove Attendant"
+msgstr ""
+
+#: inc/Functions.php:69, templates/admin/settings.php:218, templates/admin/settings.php:218
+msgid "Enable all days"
+msgstr ""
+
+#: inc/Functions.php:72
+msgid "Online all the time in this day"
+msgstr ""
+
+#: inc/Functions.php:73
+msgid "Offline all the time in this day"
+msgstr ""
+
+#: inc/Functions.php:74
+msgid "Online in the available hours below"
+msgstr ""
+
+#: inc/Functions.php:76
+msgid "Do you make sure want to reset ALL settings to default ? This way you will lost all your current defined settings."
+msgstr ""
+
+#: inc/Functions.php:78
+msgid "Select a image to upload"
+msgstr ""
+
+#: inc/Functions.php:79
+msgid "Use this image"
+msgstr ""
+
+#: inc/Admin/SettingsFields.php:102
+msgid "No values defined for this input"
+msgstr ""
+
+#: inc/Admin/SettingsPage.php:33, inc/Admin/SettingsPage.php:34, inc/Integration/WPBakery/ButtonWidget.php:48
+msgid "TM Whatsapp"
+msgstr ""
+
+#: inc/Shortcodes/Button.php:40, inc/Views/ChatWidget.php:365, inc/Widgets/Button.php:46, inc/Integration/Elementor/ButtonWidget.php:407, inc/Integration/WPBakery/ButtonWidget.php:138
+msgid "Online"
+msgstr ""
+
+#: inc/Shortcodes/Button.php:86, inc/Widgets/Button.php:89, inc/Integration/Elementor/ButtonWidget.php:432, inc/Integration/WPBakery/ButtonWidget.php:178
+msgid "None attendant is registered to show in this widget. Please register at least one attendant to render the widget."
+msgstr ""
+
+#: inc/Views/ChatWidget.php:324
+msgid "Sorry! But we have no attendants at this moment! In this mean time, you can contact us trough the phone or email below:"
+msgstr ""
+
+#: inc/Views/ChatWidget.php:300
+msgid "Hello!"
+msgstr ""
+
+#: inc/Views/ChatWidget.php:301
+msgid "Any questions? Feel free to chat with our attendants."
+msgstr ""
+
+#: inc/Views/ChatWidget.php:366
+msgid "Offline"
+msgstr ""
+
+#: inc/Views/ChatWidget.php:367
+msgid "Interval"
+msgstr ""
+
+#: inc/Views/ChatWidget.php:377
+msgid "Hello! How can I help you ?"
+msgstr ""
+
+#: inc/Views/ChatWidget.php:380
+msgid "Type a message..."
+msgstr ""
+
+#: inc/Widgets/Button.php:29
+msgid "Show TM Whatsapp Button"
+msgstr ""
+
+#: inc/Widgets/Button.php:32
+msgid "TM Whatsapp: Button"
+msgstr ""
+
+#: templates/admin/settings.php:32
+msgid "Status:"
+msgstr ""
+
+#: templates/admin/settings.php:32
+msgid "Offline all the time"
+msgstr ""
+
+#: templates/admin/settings.php:42
+msgid "Available Hours:"
+msgstr ""
+
+#: templates/admin/settings.php:43
+msgid "When attendant is available for chat"
+msgstr ""
+
+#: templates/admin/settings.php:47, templates/admin/settings.php:69
+msgid "Start:"
+msgstr ""
+
+#: templates/admin/settings.php:48, templates/admin/settings.php:55, templates/admin/settings.php:70, templates/admin/settings.php:77
+msgid "Clear"
+msgstr ""
+
+#: templates/admin/settings.php:54, templates/admin/settings.php:76
+msgid "End:"
+msgstr ""
+
+#: templates/admin/settings.php:64
+msgid "Interval:"
+msgstr ""
+
+#: templates/admin/settings.php:65
+msgid "Time not available during the day. Eg: Lunch"
+msgstr ""
+
+#: templates/admin/settings.php:87
+msgid "This option will overwrite the default timezone of the attendant in this specific day"
+msgstr ""
+
+#: templates/admin/settings.php:154
+msgid "Group Invite Links"
+msgstr ""
+
+#: templates/admin/settings.php:156
+msgid "This field also accept group invite links. For example: https://chat.whatsapp.com/DZb5cMkpM9P6knck5mi34W"
+msgstr ""
+
+#: templates/admin/settings.php:186
+msgid "Attendant Timezone"
+msgstr ""
+
+#: templates/admin/settings.php:187
+msgid "The attendant timezone"
+msgstr ""
+
+#: templates/admin/settings.php:194
+msgid "The attendant image. Default size: 50x50"
+msgstr ""
+
+#: templates/admin/settings.php:204
+msgid "Setup Availability"
+msgstr ""
+
+#: templates/admin/settings.php:218
+msgid "Disable all days"
+msgstr ""
+
+#: templates/admin/settings.php:233
+msgid "ADD NEW"
+msgstr ""
+
+#: templates/admin/settings.php:353
+msgid "Settings Changed! Click save button to see the new changes in the preview."
+msgstr ""
+
+#: templates/admin/settings.php:358
+msgid "Save Settings"
+msgstr ""
+
+#: templates/admin/settings.php:359
+msgid "Settings Updated!"
+msgstr ""
+
+#: inc/Integration/Elementor/ButtonWidget.php:59, inc/Integration/WPBakery/ButtonWidget.php:44
+msgid "TM Whatsapp Button"
+msgstr ""
+
+#: inc/Integration/Elementor/ButtonWidget.php:143, inc/Integration/WPBakery/ButtonWidget.php:69
+msgid "Layout Style"
+msgstr ""
+
+#: inc/Integration/Elementor/ButtonWidget.php:147, inc/Integration/WPBakery/ButtonWidget.php:72
+msgid "Style 1"
+msgstr ""
+
+#: inc/Integration/Elementor/ButtonWidget.php:148, inc/Integration/WPBakery/ButtonWidget.php:73
+msgid "Style 2"
+msgstr ""
+
+#: inc/Integration/Elementor/ButtonWidget.php:156
+msgid "Title"
+msgstr ""
+
+#: inc/Integration/Elementor/ButtonWidget.php:159
+msgid "Type title here..."
+msgstr ""
+
+#: inc/Integration/Elementor/ButtonWidget.php:166, inc/Integration/WPBakery/ButtonWidget.php:90
+msgid "Description"
+msgstr ""
+
+#: inc/Integration/Elementor/ButtonWidget.php:169
+msgid "Description here..."
+msgstr ""
+
+#: inc/Integration/Elementor/ButtonWidget.php:176, inc/Integration/Elementor/ButtonWidget.php:182, inc/Integration/WPBakery/ButtonWidget.php:99, inc/Integration/WPBakery/ButtonWidget.php:103, inc/Integration/WooCommerce/Admin/Metabox.php:110, inc/Integration/WooCommerce/Admin/Metabox.php:115
+msgid "Attendant Image"
+msgstr ""
+
+#: inc/Integration/Elementor/ButtonWidget.php:178
+msgid "Default size for \"Attendant Image\" is 50x50"
+msgstr ""
+
+#: inc/Integration/Elementor/ButtonWidget.php:181, inc/Integration/WPBakery/ButtonWidget.php:102, inc/Integration/WooCommerce/Admin/Metabox.php:116
+msgid "Whatsapp Icon"
+msgstr ""
+
+#: inc/Integration/Elementor/ButtonWidget.php:190, inc/Integration/WPBakery/ButtonWidget.php:112
+msgid "Alignment"
+msgstr ""
+
+#: inc/Integration/Elementor/ButtonWidget.php:194, inc/Integration/WPBakery/ButtonWidget.php:115
+msgid "Full Width"
+msgstr ""
+
+#: inc/Integration/Elementor/ButtonWidget.php:198, inc/Integration/WPBakery/ButtonWidget.php:116
+msgid "Center"
+msgstr ""
+
+#: inc/Integration/Elementor/ButtonWidget.php:202, inc/Integration/WPBakery/ButtonWidget.php:117
+msgid "Left"
+msgstr ""
+
+#: inc/Integration/Elementor/ButtonWidget.php:206, inc/Integration/WPBakery/ButtonWidget.php:118
+msgid "Right"
+msgstr ""
+
+#: inc/Integration/Elementor/ButtonWidget.php:228
+msgid "Background Color"
+msgstr ""
+
+#: inc/Integration/Elementor/ButtonWidget.php:240
+msgid "Background Hover Color"
+msgstr ""
+
+#: inc/Integration/Elementor/ButtonWidget.php:252
+msgid "Icon Color"
+msgstr ""
+
+#: inc/Integration/Elementor/ButtonWidget.php:264
+msgid "Icon Hover Color"
+msgstr ""
+
+#: inc/Integration/Elementor/ButtonWidget.php:276
+msgid "Attendant Name Color"
+msgstr ""
+
+#: inc/Integration/Elementor/ButtonWidget.php:288
+msgid "Attendant Name Hover Color"
+msgstr ""
+
+#: inc/Integration/Elementor/ButtonWidget.php:300
+msgid "Description Color"
+msgstr ""
+
+#: inc/Integration/Elementor/ButtonWidget.php:312
+msgid "Description Hover Color"
+msgstr ""
+
+#: inc/Integration/Elementor/ButtonWidget.php:324
+msgid "Status Background Color"
+msgstr ""
+
+#: inc/Integration/Elementor/ButtonWidget.php:336
+msgid "Status Text Color"
+msgstr ""
+
+#: inc/Integration/Elementor/ButtonWidget.php:348, inc/Integration/Elementor/ButtonWidget.php:372
+msgid "Interval Badge Background"
+msgstr ""
+
+#: inc/Integration/Elementor/ButtonWidget.php:360
+msgid "Offline Message Badge Text"
+msgstr ""
+
+#: inc/Integration/Elementor/ButtonWidget.php:384
+msgid "Interval Badge Text"
+msgstr ""
+
+#: inc/Integration/WooCommerce/SingleProductButton.php:66
+msgid "Offline!"
+msgstr ""
+
+#: inc/Integration/WooCommerce/SingleProductButton.php:63
+msgid "Online!"
+msgstr ""
+
+#. translators: %1$s - Product Title, %2$s - Product URL
+#: inc/Integration/WooCommerce/SingleProductButton.php:224
+msgid "Hello! I have some questions about the product: %1$s (%2$s)"
+msgstr ""
+
+#: inc/Integration/WPBakery/ButtonWidget.php:46
+msgid "Add whatsapp button"
+msgstr ""
+
+#: inc/Integration/WPBakery/ButtonWidget.php:81
+msgid "TItle"
+msgstr ""
+
+#: inc/Integration/WooCommerce/Admin/Metabox.php:38
+msgid "TM WhatsApp Button"
+msgstr ""
+
+#: inc/Integration/WooCommerce/Admin/Metabox.php:70
+msgid "Select an attendant to show along with WooCommerce product buy button."
+msgstr ""
+
+#: inc/Integration/WooCommerce/Admin/Metabox.php:73
+msgid "Show Button?"
+msgstr ""
+
+#: inc/Integration/WooCommerce/Admin/Metabox.php:79
+msgid "Attendant"
+msgstr ""
+
+#: inc/Integration/WooCommerce/Admin/Metabox.php:90
+msgid "None attendant registered for select here."
+msgstr ""
+
+#: inc/Integration/WooCommerce/Admin/Metabox.php:95
+msgid "Button Layout"
+msgstr ""
+
+#: inc/Integration/WooCommerce/Admin/Metabox.php:100
+msgid "Rounded"
+msgstr ""
+
+#: inc/Integration/WooCommerce/Admin/Metabox.php:101
+msgid "Squared"
+msgstr ""
+
+#: inc/Integration/WooCommerce/Admin/Metabox.php:125
+msgid "Button Title"
+msgstr ""
+
+#: inc/Integration/WooCommerce/Admin/Metabox.php:127
+msgid "Leave this field empty if you want to show the attendant name as it is registered in the plugin options"
+msgstr ""
+
+#: inc/Integration/WooCommerce/Admin/Metabox.php:130
+msgid "Button Description"
+msgstr ""
+
+#: inc/Integration/WooCommerce/Admin/Metabox.php:132
+msgid "Leave this field empty if you want to show the attendant description as it is registered in the plugin options"
+msgstr ""
+
+#: inc/Integration/WooCommerce/Admin/Metabox.php:135
+msgid "Product Single Page - Button Position"
+msgstr ""
+
+#: inc/Integration/WooCommerce/Admin/Metabox.php:140, inc/Integration/WooCommerce/Admin/Metabox.php:160
+msgid "None"
+msgstr ""
+
+#: inc/Integration/WooCommerce/Admin/Metabox.php:141
+msgid "Before Add To Cart Button"
+msgstr ""
+
+#: inc/Integration/WooCommerce/Admin/Metabox.php:142, inc/Integration/WooCommerce/Admin/Metabox.php:164
+msgid "After Add To Cart Button"
+msgstr ""
+
+#: inc/Integration/WooCommerce/Admin/Metabox.php:143
+msgid "Before Add To Cart Quantity"
+msgstr ""
+
+#: inc/Integration/WooCommerce/Admin/Metabox.php:144
+msgid "After Add To Cart Quantity"
+msgstr ""
+
+#: inc/Integration/WooCommerce/Admin/Metabox.php:145
+msgid "Before Add To Cart Form"
+msgstr ""
+
+#: inc/Integration/WooCommerce/Admin/Metabox.php:146
+msgid "After Add To Cart Form"
+msgstr ""
+
+#: inc/Integration/WooCommerce/Admin/Metabox.php:155
+msgid "Shop Archive Page - Button Position"
+msgstr ""
+
+#: inc/Integration/WooCommerce/Admin/Metabox.php:161
+msgid "Before Product Title"
+msgstr ""
+
+#: inc/Integration/WooCommerce/Admin/Metabox.php:162
+msgid "After Product Title"
+msgstr ""
+
+#: inc/Integration/WooCommerce/Admin/Metabox.php:163
+msgid "After Product Price"
+msgstr ""

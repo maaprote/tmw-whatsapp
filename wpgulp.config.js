@@ -8,7 +8,7 @@
  */
 
 // General options.
-const projectURL      = 'http://localhost/tmw-whatsapp';
+const projectURL      = 'http://localhost/master-whats-chat';
 const productURL      = './';
 const browserAutoOpen = false;
 const injectChanges   = true;
@@ -66,9 +66,9 @@ const watchScripts = './assets/js/src/**/*.js';
 const watchPhp     = './**/*.php';
 
 // Zip options.
-const zipName = 'tmwc-whatschat.zip';
+const zipName = 'master-whats-chat.zip';
 const zipDestination = './../';
-const zipIncludeGlob = ['../@(tmwc-whatschat)/**/*'];
+const zipIncludeGlob = ['../@(master-whats-chat)/**/*'];
 const zipIgnoreGlob = [
 	'!**/*{node_modules,node_modules/**/*}',
 	'!**/*.git',
@@ -113,12 +113,12 @@ const zipIgnoreGlob = [
 ];
 
 // Translation options.
-const textDomain = 'tmw-whatsapp';
-const translationFile = 'tmw-whatsapp.pot';
+const textDomain = 'master-whats-chat';
+const translationFile = 'master-whats-chat.pot';
 const translationDestination = './languages';
 
 // Others.
-const packageName = 'tmw-whatsapp';
+const packageName = 'master-whats-chat';
 const bugReport = 'https://github.com/maaprote/';
 const lastTranslator = 'Rodrigo Teixeira';
 const team = 'Rodrigo Teixeira';
