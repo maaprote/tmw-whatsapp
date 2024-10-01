@@ -61,20 +61,20 @@ class Assets {
             if( empty($skinCSS) ) {
                 $skinCSS = '/\* TM Whatsapp Fonts \*/';
             }
-            $skinCSS .= '.tmw-whatsapp-trigger-button > a { font-family: '. wp_unslash( $settings['skin_font_family_name'] ) .' }';
-            $skinCSS .= '.tmw-whatsapp-trigger-button .tmw-whatsapp-call-to-action > a { font-family: '. wp_unslash( $settings['skin_font_family_name'] ) .' }';
-            $skinCSS .= '.tmw-whatsapp-wrapper p, .tmw-whatsapp-wrapper a, .tmw-whatsapp-wrapper span, .tmw-whatsapp-wrapper li, .tmw-whatsapp-wrapper h2, .tmw-whatsapp-wrapper h3, .tmw-whatsapp-wrapper h4, .tmw-whatsapp-wrapper h5, .tmw-whatsapp-wrapper h6, .tmw-whatsapp-wrapper input { font-family: '. wp_unslash( $settings['skin_font_family_name'] ) .' }';
-            $skinCSS .= '.tmw-whatsapp-elementor-wrapper p, .tmw-whatsapp-elementor-wrapper a, .tmw-whatsapp-elementor-wrapper span, .tmw-whatsapp-elementor-wrapper li, .tmw-whatsapp-elementor-wrapper h2, .tmw-whatsapp-elementor-wrapper h3, .tmw-whatsapp-elementor-wrapper h4, .tmw-whatsapp-elementor-wrapper h5, .tmw-whatsapp-elementor-wrapper h6 { font-family: '. wp_unslash( $settings['skin_font_family_name'] ) .' }';
-            $skinCSS .= '.tmw-whatsapp-elementor-wrapper.tmw-whatsapp-elementor-wrapper-style-1 .tmw-whatsapp-elementor-body .tmw-whatsapp-elementor-info .tmw-whatsapp-elementor-title h5 { font-family: '. wp_unslash( $settings['skin_font_family_name'] ) .' }';
-            $skinCSS .= '.tmw-whatsapp-elementor-wrapper.tmw-whatsapp-elementor-wrapper-style-1 .tmw-whatsapp-elementor-body .tmw-whatsapp-elementor-info .tmw-whatsapp-elementor-title .tmw-whatsapp-elementor-title-status { font-family: '. wp_unslash( $settings['skin_font_family_name'] ) .' }';
-            $skinCSS .= '.tmw-whatsapp-elementor-wrapper.tmw-whatsapp-elementor-wrapper-style-1 .tmw-whatsapp-elementor-body .tmw-whatsapp-elementor-info .tmw-whatsapp-elementor-description p { font-family: '. wp_unslash( $settings['skin_font_family_name'] ) .' }';
-            $skinCSS .= '.tmw-whatsapp-elementor-wrapper.tmw-whatsapp-elementor-wrapper-style-2 .tmw-whatsapp-elementor-body .tmw-whatsapp-elementor-info .tmw-whatsapp-elementor-title h5 { font-family: '. wp_unslash( $settings['skin_font_family_name'] ) .' }';
-            $skinCSS .= '.tmw-whatsapp-elementor-wrapper.tmw-whatsapp-elementor-wrapper-style-2 .tmw-whatsapp-elementor-body .tmw-whatsapp-elementor-info .tmw-whatsapp-elementor-title .tmw-whatsapp-elementor-title-status { font-family: '. wp_unslash( $settings['skin_font_family_name'] ) .' }';
-            $skinCSS .= '.tmw-whatsapp-elementor-wrapper.tmw-whatsapp-elementor-wrapper-style-2 .tmw-whatsapp-elementor-body .tmw-whatsapp-elementor-info .tmw-whatsapp-elementor-description p { font-family: '. wp_unslash( $settings['skin_font_family_name'] ) .' }';
+            $skinCSS .= '.tmw-whatsapp-trigger-button > a { font-family: '. $settings['skin_font_family_name'] .' }';
+            $skinCSS .= '.tmw-whatsapp-trigger-button .tmw-whatsapp-call-to-action > a { font-family: '. $settings['skin_font_family_name'] .' }';
+            $skinCSS .= '.tmw-whatsapp-wrapper p, .tmw-whatsapp-wrapper a, .tmw-whatsapp-wrapper span, .tmw-whatsapp-wrapper li, .tmw-whatsapp-wrapper h2, .tmw-whatsapp-wrapper h3, .tmw-whatsapp-wrapper h4, .tmw-whatsapp-wrapper h5, .tmw-whatsapp-wrapper h6, .tmw-whatsapp-wrapper input { font-family: '. $settings['skin_font_family_name'] .' }';
+            $skinCSS .= '.tmw-whatsapp-elementor-wrapper p, .tmw-whatsapp-elementor-wrapper a, .tmw-whatsapp-elementor-wrapper span, .tmw-whatsapp-elementor-wrapper li, .tmw-whatsapp-elementor-wrapper h2, .tmw-whatsapp-elementor-wrapper h3, .tmw-whatsapp-elementor-wrapper h4, .tmw-whatsapp-elementor-wrapper h5, .tmw-whatsapp-elementor-wrapper h6 { font-family: '. $settings['skin_font_family_name'] .' }';
+            $skinCSS .= '.tmw-whatsapp-elementor-wrapper.tmw-whatsapp-elementor-wrapper-style-1 .tmw-whatsapp-elementor-body .tmw-whatsapp-elementor-info .tmw-whatsapp-elementor-title h5 { font-family: '. $settings['skin_font_family_name'] .' }';
+            $skinCSS .= '.tmw-whatsapp-elementor-wrapper.tmw-whatsapp-elementor-wrapper-style-1 .tmw-whatsapp-elementor-body .tmw-whatsapp-elementor-info .tmw-whatsapp-elementor-title .tmw-whatsapp-elementor-title-status { font-family: '. $settings['skin_font_family_name'] .' }';
+            $skinCSS .= '.tmw-whatsapp-elementor-wrapper.tmw-whatsapp-elementor-wrapper-style-1 .tmw-whatsapp-elementor-body .tmw-whatsapp-elementor-info .tmw-whatsapp-elementor-description p { font-family: '. $settings['skin_font_family_name'] .' }';
+            $skinCSS .= '.tmw-whatsapp-elementor-wrapper.tmw-whatsapp-elementor-wrapper-style-2 .tmw-whatsapp-elementor-body .tmw-whatsapp-elementor-info .tmw-whatsapp-elementor-title h5 { font-family: '. $settings['skin_font_family_name'] .' }';
+            $skinCSS .= '.tmw-whatsapp-elementor-wrapper.tmw-whatsapp-elementor-wrapper-style-2 .tmw-whatsapp-elementor-body .tmw-whatsapp-elementor-info .tmw-whatsapp-elementor-title .tmw-whatsapp-elementor-title-status { font-family: '. $settings['skin_font_family_name'] .' }';
+            $skinCSS .= '.tmw-whatsapp-elementor-wrapper.tmw-whatsapp-elementor-wrapper-style-2 .tmw-whatsapp-elementor-body .tmw-whatsapp-elementor-info .tmw-whatsapp-elementor-description p { font-family: '. $settings['skin_font_family_name'] .' }';
         }
 
         if( !empty($skinCSS) ) {
-            wp_add_inline_style( 'tmwc-whatsapp-app', $skinCSS );
+            wp_add_inline_style( 'tmwc-whatsapp-app', wp_strip_all_tags( $skinCSS ) );
         }
 
         wp_register_style( 'bootstrap-grid', TMWC_PLUGIN_URL . '/assets/vendor/bootstrap-grid/bootstrap-grid.min.css', false, TMWC_VERSION );
