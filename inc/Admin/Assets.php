@@ -89,7 +89,6 @@ class Assets {
         wp_register_script( 'flatpickr', TMWC_PLUGIN_URL . 'assets/vendor/flatpickr/flatpickr.min.js', false, TMWC_VERSION, true );
         wp_enqueue_script( 'flatpickr' );
 
-        wp_register_script( 'moment', TMWC_PLUGIN_URL . 'assets/vendor/moment/moment.min.js', false, TMWC_VERSION, true );
         wp_enqueue_script( 'moment' );
 
         wp_register_script( 'moment-timezone-with-data', TMWC_PLUGIN_URL . 'assets/vendor/moment/moment-timezone-with-data.min.js', false, TMWC_VERSION, true );
